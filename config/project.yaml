@@ -1,4 +1,4 @@
-dateModified: 1566405644
+dateModified: 1566407368
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -12,8 +12,136 @@ email:
     encryptionMethod: ssl
     timeout: '30'
 fieldGroups:
+  68e682d6-87a3-4206-a8b1-882d516282c9:
+    name: 'Our Team'
   d7cadcda-36e7-4698-a430-56f94012c04b:
     name: Common
+plugins:
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.0
+sections:
+  0d9553ee-97bc-45c6-aeed-06d1bfde344f:
+    name: 'Our Story'
+    handle: ourStory
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      efe82296-8a4a-48db-ac0d-64746ffdee91:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: our-story
+        template: our-story
+    entryTypes:
+      0c8adaa0-c4f3-4ada-9815-8ae95978e45f:
+        name: 'Our Story'
+        handle: ourStory
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+  0db9ba08-444d-4cc6-a813-7ce239e91804:
+    name: 'Our Work'
+    handle: ourWork
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      efe82296-8a4a-48db-ac0d-64746ffdee91:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: our-work
+        template: our-work
+    entryTypes:
+      8c7d1094-6991-47ca-bcc1-2f7c63811f64:
+        name: 'Our Work'
+        handle: ourWork
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+  501280a7-a6f2-43c0-9ac1-4fcb69a3afd5:
+    name: Partner
+    handle: partner
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      efe82296-8a4a-48db-ac0d-64746ffdee91:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: partner
+        template: partner
+    entryTypes:
+      bfe126ba-8902-455a-8e68-5db7c9570666:
+        name: Partner
+        handle: partner
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+  73888acd-8134-4ecd-9157-c92d260137ae:
+    name: Donate
+    handle: donate
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      efe82296-8a4a-48db-ac0d-64746ffdee91:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: donate
+        template: donate
+    entryTypes:
+      dc95f2e4-e770-4c3e-901b-687e601558c7:
+        name: Donate
+        handle: donate
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+  7ae1a417-ef1b-4b81-b05c-d3b37f9b2d67:
+    name: Homepage
+    handle: homepage
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      efe82296-8a4a-48db-ac0d-64746ffdee91:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: index
+    entryTypes:
+      c8b5d617-9471-4bde-af12-de8857aae5a4:
+        name: Homepage
+        handle: homepage
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+  a313a0ff-ddd8-4d64-9ba0-aabf6df51cc0:
+    name: 'Our Team'
+    handle: ourTeam
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      efe82296-8a4a-48db-ac0d-64746ffdee91:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: our-team
+        template: our-team
+    entryTypes:
+      981069c5-aa1f-4b01-a6d1-e3d9521a1eb9:
+        name: 'Our Team'
+        handle: ourTeam
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
 siteGroups:
   b431bdaa-8467-4438-83ee-6750652bc5fc:
     name: Onward
@@ -39,3 +167,22 @@ users:
   defaultGroup: null
   photoVolumeUid: null
   photoSubpath: ''
+volumes:
+  4f8ec569-6e1d-4f22-b630-1132bd13bb81:
+    name: People
+    handle: people
+    type: craft\volumes\Local
+    hasUrls: true
+    url: /uploads/people/
+    settings:
+      path: uploads/people
+    sortOrder: 1
+  6f85d94b-c535-4e84-802b-33fe7087ab63:
+    name: Global
+    handle: global
+    type: craft\volumes\Local
+    hasUrls: true
+    url: /uploads/
+    settings:
+      path: uploads/
+    sortOrder: 2
