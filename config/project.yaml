@@ -1,0 +1,41 @@
+dateModified: 1566405644
+email:
+  fromEmail: nate@firebellydesign.com
+  fromName: Onward
+  transportType: craft\mail\transportadapters\Smtp
+  transportSettings:
+    host: smtp.webfaction.com
+    port: '465'
+    useAuthentication: 1
+    username: $SMTP_USER
+    password: $SMTP_PASSWORD
+    encryptionMethod: ssl
+    timeout: '30'
+fieldGroups:
+  d7cadcda-36e7-4698-a430-56f94012c04b:
+    name: Common
+siteGroups:
+  b431bdaa-8467-4438-83ee-6750652bc5fc:
+    name: Onward
+sites:
+  efe82296-8a4a-48db-ac0d-64746ffdee91:
+    name: Onward
+    handle: default
+    language: en-US
+    hasUrls: true
+    baseUrl: $DEFAULT_SITE_URL
+    sortOrder: 1
+    primary: true
+    siteGroup: b431bdaa-8467-4438-83ee-6750652bc5fc
+system:
+  edition: solo
+  name: Onward
+  live: true
+  schemaVersion: 3.2.16
+  timeZone: America/Los_Angeles
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''
