@@ -1,6 +1,7 @@
 {
   "require": {
     "craftcms/cms": "3.2.10",
+    "verbb/super-table": "2.2.1",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
