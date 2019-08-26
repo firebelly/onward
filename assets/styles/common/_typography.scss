@@ -1,0 +1,146 @@
+// Typography
+
+// Fonts
+$font-header: serif;
+$font-regular: sans-serif;
+$font-mono: monospace;
+
+@mixin font-regular {
+  font-weight: normal;
+  font-family: $font-regular;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+@mixin font-header {
+  @include smooth;
+  font-weight: bold;
+  font-family: $font-header;
+  letter-spacing: -0.1px;
+}
+@mixin font-mono {
+  @include smooth;
+  font-family: $font-mono;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 2.41px;
+  text-transform: uppercase;
+}
+
+@mixin h1 {
+  @include font-header;
+  font-size: 60px;
+  line-height: 72px;
+}
+
+@mixin h2 {
+  @include font-header;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+@mixin h3 {
+  @include font-header;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+@mixin h4 {
+  @include font-mono;
+  font-weight: normal;
+}
+
+@mixin h5 {
+  @include font-mono;
+  font-weight: bold;
+}
+
+@mixin p1 {
+  @include font-regular;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+@mixin p1-xl {
+  @include p1;
+  font-size: 32px;
+  line-height: 48px;
+}
+%p1,
+p.intro {
+  @include p1;
+
+  @include media-xl {
+    @include p1-xl;
+  }
+}
+
+@mixin p2 {
+  @include font-regular;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.75px;
+}
+
+@mixin p3 {
+ @include font-regular;
+ font-size: 16px;
+ line-height: 24px;
+ letter-spacing: 0.47px;
+}
+%p3,
+.p3,
+p.p3,
+p.small {
+  @include p3
+}
+
+// Global header styles
+%h1,.h1,h1 {
+  @include h2;
+  @include media-md {
+    @include h1;
+  }
+}
+%h2,.h2,h2 {
+  @include h3;
+  @include media-md {
+    @include h2;
+  }
+}
+%h3,.h3,h3 {
+  @include h3;
+}
+%h4,.h4,h4 {
+  @include h4;
+}
+%h5,.h5,h5 {
+  @include h5;
+}
+
+// Reset all margins
+dl,
+dt,
+dd,
+p,
+ol,
+ul,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+
+// Basic paragraph styles
+address,
+p,
+%p2,
+.p2,
+figcaption {
+  @include p3;
+
+  @include media-xl {
+    @include p2;
+  }
+}

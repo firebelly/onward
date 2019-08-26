@@ -1,0 +1,127 @@
+// Mixins
+
+// Global UI Transition
+@mixin transition($properties...) {
+  transition-duration: $transition-duration;
+  transition-property: $properties;
+  transition-timing-function: $transition-easing;
+}
+
+// Inline link styles
+@mixin inline-link($hover_color:$black) {
+  display: inline;
+  background-color: rgba($hover_color, 0);
+  @include transition(all);
+
+  &:hover,
+  &:focus {
+    color: $black;
+    border-color: $black;
+    background-color: rgba($hover_color, 1);
+    box-shadow: .2em .1em 0 rgba($hover_color, 1), -.2em .1em 0 rgba($hover_color, 1), -.2em 0 0 rgba($hover_color, 1), .2em 0 0 rgba($hover_color, 1);
+    svg {
+      fill: $black;
+    }
+  }
+}
+%inline-link {
+  @include inline-link;
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+%clearfix {
+  @include clearfix;
+}
+
+@mixin vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Screen reader only
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Aspect ratio padding mixin
+@mixin aspect-ratio($width, $height) {
+  display: block;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 0;
+  padding-top: #{$height / $width * 100%};
+}
+
+// Smooth text
+@mixin smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+%smooth {
+  @include smooth;
+}
+
+// Responsive mixins by Andy Richardson (@andimal): https://github.com/andimal/sass-responsive-mixin-madness
+@mixin media-xs() {
+  @media screen and (max-width: $breakpoint-sm - 1) {
+    @content;
+  }
+}
+@mixin media-sm() {
+  @media screen and (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+@mixin media-md() {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+@mixin media-nav() {
+  @media screen and (min-width: $breakpoint-nav) {
+    @content;
+  }
+}
+@mixin media-lg() {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+@mixin media-xl() {
+  @media screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// On-the fly media-queries
+@mixin screen($res-min, $res-max) {
+  @media screen and (min-width: $res-min) and (max-width: #{$res-max - 1px}) {
+    @content;
+  }
+}
+@mixin max-screen($res) {
+  @media screen and (max-width: #{$res - 1px}) {
+    @content;
+  }
+}
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}

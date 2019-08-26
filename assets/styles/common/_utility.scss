@@ -1,0 +1,75 @@
+// Utility classes
+.hidden,
+.hide {
+  display: none;
+}
+.loading {
+  opacity: 0.5;
+}
+
+// Visually hide, accessibility-friendly
+.screen-reader-text,
+.sr-only {
+  @include sr-only;
+}
+
+.clearfix,.cf {
+  @include clearfix;
+}
+
+.bigclicky {
+  cursor: pointer;
+}
+
+// Visibility classes (borrowing nomenclature from Foundation)
+.show-for-small-up {
+  display: none;
+  @include media-sm {
+    display: block;
+    &.-inline {
+      display: inline;
+    }
+  }
+}
+.show-for-medium-up {
+  display: none;
+  @include media-md {
+    display: block;
+    &.-inline {
+      display: inline;
+    }
+  }
+}
+.hide-for-medium-up {
+  @include media-md {
+    display: none !important;
+  }
+}
+
+// Inset shadows for images
+@mixin inset-shadow {
+  position: relative;
+  &::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 32px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+.-inset-shadow,
+%inset-shadow {
+  @include inset-shadow;
+}
+
+// Global box-shadow style
+@mixin shadow($opacity:0.5) {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, $opacity);
+}
+.-shadow,
+%shadow {
+  @include shadow;
+}

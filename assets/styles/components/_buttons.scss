@@ -1,0 +1,54 @@
+%button,
+.button {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.4;
+  padding: grid(2) grid(5);
+  position: relative;
+  border: none;
+  background: $white;
+  color: $black;
+  border-radius: 16px;
+  align-items: center;
+  min-height: 56px;
+  min-width: 140px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  text-decoration: none;
+  @include h5;
+  @include transition(box-shadow, transform);
+
+  &:hover {
+    background: $black;
+    text-decoration: none;
+  }
+  &:active {
+    box-shadow: 0 0 0 rgba(0,0,0,0.25);
+    transform: translateY(1px);
+  }
+  &.disabled {
+    cursor: default;
+    &:hover {
+      color: inherit !important;
+    }
+    &:active {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+      transform: none;
+    }
+  }
+
+  // Round buttons (e.g. nav toggle)
+  &.-round {
+    border-radius: 50%;
+  }
+
+  // Full width button
+  &.-wide {
+    width: 100%;
+  }
+
+  svg {
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+  }
+}
