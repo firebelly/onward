@@ -10,3 +10,11 @@ node_modules
 npm-debug.log
 yarn-error.log
 resources/assets/config-local.json
+
+/web/uploads
+
+# Server files
+php.ini
+
+# ignore custom logo uploads
+/storage/rebrand
