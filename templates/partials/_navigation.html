@@ -1,0 +1,34 @@
+{# Static dropdown nav menu #}
+{% set nav = [
+  {"href": "/", "name": "Home"},
+  {"href": "/our-work/", "name": "Our Work"},
+  {"href": "/our-story/", "name": "Our Story", "children":
+    [
+      {"href": "/our-team/", "name": "Our Team"},
+    ]
+  },
+  {"href": "/partner-with-us/", "name": "Partner With Us"},
+  {"href": "/donate/", "name": "Donate"},
+] %}
+
+{% import _self as navigation %}
+
+{% macro menu_links(items, outside, inside) %}
+{% spaceless %}
+  {% import _self as navigation %}
+    {% for item in items %}
+      <{{inside}} class="nav-{{ item.name|lower }}{% if item.children is defined %} dropdown{% endif %}{% if item.href in craft.app.request.absoluteUrl %} active{% endif %}">
+        <a href="{{ item.href }}"{% if item.children is defined %} aria-haspopup="true"{% endif %}>{{ item.name }}{% if item.children is defined %}<svg class="icon-arrow" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow"/></svg>{% endif %}</a>
+        {% if item.children is defined %}
+          <{{outside}} class="children" aria-label="submenu">
+            {{ navigation.menu_links(item.children, outside, inside) }}
+          </{{outside}}>
+        {% endif %}
+      </{{inside}}>
+    {% endfor %}
+{% endspaceless %}
+{% endmacro %}
+
+<ul class="primary-nav">
+  {{ navigation.menu_links(nav, 'ul', 'li') }}
+</ul>

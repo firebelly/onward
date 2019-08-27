@@ -1,0 +1,50 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ siteOptions.titleSeparator }} {{ siteName }}{% else %}{{ siteName }}{% endif %}</title>
+{% if seoDescription is defined %}
+  <meta name="description" content="{{ seoDescription }}">
+{% endif %}
+  <link rel="canonical" href="{{ siteUrl }}">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+  <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | {{ siteName }}{% else %}{{ siteName }}{% endif %}">
+{% if mainImage is defined %}
+  <meta property="og:image" content="{{ mainImage.getUrl() }}">
+{% else %}
+  <meta property="og:image" content="">
+{% endif %}
+
+  <link rel="stylesheet" media="screen" href="{{ rev('styles/main.css') }}">
+  <link rel="stylesheet" media="print" href="{{ rev('styles/print.css') }}">
+  <link rel="shortcut icon" type="image/ico" href="{{ rev('images/favicon.png') }}">
+  {# <script src="{{ rev('js/modernizr.custom.js') }}"></script> #}
+
+  {% if craft.app.config.env == 'production' %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123985615-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-123985615-1');
+  </script>
+  {% endif %}
+
+  <!-- Inject SVGs Defs for SVG icon use -->
+  {#
+  <script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "{{ rev('svgs-defs.svg') }}", true);
+    ajax.send();
+    ajax.onload = function(e) {
+      var div = document.createElement("div");
+      div.className += "svg-defs hidden";
+      div.innerHTML = ajax.responseText;
+      document.body.insertBefore(div, document.body.childNodes[0]);
+    }
+  </script>
+  #}
+</head>

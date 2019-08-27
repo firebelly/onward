@@ -1,0 +1,20 @@
+{% if pageHeader.image|length %}
+  {% set headerImage = pageHeader.image.one() %}
+  {% set treatedImage = craft.imager.transformImage(headerImage, {
+    width: 1000,
+    height: 1000,
+    mode: 'crop',
+    position: '20% 65%'
+  }) %}
+{% endif %}
+
+<div class="page-header">
+  <div class="image-wrap">
+    {% if pageHeader.image|length %}
+    <div class="image" style="background-image: url({{ treatedImage ? treatedImage.getUrl() : '' }});"></div>
+    {% endif %}
+  </div>
+  <div class="page-header-info">
+    {{ pageHeader.statement }}
+  </div>
+</div>
