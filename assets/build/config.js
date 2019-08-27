@@ -19,7 +19,7 @@ const config = merge({
   paths: {
     root: rootPath,
     assets: path.join(rootPath, 'assets'),
-    dist: path.join(rootPath, 'dist'),
+    dist: path.join(rootPath, 'web/assets/dist'),
   },
   enabled: {
     sourceMaps: !isProduction,
