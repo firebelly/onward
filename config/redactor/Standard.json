@@ -1,6 +1,17 @@
 {
-  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
+  "formatting": ["p", "h2", "h3", "blockquote"],
+  "buttons": ["formatting", "bold", "italic", "lists", "link", "image", "video", "html"],
   "plugins": ["fullscreen", "video"],
+  "toolbarFixed": true,
   "linkNewTab": true,
-  "toolbarFixed": true
+  "formattingAdd": {
+    "quote-attribution-add": {
+        "title": "Quote Attribution",
+        "api": "module.block.format",
+        "args": {
+            "tag": "p",
+            "class": "quote-attribution"
+        }
+    }
+  }
 }
