@@ -1,5 +1,5 @@
 <?php
 return [
-  'manifestPath' => 'web/assets/dist/assets.json',
-  'assetUrlPrefix' => '/assets/dist/',
+  'manifestPath' => 'web/assets/dist/mix-manifest.json',
+  'assetUrlPrefix' => '/assets/dist',
 ];
