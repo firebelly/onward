@@ -35,6 +35,21 @@ mix.copyDirectory(src`images`, publicPath`images`)
 //   jquery: ['$', 'window.jQuery'],
 // });
 
+let SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+let svgSpriteDestination = publicPath`svgs-defs.svg`;
+mix.webpackConfig({
+  plugins: [
+    new SVGSpritemapPlugin('assets/svgs/*.svg', {
+      output: {
+        filename: 'svgs-defs.svg',
+        chunk: {
+          keep: true
+        }
+      },
+    })
+  ]
+});
+
 // Options
 mix.options({
   processCssUrls: false,
