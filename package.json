@@ -15,7 +15,6 @@
     "clean:views": "rimraf storage/framework/views/*.php",
     "lint": "run-s -c lint:*",
     "lint:scripts": "eslint resources/assets/scripts",
-    "lint:styles": "stylelint \"resources/assets/**/*.{vue,css,sass,scss,sss,less}\"",
     "test": "run-s -c lint"
   },
   "devDependencies": {
@@ -32,8 +31,6 @@
     "rimraf": "^3.0",
     "sass": "^1.22",
     "sass-loader": "7.*",
-    "stylelint": "^10.1",
-    "stylelint-config-standard": "^18.2",
     "svg-spritemap-webpack-plugin": "^3.4.0",
     "vue-template-compiler": "^2.6"
   },
