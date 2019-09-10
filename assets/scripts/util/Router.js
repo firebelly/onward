@@ -16,6 +16,7 @@ class Router {
    */
   constructor(routes) {
     this.routes = routes;
+    console.log(this.routes);
   }
 
   /**
@@ -32,7 +33,7 @@ class Router {
         fn: event,
       },
     }));
-    
+
     const fire = route !== '' && this.routes[route] && typeof this.routes[route][event] === 'function';
     if (fire) {
       this.routes[route][event](arg);
