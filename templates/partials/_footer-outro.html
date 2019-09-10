@@ -1,0 +1,19 @@
+{% set footerOutro = entry.footerOutro.one() %}
+<div class="footer-outro">
+  {{ footerOutro.body }}
+
+  {% include "partials/_image" with {
+    image: footerOutro.image,
+    imageOptions: {
+      mode: 'crop',
+      width: 1000,
+      height: 1042,
+      position: '20% 65%'
+    }
+  } %}
+  {% if footerOutro.linkURL %}
+    <div class="link">
+      <a class="button" href="{{ footerOutro.linkURL }} ">{{ footerOutro.linkLabel}}</a>
+    </div>
+  {% endif %}
+</div>
