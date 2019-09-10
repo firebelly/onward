@@ -1,0 +1,59 @@
+baz
+{% for block in entry.homepageBlocks.all() %}
+  {% switch block.type %}
+
+    {% case "question" %}
+      <div class="block-question">
+        <h4>{{ block.subhead }}</h4>
+        <h2>{{ block.headline }}</h2>
+        {% include "partials/_image" with {
+          image: block.image,
+          imageOptions: {
+            mode: 'crop',
+            width: 600,
+            height: 681,
+            position: '20% 65%'
+          },
+        } %}
+      </div>
+
+    {% case "answer" %}
+      <div class="block-answer">
+        <h4>{{ block.subhead }}</h4>
+        <h2>{{ block.headline }}</h2>
+
+        {% include "partials/_image" with {
+          image: block.image,
+          imageOptions: {
+            mode: 'crop',
+            width: 1000,
+            height: 1042,
+            position: '20% 65%'
+          }
+        } %}
+      </div>
+
+    {% case "quote" %}
+      {% include "partials/_quote" with {
+        quote: block.quote,
+        attribution: block.attribution
+      } %}
+
+    {% case "image" %}
+      <div class="block-image">
+        {% include "partials/_image" with {
+          image: block.image,
+          imageOptions: {
+            mode: 'crop',
+            width: 1800,
+            height: 1079,
+            position: '20% 65%'
+          },
+          caption: block.caption
+        } %}
+      </div>
+
+    {% default %}
+
+  {% endswitch %}
+{% endfor %}

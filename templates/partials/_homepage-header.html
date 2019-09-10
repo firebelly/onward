@@ -1,0 +1,31 @@
+{% if entry.homepageHeader.image|length %}
+  {% set headerImage = entry.homepageHeader.image.one() %}
+  {% set treatedImage = craft.imager.transformImage(headerImage, {
+    width: 1000,
+    height: 1000,
+    mode: 'crop',
+    position: '20% 65%'
+  }) %}
+{% endif %}
+
+<div class="page-header">
+  {% if entry.homepageHeader.image|length and treatedImage %}
+    <div class="image-wrap">
+      <figure>
+        <img src="{{ treatedImage.getUrl() }}" alt="{{ entry.homepageHeader.image.title }}">
+        {% if entry.homepageHeader.imageCaption %}
+          <figcaption>{{ entry.homepageHeader.imageCaption }}</figcaption>
+        {% endif %}
+      </figure>
+    </div>
+  {% endif %}
+  {% if entry.homepageHeader.subhead %}
+    <h4>{{ entry.homepageHeader.subhead }}</h4>
+  {% endif %}
+  {% if entry.homepageHeader.subhead %}
+    <h2>{{ entry.homepageHeader.headline }}</h2>
+  {% endif %}
+  <div class="page-header-info">
+    {{ entry.homepageHeader.statement }}
+  </div>
+</div>
