@@ -1,0 +1,42 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}
+{% if entry.seoDescription %}{% set seoDescription = entry.seoDescription %}{% endif %}
+
+{% block content %}
+
+  {% include "partials/_page-header" %}
+
+  <div class="our-work-intro user-content">
+    {% if ourWorkIntro.subhead %}
+      <h4>{{ ourWorkIntro.subhead }}</h4>
+    {% endif %}
+    {% if ourWorkIntro.headline %}
+      {{ ourWorkIntro.headline }}
+    {% endif %}
+
+    --four pillars graphic--
+  </div>
+
+  {% include "partials/_page-blocks" %}
+
+  {% if entry.successStories|length %}
+    <ul class="success-stories">
+    {% for story in entry.successStories.all() %}
+      <li>
+        {% if story.tagline %}
+          <div class="tagline">{{ story.tagline }}</div>
+        {% endif %}
+        <h2>{{ story.headline }}</h2>
+        {% if story.subhead %}
+          <h4>{{ story.subhead }}</h4>
+        {% endif %}
+        {{ story.body }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% include "partials/_footer-outro" %}
+
+{% endblock %}
