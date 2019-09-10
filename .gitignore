@@ -12,6 +12,7 @@ yarn-error.log
 resources/assets/config-local.json
 
 /web/uploads
+/web/imager
 
 # Server files
 php.ini
