@@ -1,0 +1,26 @@
+{% if image|length %}
+  {% set image = image.one() %}
+  {% set embeddedAsset = craft.embeddedAssets.get(image) %}
+
+  {% if embeddedAsset %}
+
+    <div class="embedded-asset">
+      {{ embeddedAsset.html }}
+    </div>
+
+  {% else %}
+
+    {% set treatedImage = craft.imager.transformImage(image, imageOptions) %}
+    {% if treatedImage %}
+      <figure class="image">
+        <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+        {% if caption is defined %}
+          {% if caption %}
+            <figcaption>{{ caption }}</figcaption>
+          {% endif %}
+        {% endif %}
+      </figure>
+    {% endif %}
+
+  {% endif %}
+{% endif %}
