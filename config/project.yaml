@@ -1,4 +1,4 @@
-dateModified: 1568155723
+dateModified: 1568316628
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -117,17 +117,15 @@ fields:
       propagationMethod: all
       staticField: '1'
       columns:
-        new1:
+        53:
           width: ''
-        new2:
+        51:
           width: ''
-        new3:
+        55:
           width: ''
-        new4:
+        52:
           width: ''
-        new5:
-          width: ''
-        new6:
+        50:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -1227,23 +1225,6 @@ superTableBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
-      c3526fec-5f07-42c4-8805-48c4b769c7f0:
-        name: 'Footer Statement'
-        handle: footerStatement
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
       d8c833ba-cc04-433a-bab1-3f969a52c510:
         name: Tagline
         handle: tagline
@@ -1280,9 +1261,6 @@ superTableBlockTypes:
               bc5be786-6d4b-4629-8be1-204d8e131ada:
                 required: false
                 sortOrder: 1
-              c3526fec-5f07-42c4-8805-48c4b769c7f0:
-                required: false
-                sortOrder: 6
               d8c833ba-cc04-433a-bab1-3f969a52c510:
                 required: false
                 sortOrder: 3
@@ -1725,6 +1703,30 @@ superTableBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      c754f567-9cf5-4172-abca-1d5a3377c9fc:
+        name: Taglines
+        handle: taglines
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: 'Add a row'
+          maxRows: ''
+          minRows: ''
+          columns:
+            col1:
+              heading: Tagline
+              handle: tagline
+              width: ''
+              type: singleline
+          defaults:
+            -
+              col1: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
     fieldLayouts:
       8fe7b267-c834-4de5-a2a7-12857692ee6c:
         tabs:
@@ -1747,6 +1749,9 @@ superTableBlockTypes:
               af6f9955-ebc2-4a67-ab98-6f8c8808ec6e:
                 required: false
                 sortOrder: 3
+              c754f567-9cf5-4172-abca-1d5a3377c9fc:
+                required: false
+                sortOrder: 6
   7d6c9dfa-fc86-44b7-83b8-f06f0f8337e3:
     field: fa72722d-fde8-4ef7-b96b-348a09cfb36a
     fields:

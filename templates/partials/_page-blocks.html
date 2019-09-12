@@ -31,6 +31,14 @@
         {{ block.body }}
       </div>
 
+    {% case "textGrid" %}
+      <div class="block-text-grid user-content">
+        {% if block.subhead %}
+          <h4>{{ block.subhead }}</h4>
+        {% endif %}
+        {{ block.body }}
+      </div>
+
     {% case "quote" %}
       {% include "partials/_quote" with {
         quote: block.quote,
