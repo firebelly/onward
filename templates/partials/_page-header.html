@@ -1,5 +1,5 @@
-{% if pageHeader.image|length %}
-  {% set headerImage = pageHeader.image.one() %}
+{% if entry.pageHeader.image|length %}
+  {% set headerImage = entry.pageHeader.image.one() %}
   {% set treatedImage = craft.imager.transformImage(headerImage, {
     width: 1800,
     height: 919,
@@ -9,20 +9,20 @@
 {% endif %}
 
 <div class="page-header">
-  <h1>{{ pageHeader.headline }}</h1>
+  <h1>{{ entry.pageHeader.headline }}</h1>
 
-  {% if pageHeader.tagline %}
-    <div class="tagline">{{ pageHeader.tagline }}</div>
+  {% if entry.pageHeader.tagline %}
+    <div class="tagline">{{ entry.pageHeader.tagline }}</div>
   {% endif %}
 
   <svg class="icon icon-logo"><use xlink:href="#icon-logo"/></svg>
 
-  {% if pageHeader.image|length and treatedImage %}
+  {% if entry.pageHeader.image|length and treatedImage %}
     <div class="image-wrap">
       <figure>
-        <img src="{{ treatedImage.getUrl() }}" alt="{{ pageHeader.image.title }}">
-        {% if pageHeader.imageCaption %}
-          <figcaption>{{ pageHeader.imageCaption }}</figcaption>
+        <img src="{{ treatedImage.getUrl() }}" alt="{{ entry.pageHeader.image.title }}">
+        {% if entry.pageHeader.imageCaption %}
+          <figcaption>{{ entry.pageHeader.imageCaption }}</figcaption>
         {% endif %}
       </figure>
     </div>
