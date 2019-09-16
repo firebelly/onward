@@ -1,0 +1,28 @@
+{% if entry.postcards|length %}
+  <ul class="postcards">
+  {% for card in entry.postcards.all() %}
+    {% if card.image|length %}
+      {% set cardImage = card.image.one() %}
+      {% set treatedImage = craft.imager.transformImage(cardImage, {
+        width: 1000,
+        height: 690,
+        mode: 'crop',
+        position: '20% 65%'
+      }) %}
+    {% endif %}
+
+    <li>
+      {% if card.image|length and treatedImage %}
+        <figure>
+          <img src="{{ treatedImage.getUrl() }}" alt="{{ card.image.title }}">
+        </figure>
+      {% endif %}
+      {% if card.tagline %}
+        <div class="tagline">{{ card.tagline }}</div>
+      {% endif %}
+      <h2>{{ card.headline }}</h2>
+      {{ card.body }}
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}
