@@ -1,4 +1,4 @@
-dateModified: 1568316628
+dateModified: 1568672200
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -20,6 +20,8 @@ fieldGroups:
     name: SEO
   a86c6f50-b95f-4784-98a8-f28553c72a62:
     name: Homepage
+  c5df179a-46ba-4ca1-bbdb-c44d8b2a821d:
+    name: Globals
   d7cadcda-36e7-4698-a430-56f94012c04b:
     name: Common
 fields:
@@ -63,10 +65,12 @@ fields:
           width: ''
         5:
           width: ''
+        60:
+          width: ''
       fieldLayout: row
       selectionLabel: ''
     contentColumnType: string
-    fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+    fieldGroup: c5df179a-46ba-4ca1-bbdb-c44d8b2a821d
   6972beb1-d7c4-46b6-8d63-f06e2c7627d8:
     name: 'Title Separator'
     handle: titleSeparator
@@ -83,7 +87,7 @@ fields:
       charLimit: ''
       columnType: string
     contentColumnType: string
-    fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+    fieldGroup: c5df179a-46ba-4ca1-bbdb-c44d8b2a821d
   73a71b02-a084-4cce-850e-2ab834b84730:
     name: 'Page Header'
     handle: pageHeader
@@ -98,6 +102,11 @@ fields:
       contentTable: '{{%stc_pageheader}}'
       propagationMethod: all
       staticField: '1'
+      columns:
+        29:
+          width: ''
+        28:
+          width: ''
       fieldLayout: row
       selectionLabel: ''
     contentColumnType: string
@@ -131,9 +140,9 @@ fields:
       selectionLabel: ''
     contentColumnType: string
     fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
-  a3d90be8-ba69-44c3-aa70-07ab637f2597:
-    name: 'Success Stories'
-    handle: successStories
+  8d680df1-9464-46d5-96c2-0fbf1570093b:
+    name: Postcards
+    handle: postcards
     instructions: ''
     searchable: true
     translationMethod: site
@@ -142,9 +151,45 @@ fields:
     settings:
       minRows: ''
       maxRows: ''
-      contentTable: '{{%stc_successstories}}'
+      contentTable: '{{%stc_postcards}}'
       propagationMethod: all
       staticField: ''
+      columns:
+        63:
+          width: ''
+        65:
+          width: ''
+        64:
+          width: ''
+        62:
+          width: ''
+      fieldLayout: row
+      selectionLabel: 'Add a postcard'
+    contentColumnType: string
+    fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+  a3d90be8-ba69-44c3-aa70-07ab637f2597:
+    name: 'Partnership Stories'
+    handle: partnershipStories
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_partnershipstories}}'
+      propagationMethod: all
+      staticField: ''
+      columns:
+        58:
+          width: ''
+        59:
+          width: ''
+        57:
+          width: ''
+        56:
+          width: ''
       fieldLayout: row
       selectionLabel: 'Add a success story'
     contentColumnType: string
@@ -796,12 +841,36 @@ matrixBlockTypes:
         settings:
           minRows: ''
           maxRows: ''
-          contentTable: '{{%stc_textblocks}}'
+          contentTable: '{{%stc_7_textblocks}}'
           propagationMethod: all
           staticField: ''
+          columns:
+            40:
+              width: ''
           fieldLayout: row
           selectionLabel: 'Add a text block'
         contentColumnType: string
+        fieldGroup: null
+      ccc3cd90-61fe-43df-836a-70e069e9edfb:
+        name: Intro
+        handle: intro
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
         fieldGroup: null
     fieldLayouts:
       9b7c6ec8-6811-4d32-948b-f4875bd39048:
@@ -811,6 +880,9 @@ matrixBlockTypes:
             sortOrder: 1
             fields:
               80aede10-a66e-490d-ac5a-469a7283ed27:
+                required: false
+                sortOrder: 2
+              ccc3cd90-61fe-43df-836a-70e069e9edfb:
                 required: false
                 sortOrder: 1
   fc82e018-7952-4bf1-93db-44e687f4bc0d:
@@ -968,9 +1040,28 @@ sections:
         name: 'Our Story'
         handle: ourStory
         hasTitleField: false
-        titleLabel: null
+        titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 1
+        fieldLayouts:
+          710f6936-3e0d-4d8b-af5a-5817aafb69ff:
+            tabs:
+              -
+                name: 'Our Story'
+                sortOrder: 1
+                fields:
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 1
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 4
+                  8d680df1-9464-46d5-96c2-0fbf1570093b:
+                    required: false
+                    sortOrder: 3
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 2
   0db9ba08-444d-4cc6-a813-7ce239e91804:
     name: 'Our Work'
     handle: ourWork
@@ -998,18 +1089,21 @@ sections:
                 name: 'Our Work'
                 sortOrder: 1
                 fields:
-                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
-                    required: false
-                    sortOrder: 4
-                  a3d90be8-ba69-44c3-aa70-07ab637f2597:
-                    required: false
-                    sortOrder: 3
-                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
-                    required: false
-                    sortOrder: 2
-                  fa72722d-fde8-4ef7-b96b-348a09cfb36a:
+                  73a71b02-a084-4cce-850e-2ab834b84730:
                     required: false
                     sortOrder: 1
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 5
+                  a3d90be8-ba69-44c3-aa70-07ab637f2597:
+                    required: false
+                    sortOrder: 4
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 3
+                  fa72722d-fde8-4ef7-b96b-348a09cfb36a:
+                    required: false
+                    sortOrder: 2
               -
                 name: SEO
                 sortOrder: 2
@@ -1305,8 +1399,8 @@ superTableBlockTypes:
         settings:
           placeholder: ''
           code: ''
-          multiline: ''
-          initialRows: '4'
+          multiline: '1'
+          initialRows: '2'
           charLimit: ''
           columnType: text
         contentColumnType: text
@@ -1416,6 +1510,110 @@ superTableBlockTypes:
                 required: false
                 sortOrder: 1
               e1d7f464-824d-49b8-abf5-489f3d9fe386:
+                required: false
+                sortOrder: 2
+  31b6a341-8cf2-4bcc-9231-33cbb310a47e:
+    field: 8d680df1-9464-46d5-96c2-0fbf1570093b
+    fields:
+      29cbefd6-80a7-44e6-a91c-304291dcacb1:
+        name: Body
+        handle: body
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      6632d328-147b-4b1c-8e34-eedd570c4c72:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      8a4380b5-11b5-45f4-86af-142012814334:
+        name: Tagline
+        handle: tagline
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
+      edf3548f-f23a-4432-b1b4-21ef410dd401:
+        name: Headline
+        handle: headline
+        instructions: 'e.g. Nov. 2019—Tel Aviv, Palestine'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      4c69431e-4ad8-4c14-9a3c-bfefc73769df:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              29cbefd6-80a7-44e6-a91c-304291dcacb1:
+                required: false
+                sortOrder: 4
+              6632d328-147b-4b1c-8e34-eedd570c4c72:
+                required: false
+                sortOrder: 1
+              8a4380b5-11b5-45f4-86af-142012814334:
+                required: false
+                sortOrder: 3
+              edf3548f-f23a-4432-b1b4-21ef410dd401:
                 required: false
                 sortOrder: 2
   3352a0b1-86db-48aa-9ae7-3207e43e621f:
