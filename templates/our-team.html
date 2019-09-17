@@ -1,0 +1,48 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? '_ajax-layout' : '_layout' %}
+
+{% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}
+{% if entry.seoDescription %}{% set seoDescription = entry.seoDescription %}{% endif %}
+
+{% block content %}
+
+  {% include 'partials/_page-header' %}
+
+  {% include 'partials/_page-blocks' %}
+
+  {% if entry.onwardTeam|length %}
+    {% set numVertical = 0 %}
+    {% set numWide = 0 %}
+
+    <div class="person-group our-team grid">
+      {% for person in shuffle(entry.onwardTeam) %}
+        {% set imageClass = [] %}
+
+        {# Randomize square/portrait #}
+        {% if random(100) > 50 and numWide < 3 %}
+          {% set numWide = numWide + 1 %}
+          {% set imageClass = imageClass|merge(['square']) %}
+        {% endif %}
+
+        {# Randomize vertical padding #}
+        {% if random(100) > 50 and numVertical < 3 %}
+          {% set numVertical = numVertical + 1 %}
+          {% set imageClass = imageClass|merge(['padded']) %}
+        {% endif %}
+
+        {% include 'partials/_person' with { person: person, imageClass: imageClass } %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if entry.ourBoard|length %}
+    <h2 class="serif">Our Board</h2>
+    <div class="person-group our-board grid">
+      {% for person in entry.ourBoard %}
+        {% include 'partials/_person' with { person: person, imageClass: ['gray'] } %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% include 'partials/_footer-outro' %}
+
+{% endblock %}

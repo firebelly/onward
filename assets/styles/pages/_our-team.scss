@@ -1,0 +1,20 @@
+// Home page
+
+body.page-our-team {
+	.person {
+		.modal-content {
+			display: none;
+		}
+	}
+	@include media-md {
+		.person {
+			margin-top: 24px;
+			img {
+				max-height: 264px;
+			}
+			&.padded {
+				margin-top: 96px;
+			}
+		}
+	}
+}

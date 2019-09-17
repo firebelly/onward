@@ -1,0 +1,55 @@
+<article class="grid-item one-third person{{ imageClass|length ? ' ' ~ imageClass|join(' ') : '' }}">
+	{% if person.image|length %}
+	  {% set personImage = person.image.one() %}
+  	{% set width = 1104 %}
+		{% if 'square' in imageClass %}
+			{% set width = 768 %}
+		{% endif %}
+		{% set effects = {} %}
+		{% if 'gray' in imageClass %}
+			{% set effects = { modulate: [100, 0, 100], clut: 'gradient:#222222-#EBE5D0' } %}
+		{% endif %}
+	  {% set treatedImage = craft.imager.transformImage(personImage, {
+	    width: width,
+	    height: 768,
+	    mode: 'crop',
+	    position: '20% 65%',
+	    effects: effects,
+
+	  }) %}
+	{% endif %}
+
+	{% if person.image|length and treatedImage %}
+	  <div class="image-wrap">
+	    <figure>
+	      <img src="{{ treatedImage.getUrl() }}" alt="{{ person.image.title }}">
+	    </figure>
+	  </div>
+	{% endif %}
+
+	<h3>{{ person.personName }}</h3>
+	{% if person.shortBio %}
+		<div class="user-content short-bio">
+			<p>{{ person.shortBio}}</p>
+		</div>
+	{% endif %}
+
+	<div class="modal-content">
+		{% if person.image|length and treatedImage %}
+		  <div class="image-wrap">
+		    <figure>
+		      <img src="{{ treatedImage.getUrl() }}" alt="{{ person.image.title }}">
+		    </figure>
+		  </div>
+		{% endif %}
+		{% if person.headline %}
+			<h2>{{ person.headline }}</h2>
+		{% endif %}
+		{% if person.body %}
+			<div class="user-content-body">
+				{{ person.body }}
+			</div>
+		{% endif %}
+	</div>
+
+</article>
