@@ -52,6 +52,15 @@ svg.icon {
   fill: $black;
 }
 
+// Flash notices
+.flash {
+  padding: 10px;
+  color: $white;
+  background: $red;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
 // This allows js to determine breakpoint
 #breakpoint-indicator {
   width: 0;
