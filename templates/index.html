@@ -1,4 +1,4 @@
-{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? '_ajax-layout' : '_layout' %}
 
 {% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}
 {% if entry.seoDescription %}{% set seoDescription = entry.seoDescription %}{% endif %}
@@ -6,6 +6,6 @@
 {% block content %}
 
 	{% include 'partials/_homepage-header' %}
-	{% include "partials/_homepage-blocks" %}
+	{% include 'partials/_homepage-blocks' %}
 
 {% endblock %}

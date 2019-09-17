@@ -1,53 +1,56 @@
-{% if blockColor is not defined %}
-  {% set blockColor = 'white' %}
+{% if entry.pageBlocks|length %}
+  {% if blockColor is not defined %}
+    {% set blockColor = 'white' %}
+  {% endif %}
+
+  <div class="block-color color-{{ blockColor }}">
+
+  {% for block in entry.pageBlocks.all() %}
+    {% switch block.type %}
+
+      {% case "colorChange" %}
+        </div><!-- /.block-color -->
+        <div class="block-color color-{{ block.color }}">
+
+      {% case "image" %}
+        {% include 'partials/_image' with {
+          image: block.image,
+          imageOptions: {
+            mode: 'crop',
+            width: 1800,
+            height: 1079,
+            position: '20% 65%'
+          },
+          caption: block.caption
+        } %}
+
+      {% case "text" %}
+        <div class="block-text user-content {{ block.size }}">
+          {% if block.subhead %}
+            <h4>{{ block.subhead }}</h4>
+          {% endif %}
+          {{ block.body }}
+        </div>
+
+      {% case "textGrid" %}
+        <div class="block-text-grid user-content">
+          {% if block.subhead %}
+            <h4>{{ block.subhead }}</h4>
+          {% endif %}
+          {{ block.body }}
+        </div>
+
+      {% case "quote" %}
+        {% include 'partials/_quote' with {
+          quote: block.quote,
+          attribution: block.attribution
+        } %}
+
+      {% default %}
+
+    {% endswitch %}
+  {% endfor %}
+
+  </div><!-- /.block-color -->
+
 {% endif %}
-
-<div class="block-color color-{{ blockClass }}{{ textClass }}"{{ customStyles }}>
-
-{% for block in entry.projectBlocks.all() %}
-  {% switch block.type %}
-
-    {% case "colorChange" %}
-      </div><!-- /.block-color -->
-      <div class="block-color color-{{ block.color }}">
-
-    {% case "image" %}
-      {% include "partials/_image" with {
-        image: block.image,
-        imageOptions: {
-          mode: 'crop',
-          width: 1800,
-          height: 1079,
-          position: '20% 65%'
-        },
-        caption: block.caption
-      } %}
-
-    {% case "text" %}
-      <div class="block-text user-content {{ block.size }}">
-        {% if block.subhead %}
-          <h4>{{ block.subhead }}</h4>
-        {% endif %}
-        {{ block.body }}
-      </div>
-
-    {% case "textGrid" %}
-      <div class="block-text-grid user-content">
-        {% if block.subhead %}
-          <h4>{{ block.subhead }}</h4>
-        {% endif %}
-        {{ block.body }}
-      </div>
-
-    {% case "quote" %}
-      {% include "partials/_quote" with {
-        quote: block.quote,
-        attribution: block.attribution
-      } %}
-
-    {% default %}
-
-  {% endswitch %}
-{% endfor %}
-
-</div><!-- /.block-color -->

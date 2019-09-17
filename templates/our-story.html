@@ -1,11 +1,11 @@
-{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? '_ajax-layout' : '_layout' %}
 
 {% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}
 {% if entry.seoDescription %}{% set seoDescription = entry.seoDescription %}{% endif %}
 
 {% block content %}
 
-  {% include "partials/_page-header" %}
+  {% include 'partials/_page-header' %}
 
   <div class="our-work-intro user-content">
     {% if entry.ourWorkIntro.subhead %}
@@ -18,10 +18,10 @@
     --four pillars graphic--
   </div>
 
-  {% include "partials/_page-blocks" %}
+  {% include 'partials/_page-blocks' %}
 
-  {% include "partials/_postcards" %}
+  {% include 'partials/_postcards' %}
 
-  {% include "partials/_footer-outro" %}
+  {% include 'partials/_footer-outro' %}
 
 {% endblock %}

@@ -6,7 +6,7 @@ baz
       <div class="block-question">
         <h4>{{ block.subhead }}</h4>
         <h2>{{ block.headline }}</h2>
-        {% include "partials/_image" with {
+        {% include 'partials/_image' with {
           image: block.image,
           imageOptions: {
             mode: 'crop',
@@ -22,7 +22,7 @@ baz
         <h4>{{ block.subhead }}</h4>
         <h2>{{ block.headline }}</h2>
 
-        {% include "partials/_image" with {
+        {% include 'partials/_image' with {
           image: block.image,
           imageOptions: {
             mode: 'crop',
@@ -34,14 +34,14 @@ baz
       </div>
 
     {% case "quote" %}
-      {% include "partials/_quote" with {
+      {% include 'partials/_quote' with {
         quote: block.quote,
         attribution: block.attribution
       } %}
 
     {% case "image" %}
       <div class="block-image">
-        {% include "partials/_image" with {
+        {% include 'partials/_image' with {
           image: block.image,
           imageOptions: {
             mode: 'crop',
