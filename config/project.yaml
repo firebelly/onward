@@ -1,4 +1,4 @@
-dateModified: 1568748198
+dateModified: 1568753555
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -143,6 +143,37 @@ fields:
       selectionLabel: ''
     contentColumnType: string
     fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+  85204e51-4a0e-43e0-9f5a-9f92e49290e3:
+    name: 'Our Board'
+    handle: ourBoard
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_ourboard}}'
+      propagationMethod: all
+      staticField: ''
+      columns:
+        77:
+          width: ''
+        76:
+          width: ''
+        81:
+          width: ''
+        79:
+          width: ''
+        78:
+          width: ''
+        80:
+          width: ''
+      fieldLayout: row
+      selectionLabel: 'Add a person'
+    contentColumnType: string
+    fieldGroup: 68e682d6-87a3-4206-a8b1-882d516282c9
   8d680df1-9464-46d5-96c2-0fbf1570093b:
     name: Postcards
     handle: postcards
@@ -170,6 +201,37 @@ fields:
       selectionLabel: 'Add a postcard'
     contentColumnType: string
     fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+  9166c707-3164-4994-a96d-7d54a517833d:
+    name: 'Onward Team'
+    handle: onwardTeam
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_onwardteam}}'
+      propagationMethod: all
+      staticField: ''
+      columns:
+        73:
+          width: ''
+        72:
+          width: ''
+        71:
+          width: ''
+        70:
+          width: ''
+        69:
+          width: ''
+        74:
+          width: ''
+      fieldLayout: row
+      selectionLabel: 'Add a person'
+    contentColumnType: string
+    fieldGroup: 68e682d6-87a3-4206-a8b1-882d516282c9
   a3d90be8-ba69-44c3-aa70-07ab637f2597:
     name: 'Partnership Stories'
     handle: partnershipStories
@@ -1300,9 +1362,31 @@ sections:
         name: 'Our Team'
         handle: ourTeam
         hasTitleField: false
-        titleLabel: null
+        titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 1
+        fieldLayouts:
+          1a7bcedf-dba3-4148-a8f0-33daf390d2b0:
+            tabs:
+              -
+                name: 'Our Team'
+                sortOrder: 1
+                fields:
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 1
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 5
+                  85204e51-4a0e-43e0-9f5a-9f92e49290e3:
+                    required: false
+                    sortOrder: 4
+                  9166c707-3164-4994-a96d-7d54a517833d:
+                    required: false
+                    sortOrder: 3
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 2
 siteGroups:
   b431bdaa-8467-4438-83ee-6750652bc5fc:
     name: Onward
@@ -1441,6 +1525,163 @@ superTableBlockTypes:
               d8c833ba-cc04-433a-bab1-3f969a52c510:
                 required: false
                 sortOrder: 3
+  07d4124f-a7ed-49f3-91d0-fdd7fc7aeb17:
+    field: 9166c707-3164-4994-a96d-7d54a517833d
+    fields:
+      07742700-6374-4595-9ede-33c0fdfb0aeb:
+        name: Headline
+        handle: headline
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      3aeb8c76-5c1a-409b-a4b5-979eb325e3ea:
+        name: 'Social Links'
+        handle: socialLinks
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: 'Add a link'
+          maxRows: ''
+          minRows: ''
+          columns:
+            col1:
+              heading: Title
+              handle: title
+              width: ''
+              type: singleline
+            col2:
+              heading: URL
+              handle: url
+              width: ''
+              type: singleline
+          defaults:
+            -
+              col1: ''
+              col2: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      45fb168c-e0b0-4b98-9b1a-2b6cb51d0de5:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      69a2a3dd-b898-40a1-b810-7e52bd16a941:
+        name: 'Short bio'
+        handle: shortBio
+        instructions: 'One sentence bio shown in list view'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      69d9cef3-a2b4-4663-87ee-97a63b511798:
+        name: Name
+        handle: personName
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      7cb22f2f-25b8-4ce1-88dd-1180e9339c37:
+        name: Body
+        handle: body
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      5e9a1deb-1d7f-481f-b6a1-38d5474a010b:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              07742700-6374-4595-9ede-33c0fdfb0aeb:
+                required: false
+                sortOrder: 5
+              3aeb8c76-5c1a-409b-a4b5-979eb325e3ea:
+                required: false
+                sortOrder: 4
+              45fb168c-e0b0-4b98-9b1a-2b6cb51d0de5:
+                required: false
+                sortOrder: 3
+              69a2a3dd-b898-40a1-b810-7e52bd16a941:
+                required: false
+                sortOrder: 2
+              69d9cef3-a2b4-4663-87ee-97a63b511798:
+                required: false
+                sortOrder: 1
+              7cb22f2f-25b8-4ce1-88dd-1180e9339c37:
+                required: false
+                sortOrder: 6
   0e7e32ea-ca61-46ea-adaf-c308137056dd:
     field: 73a71b02-a084-4cce-850e-2ab834b84730
     fields:
@@ -2087,6 +2328,163 @@ superTableBlockTypes:
               89fc4cc4-09c0-4167-8c24-08030b8467e9:
                 required: false
                 sortOrder: 1
+  c98fcb28-a56f-4b28-94cf-f1ce54850f03:
+    field: 85204e51-4a0e-43e0-9f5a-9f92e49290e3
+    fields:
+      185cfede-feee-4ae0-8b96-f6204336b7ee:
+        name: 'Short bio'
+        handle: shortBio
+        instructions: 'One sentence bio shown in list view'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      2025cac3-0cea-4d19-8999-91f7ced0158b:
+        name: Name
+        handle: personName
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      3a4f8dbc-9904-493a-89fa-08f5a7d97179:
+        name: Headline
+        handle: headline
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      6274b074-6ed1-43b7-a071-03245d0c4974:
+        name: 'Social Links'
+        handle: socialLinks
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: 'Add a link'
+          maxRows: ''
+          minRows: ''
+          columns:
+            col1:
+              heading: Title
+              handle: title
+              width: ''
+              type: singleline
+            col2:
+              heading: URL
+              handle: url
+              width: ''
+              type: singleline
+          defaults:
+            -
+              col1: ''
+              col2: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c42808d5-cb5e-4070-99e6-1781008c221a:
+        name: Body
+        handle: body
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      df17e61b-58a0-4093-b295-c303fd0ef0f8:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      2414f578-b95a-4d22-b204-3f8c0d225e2f:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              185cfede-feee-4ae0-8b96-f6204336b7ee:
+                required: false
+                sortOrder: 2
+              2025cac3-0cea-4d19-8999-91f7ced0158b:
+                required: false
+                sortOrder: 1
+              3a4f8dbc-9904-493a-89fa-08f5a7d97179:
+                required: false
+                sortOrder: 5
+              6274b074-6ed1-43b7-a071-03245d0c4974:
+                required: false
+                sortOrder: 4
+              c42808d5-cb5e-4070-99e6-1781008c221a:
+                required: false
+                sortOrder: 6
+              df17e61b-58a0-4093-b295-c303fd0ef0f8:
+                required: false
+                sortOrder: 3
 system:
   edition: solo
   name: Onward
