@@ -1,0 +1,70 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? '_ajax-layout' : '_layout' %}
+
+{% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}
+{% if entry.seoDescription %}{% set seoDescription = entry.seoDescription %}{% endif %}
+
+{% macro errorList(errors) %}
+  {% if errors %}
+    <ul class="errors">
+      {% for error in errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+{% block content %}
+
+  {% include 'partials/_page-header' %}
+
+  {% include 'partials/_page-blocks' %}
+
+  {% if entry.formIntro %}
+    <div class="grid">
+      <div class="grid-item one-half user-content">
+        {{ entry.formIntro }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="partner-form">
+    <form method="post" action="/partner">
+      {{ csrfInput() }}
+      <input type="hidden" name="action" value="contact-form/send">
+      <input type="hidden" name="subject" value="Onward Partnership Submission">
+
+      <div class="grid">
+        <div class="grid-item one-half">
+          <label for="from-name">Your Name</label>
+          <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+          {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+        </div>
+        <div class="grid-item one-half">
+          <label for="from-email">Your Email</label>
+          <input required id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+          {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+        </div>
+      </div>
+
+      <label for="message[Phone]">Phone Number</label>
+      <input type="text" id="message[Phone]" name="message[Phone]">{{ message.message.phone ?? '' }}</textarea>
+
+      <label for="message[Capacity]">Do you have the capacity and drive to dedicate a movement toward equity?</label>
+      <textarea rows="10" cols="40" id="message[Capacity]" name="message[Capacity]">{{ message.message.capacity ?? '' }}</textarea>
+
+      <label for="message[Current system]">What is your current system to provide a more equitable organization?</label>
+      <textarea rows="10" cols="40" id="message[Current system]" name="message[Current system]">{{ message.message.system ?? '' }}</textarea>
+
+      <label for="message[Additional info]">Additional Information</label>
+      <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
+
+      <div class="actions">
+        <button>Submit Message</button>
+      </div>
+    </form>  </div>
+
+  {% include 'partials/_footer-outro' %}
+
+{% endblock %}
