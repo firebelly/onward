@@ -1,17 +1,20 @@
-dateModified: 1568672200
+dateModified: 1568748198
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
+  template: null
   transportType: craft\mail\transportadapters\Smtp
   transportSettings:
-    host: smtp.webfaction.com
-    port: '465'
-    useAuthentication: 1
-    username: $SMTP_USER
-    password: $SMTP_PASSWORD
-    encryptionMethod: ssl
-    timeout: '30'
+    host: smtp.sendgrid.net
+    port: '587'
+    useAuthentication: '1'
+    username: apikey
+    password: $SENDGRID_API_KEY
+    encryptionMethod: tls
+    timeout: '10'
 fieldGroups:
+  0bee4054-16c4-4299-af71-f6b5ebb21116:
+    name: Partner
   68e682d6-87a3-4206-a8b1-882d516282c9:
     name: 'Our Team'
   70c8963f-cd93-46cf-9706-cb8e83ebf659:
@@ -194,6 +197,27 @@ fields:
       selectionLabel: 'Add a success story'
     contentColumnType: string
     fieldGroup: 70c8963f-cd93-46cf-9706-cb8e83ebf659
+  c07ee076-75fe-4172-8c17-24468a814cae:
+    name: 'Form Intro'
+    handle: formIntro
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Simple.json
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 0bee4054-16c4-4299-af71-f6b5ebb21116
   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
     name: 'SEO Description'
     handle: seoDescription
@@ -1022,6 +1046,36 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.1.0
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      toEmail: nate@firebellydesign.com
+      prependSender: 'On behalf of'
+      prependSubject: ''
+      allowAttachments: ''
+      successFlashMessage: 'Your message has been sent.'
+  contact-form-extensions:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      enableDatabase: '1'
+      enableTemplateOverwrite: ''
+      enableConfirmationEmail: ''
+      notificationTemplate: ''
+      confirmationTemplate: ''
+      confirmationSubject: ''
+      recaptcha: '1'
+      recaptchaVersion: '3'
+      recaptchaSiteKey: $RECAPTCHA_SITE_KEY
+      recaptchaSecretKey: $RECAPTCHA_SECRET_KEY
+      recaptchaHideBadge: ''
+      recaptchaDataBadge: bottomright
+      recaptchaTimeout: '5'
+      recaptchaDebug: ''
+      recaptchaThreshold: '0.5'
 sections:
   0d9553ee-97bc-45c6-aeed-06d1bfde344f:
     name: 'Our Story'
@@ -1131,9 +1185,38 @@ sections:
         name: Partner
         handle: partner
         hasTitleField: false
-        titleLabel: null
+        titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 1
+        fieldLayouts:
+          103eccea-de57-4d4b-b354-9dc40d0840ff:
+            tabs:
+              -
+                name: Partner
+                sortOrder: 1
+                fields:
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 1
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 4
+                  c07ee076-75fe-4172-8c17-24468a814cae:
+                    required: false
+                    sortOrder: 3
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 2
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
+                    required: false
+                    sortOrder: 2
   73888acd-8134-4ecd-9157-c92d260137ae:
     name: Donate
     handle: donate
@@ -2008,7 +2091,7 @@ system:
   edition: solo
   name: Onward
   live: true
-  schemaVersion: 3.2.16
+  schemaVersion: 3.3.3
   timeZone: America/Los_Angeles
 users:
   requireEmailVerification: true
