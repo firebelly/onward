@@ -1,4 +1,4 @@
-dateModified: 1568753555
+dateModified: 1568843110
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -58,8 +58,6 @@ fields:
       propagationMethod: all
       staticField: '1'
       columns:
-        3:
-          width: ''
         4:
           width: ''
         6:
@@ -1231,8 +1229,8 @@ sections:
                     required: false
                     sortOrder: 2
   501280a7-a6f2-43c0-9ac1-4fcb69a3afd5:
-    name: Partner
-    handle: partner
+    name: 'Partner With Us'
+    handle: partnerWithUs
     type: single
     enableVersioning: true
     propagationMethod: all
@@ -1240,11 +1238,11 @@ sections:
       efe82296-8a4a-48db-ac0d-64746ffdee91:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: partner
-        template: partner
+        uriFormat: partner-with-us
+        template: partner-with-us
     entryTypes:
       bfe126ba-8902-455a-8e68-5db7c9570666:
-        name: Partner
+        name: 'Partner With Us'
         handle: partner
         hasTitleField: false
         titleLabel: ''
@@ -1267,16 +1265,6 @@ sections:
                     required: false
                     sortOrder: 3
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
-                    required: false
-                    sortOrder: 2
-              -
-                name: SEO
-                sortOrder: 2
-                fields:
-                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
-                    required: false
-                    sortOrder: 1
-                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
                     required: false
                     sortOrder: 2
   73888acd-8134-4ecd-9157-c92d260137ae:
@@ -2131,23 +2119,6 @@ superTableBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
-      36e6e7a8-a2c0-4b60-b883-3a970dbf7fc8:
-        name: Tagline
-        handle: tagline
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
       894d6ca8-6652-42cf-a94c-12a4996dc5bb:
         name: Contact
         handle: contact
@@ -2155,14 +2126,18 @@ superTableBlockTypes:
         searchable: false
         translationMethod: none
         translationKeyFormat: null
-        type: craft\fields\PlainText
+        type: craft\redactor\Field
         settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
           columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
       99406cf1-a857-40c4-abc0-1fd08be7fb9a:
@@ -2258,22 +2233,19 @@ superTableBlockTypes:
             fields:
               32f0b36b-c389-4479-aead-a1eab3144503:
                 required: false
-                sortOrder: 4
-              36e6e7a8-a2c0-4b60-b883-3a970dbf7fc8:
-                required: false
-                sortOrder: 1
+                sortOrder: 3
               894d6ca8-6652-42cf-a94c-12a4996dc5bb:
                 required: false
-                sortOrder: 2
+                sortOrder: 1
               99406cf1-a857-40c4-abc0-1fd08be7fb9a:
                 required: false
-                sortOrder: 5
+                sortOrder: 4
               af6f9955-ebc2-4a67-ab98-6f8c8808ec6e:
                 required: false
-                sortOrder: 3
+                sortOrder: 2
               c754f567-9cf5-4172-abca-1d5a3377c9fc:
                 required: false
-                sortOrder: 6
+                sortOrder: 5
   7d6c9dfa-fc86-44b7-83b8-f06f0f8337e3:
     field: fa72722d-fde8-4ef7-b96b-348a09cfb36a
     fields:
