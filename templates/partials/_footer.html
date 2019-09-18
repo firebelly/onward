@@ -1,44 +1,62 @@
 <footer class="site-footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-tagline">
+      {% set tagline = random(siteOptions.footerInfo.taglines) %}
+      <h2>{{ tagline.tagline }}</h2>
+    </div>
 
-  <div class="footer-tagline">
-    {% set tagline = random(siteOptions.footerInfo.taglines) %}
-    <h2>{{ tagline.tagline }}</h2>
-  </div>
+    <div class="footer-blocks">
+      <div class="contact-info footer-block">
+        {{ siteOptions.footerInfo.contact }}
+        <svg class="icon sprite-staggered-logo" aria-hidden="true"><use xlink:href="#sprite-staggered-logo"/></svg>
+      </div>
+      <div class="main-nav footer-block">
+        <ul>
+          {% for link in siteOptions.footerInfo.mainNav %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-  <div class="main-nav footer-block">
-    <ul>
-      {% for link in siteOptions.footerInfo.mainNav %}
-        <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+      <div class="secondary-nav footer-block">
+        <ul>
+          {% for link in siteOptions.footerInfo.secondaryNav %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-  <div class="secondary-nav footer-block">
-    <ul>
-      {% for link in siteOptions.footerInfo.secondaryNav %}
-        <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+      <div class="social-nav footer-block">
+        <ul>
+          {% for link in siteOptions.footerInfo.socialLinks %}
+            <li>
+              <a href="{{ link.url }}" rel="noopener noreferrer" target="_blank">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
 
-  <div class="social-nav footer-block">
-    <h3>Social</h3>
-    <ul>
-      {% for link in siteOptions.footerInfo.socialLinks %}
-        <li>
-          <a href="{{ link.url }}" rel="noopener noreferrer" target="_blank">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-    <div class="copyright">&copy;{{ 'now'|date('Y') }} Clx</div>
-  </div>
-  <a href="#top" class="back-to-top smoothscroll"><svg class="icon-arrow" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow"/></svg></a>
+    <div class="copyright">
+      <p>&copy;{{ 'now'|date('Y') }} Clx</p>
+    </div>
 
+  </div><!-- /.wrapper -->
 </footer>
+<div class="ground-nav">
+  <div class="home-link">
+    <a href="/"><svg class="icon icon-home" aria-hidden="true"><use xlink:href="#icon-home"/></svg></a>
+  </div>
+  {% if nextPage is defined %}
+    <div class="home-link">
+      <a href="{{ nextPage }}"><svg class="icon icon-next" aria-hidden="true"><use xlink:href="#icon-next"/></svg></a>
+    </div>
+  {% endif %}
+</div>
 
 <script src="{{ rev('/scripts/manifest.js') }}"></script>
 <script src="{{ rev('/scripts/vendor.js') }}"></script>
