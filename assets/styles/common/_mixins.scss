@@ -28,6 +28,34 @@
   @include inline-link;
 }
 
+@mixin theme-color($property, $default, $map: 'primary') {
+  $theme-map: '.theme-green' $green, '.theme-pink' $pink,  '.theme-orange' $orange;
+  @if ($map == 'accent') {
+    $theme-map: '.theme-green' $yellow, '.theme-pink' $orange,  '.theme-orange' $pink;
+  } @elseif ($map == 'accent2') {
+    $theme-map: '.theme-green' $orange, '.theme-pink' $green,  '.theme-orange' $brown;
+  // } @elseif ($map == 'accent3') {
+  //   $theme-map: '.theme-green' $brown-dark, '.theme-pink' $black,  '.theme-orange' $black;
+  }
+
+  #{$property}: $default;
+  $selector: &;
+
+  // Loop through all schemes
+  @each $color-scheme in $theme-map {
+      $color-scheme-class: nth($color-scheme, 1);
+      $color-scheme-color: nth($color-scheme, 2);
+
+    // Prepend color-scheme selectors
+    @at-root body#{$color-scheme-class} {
+      // Apply rule
+      #{$selector} {
+        #{$property}: $color-scheme-color;
+      }
+    }
+  }
+}
+
 // Clearfix
 @mixin clearfix {
   &:after {
@@ -61,8 +89,8 @@
 // Aspect ratio padding mixin
 @mixin aspect-ratio($width, $height) {
   display: block;
-  background-size: cover;
-  background-position: center;
+  // background-size: cover;
+  // background-position: center;
   position: relative;
   height: 0;
   padding-top: #{$height / $width * 100%};

@@ -1,13 +1,13 @@
 // Grid system
 
-$grid: 8px;
-$mobile-grid: 8px;
-$gutter: 16px;
+$grid: 6px;
+$mobile-grid: 6px;
+$gutter: 25px;
 
 $global-padding: 24px;
-$mobile-global-padding: 24px;
+$mobile-global-padding: 30px;
 
-$global-columns: 20;
+$global-columns: 12;
 $column-width: 100% / $global-columns;
 
 // Quickie columns($num-columns, $parent-num-columns) function
