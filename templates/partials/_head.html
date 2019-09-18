@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ siteOptions.titleSeparator }} {{ siteName }}{% else %}{{ siteName }}{% endif %}</title>
+  <title>{% if seoTitle is defined and seoTitle != '' %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ siteOptions.titleSeparator }} {{ siteName }}{% else %}{{ siteName }}{% endif %}</title>
 {% if seoDescription is defined %}
   <meta name="description" content="{{ seoDescription }}">
 {% endif %}
@@ -34,10 +34,9 @@
   {% endif %}
 
   <!-- Inject SVGs Defs for SVG icon use -->
-  {#
   <script>
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", "{{ rev('svgs-defs.svg') }}", true);
+    ajax.open("GET", "{{ rev('/svgs-defs.svg') }}", true);
     ajax.send();
     ajax.onload = function(e) {
       var div = document.createElement("div");
@@ -46,5 +45,4 @@
       document.body.insertBefore(div, document.body.childNodes[0]);
     }
   </script>
-  #}
 </head>
