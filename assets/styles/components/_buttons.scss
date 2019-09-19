@@ -3,47 +3,43 @@
   display: inline-block;
   text-align: center;
   line-height: 1.4;
-  padding: grid(2) grid(5);
+  padding: grid(2) grid(3);
   position: relative;
   border: none;
-  background: $white;
+  background: $orange;
   color: $black;
-  border-radius: 16px;
   align-items: center;
-  min-height: 56px;
-  min-width: 140px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  // min-height: 56px;
+  // min-width: 140px;
   text-decoration: none;
-  @include h5;
-  @include transition(box-shadow, transform);
+  @include h4;
+  line-height: 1;
+  @include transition(transform);
+  transform-origin: bottom left;
 
   &:hover {
-    background: $black;
+    transform: rotate(-2deg);
     text-decoration: none;
   }
   &:active {
     box-shadow: 0 0 0 rgba(0,0,0,0.25);
     transform: translateY(1px);
   }
-  &.disabled {
-    cursor: default;
-    &:hover {
-      color: inherit !important;
-    }
-    &:active {
-      box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-      transform: none;
-    }
-  }
+  // &.disabled {
+  //   cursor: default;
+  //   &:hover {
+  //     color: inherit !important;
+  //   }
+  //   &:active {
+  //     transform: none;
+  //   }
+  // }
 
-  // Round buttons (e.g. nav toggle)
-  &.-round {
-    border-radius: 50%;
-  }
-
-  // Full width button
-  &.-wide {
-    width: 100%;
+  // Hollow buttons
+  &.-hollow {
+    background: none;
+    border: 2px solid $orange;
+    color: $orange;
   }
 
   svg {
