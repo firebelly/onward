@@ -8,11 +8,7 @@
     <div id="top"></div>
     {{ adminbar({ sticky: false, entry: entry ?? null }) }}
     <div class="body-wrapper">
-      <header class="site-header" role="banner">
-        <a href="/"><svg class="icon icon-logo" aria-hidden="true" role="presentation" viewBox="0 0 240 60"><use xlink:href="#icon-logo"/></svg></a>
-        <div class="mobile-nav-toggle"><svg class="icon-hamburger"><use xlink:href="#icon-hamburger" /></svg></div>
-        <div class="mobile-nav-close"><svg class="icon-close"><use xlink:href="#icon-close" /></svg></div>
-      </header>
+      {% include 'partials/_navigation' %}
 
       <div class="page-wrapper">
         <main class="site-main" role="main">

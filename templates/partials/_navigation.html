@@ -17,18 +17,36 @@
 {% spaceless %}
   {% import _self as navigation %}
     {% for item in items %}
-      <{{inside}} class="nav-{{ item.name|lower }}{% if item.children is defined %} dropdown{% endif %}{% if item.href in craft.app.request.absoluteUrl %} active{% endif %}">
-        <a href="{{ item.href }}"{% if item.children is defined %} aria-haspopup="true"{% endif %}>{{ item.name }}{% if item.children is defined %}<svg class="icon-arrow" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow"/></svg>{% endif %}</a>
+      <{{inside}} class="nav-{{ item.name|lower|replace(' ', '-') }}{% if item.children is defined %} dropdown{% endif %}{% if item.href in craft.app.request.absoluteUrl %} active{% endif %}">
+        <a href="{{ item.href }}"{% if item.children is defined %} aria-haspopup="true"{% endif %}>{{ item.name }}{% if item.children is defined %}<svg class="icon sprite-arrow-down" aria-hidden="true" role="presentation"><use xlink:href="#sprite-arrow-down"/></svg>{% endif %}</a>
+      </{{inside}}>
         {% if item.children is defined %}
           <{{outside}} class="children" aria-label="submenu">
             {{ navigation.menu_links(item.children, outside, inside) }}
           </{{outside}}>
         {% endif %}
-      </{{inside}}>
     {% endfor %}
 {% endspaceless %}
 {% endmacro %}
 
-<ul class="primary-nav">
-  {{ navigation.menu_links(nav, 'ul', 'li') }}
-</ul>
+<div class="nav-main">
+  <div class="container">
+    <a id="nav-toggle" href="#">
+      <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+        <g>
+          <polygon class="hambone" points="3 21.25 27 21.25 27 19 3 19"/>
+          <polygon class="hambone" points="3 11.25 27 11.25 27 9 3 9"/>
+        </g>
+      </svg>
+      <span class="label">Menu</span>
+    </a>
+    <a href="/donate" class="donate button -hollow">Donate</a>
+  </div>
+
+  <nav class="site-nav">
+    <a href="#" class="toggle-nav close"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg><span class="label">Close</span></a>
+    <ul>
+      {{ navigation.menu_links(nav, 'ul', 'li') }}
+    </ul>
+  </nav>
+</div>
