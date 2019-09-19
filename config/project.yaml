@@ -1,4 +1,4 @@
-dateModified: 1568843110
+dateModified: 1568915532
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1284,9 +1284,25 @@ sections:
         name: Donate
         handle: donate
         hasTitleField: false
-        titleLabel: null
+        titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 1
+        fieldLayouts:
+          a03c157e-7736-4188-b02e-3d908ae6a757:
+            tabs:
+              -
+                name: Donate
+                sortOrder: 1
+                fields:
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 1
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 3
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 2
   7ae1a417-ef1b-4b81-b05c-d3b37f9b2d67:
     name: Homepage
     handle: homepage
