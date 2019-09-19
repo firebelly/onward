@@ -1,5 +1,5 @@
 <footer class="site-footer" role="contentinfo">
-  <div class="wrapper">
+  <div class="container">
     <div class="footer-tagline">
       {% set tagline = random(siteOptions.footerInfo.taglines) %}
       <h2>{{ tagline.tagline }}</h2>
@@ -8,7 +8,7 @@
     <div class="footer-blocks">
       <div class="contact-info footer-block">
         {{ siteOptions.footerInfo.contact }}
-        <svg class="icon sprite-staggered-logo" aria-hidden="true"><use xlink:href="#sprite-staggered-logo"/></svg>
+        <svg class="icon sprite-logo-staggered" aria-hidden="true"><use xlink:href="#sprite-logo-staggered"/></svg>
       </div>
       <div class="main-nav footer-block">
         <ul>
@@ -42,22 +42,11 @@
     </div>
 
     <div class="copyright">
-      <p>&copy;{{ 'now'|date('Y') }} Clx</p>
+      <p>Copyright {{ siteName }} {{ 'now'|date('Y') }}</p>
     </div>
 
-  </div><!-- /.wrapper -->
+  </div><!-- /.container -->
 </footer>
-<div class="ground-nav">
-  <div class="home-link">
-    <a href="/"><svg class="icon icon-home" aria-hidden="true"><use xlink:href="#icon-home"/></svg></a>
-  </div>
-  {% if nextPage is defined %}
-    <div class="home-link">
-      <a href="{{ nextPage }}"><svg class="icon icon-next" aria-hidden="true"><use xlink:href="#icon-next"/></svg></a>
-    </div>
-  {% endif %}
-</div>
-
 <script src="{{ rev('/scripts/manifest.js') }}"></script>
 <script src="{{ rev('/scripts/vendor.js') }}"></script>
 <script src="{{ rev('/scripts/main.js') }}"></script>
