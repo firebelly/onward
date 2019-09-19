@@ -1,20 +1,20 @@
 // Typography
 
 // Fonts
-$font-header: serif;
-$font-regular: sans-serif;
+$font-serif: serif;
+$font-sans-serif: sans-serif;
 $font-mono: monospace;
 
 @mixin font-regular {
   font-weight: normal;
-  font-family: $font-regular;
+  font-family: $font-sans-serif;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 }
 @mixin font-header {
   @include smooth;
   font-weight: bold;
-  font-family: $font-header;
+  font-family: $font-sans-serif;
   letter-spacing: -0.1px;
 }
 @mixin font-mono {
@@ -29,29 +29,51 @@ $font-mono: monospace;
 @mixin h1 {
   @include font-header;
   font-size: 60px;
-  line-height: 72px;
+  line-height: 60px;
+  letter-spacing: -2.25px;
+}
+@mixin h1-serif {
+  @include font-header;
+  font-family: $font-serif;
+  font-size: 63.5px;
+  line-height: 60px;
+  letter-spacing: 0;
 }
 
 @mixin h2 {
   @include font-header;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1.4px;
+}
+@mixin h2-serif {
+  @include font-header;
+  font-family: $font-serif;
+  font-size: 51px;
+  line-height: 48px;
+  letter-spacing: 0;
 }
 
 @mixin h3 {
   @include font-header;
-  font-size: 28px;
-  line-height: 32px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.2px;
 }
 
 @mixin h4 {
-  @include font-mono;
-  font-weight: normal;
+  @include font-header;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
 }
 
 @mixin h5 {
-  @include font-mono;
-  font-weight: bold;
+  @include font-header;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1.75px;
 }
 
 @mixin p1 {
