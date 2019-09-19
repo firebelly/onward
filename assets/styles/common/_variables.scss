@@ -1,10 +1,8 @@
 // Variables
 
 // Colors
-
 $black: #1a1a1a;
 $white: #ffffff;
-
 $tan: #EBE5D0;
 $pink: #f9b9b4;
 $orange: #f15623;
@@ -15,6 +13,7 @@ $brown: #674c31;
 $gray: #bfbfbf;
 $red: #dd8064;
 
+// Base transition styles using @include transition(property)
 $transition-duration: 0.15s;
 $transition-easing: ease-out;
 
