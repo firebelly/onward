@@ -8,17 +8,6 @@
 
   {% include 'partials/_page-header' %}
 
-  <div class="our-work-intro user-content">
-    {% if entry.ourWorkIntro.subhead %}
-      <h4>{{ entry.ourWorkIntro.subhead }}</h4>
-    {% endif %}
-    {% if entry.ourWorkIntro.headline %}
-      {{ entry.ourWorkIntro.headline }}
-    {% endif %}
-
-    --four pillars graphic--
-  </div>
-
   {% include 'partials/_page-blocks' %}
 
   {% include 'partials/_postcards' %}
