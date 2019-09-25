@@ -1,14 +1,24 @@
 {# Static dropdown nav menu #}
+
+{# Find child pages of Our Work to show in nav #}
+{% set ourWorkPages = craft.entries({ section: 'ourWork', showInNav: 1, level: 2 }).all() %}
+{% set ourWorkChildNav = [] %}
+{% for page in ourWorkPages %}
+  {% set ourWorkChildNav = ourWorkChildNav|merge([{ 'href': page.getUrl(), 'name': page.title }]) %}
+{% endfor %}
+
+{# Find child pages of Our Story to show in nav #}
+{% set ourStoryPages = craft.entries({ section: 'ourStory', showInNav: 1, level: 2 }).all() %}
+{% set ourStoryChildNav = [] %}
+{% for page in ourStoryPages %}
+  {% set ourStoryChildNav = ourStoryChildNav|merge([{ 'href': page.getUrl(), 'name': page.title }]) %}
+{% endfor %}
 {% set nav = [
-  {"href": "/", "name": "Home"},
-  {"href": "/our-work/", "name": "Our Work"},
-  {"href": "/our-story/", "name": "Our Story", "children":
-    [
-      {"href": "/our-team/", "name": "Our Team"},
-    ]
-  },
-  {"href": "/partner-with-us/", "name": "Partner With Us"},
-  {"href": "/donate/", "name": "Donate"},
+  {'href': '/', 'name': 'Home'},
+  {'href': '/our-work/', 'name': 'Our Work', 'children': ourWorkChildNav },
+  {'href': '/our-story/', 'name': 'Our Story', 'children': ourStoryChildNav },
+  {'href': '/partner-with-us/', 'name': 'Partner With Us'},
+  {'href': '/donate/', 'name': 'Donate'},
 ] %}
 
 {% import _self as navigation %}
@@ -18,20 +28,20 @@
   {% import _self as navigation %}
     {% for item in items %}
       <{{inside}} class="nav-{{ item.name|lower|replace(' ', '-') }}{% if item.children is defined %} dropdown{% endif %}{% if item.href in craft.app.request.absoluteUrl %} active{% endif %}">
-        <a href="{{ item.href }}"{% if item.children is defined %} aria-haspopup="true"{% endif %}>{{ item.name }}{% if item.children is defined %}<svg class="icon sprite-arrow-down" aria-hidden="true" role="presentation"><use xlink:href="#sprite-arrow-down"/></svg>{% endif %}</a>
-      </{{inside}}>
-        {% if item.children is defined %}
+        <a href="{{ item.href }}"{% if item.children is defined %} aria-haspopup="true"{% endif %}><span class="name">{{ item.name }}</span>{% if item.children is defined %}<span class="toggle-dropdown"><svg class="icon sprite-arrow-down" aria-hidden="true" role="presentation"><use xlink:href="#sprite-arrow-down"/></svg></span>{% endif %}</a>
+        {% if item.children is defined and item.children|length > 0 %}
           <{{outside}} class="children" aria-label="submenu">
             {{ navigation.menu_links(item.children, outside, inside) }}
           </{{outside}}>
         {% endif %}
+      </{{inside}}>
     {% endfor %}
 {% endspaceless %}
 {% endmacro %}
 
 <div class="nav-main">
   <div class="container">
-    <a id="nav-toggle" href="#">
+    <a id="hamburger-salad" class="toggle-nav" href="#">
       <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
         <g>
           <polygon class="hambone" points="3 21.25 27 21.25 27 19 3 19"/>
@@ -45,8 +55,10 @@
 
   <nav class="site-nav">
     <a href="#" class="toggle-nav close"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg><span class="label">Close</span></a>
-    <ul>
-      {{ navigation.menu_links(nav, 'ul', 'li') }}
-    </ul>
+    <div class="wrap">
+      <ul>
+        {{ navigation.menu_links(nav, 'ul', 'li') }}
+      </ul>
+    </div>
   </nav>
 </div>

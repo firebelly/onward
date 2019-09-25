@@ -1,4 +1,4 @@
-dateModified: 1568915532
+dateModified: 1569441222
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -16,7 +16,7 @@ fieldGroups:
   0bee4054-16c4-4299-af71-f6b5ebb21116:
     name: Partner
   68e682d6-87a3-4206-a8b1-882d516282c9:
-    name: 'Our Team'
+    name: 'Our Story'
   70c8963f-cd93-46cf-9706-cb8e83ebf659:
     name: 'Our Work'
   9591d94f-3f18-46a6-9d97-e03ed9da808f:
@@ -43,6 +43,18 @@ fields:
       propagationMethod: all
     contentColumnType: string
     fieldGroup: a86c6f50-b95f-4784-98a8-f28553c72a62
+  3a0d0984-47f0-4517-830b-115e5b5ec658:
+    name: 'Show in Nav'
+    handle: showInNav
+    instructions: 'Show this child page in the site navigation'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 68e682d6-87a3-4206-a8b1-882d516282c9
   3ea9bba3-6981-4abf-8ca2-b714a51917a9:
     name: 'Footer Info'
     handle: footerInfo
@@ -104,9 +116,9 @@ fields:
       propagationMethod: all
       staticField: '1'
       columns:
-        29:
-          width: ''
         28:
+          width: ''
+        29:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -198,7 +210,7 @@ fields:
       fieldLayout: row
       selectionLabel: 'Add a postcard'
     contentColumnType: string
-    fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+    fieldGroup: 68e682d6-87a3-4206-a8b1-882d516282c9
   9166c707-3164-4994-a96d-7d54a517833d:
     name: 'Onward Team'
     handle: onwardTeam
@@ -781,14 +793,18 @@ matrixBlockTypes:
         searchable: true
         translationMethod: none
         translationKeyFormat: null
-        type: craft\fields\PlainText
+        type: craft\redactor\Field
         settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
           columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
       7a83a647-f896-4471-94d4-a975fb74d584:
@@ -1140,28 +1156,31 @@ sections:
   0d9553ee-97bc-45c6-aeed-06d1bfde344f:
     name: 'Our Story'
     handle: ourStory
-    type: single
+    type: structure
     enableVersioning: true
     propagationMethod: all
     siteSettings:
       efe82296-8a4a-48db-ac0d-64746ffdee91:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: our-story
-        template: our-story
+        uriFormat: '{parent.uri}/{slug}'
+        template: our-story/_entry
+    structure:
+      uid: c6670914-9dc1-4bbb-a4b8-3dfce4e5dbd8
+      maxLevels: 2
     entryTypes:
       0c8adaa0-c4f3-4ada-9815-8ae95978e45f:
-        name: 'Our Story'
-        handle: ourStory
-        hasTitleField: false
-        titleLabel: ''
+        name: 'Landing Page'
+        handle: landingPage
+        hasTitleField: true
+        titleLabel: Title
         titleFormat: '{section.name|raw}'
-        sortOrder: 1
+        sortOrder: 3
         fieldLayouts:
           710f6936-3e0d-4d8b-af5a-5817aafb69ff:
             tabs:
               -
-                name: 'Our Story'
+                name: Info
                 sortOrder: 1
                 fields:
                   73a71b02-a084-4cce-850e-2ab834b84730:
@@ -1176,26 +1195,113 @@ sections:
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 2
+      155f9daf-d92d-49e3-a5a1-632917c321d8:
+        name: 'Team Page'
+        handle: teamPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 2
+        fieldLayouts:
+          365ac177-8571-4cd4-b905-e0cb779f1118:
+            tabs:
+              -
+                name: Common
+                sortOrder: 1
+                fields:
+                  3a0d0984-47f0-4517-830b-115e5b5ec658:
+                    required: false
+                    sortOrder: 1
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 2
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 6
+                  85204e51-4a0e-43e0-9f5a-9f92e49290e3:
+                    required: false
+                    sortOrder: 5
+                  9166c707-3164-4994-a96d-7d54a517833d:
+                    required: false
+                    sortOrder: 4
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 3
+      f193730d-7dc8-47d9-8e2f-4b9c24270f52:
+        name: 'Child Page'
+        handle: childPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          6a017903-e7cd-435e-9332-6b9c33e95b94:
+            tabs:
+              -
+                name: Common
+                sortOrder: 1
+                fields:
+                  3a0d0984-47f0-4517-830b-115e5b5ec658:
+                    required: false
+                    sortOrder: 1
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 2
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 4
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 3
   0db9ba08-444d-4cc6-a813-7ce239e91804:
     name: 'Our Work'
     handle: ourWork
-    type: single
+    type: structure
     enableVersioning: true
     propagationMethod: all
     siteSettings:
       efe82296-8a4a-48db-ac0d-64746ffdee91:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: our-work
-        template: our-work
+        uriFormat: '{parent.uri}/{slug}'
+        template: our-work/_entry
+    structure:
+      uid: 8d69abf3-bd37-4bd0-843c-4f8b0ec1484c
+      maxLevels: 2
     entryTypes:
-      8c7d1094-6991-47ca-bcc1-2f7c63811f64:
-        name: 'Our Work'
-        handle: ourWork
-        hasTitleField: false
-        titleLabel: ''
-        titleFormat: '{section.name|raw}'
+      69419387-7bb7-483b-9681-6ac0f75e054f:
+        name: 'Child Page'
+        handle: childPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
         sortOrder: 1
+        fieldLayouts:
+          7087c100-b41d-41ff-8d98-fb828b9b6e3d:
+            tabs:
+              -
+                name: Info
+                sortOrder: 1
+                fields:
+                  3a0d0984-47f0-4517-830b-115e5b5ec658:
+                    required: false
+                    sortOrder: 1
+                  73a71b02-a084-4cce-850e-2ab834b84730:
+                    required: false
+                    sortOrder: 2
+                  747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 4
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 3
+      8c7d1094-6991-47ca-bcc1-2f7c63811f64:
+        name: 'Landing Page'
+        handle: landingPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: '{section.name|raw}'
+        sortOrder: 2
         fieldLayouts:
           2bfd14a7-dbc5-4e75-a445-fb96067f9cc9:
             tabs:
@@ -1349,43 +1455,40 @@ sections:
                   eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
                     required: false
                     sortOrder: 2
-  a313a0ff-ddd8-4d64-9ba0-aabf6df51cc0:
-    name: 'Our Team'
-    handle: ourTeam
-    type: single
+  ba101616-47e5-4c14-b89a-bd1605436bcd:
+    name: 'General Pages'
+    handle: generalPages
+    type: structure
     enableVersioning: true
     propagationMethod: all
     siteSettings:
       efe82296-8a4a-48db-ac0d-64746ffdee91:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: our-team
-        template: our-team
+        uriFormat: '{slug}'
+        template: common/_page
+    structure:
+      uid: 4224895d-ecd5-4d65-8d4d-df5aae09a2ad
+      maxLevels: null
     entryTypes:
-      981069c5-aa1f-4b01-a6d1-e3d9521a1eb9:
-        name: 'Our Team'
-        handle: ourTeam
-        hasTitleField: false
-        titleLabel: ''
-        titleFormat: '{section.name|raw}'
+      c8a465fc-4df4-4899-8f53-64426a0be7f0:
+        name: 'General Pages'
+        handle: generalPages
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
-          1a7bcedf-dba3-4148-a8f0-33daf390d2b0:
+          b1e71bef-0a90-420b-89f7-b02d0d599bd0:
             tabs:
               -
-                name: 'Our Team'
+                name: Common
                 sortOrder: 1
                 fields:
                   73a71b02-a084-4cce-850e-2ab834b84730:
                     required: false
                     sortOrder: 1
                   747f7b29-c1ba-4ae0-a18f-6da874d04062:
-                    required: false
-                    sortOrder: 5
-                  85204e51-4a0e-43e0-9f5a-9f92e49290e3:
-                    required: false
-                    sortOrder: 4
-                  9166c707-3164-4994-a96d-7d54a517833d:
                     required: false
                     sortOrder: 3
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
@@ -1711,7 +1814,7 @@ superTableBlockTypes:
           targetSiteId: null
           viewMode: large
           limit: '1'
-          selectionLabel: ''
+          selectionLabel: 'Add an image'
           localizeRelations: false
           validateRelatedElements: ''
         contentColumnType: string
@@ -1742,10 +1845,10 @@ superTableBlockTypes:
             fields:
               5579df76-d891-403b-bb43-0bdddca360d5:
                 required: false
-                sortOrder: 2
+                sortOrder: 1
               91b3cc4e-9229-4b56-aa90-1263511fda0c:
                 required: false
-                sortOrder: 1
+                sortOrder: 2
   288fb8ef-b704-4eea-bfbc-e7035114035f:
     field: a3d90be8-ba69-44c3-aa70-07ab637f2597
     fields:
