@@ -32,9 +32,9 @@
   $theme-map: '.theme-green' $green, '.theme-pink' $pink,  '.theme-orange' $orange;
   @if ($map == 'accent') {
     $theme-map: '.theme-green' $yellow, '.theme-pink' $orange,  '.theme-orange' $pink;
-  } @elseif ($map == 'accent2') {
+  } @else if ($map == 'accent2') {
     $theme-map: '.theme-green' $orange, '.theme-pink' $green,  '.theme-orange' $brown;
-  // } @elseif ($map == 'accent3') {
+  // } @else if ($map == 'accent3') {
   //   $theme-map: '.theme-green' $brown-dark, '.theme-pink' $black,  '.theme-orange' $black;
   }
 
