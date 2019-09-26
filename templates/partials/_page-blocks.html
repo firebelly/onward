@@ -25,9 +25,9 @@
         } %}
 
       {% case "text" %}
-        <div class="block-text user-content {{ block.size }}">
+        <div class="block-text user-content {{ block.width }}">
           {% if block.subhead %}
-            <h4>{{ block.subhead }}</h4>
+            <h5>{{ block.subhead }}</h5>
           {% endif %}
           {{ block.body }}
         </div>
@@ -35,7 +35,7 @@
       {% case "textGrid" %}
         <div class="block-text-grid user-content">
           {% if block.subhead %}
-            <h4>{{ block.subhead }}</h4>
+            <h5>{{ block.subhead }}</h5>
           {% endif %}
           {{ block.body }}
         </div>
