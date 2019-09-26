@@ -13,10 +13,7 @@ $brown: #674c31;
 $gray: #bfbfbf;
 $red: #dd8064;
 
-// Base transition styles using @include transition(property)
-$transition-duration: 0.15s;
-$transition-easing: ease-out;
-
+// Nav and admin bar heights
 $nav-height-mobile: 80px;
 $nav-height: 176px;
 $admin-bar-height-mobile: 46px;
@@ -25,6 +22,10 @@ $admin-bar-height: 32px;
 // Custom cubic easings
 $cubic-ease1: cubic-bezier(0.77, 0, 0.175, 1);
 $cubic-ease2: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+// Base transition styles using @include transition(property)
+$transition-duration: 0.25s;
+$transition-easing: $cubic-ease1;
 
 // Breakpoints
 $breakpoint-sm: 480px;

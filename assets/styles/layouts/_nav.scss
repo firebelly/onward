@@ -1,98 +1,13 @@
 // Nav
 
-.nav-main {
-  .container {
-    position: relative;
-  }
-
-  @include h4;
-
-  .site-nav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    .nav-home a {
-      background: $green;
-      color: $tan;
-    }
-    .nav-our-work a {
-      background: $orange;
-    }
-    .nav-our-story a {
-      background: $pink;
-    }
-    .nav-our-team a {
-      background: $pink;
-    }
-    .nav-partner-with-us a {
-      background: $yellow;
-    }
-    .nav-donate a {
-      background: $tan;
-      color: $orange;
-    }
-
-    a {
-      text-align: center;
-    }
-
-    > ul {
-      display: table;
-      width: 100%;
-      height: 100%;
-      > li {
-        display: table-row;
-        a {
-          display: table-cell;
-          vertical-align: middle;
-        }
-      }
-    }
-
-    // Child menus, hidden at start
-    ul.children {
-      display: none;
-    }
-    // Slide out child menu
-    li.open+ul.children {
-      display: table-row;
-      li {
-        display: table-cell;
-        vertical-align: middle;
-      }
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-  }
-
-  @include media-md {
-    .site-nav {
-      width: 50vw;
-    }
-
-    .container {
-      margin: grid(6) auto;
-    }
-    .donate {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-  }
-}
-
-#nav-toggle {
+// Hamburgers for everyone large and small
+#hamburger-salad {
   display: inline-block;
+  margin: grid(2) 0 0 grid(6);
   .label {
     display: none;
   }
+  // 🍔¯\_(ツ)_/¯🍔
   .hamburger {
     width: 36px;
     height: 38px;
@@ -119,3 +34,154 @@
   }
 }
 
+// Primary nav container
+.nav-main {
+  .container {
+    position: relative;
+  }
+
+  // "Menu" and "Close" text styles
+  @include h4;
+
+  // Primary nav
+  .site-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: $tan;
+    z-index: 1000;
+    transform: translateX(-100%);
+    @include transition(transform);
+
+    // Center all the links
+    a {
+      text-align: center;
+    }
+
+    // Wrap it
+    .wrap {
+      height: calc(100% - 50px);
+    }
+
+    // Color coded
+    .nav-home a {
+      background: $green;
+      color: $tan;
+    }
+    .nav-our-work a {
+      background: $orange;
+    }
+    .nav-our-story a {
+      background: $pink;
+    }
+    .nav-our-team a {
+      background: $pink;
+    }
+    .nav-partner-with-us a {
+      background: $yellow;
+    }
+    .nav-donate a {
+      background: $tan;
+      color: $orange;
+    }
+
+    ul {
+      @include h3;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      > li {
+        position: relative;
+        flex: 1;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+        // Can has child nav
+        &.dropdown {
+          svg {
+            height: 15px;
+          }
+          .toggle-dropdown {
+            padding: 15px;
+            cursor: pointer;
+            position: absolute;
+            right: columns(1);
+            @include transition(transform);
+          }
+          &.open {
+            .toggle-dropdown {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    // Child menus hidden at start
+    ul.children {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      li {
+        display: block;
+        height: 100px;
+      }
+    }
+
+    // Slide out child menu upon request
+    li.open > ul.children {
+      display: block;
+    }
+  }
+
+  // Close button
+  a.close {
+    display: block;
+    width: 130px;
+    text-align: left;
+    svg {
+      vertical-align: top;
+      margin-right: grid(3);
+    }
+    margin: grid(2) 0 grid(2) grid(6);
+  }
+
+  // Hide donate on mobile
+  .donate {
+    display: none;
+  }
+
+  // Desktop styles
+  @include media-md {
+    .site-nav {
+      width: 50vw;
+    }
+
+    .container {
+      margin: grid(6) auto;
+    }
+    .donate {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+// Nav is open for hambusiness
+body.nav-open {
+  .nav-main {
+    .site-nav {
+      transform: translateX(0);
+    }
+  }
+}
