@@ -1,8 +1,8 @@
 {% if entry.pageBlocks|length %}
+<div class="container page-blocks">
   {% if blockColor is not defined %}
     {% set blockColor = 'white' %}
   {% endif %}
-
   <div class="block-color color-{{ blockColor }}">
 
   {% for block in entry.pageBlocks.all() %}
@@ -52,5 +52,5 @@
   {% endfor %}
 
   </div><!-- /.block-color -->
-
+</div><!-- /.container -->
 {% endif %}

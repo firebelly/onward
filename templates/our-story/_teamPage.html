@@ -14,24 +14,26 @@
     {% set numVertical = 0 %}
     {% set numWide = 0 %}
 
-    <div class="person-group our-team grid">
-      {% for person in shuffle(entry.onwardTeam.all()) %}
-        {% set imageClass = [] %}
+    <div class="container">
+      <div class="person-group our-team grid">
+        {% for person in shuffle(entry.onwardTeam.all()) %}
+          {% set imageClass = [] %}
 
-        {# Randomize square/portrait #}
-        {% if random(100) > 50 and numWide < 3 %}
-          {% set numWide = numWide + 1 %}
-          {% set imageClass = imageClass|merge(['square']) %}
-        {% endif %}
+          {# Randomize square/portrait #}
+          {% if random(100) > 50 and numWide < 3 %}
+            {% set numWide = numWide + 1 %}
+            {% set imageClass = imageClass|merge(['square']) %}
+          {% endif %}
 
-        {# Randomize vertical padding #}
-        {% if random(100) > 50 and numVertical < 3 %}
-          {% set numVertical = numVertical + 1 %}
-          {% set imageClass = imageClass|merge(['padded']) %}
-        {% endif %}
+          {# Randomize vertical padding #}
+          {% if random(100) > 50 and numVertical < 3 %}
+            {% set numVertical = numVertical + 1 %}
+            {% set imageClass = imageClass|merge(['padded']) %}
+          {% endif %}
 
-        {% include 'partials/_person' with { person: person, imageClass: imageClass } %}
-      {% endfor %}
+          {% include 'partials/_person' with { person: person, imageClass: imageClass } %}
+        {% endfor %}
+      </div>
     </div>
   {% endif %}
 

@@ -1,64 +1,70 @@
-{% for block in entry.homepageBlocks.all() %}
-  {% switch block.type %}
+{% if entry.homepageBlocks|length %}
+<div class="container homepage-blocks">
 
-    {% case "question" %}
-      <div class="block-question">
-        <h5>{{ block.subhead }}</h5>
-        <h2>{{ block.headline }}</h2>
-        {% include 'partials/_image' with {
-          image: block.image,
-          imageOptions: {
-            mode: 'crop',
-            width: 600,
-            height: 681,
-            position: '20% 65%'
-          },
-        } %}
-      </div>
+  {% for block in entry.homepageBlocks.all() %}
+    {% switch block.type %}
 
-    {% case "answer" %}
-      <div class="block-answer">
-        <div class="text-wrap">
+      {% case "question" %}
+        <div class="block-question">
           <h5>{{ block.subhead }}</h5>
           <h2>{{ block.headline }}</h2>
-          <div class="body user-content">
-            {{ block.body }}
-          </div>
-        </div>
-        <div class="image-wrap">
           {% include 'partials/_image' with {
             image: block.image,
             imageOptions: {
               mode: 'crop',
-              width: 1000,
-              height: 1042,
+              width: 600,
+              height: 681,
               position: '20% 65%'
-            }
+            },
           } %}
         </div>
-      </div>
 
-    {% case "quote" %}
-      {% include 'partials/_quote' with {
-        quote: block.quote,
-        attribution: block.attribution
-      } %}
+      {% case "answer" %}
+        <div class="block-answer">
+          <div class="text-wrap">
+            <h5>{{ block.subhead }}</h5>
+            <h2>{{ block.headline }}</h2>
+            <div class="body user-content">
+              {{ block.body }}
+            </div>
+          </div>
+          <div class="image-wrap">
+            {% include 'partials/_image' with {
+              image: block.image,
+              imageOptions: {
+                mode: 'crop',
+                width: 1000,
+                height: 1042,
+                position: '20% 65%'
+              }
+            } %}
+          </div>
+        </div>
 
-    {% case "image" %}
-      <div class="block-image">
-        {% include 'partials/_image' with {
-          image: block.image,
-          imageOptions: {
-            mode: 'crop',
-            width: 1800,
-            height: 1079,
-            position: '20% 65%'
-          },
-          caption: block.caption
+      {% case "quote" %}
+        {% include 'partials/_quote' with {
+          quote: block.quote,
+          attribution: block.attribution
         } %}
-      </div>
 
-    {% default %}
+      {% case "image" %}
+        <div class="block-image">
+          {% include 'partials/_image' with {
+            image: block.image,
+            imageOptions: {
+              mode: 'crop',
+              width: 1800,
+              height: 1079,
+              position: '20% 65%'
+            },
+            caption: block.caption
+          } %}
+        </div>
 
-  {% endswitch %}
-{% endfor %}
+      {% default %}
+
+    {% endswitch %}
+  {% endfor %}
+
+</div><!-- /.container -->
+{% endif %}
