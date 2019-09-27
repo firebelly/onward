@@ -36,9 +36,12 @@
 
 // Primary nav container
 .nav-main {
+  @include clearfix;
   .container {
     position: relative;
   }
+
+  padding: grid(6) 0;
 
   // "Menu" and "Close" text styles
   @include h4;
@@ -133,6 +136,9 @@
       li {
         display: block;
         height: 100px;
+        &:nth-child(1) {
+          margin-top: -20px;
+        }
       }
     }
 
@@ -166,7 +172,7 @@
     }
 
     .container {
-      margin: grid(6) auto;
+      margin: 0 auto;
     }
     .donate {
       display: block;

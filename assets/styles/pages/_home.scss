@@ -1,3 +1,67 @@
 // Home page
 
-body.page-home {}
+body.page-home {
+  .nav-main,
+  .page-header {
+    background: $green;
+  }
+
+  .logos {
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    @include media-md {
+      width: 742px;
+    }
+  }
+  .sprite-logo {
+    fill: $tan;
+    opacity: 0;
+  }
+  .sprite-logo.clone {
+    fill: none;
+    stroke: $yellow;
+    stroke-width: 2px;
+    position: absolute;
+    top: 100%;
+    &.clone-2 {
+      top: 200%;
+    }
+    &.clone-1 {
+      top: 300%;
+    }
+    @include media-md {
+      stroke-width: 1px;
+    }
+  }
+
+  .headers {
+    background: $green;
+    color: $tan;
+    padding: $global-padding;
+    .statement {
+      @include p2;
+      margin: grid(6) 0 grid(5);
+    }
+  }
+
+  @include media-md {
+    .image-wrap {
+      width: columns(6);
+      float: left;
+      padding-right: $global-padding;
+    }
+
+    .page-header-info {
+      margin-top: grid(16);
+    }
+
+    .headers {
+      width: columns(5);
+      float: left;
+      margin-left: columns(1);
+    }
+
+  }
+
+}
