@@ -1,7 +1,7 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? '_ajax-layout' : '_layout' %}
 
 {% if theme is defined %}
-	{% set bodyClass = 'theme-' ~ theme %}
+	{% set colorTheme = theme %}
 {% endif %}
 {% set title = entry.title %}
 {% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}

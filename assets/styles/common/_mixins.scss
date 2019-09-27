@@ -28,14 +28,14 @@
   @include inline-link;
 }
 
-@mixin theme-color($property, $default, $map: 'primary') {
-  $theme-map: '.theme-green' $green, '.theme-pink' $pink,  '.theme-orange' $orange;
+@mixin theme-color($property, $default: $black, $map: 'primary') {
+  $theme-map: 'theme-green' $green, 'theme-pink' $pink,  'theme-orange' $orange;
   @if ($map == 'accent') {
-    $theme-map: '.theme-green' $yellow, '.theme-pink' $orange,  '.theme-orange' $pink;
+    $theme-map: 'theme-green' $yellow, 'theme-pink' $orange,  'theme-orange' $pink;
   } @else if ($map == 'accent2') {
-    $theme-map: '.theme-green' $orange, '.theme-pink' $green,  '.theme-orange' $brown;
+    $theme-map: 'theme-green' $orange, 'theme-pink' $green,  'theme-orange' $brown;
   // } @else if ($map == 'accent3') {
-  //   $theme-map: '.theme-green' $brown-dark, '.theme-pink' $black,  '.theme-orange' $black;
+  //   $theme-map: 'theme-green' $brown-dark, 'theme-pink' $black,  'theme-orange' $black;
   }
 
   #{$property}: $default;
@@ -47,7 +47,7 @@
       $color-scheme-color: nth($color-scheme, 2);
 
     // Prepend color-scheme selectors
-    @at-root body#{$color-scheme-class} {
+    @at-root body[data-theme="#{$color-scheme-class}"] {
       // Apply rule
       #{$selector} {
         #{$property}: $color-scheme-color;
