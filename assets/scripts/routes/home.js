@@ -8,12 +8,12 @@ export default {
     $homeSvg.velocity({ opacity: 0 }, { duration: 0 });
     $homeHeader.find('.page-header-info').velocity({ opacity: 0 }, { duration: 0 });
     var clones = [];
-    for (var i = 1; i < 4; i++) {
+    for (var i = 1; i < 5; i++) {
     	clones[i] = $homeSvg.clone().addClass('clone clone-'+i).insertAfter($homeSvg).velocity({ opacity: 0 }, { duration: 0});
     }
     $homeSvg.velocity({ opacity: 1 }, { duration: 1500 });
-    for (var i = 1; i < 4; i++) {
-    	clones[i].velocity({ opacity: 1 }, { duration: i * 500, delay: (4-i) * 250 });
+    for (var i = 1; i < 5; i++) {
+    	clones[i].velocity({ opacity: 1 }, { duration: i * 500, delay: (5-i) * 250 });
     }
     $homeHeader.find('.page-header-info').velocity({ opacity: 1 }, { duration: 500, delay: 1500 });
   },

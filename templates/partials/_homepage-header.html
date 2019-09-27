@@ -11,6 +11,7 @@
 <div class="page-header">
 
   <div class="container">
+
     <div class="logos">
       <svg class="icon sprite-logo" data-clone-me><use xlink:href="#sprite-logo"/></svg>
     </div>
@@ -26,17 +27,19 @@
           </figure>
         </div>
       {% endif %}
-      <div class="headers">
+      <div class="text-wrap">
         {% if entry.homepageHeader.subhead %}
-          <h4>{{ entry.homepageHeader.subhead }}</h4>
+          <h5>{{ entry.homepageHeader.subhead }}</h5>
         {% endif %}
         {% if entry.homepageHeader.subhead %}
           <h2 class="serif">{{ entry.homepageHeader.headline }}</h2>
         {% endif %}
-        <div class="statement">
-          {{ entry.homepageHeader.statement }}
+        <div class="body">
+          {{ entry.homepageHeader.body }}
         </div>
       </div>
     </div>
+
   </div>
+
 </div>

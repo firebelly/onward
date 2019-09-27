@@ -1,4 +1,4 @@
-dateModified: 1569441222
+dateModified: 1569603207
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -2163,8 +2163,8 @@ superTableBlockTypes:
         contentColumnType: string
         fieldGroup: null
       a064d645-f73d-4428-86f8-c42ea0ac3c99:
-        name: Statement
-        handle: statement
+        name: Body
+        handle: body
         instructions: ''
         searchable: false
         translationMethod: none

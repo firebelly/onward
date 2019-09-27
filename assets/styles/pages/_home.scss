@@ -1,11 +1,23 @@
 // Home page
 
 body.page-home {
+  // Dark nav with lighter elements
   .nav-main,
   .page-header {
     background: $green;
   }
+  #hamburger-salad {
+    color: $tan;
+    svg {
+      fill: $tan;
+    }
+  }
+  a.donate {
+    color: $yellow;
+    border-color: $yellow;
+  }
 
+  // Onward repeating logos
   .logos {
     width: 250px;
     margin: 0 auto;
@@ -24,44 +36,103 @@ body.page-home {
     stroke-width: 2px;
     position: absolute;
     top: 100%;
-    &.clone-2 {
+    &.clone-3 {
       top: 200%;
     }
-    &.clone-1 {
+    &.clone-2 {
       top: 300%;
+    }
+    &.clone-1 {
+      top: 400%;
     }
     @include media-md {
       stroke-width: 1px;
     }
   }
 
-  .headers {
-    background: $green;
-    color: $tan;
-    padding: $global-padding;
-    .statement {
-      @include p2;
-      margin: grid(6) 0 grid(5);
+  // Header tweaks
+  .page-header {
+    .text-wrap {
+      background: $green;
+      color: $tan;
+      padding: $global-padding;
+      .body {
+        @include p2;
+        margin: grid(6) 0 0;
+      }
     }
   }
 
+  // Question
+  .block-question {
+    position: relative;
+    text-align: center;
+    h2 {
+      @include h1;
+    }
+
+    @include media-md {
+      padding: grid(20) 0;
+    }
+  }
+
+  // Answer
+  .block-answer {
+    position: relative;
+    h2 {
+      @include h1;
+      em {
+        @include h1-serif;
+        font-style: normal;
+      }
+    }
+    .text-wrap {
+      .body {
+        @include p2;
+        margin: grid(6) 0 0;
+      }
+    }
+
+    @include media-md {
+      @include clearfix;
+      padding: grid(20) 0;
+      .text-wrap {
+        float: left;
+        width: columns(5);
+      }
+      .image-wrap {
+        float: right;
+        width: columns(6);
+        padding-left: $global-padding;
+        position: relative;
+        figure {
+          position: absolute;
+          top: grid(-32);
+        }
+      }
+    }
+  }
+
+  // Desktop styles
   @include media-md {
-    .image-wrap {
-      width: columns(6);
-      float: left;
-      padding-right: $global-padding;
+    // Desktop header
+    .page-header {
+      .image-wrap {
+        width: columns(6);
+        float: left;
+        padding-right: $global-padding;
+      }
+      .text-wrap {
+        width: columns(5);
+        float: left;
+        margin-left: columns(1);
+      }
+      .page-header-info {
+        margin-top: grid(16);
+        margin-bottom: 25%;
+        padding-bottom: 25%;
+      }
     }
-
-    .page-header-info {
-      margin-top: grid(16);
-    }
-
-    .headers {
-      width: columns(5);
-      float: left;
-      margin-left: columns(1);
-    }
-
   }
 
 }
