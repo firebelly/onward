@@ -44,7 +44,8 @@ mix.webpackConfig({
         filename: 'svgs-defs.svg',
         chunk: {
           keep: true
-        }
+        },
+        svgo: true
       },
     })
   ]

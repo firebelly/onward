@@ -98,9 +98,10 @@ p.intro {
 
 @mixin p2 {
   @include font-regular;
-  font-size: 18px;
-  line-height: 1.6;
-  letter-spacing: 0.75px;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.25px;
+  font-weight: light;
 }
 
 @mixin p3 {
@@ -128,6 +129,10 @@ p.small {
   @include media-md {
     @include h2;
   }
+}
+.h2.serif,
+h2.serif {
+  @include h2-serif;
 }
 %h3,.h3,h3 {
   @include h3;
