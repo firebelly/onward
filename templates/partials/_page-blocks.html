@@ -1,22 +1,47 @@
 {% if entry.pageBlocks|length %}
-<div class="container page-blocks">
-  {% if blockColor is not defined %}
-    {% set blockColor = 'white' %}
+
+{# Check if first block is a section change #}
+{% if entry.pageBlocks[0].type == 'sectionChange' %}
+  {% set sectionColor = entry.pageBlocks[0].color %}
+  {% set sectionTitle = entry.pageBlocks[0].sectionTitle %}
+{% endif %}
+
+<div class="page-blocks">
+  {% if sectionColor is not defined %}
+    {% set sectionColor = 'tan' %}
+    {% set sectionTitle = '' %}
   {% endif %}
-  <div class="block-color color-{{ blockColor }}">
+  <div class="block-section color-{{ sectionColor }}">
+  {% if sectionTitle %}
+    <div class="sticky-header">
+      <div class="sticky-title">
+        <span>{{ sectionTitle }}</span>
+      </div>
+    </div>
+  {% endif %}
 
   {% for block in entry.pageBlocks.all() %}
     {% switch block.type %}
 
-      {% case "colorChange" %}
-        </div><!-- /.block-color -->
-        <div class="block-color color-{{ block.color }}">
+      {% case "sectionChange" %}
+        {% if not loop.first %}
+          </div><!-- /.block-color -->
+          <div class="block-color color-{{ block.color }}">
+          {% if block.sectionTitle and block.sectionTitle != '' %}
+          <div class="sticky-header">
+            <div class="sticky-title">
+              <span>{{ block.sectionTitle }}</span>
+            </div>
+          </div>
+          {% endif %}
+        {% endif %}
 
       {% case "image" %}
         {% include 'partials/_image' with {
           image: block.image,
           imageOptions: {
             mode: 'crop',
+            placement: block.imagePlacement,
             width: 1800,
             height: 1079,
             position: '20% 65%'
@@ -27,7 +52,7 @@
       {% case "text" %}
         <div class="block-text user-content {{ block.width }}">
           {% if block.subhead %}
-            <h5>{{ block.subhead }}</h5>
+            <h5 class="subhead">{{ block.subhead }}</h5>
           {% endif %}
           {{ block.body }}
         </div>
@@ -35,7 +60,7 @@
       {% case "textGrid" %}
         <div class="block-text-grid user-content">
           {% if block.subhead %}
-            <h5>{{ block.subhead }}</h5>
+            <h5 class="subhead">{{ block.subhead }}</h5>
           {% endif %}
           {{ block.body }}
         </div>

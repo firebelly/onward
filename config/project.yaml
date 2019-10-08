@@ -1,4 +1,4 @@
-dateModified: 1569603207
+dateModified: 1570482209
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -145,9 +145,9 @@ fields:
           width: ''
         55:
           width: ''
-        52:
-          width: ''
         50:
+          width: ''
+        52:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -409,6 +409,79 @@ globalSets:
                 required: false
                 sortOrder: 2
 matrixBlockTypes:
+  02bc3476-d7ac-448f-9ec2-84e2d9d735cc:
+    field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+    name: 'Section Change'
+    handle: sectionChange
+    sortOrder: 5
+    fields:
+      0995ff1b-d299-4c5f-9b67-f6cfcaf330fe:
+        name: Title
+        handle: sectionTitle
+        instructions: 'Shows as fixed vertical text at right on desktop.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
+      121c2dc7-a0bc-4f95-b3df-acefec4c7646:
+        name: Color
+        handle: color
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Brown
+              value: brown
+              default: ''
+            -
+              label: Pink
+              value: pink
+              default: ''
+            -
+              label: Green
+              value: green
+              default: ''
+            -
+              label: Yellow
+              value: yellow
+              default: ''
+            -
+              label: Tan
+              value: tan
+              default: ''
+            -
+              label: Orange
+              value: orange
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      4c800df4-f0f2-49b8-8574-cecb22148a70:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0995ff1b-d299-4c5f-9b67-f6cfcaf330fe:
+                required: false
+                sortOrder: 1
+              121c2dc7-a0bc-4f95-b3df-acefec4c7646:
+                required: false
+                sortOrder: 2
   1ace3f9e-b044-4a10-b6fe-89db3de6c357:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Question
@@ -654,6 +727,27 @@ matrixBlockTypes:
           availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
+      420dfa14-522e-4cf7-9695-0ac0f13be8bd:
+        name: 'Image Placement'
+        handle: imagePlacement
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: left
+              default: '1'
+            -
+              label: Right
+              value: right
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       b1e6aa99-466d-455d-8dab-e11e67ed222a:
         name: Subhead
         handle: subhead
@@ -711,6 +805,9 @@ matrixBlockTypes:
               3c2518bb-bdbb-4f06-a671-af7aa94cae3d:
                 required: false
                 sortOrder: 2
+              420dfa14-522e-4cf7-9695-0ac0f13be8bd:
+                required: false
+                sortOrder: 5
               b1e6aa99-466d-455d-8dab-e11e67ed222a:
                 required: false
                 sortOrder: 1
@@ -767,6 +864,31 @@ matrixBlockTypes:
           validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
+      f4e8fe34-8ae8-41b4-8361-16e76f51cefe:
+        name: 'Image Placement'
+        handle: imagePlacement
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: left
+              default: ''
+            -
+              label: Center
+              value: center
+              default: '1'
+            -
+              label: Right
+              value: right
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       3491ff18-1857-42ca-98b3-ad2a9528a5ee:
         tabs:
@@ -780,6 +902,9 @@ matrixBlockTypes:
               a0f2bf8d-589d-409b-a3ad-8eb0b68e352a:
                 required: false
                 sortOrder: 1
+              f4e8fe34-8ae8-41b4-8361-16e76f51cefe:
+                required: false
+                sortOrder: 3
   8faf2d7a-edca-4f59-9ad0-047f357fceab:
     field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
     name: Text
@@ -911,6 +1036,31 @@ matrixBlockTypes:
           columnType: string
         contentColumnType: string
         fieldGroup: null
+      7e084dec-73cc-4f14-803f-400896f385f5:
+        name: 'Image Placement'
+        handle: imagePlacement
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: left
+              default: ''
+            -
+              label: Center
+              value: center
+              default: '1'
+            -
+              label: Right
+              value: right
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       fdadc4d1-dc5f-41b0-9aab-6b950020b97c:
         tabs:
@@ -924,6 +1074,9 @@ matrixBlockTypes:
               530887ec-6ee8-4e91-86b7-e2cb972de8c8:
                 required: false
                 sortOrder: 2
+              7e084dec-73cc-4f14-803f-400896f385f5:
+                required: false
+                sortOrder: 3
   bb8dda38-3c4a-43e6-92cd-a2ba5b37e365:
     field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
     name: 'Text Grid'
@@ -1314,14 +1467,11 @@ sections:
                     sortOrder: 1
                   747f7b29-c1ba-4ae0-a18f-6da874d04062:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 4
                   a3d90be8-ba69-44c3-aa70-07ab637f2597:
                     required: false
-                    sortOrder: 4
-                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
-                    required: false
                     sortOrder: 3
-                  fa72722d-fde8-4ef7-b96b-348a09cfb36a:
+                  de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 2
               -
@@ -1512,7 +1662,7 @@ superTableBlockTypes:
     field: 747f7b29-c1ba-4ae0-a18f-6da874d04062
     fields:
       67f18502-81e3-4b97-bad1-f2b789a37676:
-        name: 'Link Label'
+        name: 'CTA Button Label'
         handle: linkLabel
         instructions: ''
         searchable: false
@@ -1556,9 +1706,9 @@ superTableBlockTypes:
         contentColumnType: string
         fieldGroup: null
       ade54bb0-75f3-4704-849d-0e97ccf353dd:
-        name: 'Link URL'
+        name: 'CTA Button URL'
         handle: linkURL
-        instructions: ''
+        instructions: 'e.g. /our-work/'
         searchable: false
         translationMethod: none
         translationKeyFormat: null
@@ -1569,8 +1719,8 @@ superTableBlockTypes:
           multiline: ''
           initialRows: '4'
           charLimit: ''
-          columnType: text
-        contentColumnType: text
+          columnType: string
+        contentColumnType: string
         fieldGroup: null
       bc5be786-6d4b-4629-8be1-204d8e131ada:
         name: Body
@@ -1619,13 +1769,13 @@ superTableBlockTypes:
             fields:
               67f18502-81e3-4b97-bad1-f2b789a37676:
                 required: false
-                sortOrder: 5
+                sortOrder: 4
               8959cde6-c1f1-422f-8b2b-4c4c7ad6b659:
                 required: false
                 sortOrder: 2
               ade54bb0-75f3-4704-849d-0e97ccf353dd:
                 required: false
-                sortOrder: 4
+                sortOrder: 5
               bc5be786-6d4b-4629-8be1-204d8e131ada:
                 required: false
                 sortOrder: 1
