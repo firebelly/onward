@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "902cae62c70e9d0fb61ff0ed2014b69a",
+    "content-hash": "c9cbe97ac88b4484d484788114aaa4c3",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.7",
+            "version": "3.112.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5167704e39f4e139152906b3d962aa15692bff07"
+                "reference": "782f304ef4dc2fa73f5ecfbb49fcba46238ed541"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5167704e39f4e139152906b3d962aa15692bff07",
-                "reference": "5167704e39f4e139152906b3d962aa15692bff07",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/782f304ef4dc2fa73f5ecfbb49fcba46238ed541",
+                "reference": "782f304ef4dc2fa73f5ecfbb49fcba46238ed541",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-24T18:13:32+00:00"
+            "time": "2019-10-07T18:13:37+00:00"
         },
         {
             "name": "barrelstrength/sprout-active",
@@ -619,16 +619,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.4.1",
+            "version": "3.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "411852758f009292eb203c89e24dc83e0445c44c"
+                "reference": "24300e95ce3acd47d10557a8bd8b9b9fbc520795"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/411852758f009292eb203c89e24dc83e0445c44c",
-                "reference": "411852758f009292eb203c89e24dc83e0445c44c",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/24300e95ce3acd47d10557a8bd8b9b9fbc520795",
+                "reference": "24300e95ce3acd47d10557a8bd8b9b9fbc520795",
                 "shasum": ""
             },
             "require": {
@@ -676,6 +676,16 @@
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1"
             },
+            "require-dev": {
+                "codeception/codeception": "^3.1",
+                "codeception/mockery-module": "^0.3",
+                "codeception/phpunit-wrapper": "^7.7",
+                "codeception/specify": "^0.4",
+                "codeception/verify": "^1.0",
+                "fzaninotto/faker": "^1.8",
+                "league/factory-muffin": "^3.0",
+                "vlucas/phpdotenv": "^3.0"
+            },
             "suggest": {
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options.",
@@ -688,6 +698,7 @@
                     "crafttests\\fixtures\\": "tests/fixtures/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -698,15 +709,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
-                "docs": "https://docs.craftcms.com/v3/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
-            },
-            "time": "2019-09-17T22:35:58+00:00"
+            "time": "2019-10-03T19:15:33+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -1376,16 +1379,16 @@
         },
         {
             "name": "google/auth",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "2ee962e5df3e9427fda859f1b0515d6d62c4afa5"
+                "reference": "6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/2ee962e5df3e9427fda859f1b0515d6d62c4afa5",
-                "reference": "2ee962e5df3e9427fda859f1b0515d6d62c4afa5",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3",
+                "reference": "6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3",
                 "shasum": ""
             },
             "require": {
@@ -1404,7 +1407,7 @@
                 "sebastian/comparator": ">=1.2.3"
             },
             "suggest": {
-                "phpseclib/phpseclib": "May be used in place of OpenSSL for signing strings. Please require version ^2."
+                "phpseclib/phpseclib": "May be used in place of OpenSSL for signing strings or for token management. Please require version ^2."
             },
             "type": "library",
             "autoload": {
@@ -1423,24 +1426,24 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2019-07-22T21:01:31+00:00"
+            "time": "2019-10-01T18:35:05+00:00"
         },
         {
             "name": "google/cloud",
-            "version": "v0.112.0",
+            "version": "v0.114.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php.git",
-                "reference": "68fc365039a0dd702a4b28ca77cbab1b4ecc9327"
+                "reference": "cc8494ffb1f64bc42129641de4226bed2f687e57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/68fc365039a0dd702a4b28ca77cbab1b4ecc9327",
-                "reference": "68fc365039a0dd702a4b28ca77cbab1b4ecc9327",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/cc8494ffb1f64bc42129641de4226bed2f687e57",
+                "reference": "cc8494ffb1f64bc42129641de4226bed2f687e57",
                 "shasum": ""
             },
             "require": {
-                "google/auth": "^1.5.1",
+                "google/auth": "^1.6",
                 "google/common-protos": "^1.0",
                 "google/crc32": "^0.1.0",
                 "google/gax": "^1.1",
@@ -1454,31 +1457,31 @@
             },
             "replace": {
                 "google/cloud-asset": "0.4.0",
-                "google/cloud-automl": "0.5.0",
-                "google/cloud-bigquery": "1.12.0",
+                "google/cloud-automl": "0.6.0",
+                "google/cloud-bigquery": "1.12.1",
                 "google/cloud-bigquerydatatransfer": "0.14.0",
                 "google/cloud-bigtable": "1.1.0",
                 "google/cloud-common-protos": "0.2.0",
                 "google/cloud-container": "0.11.0",
-                "google/cloud-core": "1.33.0",
-                "google/cloud-dataproc": "0.13.0",
+                "google/cloud-core": "1.33.1",
+                "google/cloud-dataproc": "0.14.0",
                 "google/cloud-datastore": "1.10.0",
                 "google/cloud-debugger": "0.19.1",
                 "google/cloud-dialogflow": "0.10.0",
                 "google/cloud-dlp": "0.22.0",
                 "google/cloud-error-reporting": "0.15.0",
-                "google/cloud-firestore": "1.8.0",
+                "google/cloud-firestore": "1.9.0",
                 "google/cloud-iot": "0.9.0",
                 "google/cloud-kms": "1.7.0",
-                "google/cloud-language": "0.20.0",
+                "google/cloud-language": "0.21.0",
                 "google/cloud-logging": "1.18.0",
                 "google/cloud-monitoring": "0.18.0",
                 "google/cloud-oslogin": "0.10.0",
-                "google/cloud-pubsub": "1.17.0",
+                "google/cloud-pubsub": "1.18.0",
                 "google/cloud-redis": "0.10.0",
                 "google/cloud-scheduler": "1.1.0",
                 "google/cloud-security-center": "0.2.0",
-                "google/cloud-spanner": "1.18.0",
+                "google/cloud-spanner": "1.19.0",
                 "google/cloud-speech": "0.27.0",
                 "google/cloud-storage": "1.14.0",
                 "google/cloud-talent": "0.6.0",
@@ -1487,7 +1490,7 @@
                 "google/cloud-trace": "0.15.0",
                 "google/cloud-translate": "1.4.1",
                 "google/cloud-videointelligence": "1.7.0",
-                "google/cloud-vision": "0.23.0",
+                "google/cloud-vision": "0.24.0",
                 "google/cloud-web-risk": "0.3.0",
                 "google/cloud-web-security-scanner": "0.2.0"
             },
@@ -1585,6 +1588,7 @@
                     "GPBMetadata\\Google\\Cloud\\Talent\\": "Talent/metadata",
                     "GPBMetadata\\Google\\Cloud\\Tasks\\": "Tasks/metadata",
                     "GPBMetadata\\Google\\Cloud\\Texttospeech\\": "TextToSpeech/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Translate\\": "Translate/metadata",
                     "GPBMetadata\\Google\\Cloud\\Videointelligence\\": "VideoIntelligence/metadata",
                     "GPBMetadata\\Google\\Cloud\\Vision\\": "Vision/metadata",
                     "GPBMetadata\\Google\\Cloud\\Webrisk\\": "WebRisk/metadata",
@@ -1645,7 +1649,7 @@
                 "translation",
                 "vision"
             ],
-            "time": "2019-09-16T21:17:30+00:00"
+            "time": "2019-10-04T23:23:37+00:00"
         },
         {
             "name": "google/common-protos",
@@ -1819,16 +1823,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.9.2",
+            "version": "v3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "5159d2b6f11fe86ea1b8fca5a5d5c42cb0c93b1e"
+                "reference": "5dffdd2c84112e6c91fd84f92e3df96649426881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/5159d2b6f11fe86ea1b8fca5a5d5c42cb0c93b1e",
-                "reference": "5159d2b6f11fe86ea1b8fca5a5d5c42cb0c93b1e",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/5dffdd2c84112e6c91fd84f92e3df96649426881",
+                "reference": "5dffdd2c84112e6c91fd84f92e3df96649426881",
                 "shasum": ""
             },
             "require": {
@@ -1856,7 +1860,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2019-09-23T17:53:18+00:00"
+            "time": "2019-10-03T20:08:37+00:00"
         },
         {
             "name": "grpc/grpc",
@@ -3790,16 +3794,16 @@
         },
         {
             "name": "rias/craft-contact-form-extensions",
-            "version": "1.1.7",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/riasvdv/craft-contact-form-extensions.git",
-                "reference": "e1506aedd07f2ae2e68b3e9cbd1f31769582e614"
+                "reference": "d489d2ec97b39c6949061307dce87dc7a18a05fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riasvdv/craft-contact-form-extensions/zipball/e1506aedd07f2ae2e68b3e9cbd1f31769582e614",
-                "reference": "e1506aedd07f2ae2e68b3e9cbd1f31769582e614",
+                "url": "https://api.github.com/repos/riasvdv/craft-contact-form-extensions/zipball/d489d2ec97b39c6949061307dce87dc7a18a05fa",
+                "reference": "d489d2ec97b39c6949061307dce87dc7a18a05fa",
                 "shasum": ""
             },
             "require": {
@@ -3825,6 +3829,7 @@
                     "rias\\contactformextensions\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3836,17 +3841,13 @@
             ],
             "description": "Adds extensions to the Craft CMS contact form plugin.",
             "keywords": [
+                "Craft",
                 "cms",
-                "craft",
                 "craft contact form extensions",
                 "craft-plugin",
                 "craftcms"
             ],
-            "support": {
-                "docs": "https://github.com/riasvdv/craft-contact-form-extensions/blob/master/README.md",
-                "issues": "https://github.com/riasvdv/craft-contact-form-extensions/issues"
-            },
-            "time": "2019-08-09T06:56:13+00:00"
+            "time": "2019-09-06T07:40:54+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -5460,21 +5461,24 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.14",
+            "version": "4.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/anti-xss.git",
-                "reference": "53c5da8039cf2ed226e3249b86a2be700c415f88"
+                "reference": "14ff3982d58af104f5f38a438d99b9600705151e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/53c5da8039cf2ed226e3249b86a2be700c415f88",
-                "reference": "53c5da8039cf2ed226e3249b86a2be700c415f88",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/14ff3982d58af104f5f38a438d99b9600705151e",
+                "reference": "14ff3982d58af104f5f38a438d99b9600705151e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
-                "voku/portable-utf8": "~5.4.1"
+                "voku/portable-utf8": "~5.4.21"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "extra": {
@@ -5487,6 +5491,7 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5509,20 +5514,20 @@
                 "security",
                 "xss"
             ],
-            "time": "2019-06-27T21:40:28+00:00"
+            "time": "2019-09-25T22:40:48+00:00"
         },
         {
             "name": "voku/arrayy",
-            "version": "5.14.1",
+            "version": "5.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/Arrayy.git",
-                "reference": "2a76c1f5b40ef78d757a137fc7d992a80783d229"
+                "reference": "6fe80d46f515d8d96db244d36e6099ef6659c04a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/2a76c1f5b40ef78d757a137fc7d992a80783d229",
-                "reference": "2a76c1f5b40ef78d757a137fc7d992a80783d229",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/6fe80d46f515d8d96db244d36e6099ef6659c04a",
+                "reference": "6fe80d46f515d8d96db244d36e6099ef6659c04a",
                 "shasum": ""
             },
             "require": {
@@ -5530,6 +5535,9 @@
                 "php": ">=7.0.0",
                 "phpdocumentor/reflection-docblock": "~4.3",
                 "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "autoload": {
@@ -5540,6 +5548,7 @@
                     "src/Create.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5561,7 +5570,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2019-09-16T21:25:09+00:00"
+            "time": "2019-10-06T17:56:40+00:00"
         },
         {
             "name": "voku/email-check",
@@ -5659,16 +5668,16 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.21",
+            "version": "5.4.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/portable-utf8.git",
-                "reference": "df543931d92b8403e9b5b38e56abdd24851d8cff"
+                "reference": "1ff025864df28cdbb946fe96f8343904400f5e2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/df543931d92b8403e9b5b38e56abdd24851d8cff",
-                "reference": "df543931d92b8403e9b5b38e56abdd24851d8cff",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/1ff025864df28cdbb946fe96f8343904400f5e2a",
+                "reference": "1ff025864df28cdbb946fe96f8343904400f5e2a",
                 "shasum": ""
             },
             "require": {
@@ -5729,7 +5738,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-09-17T14:53:36+00:00"
+            "time": "2019-10-06T00:26:19+00:00"
         },
         {
             "name": "voku/stop-words",
