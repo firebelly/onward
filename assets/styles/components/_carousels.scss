@@ -11,18 +11,61 @@
     li {
       width: 85%;
       margin-right: $global-padding;
-      background: $white;
+      background: color(white);
       padding: $global-padding;
     }
   }
+  // Postcard carousels
   &.postcards {
     figure {
-      padding-bottom: $global-padding;
+      display: block;
+      background-color: color(black);
+      margin-bottom: $global-padding;
+      position: relative;
+      img {
+        @include transition(all);
+        display: block;
+        mix-blend-mode: screen;
+        filter: grayscale(100%);
+      }
+      &::before {
+        @include transition(opacity);
+        content: '';
+        background-color: color(tan);
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
     }
+    .cell {
+      &:hover,
+      &.-active {
+        figure {
+          img {
+            filter: none;
+            mix-blend-mode: none;
+          }
+          &::before {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
     .cell-body {
       padding: 0 $global-padding;
     }
+    p {
+      @include p3;
+    }
   }
+
   // Desktop styles
   @include media-md {
     padding: 0;
@@ -40,11 +83,15 @@
       }
     }
   }
+  &.postcards {
+    padding-top: grid(16);
+  }
 }
 
 .carousel-pagination {
   @include h3;
   span {
+    color: color(gray);
     cursor: pointer;
     @include smooth;
     display: inline-block;
@@ -55,8 +102,17 @@
       height: 19px;
     }
     &.-active {
-      color: $red;
+      color: color(red);
     }
+    &:hover {
+      color: color(black);
+      svg {
+        fill: color(black);
+      }
+    }
+  }
+  svg {
+    fill: color(gray);
   }
   .cell-buttons {
     display: inline-block;
