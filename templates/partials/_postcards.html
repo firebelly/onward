@@ -1,28 +1,54 @@
 {% if entry.postcards|length %}
-  <ul class="postcards">
-  {% for card in entry.postcards.all() %}
-    {% if card.image|length %}
-      {% set cardImage = card.image.one() %}
-      {% set treatedImage = craft.imager.transformImage(cardImage, {
-        width: 1000,
-        height: 690,
-        mode: 'crop',
-        position: '20% 65%'
-      }) %}
-    {% endif %}
+  <div class="container">
+    <div class="carousel postcards">
+      <div class="carousel-header grid">
+        <div class="grid-item one-half">
+          <h2><em>Postcards</em><br> from the Field</h2>
+        </div>
+        <div class="grid-item one-half">
+          <div class="carousel-pagination">
+            <span class="previous"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
+            <div class="cell-buttons">
+              {% for card in entry.postcards.all() %}
+                <span{{ loop.first ? ' class="-active"' : '' }}>{{ '%02d'|format(loop.index) }}</span>
+              {% endfor %}
+            </div>
+            <span class="next"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
+          </div>
+        </div>
+      </div>
 
-    <li>
-      {% if card.image|length and treatedImage %}
-        <figure>
-          <img src="{{ treatedImage.getUrl() }}" alt="{{ card.image.title }}">
-        </figure>
-      {% endif %}
-      {% if card.tagline %}
-        <div class="tagline">{{ card.tagline }}</div>
-      {% endif %}
-      <h2>{{ card.headline }}</h2>
-      {{ card.body }}
-    </li>
-  {% endfor %}
-  </ul>
+      <ul class="cells">
+      {% for card in entry.postcards.all() %}
+        {% if card.image|length %}
+          {% set cardImage = card.image.one() %}
+          {% set treatedImage = craft.imager.transformImage(cardImage, {
+            width: 1000,
+            height: 690,
+            mode: 'crop',
+            effects: (card.treated ? { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' } : {}),
+          }) %}
+        {% endif %}
+        <li>
+          {% if card.tagline %}
+            <div class="tagline">{{ card.tagline }}</div>
+          {% endif %}
+          {% if card.image|length and treatedImage %}
+            <figure>
+              <img src="{{ treatedImage.getUrl() }}" alt="{{ card.image.title }}">
+            </figure>
+          {% endif %}
+          <div class="grid">
+            <div class="grid-item one-third">
+              <h3>{{ card.headline }}</h3>
+            </div>
+            <div class="grid-item two-thirds cell-body">
+              {{ card.body }}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endif %}
