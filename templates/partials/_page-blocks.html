@@ -70,6 +70,13 @@
           quote: block.quote,
           attribution: block.attribution
         } %}
+        {% case 'statement' %}
+          {% include 'partials/blocks/_statement' with {
+            subhead: block.subhead,
+            statement: block.statement,
+            image: block.image,
+            imagePlacement: block.imagePlacement
+          } %}
 
       {% default %}
 
