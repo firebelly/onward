@@ -2,25 +2,29 @@
   {% set image = image.one() %}
   {% set embeddedAsset = craft.embeddedAssets.get(image) %}
 
-  {% if embeddedAsset %}
+    {% if embeddedAsset %}
+      <div class="embedded-asset">
+        {{ embeddedAsset.html }}
+      </div>
+    {% else %}
 
-    <div class="embedded-asset">
-      {{ embeddedAsset.html }}
-    </div>
+      {# Leave GIFs and PNGs alone #}
+      {% if image.filename matches '/(gif|png|svg)$/' %}
+        {% set treatedImage = image %}
+      {% else %}
+        {% set treatedImage = craft.imager.transformImage(image, imageOptions) %}
+      {% endif %}
 
-  {% else %}
-
-    {% set treatedImage = craft.imager.transformImage(image, imageOptions) %}
-    {% if treatedImage %}
-      <figure class="image">
-        <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
-        {% if caption is defined %}
-          {% if caption %}
-            <figcaption>{{ caption }}</figcaption>
+      {% if treatedImage %}
+        <figure class="image">
+          <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+          {% if caption is defined %}
+            {% if caption %}
+              <figcaption>{{ caption }}</figcaption>
+            {% endif %}
           {% endif %}
-        {% endif %}
-      </figure>
-    {% endif %}
+        </figure>
+      {% endif %}
 
-  {% endif %}
+    {% endif %}
 {% endif %}
