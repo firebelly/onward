@@ -6,9 +6,6 @@
     ],
     "print": [
       "./styles/print.scss"
-    ],
-    "customizer": [
-      "./scripts/customizer.js"
     ]
   },
   "publicPath": "/assets/",
