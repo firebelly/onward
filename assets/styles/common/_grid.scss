@@ -31,6 +31,10 @@ $column-width: 100% / $global-columns;
   }
 }
 
+.row {
+  @include clearfix;
+}
+
 // Global flexbox grid styles
 .grid {
   width: 100%;
