@@ -1,5 +1,46 @@
 // Footer
 
+.footer-outro {
+  position: relative;
+  h2 {
+    @include h1;
+    em {
+      @include h1-serif;
+      font-style: normal;
+    }
+  }
+  .text-wrap {
+    .body {
+      @include p2;
+      margin: grid(6) 0 0;
+    }
+  }
+  .block-cta {
+    @include clearfix;
+  }
+
+  // Desktop styles
+  @include media-md {
+    padding: grid(16) 0;
+
+    .text-wrap {
+      align-self: flex-end;
+      padding-bottom: grid(4);
+    }
+    .image-wrap {
+      figure {
+      }
+    }
+  }
+}
+
+body[data-theme="theme-green"] {
+  .footer-outro {
+    background: $brown;
+    color: $tan;
+  }
+}
+
 footer.site-footer {
   @include theme-color('background', $yellow, 'accent');
 
