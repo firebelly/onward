@@ -1,21 +1,33 @@
 {% set footerOutro = entry.footerOutro.one() %}
-<div class="footer-outro">
-  <div class="container">
-    {{ footerOutro.body }}
+{% if footerOutro.body or footerOutro.image|length %}
+  <div class="footer-outro">
+    <div class="container">
+      <div class="grid">
+        {% if footerOutro.body %}
+          <div class="text-wrap grid-item one-half">
+            {{ footerOutro.body }}
+          </div>
+        {% endif %}
 
-    {% include 'partials/_image' with {
-      image: footerOutro.image,
-      imageOptions: {
-        mode: 'crop',
-        width: 1000,
-        height: 1042,
-        position: '20% 65%'
-      }
-    } %}
-    {% if footerOutro.linkURL %}
-      <div class="link">
-        <a class="button" href="{{ footerOutro.linkURL }} ">{{ footerOutro.linkLabel}}</a>
-      </div>
-    {% endif %}
-  </div>
-</div>
+        {% if footerOutro.image|length %}
+          <div class="image-wrap grid-item one-half">
+            {% include 'partials/_image' with {
+              image: footerOutro.image,
+              imageOptions: {
+                mode: 'crop',
+                width: 1000,
+                height: 1042,
+              }
+            } %}
+          </div>
+        {% endif %}
+      </div><!-- /.grid -->
+
+      {% if footerOutro.linkURL %}
+        <div class="block-cta">
+          <a class="button -jumbo" href="{{ footerOutro.linkURL }} ">{{ footerOutro.linkLabel}}</a>
+        </div>
+      {% endif %}
+    </div><!-- /.container -->
+  </div><!-- /.footer-outro -->
+{% endif %}
