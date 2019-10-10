@@ -149,15 +149,29 @@
   }
 
   // Close button
-  a.close {
-    display: block;
-    width: 130px;
-    text-align: left;
-    svg {
-      vertical-align: top;
-      margin-right: grid(3);
-    }
+  .close-wrap {
     margin: grid(2) 0 grid(2) grid(6);
+    a {
+      display: block;
+      width: 100px;
+      text-align: left;
+      svg {
+        vertical-align: top;
+        margin-right: grid(3);
+      }
+    }
+
+    // Desktop styles
+    @include media-nav {
+      margin: grid(2) 0;
+      position: relative;
+      height: 24px;
+      a {
+        position: absolute;
+        right: calc(540px - #{columns(2)});
+        z-index: 1000;
+      }
+    }
   }
 
   // Hide donate on mobile

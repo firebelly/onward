@@ -54,7 +54,9 @@
   </div>
 
   <nav class="site-nav">
-    <a href="#" class="toggle-nav close"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg><span class="label">Close</span></a>
+    <div class="close-wrap">
+      <a href="#" class="toggle-nav close"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg><span class="label">Close</span></a>
+    </div>
     <div class="wrap">
       <ul>
         {{ navigation.menu_links(nav, 'ul', 'li') }}
