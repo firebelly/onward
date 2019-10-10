@@ -1,0 +1,37 @@
+{% if entry.partnershipStories|length %}
+  <div class="container">
+    <div class="carousel">
+      <div class="carousel-header grid">
+        <div class="grid-item one-half">
+          <h2><em>Partnership </em><br> Stories</h2>
+        </div>
+        <div class="grid-item one-half">
+          <div class="carousel-pagination">
+            <span class="previous"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
+            <div class="cell-buttons">
+              {% for story in entry.partnershipStories.all() %}
+                <span{{ loop.first ? ' class="-active"' : '' }}>{{ '%02d'|format(loop.index) }}</span>
+              {% endfor %}
+            </div>
+            <span class="next"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="cells">
+      {% for story in entry.partnershipStories.all() %}
+        <li>
+          {% if story.tagline %}
+            <div class="tagline">{{ story.tagline }}</div>
+          {% endif %}
+          <h2>{{ story.headline }}</h2>
+          {% if story.subhead %}
+            <h5>{{ story.subhead }}</h5>
+          {% endif %}
+          {{ story.body }}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

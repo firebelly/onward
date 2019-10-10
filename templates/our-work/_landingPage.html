@@ -9,39 +9,9 @@
 
   {% include 'partials/_page-header' %}
 
-  <div class="container">
+  {% include 'partials/_page-blocks' %}
 
-    <div class="our-work-intro user-content">
-      {% if entry.ourWorkIntro.subhead %}
-        <h5>{{ entry.ourWorkIntro.subhead }}</h5>
-      {% endif %}
-      {% if entry.ourWorkIntro.headline %}
-        {{ entry.ourWorkIntro.headline }}
-      {% endif %}
-
-      --four pillars graphic--
-    </div>
-
-    {% include 'partials/_page-blocks' %}
-
-    {% if entry.partnershipStories|length %}
-      <ul class="partnership-stories">
-      {% for story in entry.partnershipStories.all() %}
-        <li>
-          {% if story.tagline %}
-            <div class="tagline">{{ story.tagline }}</div>
-          {% endif %}
-          <h2>{{ story.headline }}</h2>
-          {% if story.subhead %}
-            <h5>{{ story.subhead }}</h5>
-          {% endif %}
-          {{ story.body }}
-        </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-
-  </div>
+  {% include 'partials/_partnership-stories' %}
 
   {% include 'partials/_footer-outro' %}
 
