@@ -41,6 +41,10 @@
     border: 2px solid $orange;
     color: $orange;
   }
+  &.-jumbo {
+    @include h3;
+    padding: grid(5) grid(24);
+  }
 
   svg {
     vertical-align: top;
