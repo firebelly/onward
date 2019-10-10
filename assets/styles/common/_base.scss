@@ -18,6 +18,9 @@ body {
   font: 18px/1.333 $font-sans-serif;
   text-rendering: optimizeLegibility;
 }
+.body-wrapper {
+  position: relative;
+}
 
 ul {
   list-style-type: none;
@@ -43,6 +46,10 @@ img {
 figure {
   margin: 0;
 }
+blockquote {
+  margin: 0;
+  padding: 0;
+}
 
 address {
   font-style: normal;
@@ -66,8 +73,12 @@ svg.icon {
 }
 
 .container {
-  max-width: 1128px;
+  max-width: $container-width;
   margin: 0 auto;
+  padding: 0 $mobile-global-padding;
+  @include media-md {
+    padding: 0;
+  }
 }
 
 // This allows js to determine breakpoint
