@@ -1,4 +1,4 @@
-dateModified: 1570653464
+dateModified: 1570742721
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1605,6 +1605,16 @@ sections:
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 2
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
+                    required: false
+                    sortOrder: 2
       155f9daf-d92d-49e3-a5a1-632917c321d8:
         name: 'Team Page'
         handle: teamPage
@@ -1637,6 +1647,16 @@ sections:
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 3
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
+                    required: false
+                    sortOrder: 2
       f193730d-7dc8-47d9-8e2f-4b9c24270f52:
         name: 'Child Page'
         handle: childPage
@@ -1663,6 +1683,16 @@ sections:
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 3
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
+                    required: false
+                    sortOrder: 2
   0db9ba08-444d-4cc6-a813-7ce239e91804:
     name: 'Our Work'
     handle: ourWork
@@ -1705,6 +1735,16 @@ sections:
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 3
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
+                    required: false
+                    sortOrder: 2
       8c7d1094-6991-47ca-bcc1-2f7c63811f64:
         name: 'Landing Page'
         handle: landingPage
@@ -1780,6 +1820,16 @@ sections:
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
                     required: false
                     sortOrder: 2
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
+                    required: false
+                    sortOrder: 2
   73888acd-8134-4ecd-9157-c92d260137ae:
     name: Donate
     handle: donate
@@ -1812,8 +1862,21 @@ sections:
                     sortOrder: 1
                   747f7b29-c1ba-4ae0-a18f-6da874d04062:
                     required: false
+                    sortOrder: 4
+                  8d680df1-9464-46d5-96c2-0fbf1570093b:
+                    required: false
                     sortOrder: 3
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 2
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
                     required: false
                     sortOrder: 2
   7ae1a417-ef1b-4b81-b05c-d3b37f9b2d67:
@@ -1899,6 +1962,16 @@ sections:
                     required: false
                     sortOrder: 3
                   de9ddb2d-f504-43eb-8c92-5ff7ab72ef33:
+                    required: false
+                    sortOrder: 2
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
+                    required: false
+                    sortOrder: 1
+                  eccb8cfb-a355-4a92-bb67-aebb97ed92f2:
                     required: false
                     sortOrder: 2
 siteGroups:
@@ -2418,18 +2491,6 @@ superTableBlockTypes:
           columnType: string
         contentColumnType: string
         fieldGroup: null
-      901c0fde-c21d-4c21-a117-28e90b92364b:
-        name: 'B&W Treated'
-        handle: treated
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Lightswitch
-        settings:
-          default: ''
-        contentColumnType: boolean
-        fieldGroup: null
       edf3548f-f23a-4432-b1b4-21ef410dd401:
         name: Headline
         handle: headline
@@ -2456,19 +2517,16 @@ superTableBlockTypes:
             fields:
               29cbefd6-80a7-44e6-a91c-304291dcacb1:
                 required: false
-                sortOrder: 5
+                sortOrder: 4
               6632d328-147b-4b1c-8e34-eedd570c4c72:
                 required: false
                 sortOrder: 1
               8a4380b5-11b5-45f4-86af-142012814334:
                 required: false
-                sortOrder: 4
-              901c0fde-c21d-4c21-a117-28e90b92364b:
-                required: false
-                sortOrder: 2
+                sortOrder: 3
               edf3548f-f23a-4432-b1b4-21ef410dd401:
                 required: false
-                sortOrder: 3
+                sortOrder: 2
   3352a0b1-86db-48aa-9ae7-3207e43e621f:
     field: 80aede10-a66e-490d-ac5a-469a7283ed27
     fields:
