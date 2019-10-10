@@ -4,3 +4,19 @@
 .actions {
   margin: grid(2) 0;
 }
+
+// Sticky titles
+.sticky-header {
+  position: relative;
+  .sticky-title {
+    z-index: 1000;
+    @include h5;
+    text-transform: uppercase;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    position: absolute;
+    top: 0;
+    left: calc(100% - 20px);
+    white-space: nowrap;
+  }
+}
