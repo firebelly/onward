@@ -53,7 +53,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    background: $tan;
+    background: color(tan);
     z-index: 1000;
     transform: translateX(-100%);
     @include transition(transform);
@@ -70,24 +70,24 @@
 
     // Color coded
     .nav-home a {
-      background: $green;
-      color: $tan;
+      background: color(green);
+      color: color(tan);
     }
     .nav-our-work a {
-      background: $orange;
+      background: color(orange);
     }
     .nav-our-story a {
-      background: $pink;
+      background: color(pink);
     }
     .nav-our-team a {
-      background: $pink;
+      background: color(pink);
     }
     .nav-partner-with-us a {
-      background: $yellow;
+      background: color(yellow);
     }
     .nav-donate a {
-      background: $tan;
-      color: $orange;
+      background: color(tan);
+      color: color(orange);
     }
 
     ul {
@@ -104,6 +104,12 @@
           align-items: center;
           width: 100%;
           height: 100%;
+          @include transition(background);
+          &:hover {
+            background: color(white);
+            color: color(black);
+            text-decoration: underline;
+          }
         }
         // Can has child nav
         &.dropdown {
@@ -193,6 +199,12 @@
       position: absolute;
       top: 0;
       right: 0;
+      @include transition(all);
+      &:hover {
+        transform: none;
+        background: color(white);
+        border-color: color(white);
+      }
     }
   }
 }

@@ -127,18 +127,18 @@ $font-mono: monospace;
   line-height: 40px;
   letter-spacing: 1px;
 }
-@mixin p1-xl {
-  @include p1;
-  font-size: 32px;
-  line-height: 48px;
-}
+// @mixin p1-xl {
+//   @include p1;
+//   font-size: 32px;
+//   line-height: 48px;
+// }
 %p1,
 p.intro {
   @include p1;
 
-  @include media-xl {
-    @include p1-xl;
-  }
+  // @include media-xl {
+  //   @include p1-xl;
+  // }
 }
 
 @mixin p2 {
@@ -221,7 +221,7 @@ p,
 figcaption {
   @include p3;
 
-  @include media-xl {
-    @include p2;
-  }
+  // @include media-xl {
+  //   @include p2;
+  // }
 }

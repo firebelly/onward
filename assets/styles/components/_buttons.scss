@@ -1,3 +1,5 @@
+// Buttons
+
 %button,
 .button {
   display: inline-block;
@@ -6,8 +8,8 @@
   padding: grid(2) grid(3);
   position: relative;
   border: none;
-  background: $orange;
-  color: $black;
+  background: color(orange);
+  color: color(black);
   align-items: center;
   // min-height: 56px;
   // min-width: 140px;
@@ -38,8 +40,8 @@
   // Hollow buttons
   &.-hollow {
     background: none;
-    border: 2px solid $orange;
-    color: $orange;
+    border: 2px solid color(orange);
+    color: color(orange);
   }
   &.-jumbo {
     @include h3;

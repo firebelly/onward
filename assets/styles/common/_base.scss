@@ -12,8 +12,8 @@ body {
 }
 
 body {
-  background: $tan;
-  color: $black;
+  background: color(tan);
+  color: color(black);
   font-size: 16px;
   font: 18px/1.333 $font-sans-serif;
   text-rendering: optimizeLegibility;
@@ -60,14 +60,14 @@ svg.icon {
   display: inline-block;
   width: 24px;
   height: 24px;
-  fill: $black;
+  fill: color(black);
 }
 
 // Flash notices
 .flash {
   padding: 10px;
-  color: $white;
-  background: $red;
+  color: color(white);
+  background: color(red);
   text-align: center;
   margin: 0 0 20px;
 }

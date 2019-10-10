@@ -9,6 +9,7 @@
 .sticky-header {
   position: relative;
   .sticky-title {
+    color: color(black);
     z-index: 1000;
     @include h5;
     text-transform: uppercase;

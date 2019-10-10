@@ -4,17 +4,17 @@ body.page-home {
   // Dark nav with lighter elements
   .nav-main,
   .page-header {
-    background: $green;
+    background: color(green);
   }
   #hamburger-salad {
-    color: $tan;
+    color: color(tan);
     svg {
-      fill: $tan;
+      fill: color(tan);
     }
   }
   a.donate {
-    color: $yellow;
-    border-color: $yellow;
+    color: color(yellow);
+    border-color: color(yellow);
   }
 
   // Onward repeating logos
@@ -27,12 +27,12 @@ body.page-home {
     }
   }
   .sprite-logo {
-    fill: $tan;
+    fill: color(tan);
     opacity: 0;
   }
   .sprite-logo.clone {
     fill: none;
-    stroke: $yellow;
+    stroke: color(yellow);
     stroke-width: 2px;
     position: absolute;
     top: 100%;
@@ -53,8 +53,8 @@ body.page-home {
   // Header tweaks
   .page-header {
     .text-wrap {
-      background: $green;
-      color: $tan;
+      background: color(green);
+      color: color(tan);
       padding: $global-padding;
       .body {
         @include p2;

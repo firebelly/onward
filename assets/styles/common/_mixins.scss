@@ -8,19 +8,19 @@
 }
 
 // Inline link styles
-@mixin inline-link($hover_color:$black) {
+@mixin inline-link($hover_color: #000) {
   display: inline;
   background-color: rgba($hover_color, 0);
   @include transition(all);
 
   &:hover,
   &:focus {
-    color: $black;
-    border-color: $black;
+    color: color(black);
+    border-color: color(black);
     background-color: rgba($hover_color, 1);
     box-shadow: .2em .1em 0 rgba($hover_color, 1), -.2em .1em 0 rgba($hover_color, 1), -.2em 0 0 rgba($hover_color, 1), .2em 0 0 rgba($hover_color, 1);
     svg {
-      fill: $black;
+      fill: color(black);
     }
   }
 }
@@ -28,14 +28,14 @@
   @include inline-link;
 }
 
-@mixin theme-color($property, $default: $black, $map: 'primary') {
-  $theme-map: 'theme-green' $green, 'theme-pink' $pink,  'theme-orange' $orange;
+@mixin theme-color($property, $default: color(black), $map: 'primary') {
+  $theme-map: 'theme-green' color(green), 'theme-pink' color(pink),  'theme-orange' color(orange),  'theme-black' color(black);
   @if ($map == 'accent') {
-    $theme-map: 'theme-green' $yellow, 'theme-pink' $orange,  'theme-orange' $pink;
+    $theme-map: 'theme-green' color(yellow), 'theme-pink' color(orange),  'theme-orange' color(brown);
   } @else if ($map == 'accent2') {
-    $theme-map: 'theme-green' $orange, 'theme-pink' $green,  'theme-orange' $brown;
+    $theme-map: 'theme-green' color(orange), 'theme-pink' color(green),  'theme-orange' color(pink);
   // } @else if ($map == 'accent3') {
-  //   $theme-map: 'theme-green' $brown-dark, 'theme-pink' $black,  'theme-orange' $black;
+  //   $theme-map: 'theme-green' color(brown)-dark, 'theme-pink' color(black),  'theme-orange' color(black);
   }
 
   #{$property}: $default;
