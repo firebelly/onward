@@ -1,0 +1,77 @@
+// Carousels
+
+.carousel {
+  @include clearfix;
+  padding: $global-padding;
+
+  .flickity-viewport {
+    overflow: visible;
+  }
+  .cells {
+    li {
+      width: 85%;
+      margin-right: $global-padding;
+      background: $white;
+      padding: $global-padding;
+    }
+  }
+  &.postcards {
+    figure {
+      padding-bottom: $global-padding;
+    }
+    .cell-body {
+      padding: 0 $global-padding;
+    }
+  }
+  // Desktop styles
+  @include media-md {
+    padding: 0;
+    .carousel-header {
+      .grid-item:nth-child(2) {
+        position: relative;
+      }
+    }
+    .cells {
+      margin: grid(16) 0;
+      li {
+        width: columns(5);
+        max-width: 450px;
+        float: left;
+      }
+    }
+  }
+}
+
+.carousel-pagination {
+  @include h3;
+  span {
+    cursor: pointer;
+    @include smooth;
+    display: inline-block;
+    padding: grid(1) grid(2);
+    user-select: none;
+    svg {
+      width: 27px;
+      height: 19px;
+    }
+    &.-active {
+      color: $red;
+    }
+  }
+  .cell-buttons {
+    display: inline-block;
+  }
+  .next {
+    svg {
+      transform: rotate(180deg);
+    }
+    padding-right: 0;
+  }
+
+  // Desktop styles
+  @include media-md {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
