@@ -31,21 +31,6 @@
       }
     }
   }
-  ol {
-    list-style: none;
-    li {
-      counter-increment: num;
-      position: relative;
-      &::before {
-        @extend %h4;
-        content: counter(num) ". ";
-        position: absolute;
-        top: 6px;
-        left: grid(-4);
-        color: $black;
-      }
-    }
-  }
 
   blockquote {
     margin: grid(4) 0;
