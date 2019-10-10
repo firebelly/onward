@@ -1,8 +1,44 @@
 // Typography
 
+@font-face {
+    font-family: 'Quarto';
+    src: url('../fonts/Quarto-Black.woff2') format('woff2'),
+        url('../fonts/Quarto-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('../fonts/UntitledSansWeb-LightItalic.woff2') format('woff2'),
+        url('../fonts/UntitledSansWeb-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('../fonts/UntitledSansWeb-BoldItalic.woff2') format('woff2'),
+        url('../fonts/UntitledSansWeb-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('../fonts/UntitledSansWeb-Light.woff2') format('woff2'),
+        url('../fonts/UntitledSansWeb-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Untitled Sans';
+    src: url('../fonts/UntitledSansWeb-Bold.woff2') format('woff2'),
+        url('../fonts/UntitledSansWeb-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 // Fonts
-$font-serif: serif;
-$font-sans-serif: sans-serif;
+$font-serif: 'Quarto', serif;
+$font-sans-serif: 'Untitled Sans', sans-serif;
 $font-mono: monospace;
 
 @mixin font-regular {
@@ -35,6 +71,7 @@ $font-mono: monospace;
 @mixin h1-serif {
   @include font-header;
   font-family: $font-serif;
+  font-weight: bold;
   font-size: 63.5px;
   line-height: 60px;
   letter-spacing: 0;
@@ -49,6 +86,7 @@ $font-mono: monospace;
 @mixin h2-serif {
   @include font-header;
   font-family: $font-serif;
+  font-weight: bold;
   font-size: 51px;
   line-height: 48px;
   letter-spacing: 0;
@@ -56,6 +94,13 @@ $font-mono: monospace;
 
 @mixin h3 {
   @include font-header;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.2px;
+}
+@mixin h3-serif {
+  @include font-header;
+  font-family: $font-serif;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: -0.2px;
@@ -102,6 +147,7 @@ p.intro {
   line-height: 1.25;
   letter-spacing: -0.25px;
   font-weight: light;
+  @include smooth;
 }
 
 @mixin p3 {
@@ -114,7 +160,7 @@ p.intro {
 .p3,
 p.p3,
 p.small {
-  @include p3
+  @include p3;
 }
 
 // Global header styles
@@ -126,8 +172,16 @@ p.small {
 }
 %h2,.h2,h2 {
   @include h3;
+  em {
+    @include h3-serif;
+    font-style: normal;
+  }
   @include media-md {
     @include h2;
+    em {
+      @include h2-serif;
+      font-style: normal;
+    }
   }
 }
 .h2.serif,
