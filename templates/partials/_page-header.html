@@ -9,13 +9,13 @@
 
 <div class="page-header">
   <div class="container">
+    <svg class="icon sprite-logo"><use xlink:href="#sprite-logo"/></svg>
+
     <h1>{{ entry.pageHeader.headline }}</h1>
 
     {% if entry.pageHeader.tagline %}
       <div class="tagline">{{ entry.pageHeader.tagline }}</div>
     {% endif %}
-
-    <svg class="icon sprite-logo"><use xlink:href="#sprite-logo"/></svg>
 
     {% if entry.pageHeader.image|length and treatedImage %}
       <div class="image-wrap">
