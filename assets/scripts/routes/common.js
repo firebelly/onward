@@ -1,3 +1,5 @@
+import Flickity from 'flickity';
+
 export default {
   init() {
     // JavaScript to be fired on all pages
@@ -10,6 +12,46 @@ export default {
     $('.toggle-nav').on('click', function(e) {
       e.preventDefault();
       _closeNav();
+    });
+
+    // $('.feedify').feedify();
+    // console.log($('.feedify').find('.feedify-item'));
+
+    // Story carousels with custom pagination
+    $('.carousel').each(function() {
+      var $this = $(this),
+          $cells = $this.find('.cells'),
+          $pagination = $this.find('.carousel-pagination'),
+          $cellButtonGroup = $pagination.find('.cell-buttons'),
+          $cellButtons = $cellButtonGroup.find('span');
+
+      var flkty = new Flickity($cells[0], {
+        prevNextButtons: false,
+        pageDots: false,
+        cellAlign: 'left',
+        contain: true
+      });
+
+      // update selected cellButtons
+      flkty.on('select', function(index){
+        console.log(index);
+        $cellButtons.removeClass('-active');
+        $cellButtons.eq(index).addClass('-active');
+      });
+
+      // select cell on button click
+      $cellButtonGroup.on('click', 'span', function(){
+        var index = $(this).index();
+        flkty.select(index);
+      });
+      // previous
+      $this.find('.previous').on('click', function(){
+        flkty.previous();
+      });
+      // next
+      $this.find('.next').on('click', function(){
+        flkty.next();
+      });
     });
 
     // Keyboard navigation and esc handlers
