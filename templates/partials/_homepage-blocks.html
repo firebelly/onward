@@ -34,28 +34,28 @@
                 mode: 'crop',
                 width: 1000,
                 height: 1042,
-                position: '20% 65%'
               }
             } %}
           </div>
         </div>
 
       {% case "quote" %}
-        {% include 'partials/_quote' with {
+        {% include 'partials/blocks/_quote' with {
           quote: block.quote,
+          image: block.image,
+          imagePlacement: block.imagePlacement,
           attribution: block.attribution
         } %}
 
       {% case "image" %}
-        <div class="block-image">
+        <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
           {% include 'partials/_image' with {
             image: block.image,
             imageOptions: {
               mode: 'crop',
               width: 1800,
               height: 1079,
-              position: '20% 65%'
-            },
+              },
             caption: block.caption
           } %}
         </div>
