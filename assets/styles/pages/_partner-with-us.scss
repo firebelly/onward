@@ -1,0 +1,18 @@
+// Partner with us
+
+body.page-partner-with-us {
+
+	.partner-form-wrap {
+		background: color(yellow);
+		.actions {
+			text-align: center;
+		}
+	}
+
+	// Desktop styles
+	@include media-md {
+		.partner-form-wrap {
+			padding: grid(16) 0;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+// Forms
+
+form {
+
+  label {
+    display: block;
+    @include h4;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type=text],
+  input[type=email],
+  textarea {
+    background: none;
+    border: 2px solid color(black);
+    border-top: none;
+    padding: grid(2) grid(4) grid(4);
+    @include h3;
+    &:focus {
+      outline: 0;
+    }
+    &::placeholder {
+      color: rgba(color(black), 0.5);
+    }
+
+    width: 100%;
+    margin-bottom: grid(3);
+
+    @include media-md {
+      &.half {
+        width: calc(50% - 12px);
+        float: left;
+        &:nth-child(even) {
+          float: right;
+        }
+      }
+    }
+  }
+
+  // Form buttons
+  .actions {
+    margin-top: grid(2);
+  }
+  [type=submit] {
+  }
+
+  // Feedback from submitting form
+  .status {
+    display: none;
+    &.error {
+      color: color(red);
+      margin: grid(2) 0 grid(4);
+      display: block;
+    }
+  }
+
+  // Form sending
+  &.working {
+  }
+
+  // Submit was successful
+  &.success {
+    fieldset,
+    .actions {
+      display: none;
+    }
+    .status {
+      margin: grid(5) 0;
+      display: block;
+    }
+  }
+
+}
