@@ -1,4 +1,5 @@
 {% if entry.postcards|length %}
+<div class="postcards-wrap">
   <div class="container">
     <div class="carousel postcards">
       <div class="carousel-header grid">
@@ -26,10 +27,9 @@
             width: 1000,
             height: 690,
             mode: 'crop',
-            effects: (card.treated ? { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' } : {}),
           }) %}
         {% endif %}
-        <li>
+        <li class="cell">
           {% if card.tagline %}
             <div class="tagline">{{ card.tagline }}</div>
           {% endif %}
@@ -51,4 +51,5 @@
       </ul>
     </div>
   </div>
+</div>
 {% endif %}
