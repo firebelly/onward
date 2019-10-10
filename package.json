@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "fitvids": "^2.0.0",
+    "flickity": "^2.2.1",
     "jquery": "^3.4",
     "js-dom-router": "^1.0",
     "popper.js": "^1.15",
