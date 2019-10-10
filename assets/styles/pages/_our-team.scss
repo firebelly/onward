@@ -1,4 +1,4 @@
-// Home page
+// Our Team
 
 body.page-our-team {
 	.person {
@@ -6,6 +6,8 @@ body.page-our-team {
 			display: none;
 		}
 	}
+
+	// Desktop styles
 	@include media-md {
 		.person {
 			margin-top: 24px;

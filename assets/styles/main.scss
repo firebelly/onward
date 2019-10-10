@@ -1,5 +1,10 @@
+// Vendor
+@import "~flickity/css/flickity.css";
+
+// Variables
 @import "common/variables";
 
+// Common
 @import "common/normalize";
 @import "common/mixins";
 @import "common/typography";
@@ -9,14 +14,20 @@
 @import "common/user-content";
 @import "common/utility";
 
+// Components
 @import "components/buttons";
 @import "components/pagination";
 @import "components/shared";
 @import "components/page-headers";
+@import "components/carousels";
+@import "components/blocks";
 
+// Layout elements
 @import "layouts/header";
 @import "layouts/nav";
 @import "layouts/footer";
 
+// Page specifics
 @import "pages/home";
 @import "pages/our-team";
+@import "pages/our-work";
