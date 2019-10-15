@@ -8,9 +8,10 @@
 // Sticky titles
 .sticky-header {
   position: relative;
+  display: none;
   .sticky-title {
     color: color(black);
-    z-index: 1000;
+    z-index: z(titles);
     @include h5;
     text-transform: uppercase;
     transform: rotate(90deg);
@@ -19,5 +20,9 @@
     top: 0;
     left: calc(100% - 20px);
     white-space: nowrap;
+  }
+
+  @include media-md {
+    display: block;
   }
 }
