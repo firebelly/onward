@@ -177,9 +177,9 @@ p.small {
     font-style: normal;
   }
   @include media-md {
-    @include h2;
+    @include h1;
     em {
-      @include h2-serif;
+      @include h1-serif;
       font-style: normal;
     }
   }
