@@ -1,5 +1,53 @@
 // Base page block styles
 
+// Images
+.block-image {
+  position: relative;
+  figcaption {
+    @include h4;
+    background: color(tan);
+    padding: grid(4);
+  }
+
+  // Desktop styles
+  @include media-md {
+    @include clearfix;
+    padding: grid(16) 0;
+    figcaption {
+      position: absolute;
+      right: columns(1);
+      bottom: grid(-4);
+      width: columns(3);
+    }
+    figure {
+      position: relative;
+      display: block;
+      max-width: $container-width;
+    }
+    &.-center {
+      // For inline images not treated, such as SVG/gif/png
+      text-align: center;
+      figure {
+        margin: 0 auto;
+      }
+    }
+    &.-right {
+      figure {
+        float: right;
+      }
+    }
+    &.-left {
+      figure {
+        float: left;
+      }
+      figcaption {
+        right: auto;
+        left: columns(3);
+      }
+    }
+  }
+}
+
 .page-blocks {
   .container {
     @include clearfix;
@@ -8,43 +56,9 @@
     margin: 0;
   }
 
-  // Images
-  .block-image {
-    position: relative;
-    figcaption {
-      @include h4;
-      background: color(tan);
-      padding: grid(4);
-    }
-
-    // Desktop styles
-    @include media-md {
-      padding: grid(16) 0;
-      &.-center {
-        text-align: center;
-      }
-      &.-right {
-        @include clearfix;
-        img {
-          display: block;
-          float: right;
-          max-width: $container-width;
-        }
-      }
-      .image {
-        position: relative;
-      }
-      figcaption {
-        position: absolute;
-        right: columns(1);
-        bottom: grid(-4);
-        width: columns(3);
-      }
-    }
-  }
-
   // Section change
   .block-section {
+    @include clearfix;
     @each $color, $value in $colors {
       &.color-#{$color} {
         background: $value;
@@ -94,10 +108,10 @@
     @include media-md {
       padding: grid(16) 0;
       h2 {
-        @include h1;
+        // @include h1;
         em {
-          @include h1-serif;
-          font-style: normal;
+          // @include h1-serif;
+          // font-style: normal;
         }
       }
       &.-halfWidth {
@@ -134,12 +148,13 @@
       content: ' — ';
     }
   }
-  .image {
+  figure {
     display: none;
   }
 
   // Desktop styles
   @include media-md {
+    padding: grid(16) 0;
     p {
       @include h1;
     }
@@ -150,23 +165,36 @@
 .block-statement {
   .statement {
     text-align: center;
+    h2 {
+      // @include h1;
+    }
+  }
+  @include media-md {
+    padding: grid(16) 0;
   }
 }
 
-// Statement/quote shared styles
+// Statement/quote/question shared styles
+.block-question,
 .block-statement,
 .block-quote {
+  // Hide offset images on mobile
+  figure {
+    display: none;
+  }
+
   // Desktop styles
   @include media-md {
     position: relative;
     &.-has-image {
       min-height: 384px;
+      padding: 0;
+      .container {
+        position: relative;
+        padding: grid(16) calc(#{columns(1)} - #{$global-padding});
+      }
     }
-    .container {
-      position: relative;
-      padding: grid(16) calc(#{columns(1)} - #{$global-padding});
-    }
-    .image {
+    figure {
       display: block;
       width: 264px;
       height: 384px;
@@ -176,13 +204,13 @@
       opacity: 0.9;
     }
     &.-left {
-      .image {
+      figure {
         left: 0;
         transform: translateX(-50%);
       }
     }
     &.-right {
-      .image {
+      figure {
         right: 0;
         transform: translateX(50%);
       }
