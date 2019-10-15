@@ -5,19 +5,13 @@
   // @include theme-color('background', color(brown), 'accent');
   // @include theme-color('color', color(black));
 
-  h2 {
-    @include h1;
-    em {
-      @include h1-serif;
-      font-style: normal;
-    }
+  p {
+    @include p2;
   }
   .text-wrap {
-    .body {
-      @include p2;
-      margin: grid(6) 0 0;
-    }
+    padding: grid(6) 0 0;
   }
+
   // Footer-specific CTA styles
   .block-cta {
     @include media-md {
@@ -31,7 +25,7 @@
 
     .text-wrap {
       align-self: flex-end;
-      padding-bottom: grid(4);
+      padding: 0 $global-padding grid(4) 0;
     }
     .image-wrap {
       figure {
@@ -83,7 +77,7 @@ footer.site-footer {
     .footer-tagline {
       padding: grid(14) 0;
       h2 {
-        @include h1;
+        // @include h1;
       }
     }
     .footer-blocks {
