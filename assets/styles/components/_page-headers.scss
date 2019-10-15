@@ -1,13 +1,16 @@
 // Page headers
 
-.image-wrap {
-}
-
 // Page header with image
 .page-header {
   position: relative;
   .page-header-info {
     position: relative;
+  }
+
+  h1 {
+    margin-top: 0;
+    @include theme-color(color);
+    text-align: center;
   }
 
   // Header logos
