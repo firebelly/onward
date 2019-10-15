@@ -4,7 +4,7 @@
 
   {% include '/partials/_head' %}
 
-  <body class="{% if currentUser %}logged-in {% endif %}{% if bodyClass is defined %}{{ bodyClass }} {% endif %}page-{{ segment(1) ? segment(1) : 'home' }}"{% if bodyId is defined %} id="{{ bodyId }}"{% endif %} data-theme="{% if colorTheme is defined %}theme-{{ colorTheme }}{% else %}theme-green{% endif %}">
+  <body class="{% if currentUser %}logged-in {% endif %}{% if bodyClass is defined %}{{ bodyClass }} {% endif %}{% if craft.request.getSegments()|length %}page-{{ craft.request.getFirstSegment() }}{{ craft.request.getSegments()|length > 1 ? ' child-'~craft.request.getLastSegment() : '' }}{% else %}page-home{% endif %}"{% if bodyId is defined %} id="{{ bodyId }}"{% endif %} data-theme="{% if colorTheme is defined %}theme-{{ colorTheme }}{% else %}theme-green{% endif %}">
     <div id="top"></div>
     {{ adminbar({ sticky: false, entry: entry ?? null }) }}
     <div class="body-wrapper">
