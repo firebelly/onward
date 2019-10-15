@@ -2,14 +2,20 @@
 
 body.page-donate {
 
-	.postcards-wrap {
-		background: color(green);
-		.carousel-header {
-			color: color(tan);
-		}
-	}
+  .carousel-wrap {
+    background: color(green);
+    .carousel-header {
+      color: color(tan);
+    }
+    // Gradient
+    .cells {
+      &::after {
+        background-image: linear-gradient(90deg, rgba(color(green), 0) 0%, rgba(color(green), 1) 100%);
+      }
+    }
+  }
 
-	// Desktop styles
-	@include media-md {
-	}
+  // Desktop styles
+  @include media-md {
+  }
 }

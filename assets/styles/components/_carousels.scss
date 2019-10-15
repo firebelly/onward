@@ -1,20 +1,46 @@
 // Carousels
 
-.carousel {
+.carousel-wrap {
   @include clearfix;
+}
+
+.carousel {
+  // @include clearfix;
   padding: $global-padding;
 
+  // Make Flickity extend outside .container
   .flickity-viewport {
     overflow: visible;
   }
-  .cells {
-    li {
-      width: 85%;
-      margin-right: $global-padding;
-      background: color(white);
-      padding: $global-padding;
+
+  // Gradient
+  .cells.flickity-enabled {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 50%;
+      bottom: 0;
+      width: 15%;
+      margin-right: -50vw;
+      background-image: linear-gradient(90deg, rgba(color(tan), 0) 0%, rgba(color(tan), 1) 100%);
+      pointer-events: none;
+
+      // Desktop styles
+      @include media-md {
+      }
     }
   }
+
+  // Individual carousel cells
+  .cell {
+    width: 85%;
+    margin-right: $global-padding;
+    background: color(white);
+    padding: $global-padding;
+  }
+
   // Postcard carousels
   &.postcards {
     figure {
@@ -28,6 +54,7 @@
         mix-blend-mode: screen;
         filter: grayscale(100%);
       }
+      // Monochrome image treatment before hover
       &::before {
         @include transition(opacity);
         content: '';
@@ -43,6 +70,7 @@
         z-index: 1;
       }
     }
+    // Hover state for images
     .cell {
       &:hover,
       &.-active {
@@ -58,6 +86,7 @@
       }
     }
 
+    // Content inside cell
     .cell-body {
       padding: 0 $global-padding;
     }
@@ -88,6 +117,7 @@
   }
 }
 
+// Pagination
 .carousel-pagination {
   @include h3;
   span {
