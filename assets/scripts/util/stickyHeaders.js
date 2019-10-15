@@ -1,16 +1,16 @@
 // Vertical sticky headers with push effect
 export let $stickies,
     $stickyTitles = [],
-    $offset,
-    $scrollTop,
-    $ticking;
+    offset,
+    scrollTop,
+    ticking;
 
 const stickyHeaders = {
 
   // Init sticky headers
-  load(stickies, target, offset) {
+  init(stickies, target, setOffset) {
 
-    $offset = offset || 0;
+    offset = setOffset || 0;
     if (typeof stickies === 'object' && stickies instanceof $ && stickies.length > 0) {
 
       $stickies = stickies;
@@ -24,35 +24,35 @@ const stickyHeaders = {
 
   // Request update using requestAnimationFrame
   requestTick() {
-    if(!$ticking) {
+    if(!ticking) {
       requestAnimationFrame(stickyHeaders.update);
     }
-    $ticking = true;
+    ticking = true;
   },
 
   // Update positions of sticky headers
   update() {
-    $ticking = false;
+    ticking = false;
     $stickies.each(function(i) {
 
       let $this = $(this),
-          $stickyPosition = $this.data('originalPosition'),
-          $newPosition,
+          stickyPosition = $this.data('originalPosition'),
+          newPosition,
           $nextSticky;
 
-      if ($stickyPosition <= $scrollTop) {
+      if (stickyPosition <= scrollTop) {
 
-        $newPosition = Math.max($offset, $scrollTop - $stickyPosition);
+        newPosition = Math.max(offset, scrollTop - stickyPosition);
         $nextSticky = $stickies.eq(i + 1);
         if($nextSticky.length > 0) {
-          $newPosition = Math.min($newPosition, ($nextSticky.data('originalPosition') - $stickyPosition) - $this.data('originalHeight'));
+          newPosition = Math.min(newPosition, ($nextSticky.data('originalPosition') - stickyPosition) - $this.data('originalHeight'));
         }
 
       } else {
-        $newPosition = $offset;
+        newPosition = offset;
       }
 
-      $stickyTitles[i].css('top', $newPosition + 'px');
+      $stickyTitles[i].css('top', newPosition + 'px');
     });
   },
 
@@ -63,7 +63,6 @@ const stickyHeaders = {
       // Cache title elements
       $stickyTitles[i] = $this.find('.sticky-title');
       $this
-        .data('title', $this.find('.sticky-title'))
         .data('originalPosition', $this.offset().top)
         .data('originalHeight', $this.find('.sticky-title').outerWidth() + 10);
     });
@@ -76,7 +75,7 @@ const stickyHeaders = {
 
   // Scrolling
   scrolling(event) {
-    $scrollTop = $(event.currentTarget).scrollTop() + $offset;
+    scrollTop = $(event.currentTarget).scrollTop() + offset;
     stickyHeaders.requestTick();
   }
 
