@@ -1,69 +1,80 @@
 {% if entry.homepageBlocks|length %}
-<div class="container homepage-blocks">
 
-  {% for block in entry.homepageBlocks.all() %}
-    {% switch block.type %}
+  {% set containerWrapped = false %}
 
-      {% case "question" %}
-        <div class="block-question">
-          <h5>{{ block.subhead }}</h5>
-          <h2>{{ block.headline }}</h2>
-          {% include 'partials/_image' with {
-            image: block.image,
-            imageOptions: {
-              mode: 'crop',
-              width: 600,
-              height: 681,
-            },
-          } %}
-        </div>
+  <div class="homepage-blocks">
 
-      {% case "answer" %}
-        <div class="block-answer">
-          <div class="text-wrap">
-            <h5>{{ block.subhead }}</h5>
-            <h2>{{ block.headline }}</h2>
-            <div class="body user-content">
-              {{ block.body }}
+    {% for block in entry.homepageBlocks.all() %}
+      {% switch block.type %}
+
+        {% case "question" %}
+          <div class="block-question -{{ block.imagePlacement ?? '' }}{{ block.image|length ? ' -has-image' : '' }}">
+            <div class="container">
+              <h5>{{ block.subhead }}</h5>
+              <h2>{{ block.headline }}</h2>
             </div>
-          </div>
-          <div class="image-wrap">
+
             {% include 'partials/_image' with {
               image: block.image,
               imageOptions: {
                 mode: 'crop',
-                width: 1000,
-                height: 1042,
-              }
+                width: 600,
+                height: 681,
+                effects: { modulate: [100, 0, 100], clut: 'gradient:#111-#eee' },
+              },
             } %}
           </div>
-        </div>
 
-      {% case "quote" %}
-        {% include 'partials/blocks/_quote' with {
-          quote: block.quote,
-          image: block.image,
-          imagePlacement: block.imagePlacement,
-          attribution: block.attribution
-        } %}
+        {% case "answer" %}
+          {% if not containerWrapped %}<div class="container">{% set containerWrapped = true %}{% endif %}
+          <div class="block-answer">
+            <div class="text-wrap">
+              <h5>{{ block.subhead }}</h5>
+              <h2>{{ block.headline }}</h2>
+              <div class="body user-content">
+                {{ block.body }}
+              </div>
+            </div>
+            <div class="image-wrap">
+              {% include 'partials/_image' with {
+                image: block.image,
+                imageOptions: {
+                  mode: 'crop',
+                  width: 1000,
+                  height: 1042,
+                }
+              } %}
+            </div>
+          </div>
 
-      {% case "image" %}
-        <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
-          {% include 'partials/_image' with {
+        {% case "quote" %}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+          {% include 'partials/blocks/_quote' with {
+            quote: block.quote,
             image: block.image,
-            imageOptions: {
-              mode: 'crop',
-              width: 1800,
-              height: 1079,
-              },
-            caption: block.caption
+            imagePlacement: block.imagePlacement,
+            attribution: block.attribution
           } %}
-        </div>
 
-      {% default %}
+        {% case "image" %}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+          <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
+            {% include 'partials/_image' with {
+              image: block.image,
+              imageOptions: {
+                mode: 'crop',
+                width: 1800,
+                height: 1079,
+                },
+              caption: block.caption
+            } %}
+          </div>
 
-    {% endswitch %}
-  {% endfor %}
+        {% default %}
 
-</div><!-- /.container -->
+      {% endswitch %}
+    {% endfor %}
+
+  {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+  </div><!-- /.homepage-blocks -->
 {% endif %}

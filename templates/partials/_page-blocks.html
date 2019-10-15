@@ -41,7 +41,7 @@
           {% endif %}
 
         {% case 'image' %}
-          {% if not containerWrapped %}<div class="container">{% set containerWrapped = true %}{% endif %}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
           <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
             {% include 'partials/_image' with {
               image: block.image,
@@ -94,6 +94,7 @@
           </div>
 
         {% case 'quote' %}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
           {% include 'partials/blocks/_quote' with {
             quote: block.quote,
             image: block.image,
@@ -102,6 +103,7 @@
           } %}
 
         {% case 'statement' %}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
           {% include 'partials/blocks/_statement' with {
             subhead: block.subhead,
             statement: block.statement,

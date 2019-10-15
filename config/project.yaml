@@ -1,4 +1,4 @@
-dateModified: 1570742721
+dateModified: 1571097427
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -488,6 +488,54 @@ matrixBlockTypes:
     handle: question
     sortOrder: 1
     fields:
+      039afe33-d5c3-4614-83a0-10c7be623754:
+        name: 'Image Placement'
+        handle: imagePlacement
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: left
+              default: '1'
+            -
+              label: Right
+              value: right
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      18f6d14c-b9c2-4582-8eb6-20d1d44bdc5a:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: large
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
       2420144f-0a2c-48be-9178-a5178f099302:
         name: Headline
         handle: headline
@@ -533,6 +581,12 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              039afe33-d5c3-4614-83a0-10c7be623754:
+                required: false
+                sortOrder: 4
+              18f6d14c-b9c2-4582-8eb6-20d1d44bdc5a:
+                required: false
+                sortOrder: 3
               2420144f-0a2c-48be-9178-a5178f099302:
                 required: false
                 sortOrder: 2
@@ -1526,7 +1580,7 @@ plugins:
     schemaVersion: 1.0.0
   sprout-active:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 2.0.0
   admin-bar:
     edition: standard
