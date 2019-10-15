@@ -22,6 +22,7 @@ body.page-home {
     width: 250px;
     margin: 0 auto;
     position: relative;
+
     @include media-md {
       width: 742px;
     }
@@ -50,7 +51,7 @@ body.page-home {
     }
   }
 
-  // Header tweaks
+  // Header tweaks for homepage
   .page-header {
     .text-wrap {
       background: color(green);
@@ -63,13 +64,15 @@ body.page-home {
     }
   }
 
+  // Give homepage blocks initial bg color for mix-blend-mode
+  .homepage-blocks {
+    background: color(tan);
+  }
+
   // Question
   .block-question {
     position: relative;
     text-align: center;
-    h2 {
-      @include h1;
-    }
 
     @include media-md {
       padding: grid(20) 0;
@@ -79,13 +82,6 @@ body.page-home {
   // Answer
   .block-answer {
     position: relative;
-    h2 {
-      @include h1;
-      em {
-        @include h1-serif;
-        font-style: normal;
-      }
-    }
     .text-wrap {
       .body {
         @include p2;
@@ -93,22 +89,19 @@ body.page-home {
       }
     }
 
+    // Desktop styles
     @include media-md {
       @include clearfix;
-      padding: grid(20) 0;
+      display: flex;
+      justify-content: space-between;
       .text-wrap {
-        float: left;
-        width: columns(5);
+        padding-top: 224px;
+        flex-basis: columns(5);
       }
       .image-wrap {
-        float: right;
-        width: columns(6);
+        flex-basis: columns(6);
         padding-left: $global-padding;
         position: relative;
-        figure {
-          position: absolute;
-          top: grid(-32);
-        }
       }
     }
   }
@@ -117,7 +110,9 @@ body.page-home {
   @include media-md {
     // Desktop header
     .page-header {
+      @include clearfix;
       .image-wrap {
+        margin: 0;
         width: columns(6);
         float: left;
         padding-right: $global-padding;
@@ -126,6 +121,9 @@ body.page-home {
         width: columns(5);
         float: left;
         margin-left: columns(1);
+        p {
+          @include p2;
+        }
       }
       .page-header-info {
         margin-top: grid(16);
