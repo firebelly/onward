@@ -43,9 +43,14 @@
     border: 2px solid color(orange);
     color: color(orange);
   }
+  // Jumbo buttons
   &.-jumbo {
     @include h3;
-    padding: grid(5) grid(24);
+    padding: grid(5) grid(10);
+
+    @include media-md {
+      min-width: columns(4);
+    }
   }
 
   svg {
