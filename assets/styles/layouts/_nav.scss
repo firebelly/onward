@@ -41,6 +41,20 @@
     position: relative;
   }
 
+  // Mini logo for sticky nav only
+  .sticky-logo {
+    opacity: 0;
+    @include transition(opacity);
+    transition-duration: 0s;
+    width: 150px;
+    height: 40px;
+    fill: color(green);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   padding: grid(6) 0;
 
   // "Menu" and "Close" text styles
@@ -53,7 +67,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    background: color(tan);
+    // background: color(tan);
     z-index: 1000;
     transform: translateX(-100%);
     @include transition(transform);
@@ -142,9 +156,10 @@
       li {
         display: block;
         height: 100px;
-        &:nth-child(1) {
-          margin-top: -20px;
-        }
+        // with hovers this tweak for better optical spacing doesn't work:
+        // &:nth-child(1) {
+        //   margin-top: -20px;
+        // }
       }
     }
 
@@ -169,7 +184,7 @@
 
     // Desktop styles
     @include media-nav {
-      margin: grid(2) 0;
+      margin: 15px 0;
       position: relative;
       height: 24px;
       a {
@@ -209,8 +224,34 @@
   }
 }
 
+// Nav is stuck
+body.nav-stuck {
+  padding-top: 122px;
+  .nav-main {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: z(nav);
+    padding: 7px 0;
+    background: color(tan);
+    .sticky-logo {
+      opacity: 1;
+      transition-duration: 0.2s;
+    }
+    #hamburger-salad {
+      margin-top: 2px;
+    }
+    .donate {
+      display: none;
+    }
+  }
+}
+
 // Nav is open for hambusiness
 body.nav-open {
+  #hamburger-salad {
+    opacity: 0;
+  }
   .nav-main {
     .site-nav {
       transform: translateX(0);
