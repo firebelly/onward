@@ -4,13 +4,25 @@ form {
 
   label {
     display: block;
+    padding: 0 $global-padding grid(2) 0;
     @include h4;
+    &.-large {
+      @include h3;
+    }
   }
 
   fieldset {
     border: none;
     padding: 0;
     margin: 0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      -webkit-transition-delay: 9999s;
+      -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
   }
 
   input[type=text],
@@ -25,11 +37,12 @@ form {
       outline: 0;
     }
     &::placeholder {
-      color: rgba(color(black), 0.5);
+      color: rgba(color(black), 0.3);
     }
 
     width: 100%;
-    margin-bottom: grid(3);
+    margin-bottom: grid(6);
+    max-height: 200px;
 
     @include media-md {
       &.half {

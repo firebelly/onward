@@ -26,7 +26,7 @@
     <div class="container">
 
       {% if entry.formIntro %}
-        <div class="grid">
+        <div class="form-intro grid">
           <div class="grid-item one-half user-content">
             {{ entry.formIntro }}
           </div>
@@ -39,33 +39,33 @@
           <input type="hidden" name="action" value="contact-form/send">
           <input type="hidden" name="subject" value="Onward Partnership Submission">
 
-          <div class="grid">
+          <div class="grid-wrap"><div class="grid">
             <div class="grid-item one-third">
               <label for="from-name">Your Name</label>
-              <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+              <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" placeholder="Enter your name...">
               {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
             </div>
             <div class="grid-item one-third">
               <label for="from-email">Your Email</label>
-              <input required id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+              <input required id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" placeholder="Now your email...">
               {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
             </div>
             <div class="grid-item one-third">
               <label for="message[Phone]">Phone Number</label>
-              <input type="text" id="message[Phone]" name="message[Phone]">{{ message.message.phone ?? '' }}</textarea>
+              <input type="text" id="message[Phone]" name="message[Phone]" value="{{ message.message.phone ?? '' }}" placeholder="000-000-0000">
             </div>
-          </div>
+          </div></div>
 
-          <div class="grid">
+          <div class="grid-wrap"><div class="grid">
             <div class="grid-item one-half">
-              <label class="prompt" for="message[Capacity]">Do you have the capacity and drive to dedicate a movement toward equity?</label>
+              <label class="-large" for="message[Capacity]">Do you have the capacity and drive to dedicate a movement toward equity?</label>
               <textarea rows="10" cols="40" id="message[Capacity]" name="message[Capacity]">{{ message.message.capacity ?? '' }}</textarea>
             </div>
             <div class="grid-item one-half">
-              <label class="prompt" for="message[Current system]">What is your current system to provide a more equitable organization?</label>
+              <label class="-large" for="message[Current system]">What is your current system to provide a more equitable organization?</label>
               <textarea rows="10" cols="40" id="message[Current system]" name="message[Current system]">{{ message.message.system ?? '' }}</textarea>
             </div>
-          </div>
+          </div></div>
 
           <label for="message[Additional info]">Additional Information</label>
           <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
