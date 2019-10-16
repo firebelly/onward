@@ -10,6 +10,16 @@
     }
   }
 
+  // User content gets properly sized h2's (rest of site is h1 sized)
+  @include media-md {
+    h2 {
+      @include h2;
+      em {
+        @include h2-serif;
+      }
+    }
+  }
+
   a:not(.button) {
     border-bottom: 2px solid color(black);
     @extend %inline-link;
