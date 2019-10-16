@@ -7,11 +7,16 @@ export default {
     let $body = $('body');
     let pageAt = window.location.pathname;
     let isAnimating = false;
+    let navOpen = false;
 
     // Mobile hamburger and X close icons toggle mobile nav
     $('.toggle-nav').on('click', function(e) {
       e.preventDefault();
-      _closeNav();
+      if (navOpen) {
+        _closeNav();
+      } else {
+        _openNav();
+      }
     });
 
     // $('.feedify').feedify();
@@ -34,7 +39,7 @@ export default {
 
       // update selected cellButtons
       flkty.on('select', function(index){
-        console.log(index);
+        // console.log(index);
         $cellButtons.removeClass('-active');
         $cellButtons.eq(index).addClass('-active');
       });
@@ -103,13 +108,18 @@ export default {
     function _resetNav() {
       $('.site-nav ul.children').velocity('slideUp', { duration: 0 });
       $('.site-nav ul.children span').velocity('fadeOut', { duration: 0 });
+      navOpen = false;
     }
 
     // Close main and any child nav elements
     function _closeNav() {
       $('.site-nav li.open').removeClass('open');
       _resetNav();
-      $('body').toggleClass('nav-open');
+      $('body').removeClass('nav-open');
+    }
+    function _openNav() {
+      $('body').addClass('nav-open');
+      navOpen = true;
     }
 
     // Scroll body to an element with velocity
