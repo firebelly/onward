@@ -17,6 +17,16 @@ body {
   font-size: 16px;
   font: 18px/1.333 $font-sans-serif;
   text-rendering: optimizeLegibility;
+
+  // Disable-scrolling
+  &.no-scroll {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 }
 .body-wrapper {
   position: relative;
