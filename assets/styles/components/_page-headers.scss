@@ -20,6 +20,8 @@
     margin: 0 auto;
     width: 250px;
     height: 67px;
+
+    // Desktop styles
     @include media-md {
       width: 742px;
       height: 200px;
@@ -29,6 +31,7 @@
   // Small screen only styles
   @include max-screen($breakpoint-md) {
     .image-wrap {
+      margin: grid(4) 0;
     }
   }
 
