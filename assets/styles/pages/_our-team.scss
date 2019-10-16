@@ -1,22 +1,190 @@
 // Our Team
 
-body.page-our-team {
-	.person {
-		.modal-content {
-			display: none;
-		}
-	}
+// Modal
+.modal-overlay {
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: z(overlay);
+  position: fixed;
+  background-color: rgba(color(tan), 0.95);
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: $global-padding;
+  z-index: z(modal);
+  // will-change: transform;
+  // transform-origin: bottom left;
+  .close-modal {
+    position: absolute;
+    width: 150px;
+    top: 6px;
+    left: calc(100% - 6px);
+    transform: rotate(90deg);
+    transform-origin: left top;
+    svg {
+      width: 21px;
+      height: 21px;
+    }
+    span {
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: top;
+      margin-left: 21px;
+      letter-spacing: 0.45px;
+      border-bottom: 1px solid color(black);
+    }
+    &:hover {
+      span {
+        background: color(white);
+      }
+    }
+  }
+  .text-wrap {
+    position: relative;
+    h2 {
+      @include h2;
+      text-align: center;
+    }
+    .person-meta {
+      display: flex;
+      h3 {
+        flex: 0 1 40%;
+      }
+      ul.social {
+        flex: 0 1 60%;
+        text-align: right;
+        margin-top: 4px;
+        li {
+          display: inline-block;
+          margin-left: grid(4);
+        }
+        a {
+          @include h4;
+          border-bottom: 2px solid color(black);
+          &:hover {
+            background: color(white);
+          }
+        }
+      }
+    }
+  }
 
-	// Desktop styles
-	@include media-md {
-		.person {
-			margin-top: 24px;
-			img {
-				max-height: 264px;
-			}
-			&.padded {
-				margin-top: 96px;
-			}
-		}
-	}
+  @include media-md {
+    .image-wrap {
+      width: columns(6);
+    }
+    .text-wrap {
+      position: relative;
+      margin: grid(-20) columns(1) grid(16) columns(1);
+      width: columns(10);
+      padding: grid(6) columns(1);
+      background: color(pink);
+      min-height: 220px;
+      max-height: 53vh;
+      overflow: auto;
+
+      h2 {
+        margin: grid(6) 0 grid(8);
+      }
+    }
+  }
+}
+
+body.child-our-team {
+  .person {
+    .modal-content {
+      display: none;
+    }
+    figure {
+      cursor: pointer;
+    }
+    h3 {
+      position: relative;
+      margin: grid(1) 0 grid(2);
+      padding-right: 34px;
+      cursor: pointer;
+      span {
+        border-bottom: 2px solid color(black);
+      }
+      a {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        background: color(white);
+        padding: 5px;
+        text-align: center;
+        svg {
+          vertical-align: top;
+          width: 22px;
+          height: 22px;
+        }
+      }
+      &:hover {
+        span {
+          background: color(white);
+        }
+      }
+    }
+  }
+  .our-team {
+    .person {
+      p {
+        @include p2;
+      }
+    }
+  }
+
+  // Desktop styles
+  @include media-md {
+    .person-group-wrap {
+      margin: 0 columns(-0.5);
+    }
+    .person {
+      flex-basis: columns(4.5);
+      &.square {
+        flex-basis: columns(3.75);
+      }
+      padding: 24px columns(0.5) grid(6);
+      &.padded {
+        padding-top: 96px;
+      }
+    }
+    // Our Team
+    .our-team {
+      padding-top: grid(16);
+    }
+
+    // Our Board
+    .our-board {
+      .person-group-wrap {
+        margin: 0 -#{$global-padding / 2};
+      }
+      >h2 {
+        margin-bottom: grid(6);
+      }
+      padding-top: grid(16);
+      .person {
+        flex-basis: columns(4);
+        padding: 24px #{$global-padding / 2} grid(16);
+        .person-info {
+          padding-right: columns(1,4);
+        }
+        h3 {
+          @include h4;
+          margin: grid(2) 0;
+        }
+      }
+    }
+  }
 }
