@@ -1,5 +1,6 @@
 // Vertical sticky headers with push effect
-export let $stickies,
+
+export let $stickies = [],
     $stickyTitles = [],
     offset,
     scrollTop,
@@ -75,7 +76,7 @@ const stickyHeaders = {
 
   // Scrolling
   scrolling(event) {
-    scrollTop = $(event.currentTarget).scrollTop() + offset;
+    scrollTop = $(event.currentTarget).scrollTop() + 70;
     stickyHeaders.requestTick();
   }
 

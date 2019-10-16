@@ -1,4 +1,7 @@
-// Sticky nav
+// Sticky header nav
+//
+// Toggles "nav-stuck" class to body as you scroll past element of class "nav-main"
+
 export let $nav,
     $body,
     $window,
