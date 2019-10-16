@@ -59,7 +59,7 @@
       <h2 class="serif">Our Board</h2>
       <div class="person-group-wrap">
         <div class="person-group grid">
-          {% for person in entry.ourBoard %}
+          {% for person in entry.ourBoard.all() %}
             {% include 'partials/_person' with { person: person, imageClass: ['gray'] } %}
           {% endfor %}
         </div>
