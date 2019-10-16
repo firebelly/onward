@@ -16,7 +16,7 @@ class Router {
    */
   constructor(routes) {
     this.routes = routes;
-    console.log(this.routes);
+    // console.log(this.routes);
   }
 
   /**
