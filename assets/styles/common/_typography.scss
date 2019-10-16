@@ -52,6 +52,7 @@ $font-mono: monospace;
   font-weight: bold;
   font-family: $font-sans-serif;
   letter-spacing: -0.1px;
+  margin: 0.5em 0;
 }
 @mixin font-mono {
   @include smooth;
@@ -165,9 +166,18 @@ p.small {
 
 // Global header styles
 %h1,.h1,h1 {
-  @include h2;
+  @include h3;
+  em {
+    @include h3-serif;
+    font-style: normal;
+  }
+
   @include media-md {
     @include h1;
+    em {
+      @include h1-serif;
+      font-style: normal;
+    }
   }
 }
 %h2,.h2,h2 {
@@ -176,6 +186,7 @@ p.small {
     @include h3-serif;
     font-style: normal;
   }
+
   @include media-md {
     @include h1;
     em {
@@ -186,7 +197,13 @@ p.small {
 }
 .h2.serif,
 h2.serif {
-  @include h2-serif;
+  @include h3-serif;
+  font-style: normal;
+
+  @include media-md {
+    @include h1-serif;
+    font-style: normal;
+  }
 }
 %h3,.h3,h3 {
   @include h3;
