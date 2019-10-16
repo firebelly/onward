@@ -1,4 +1,4 @@
-dateModified: 1571097427
+dateModified: 1571243579
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -117,8 +117,6 @@ fields:
       staticField: '1'
       columns:
         28:
-          width: ''
-        29:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -543,18 +541,14 @@ matrixBlockTypes:
         searchable: true
         translationMethod: none
         translationKeyFormat: null
-        type: craft\redactor\Field
+        type: craft\fields\PlainText
         settings:
-          redactorConfig: Simple.json
-          purifierConfig: ''
-          cleanupHtml: true
-          removeInlineStyles: '1'
-          removeEmptyTags: '1'
-          removeNbsp: '1'
-          purifyHtml: '1'
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
           columnType: text
-          availableVolumes: '*'
-          availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
       b67517d3-0b05-4b8d-8fd6-7b7b6ff7a2cc:
@@ -1351,7 +1345,7 @@ matrixBlockTypes:
         type: verbb\supertable\fields\SuperTableField
         settings:
           minRows: ''
-          maxRows: ''
+          maxRows: '4'
           contentTable: '{{%stc_7_textblocks}}'
           propagationMethod: all
           staticField: ''
@@ -2353,22 +2347,30 @@ superTableBlockTypes:
           validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
-      91b3cc4e-9229-4b56-aa90-1263511fda0c:
-        name: Headline
-        handle: headline
+      925ecd9b-7793-48ef-a839-776bf6260325:
+        name: 'Color Theme'
+        handle: colorTheme
         instructions: ''
         searchable: false
         translationMethod: none
         translationKeyFormat: null
-        type: craft\fields\PlainText
+        type: craft\fields\Dropdown
         settings:
-          placeholder: ''
-          code: ''
-          multiline: '1'
-          initialRows: '2'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
+          optgroups: true
+          options:
+            -
+              label: Orange
+              value: orange
+              default: '1'
+            -
+              label: Pink
+              value: pink
+              default: ''
+            -
+              label: Yellow
+              value: yellow
+              default: ''
+        contentColumnType: string
         fieldGroup: null
     fieldLayouts:
       c3576140-a6b1-468c-a39a-86c4a1619259:
@@ -2380,7 +2382,7 @@ superTableBlockTypes:
               5579df76-d891-403b-bb43-0bdddca360d5:
                 required: false
                 sortOrder: 1
-              91b3cc4e-9229-4b56-aa90-1263511fda0c:
+              925ecd9b-7793-48ef-a839-776bf6260325:
                 required: false
                 sortOrder: 2
   288fb8ef-b704-4eea-bfbc-e7035114035f:
