@@ -1,53 +1,80 @@
-<article class="grid-item one-third person{{ imageClass|length ? ' ' ~ imageClass|join(' ') : '' }}">
-	{% if person.image|length %}
-	  {% set personImage = person.image.one() %}
-  	{% set width = 1104 %}
-		{% if 'square' in imageClass %}
-			{% set width = 768 %}
-		{% endif %}
-		{% set effects = {} %}
-		{% if 'gray' in imageClass %}
-			{% set effects = { modulate: [100, 0, 100], clut: 'gradient:#222222-#EBE5D0' } %}
-		{% endif %}
-	  {% set treatedImage = craft.imager.transformImage(personImage, {
-	    width: width,
-	    height: 768,
-	    mode: 'crop',
-	    effects: effects,
-	  }) %}
-	{% endif %}
+<article class="grid-item person{{ imageClass|length ? ' ' ~ imageClass|join(' ') : '' }}">
+  {% if person.image|length %}
+    {% set personImage = person.image.one() %}
+    {% set width = 1104 %}
+    {% if 'square' in imageClass %}
+      {% set width = 768 %}
+    {% endif %}
+    {% set effects = {} %}
+    {% if 'gray' in imageClass %}
+      {% set effects = { modulate: [100, 0, 100], clut: 'gradient:#222222-#EBE5D0' } %}
+    {% endif %}
+    {% set treatedImage = craft.imager.transformImage(personImage, {
+      width: width,
+      height: 768,
+      mode: 'crop',
+      effects: effects,
+    }) %}
+    {# Modal image -- just use treated image unless it's square #}
+    {% if width == 768 %}
+      {% set modalImage = craft.imager.transformImage(personImage, {
+        width: 1104,
+        height: 768,
+        mode: 'crop',
+        effects: effects,
+      }) %}
+    {% else %}
+      {% set modalImage = treatedImage %}
+    {% endif %}
+  {% endif %}
 
-	{% if person.image|length and treatedImage %}
-	  <div class="image-wrap">
-	    <figure>
-	      <img src="{{ treatedImage.getUrl() }}" alt="{{ person.image.title }}">
-	    </figure>
-	  </div>
-	{% endif %}
+  <div class="person-info">
+    {% if person.image|length and treatedImage %}
+      <div class="image-wrap">
+        <figure>
+          <img src="{{ treatedImage.getUrl() }}" alt="{{ person.image.title }}">
+        </figure>
+      </div>
+    {% endif %}
 
-	<h3>{{ person.personName }}</h3>
-	{% if person.shortBio %}
-		<div class="user-content short-bio">
-			<p>{{ person.shortBio}}</p>
-		</div>
-	{% endif %}
+    <h3><span>{{ person.personName }}</span> <a href="#"><svg class="icon sprite-plus" aria-hidden="true"><use xlink:href="#sprite-plus"/></svg></a></h3>
+    {% if person.shortBio %}
+      <div class="user-content short-bio">
+        <p>{{ person.shortBio}}</p>
+      </div>
+    {% endif %}
+  </div>
 
-	<div class="modal-content">
-		{% if person.image|length and treatedImage %}
-		  <div class="image-wrap">
-		    <figure>
-		      <img src="{{ treatedImage.getUrl() }}" alt="{{ person.image.title }}">
-		    </figure>
-		  </div>
-		{% endif %}
-		{% if person.headline %}
-			<h2>{{ person.headline }}</h2>
-		{% endif %}
-		{% if person.body %}
-			<div class="user-content-body">
-				{{ person.body }}
-			</div>
-		{% endif %}
-	</div>
+  <div class="modal-content">
+    {% if person.image|length and modalImage %}
+      <div class="image-wrap">
+        <figure>
+          <img src="{{ modalImage.getUrl() }}" alt="{{ person.image.title }}">
+        </figure>
+      </div>
+    {% endif %}
+    <div class="text-wrap">
+      <div class="person-meta">
+        <h3>{{ person.personName }}</h3>
+        {% if person.socialLinks|length %}
+          <ul class="social">
+            {% for link in person.socialLinks %}
+              <li><a rel="noopener" target="_blank" href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <div class="person-body">
+        <div class="user-content">
+        {% if person.headline %}
+          <h2>{{ person.headline }}</h2>
+        {% endif %}
+        {% if person.body %}
+          {{ person.body }}
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
 
 </article>
