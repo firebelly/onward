@@ -19,10 +19,29 @@
     }
   }
 
+  // Mobile only styles
+  @include max-screen($breakpoint-md) {
+    .grid {
+      display: flex;
+      flex-direction: column;
+    }
+    .grid-item {
+      flex: 0 1 100%;
+    }
+    .image-wrap {
+      order: 1;
+    }
+    .text-wrap {
+      order: 2;
+    }
+    .block-cta {
+      padding: grid(6) 0;
+    }
+  }
+
   // Desktop styles
   @include media-md {
     padding: grid(16) 0;
-
     .text-wrap {
       align-self: flex-end;
       padding: 0 $global-padding grid(4) 0;
@@ -34,24 +53,40 @@
   }
 }
 
-body[data-theme="theme-green"] {
+body[data-theme="theme-pink"] {
   .footer-outro {
     background: color(brown);
     color: color(tan);
   }
 }
 
+body[data-theme="theme-orange"] {
+  .footer-outro {
+    background: color(green);
+    color: color(tan);
+  }
+}
+
 footer.site-footer {
   @include theme-color('background', color(yellow), 'accent2');
+  text-align: center;
 
   .footer-tagline {
     text-align: center;
-    padding: grid(6) 0 grid(10);
+    padding: grid(8) 0 grid(2);
   }
 
   .copyright {
     text-align: center;
     padding: grid(6) 0 grid(12);
+  }
+
+  .contact-info {
+    svg.sprite-logo-staggered {
+      width: 120px;
+      height: 78px;
+      margin: grid(6) 0 0;
+    }
   }
 
   .footer-blocks {
@@ -65,10 +100,37 @@ footer.site-footer {
     }
   }
 
+  // Mobile-only footer styles
+  @include max-screen($breakpoint-md) {
+    .footer-blocks {
+      display: flex;
+      flex-direction: column;
+      .footer-block {
+        margin: grid(6) 0 0;
+        flex: 0 1 100%;
+      }
+      // Reorder footer blocks
+      .main-nav {
+        order: 1;
+        // display: none;
+      }
+      .secondary-nav {
+        order: 2;
+      }
+      .social-nav {
+        order: 3;
+      }
+      .contact-info {
+        order: 4;
+      }
+    }
+  }
+
   // Desktop styles
   @include media-md {
+    text-align: left;
     .contact-info {
-      svg {
+      svg.sprite-logo-staggered {
         margin-top: grid(10);
         width: 168px;
         height: 109px;
