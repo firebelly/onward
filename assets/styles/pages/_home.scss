@@ -1,6 +1,7 @@
 // Home page
 
 body.page-home {
+
   // Dark nav with lighter elements
   .nav-main,
   .page-header {
@@ -11,57 +12,67 @@ body.page-home {
     svg {
       fill: color(tan);
     }
+    &:hover {
+      .label {
+        background: color(white);
+        border-bottom: 2px solid color(black);
+        color: color(green);
+      }
+    }
+  }
+  .sticky-logo {
+    svg {
+      fill: color(tan);
+    }
+  }
+  .close-wrap {
+    color: color(tan);
+    svg {
+      fill: color(tan);
+    }
   }
   a.donate {
     color: color(yellow);
     border-color: color(yellow);
   }
 
-  // Onward repeating logos
-  .logos {
-    width: 250px;
-    margin: 0 auto;
-    position: relative;
+  .page-wrapper {
 
-    @include media-md {
-      width: 742px;
-    }
-  }
-  .sprite-logo {
-    fill: color(tan);
-    opacity: 0;
-  }
-  .sprite-logo.clone {
-    fill: none;
-    stroke: color(yellow);
-    stroke-width: 2px;
-    position: absolute;
-    top: 100%;
-    &.clone-3 {
-      top: 200%;
-    }
-    &.clone-2 {
-      top: 300%;
-    }
-    &.clone-1 {
-      top: 400%;
-    }
-    @include media-md {
-      stroke-width: 1px;
-    }
-  }
+    // Onward repeating logos
+    .logos {
+      width: 250px;
+      margin: 0 auto;
+      position: relative;
 
-  // Header tweaks for homepage
-  .page-header {
-    .text-wrap {
-      background: color(green);
-      color: color(tan);
-      padding: $global-padding;
-      .body {
-        @include p2;
-        margin: grid(6) 0 0;
+      @include media-md {
+        width: 742px;
       }
     }
+
+    .sprite-logo {
+      fill: color(tan);
+      opacity: 0;
+    }
+    .sprite-logo.clone {
+      fill: none;
+      stroke: color(yellow);
+      stroke-width: 2px;
+      position: absolute;
+      top: 100%;
+      &.clone-3 {
+        top: 200%;
+      }
+      &.clone-2 {
+        top: 300%;
+      }
+      &.clone-1 {
+        top: 400%;
+      }
+      @include media-md {
+        stroke-width: 1px;
+      }
+    }
+
   }
 
   // Give homepage blocks initial bg color for mix-blend-mode
@@ -74,6 +85,7 @@ body.page-home {
     position: relative;
     text-align: center;
 
+    // Desktop styles
     @include media-md {
       padding: grid(20) 0;
     }
@@ -84,8 +96,23 @@ body.page-home {
     position: relative;
     .text-wrap {
       .body {
-        @include p2;
+        p {
+          @include p3;
+        }
         margin: grid(6) 0 0;
+      }
+    }
+
+    @include max-screen($breakpoint-md) {
+      .image-wrap {
+        margin: grid(8) 0;
+      }
+      h2 {
+        @include h2;
+        margin-top: grid(0);
+        em {
+          @include h2-serif;
+        }
       }
     }
 
@@ -97,6 +124,11 @@ body.page-home {
       .text-wrap {
         padding-top: 224px;
         flex-basis: columns(5);
+        .body {
+          p {
+            @include p2;
+          }
+        }
       }
       .image-wrap {
         flex-basis: columns(6);
@@ -106,10 +138,20 @@ body.page-home {
     }
   }
 
-  // Desktop styles
-  @include media-md {
-    // Desktop header
-    .page-header {
+  // Header tweaks for homepage
+  .page-header {
+    padding-bottom: grid(8);
+    .page-header-info {
+      margin-top: grid(16);
+    }
+
+    .text-wrap {
+      background: color(green);
+      color: color(tan);
+    }
+
+    // Desktop styles
+    @include media-md {
       @include clearfix;
       .image-wrap {
         margin: 0;
@@ -118,11 +160,15 @@ body.page-home {
         padding-right: $global-padding;
       }
       .text-wrap {
+        background: color(green);
+        color: color(tan);
+        padding: $global-padding;
         width: columns(5);
         float: left;
         margin-left: columns(1);
-        p {
+        .body {
           @include p2;
+          margin: grid(6) 0 0;
         }
       }
       .page-header-info {
