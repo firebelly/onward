@@ -12,40 +12,65 @@
   {% include 'partials/_page-blocks' %}
 
   {% if entry.onwardTeam|length %}
-    {% set numVertical = 0 %}
-    {% set numWide = 0 %}
-
+    <div class="sticky-header">
+      <div class="sticky-title">
+        <span>Team Members</span>
+      </div>
+    </div>
     <div class="container">
-      <div class="person-group our-team grid">
-        {% for person in shuffle(entry.onwardTeam.all()) %}
-          {% set imageClass = [] %}
+      <div class="person-group-wrap">
+        <div class="person-group our-team grid">
+          {% for row in shuffle(entry.onwardTeam.all())|batch(3, null) %}
+            {% set verticalShown = false %}
+            {% set wideShown = false %}
 
-          {# Randomize square/portrait #}
-          {% if random(100) > 50 and numWide < 3 %}
-            {% set numWide = numWide + 1 %}
-            {% set imageClass = imageClass|merge(['square']) %}
-          {% endif %}
+            {% for person in row %}
+              {% if person %}
+                {# Randomize square/portrait #}
+                {% if (random(100) > 50 or loop.last) and not wideShown %}
+                  {% set imageClass = [] %}
+                  {% set wideShown = true %}
+                {% else %}
+                  {% set imageClass = ['square'] %}
+                {% endif %}
 
-          {# Randomize vertical padding #}
-          {% if random(100) > 50 and numVertical < 3 %}
-            {% set numVertical = numVertical + 1 %}
-            {% set imageClass = imageClass|merge(['padded']) %}
-          {% endif %}
+                {# Randomize vertical padding #}
+                {% if (random(100) > 50 or loop.last) and not verticalShown %}
+                  {% set imageClass = imageClass|merge(['padded']) %}
+                  {% set verticalShown = true %}
+                {% endif %}
 
-          {% include 'partials/_person' with { person: person, imageClass: imageClass } %}
-        {% endfor %}
+                {% include 'partials/_person' with { person: person, imageClass: imageClass } %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   {% endif %}
 
   {% if entry.ourBoard|length %}
-    <h2 class="serif">Our Board</h2>
-    <div class="person-group our-board grid">
-      {% for person in entry.ourBoard %}
-        {% include 'partials/_person' with { person: person, imageClass: ['gray'] } %}
-      {% endfor %}
+    <div class="sticky-header">
+      <div class="sticky-title">
+        <span>Board</span>
+      </div>
+    </div>
+    <div class="container our-board">
+      <h2 class="serif">Our Board</h2>
+      <div class="person-group-wrap">
+        <div class="person-group grid">
+          {% for person in entry.ourBoard %}
+            {% include 'partials/_person' with { person: person, imageClass: ['gray'] } %}
+          {% endfor %}
+        </div>
+      </div>
     </div>
   {% endif %}
+
+  <div class="modal-overlay"></div>
+  <div class="modal">
+    <div class="container"></div>
+  </div>
 
   {% include 'partials/_footer-outro' %}
 
