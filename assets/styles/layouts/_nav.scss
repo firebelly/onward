@@ -3,7 +3,6 @@
 // Hamburgers for everyone large and small
 #hamburger-salad {
   display: inline-block;
-  margin: grid(2) 0 0 grid(6);
   .label {
     display: none;
   }
@@ -19,6 +18,10 @@
   }
   // Skew = icon on hover or when nav is active
   &:hover {
+    .label {
+      background: color(white);
+      border-bottom: 2px solid color(black);
+    }
     .hambone:nth-child(1) {
       transform: skewY(-7deg);
     }
@@ -26,9 +29,11 @@
 
   // Desktop styles
   @include media-md {
+    margin: grid(2) 0 0 grid(6);
     // "Menu" label
     .label {
       margin-left: grid(2);
+      padding: 0 2px;
       display: inline-block;
     }
   }
@@ -37,6 +42,13 @@
 // Primary nav container
 .nav-main {
   @include clearfix;
+
+  // "Menu" and "Close" text styles
+  @include h4;
+
+  padding: grid(6) 0;
+  margin: 0;
+
   .container {
     position: relative;
   }
@@ -45,20 +57,30 @@
   .sticky-logo {
     opacity: 0;
     @include transition(opacity);
+    // No fade on hide
     transition-duration: 0s;
-    width: 150px;
-    height: 40px;
-    fill: color(green);
+    width: 97px;
+    height: 26px;
+    svg {
+      width: 97px;
+      height: 26px;
+      fill: color(green);
+    }
     position: absolute;
-    top: 0;
+    top: 7px;
     left: 50%;
     transform: translateX(-50%);
+
+    @include media-md {
+      top: 0;
+      width: 150px;
+      height: 40px;
+      svg {
+        width: 150px;
+        height: 40px;
+      }
+    }
   }
-
-  padding: grid(6) 0;
-
-  // "Menu" and "Close" text styles
-  @include h4;
 
   // Primary nav
   .site-nav {
@@ -79,7 +101,12 @@
 
     // Wrap it
     .wrap {
-      height: calc(100% - 50px);
+      height: calc(100% - 46px);
+      @include media-md {
+        .wrap {
+          height: calc(100% - 50px);
+        }
+      }
     }
 
     // Color coded
@@ -109,6 +136,7 @@
       display: flex;
       flex-flow: column;
       height: 100%;
+      margin: 0;
       > li {
         position: relative;
         flex: 1;
@@ -171,7 +199,7 @@
 
   // Close button
   .close-wrap {
-    margin: grid(2) 0 grid(2) grid(6);
+    margin: 10px 0 10px grid(6);
     a {
       display: block;
       width: 100px;
@@ -181,12 +209,18 @@
         margin-right: grid(3);
       }
     }
+    .label {
+      display: none;
+    }
 
     // Desktop styles
     @include media-nav {
       margin: 15px 0;
       position: relative;
       height: 24px;
+      .label {
+        display: inline-block;
+      }
       a {
         position: absolute;
         right: calc(540px - #{columns(2)});
@@ -226,23 +260,30 @@
 
 // Nav is stuck
 body.nav-stuck {
-  padding-top: 122px;
+  padding-top: 110px;
   .nav-main {
     position: fixed;
     top: 0;
     width: 100%;
+    padding: 4px 0;
     z-index: z(nav);
-    padding: 7px 0;
     background: color(tan);
     .sticky-logo {
       opacity: 1;
       transition-duration: 0.2s;
     }
+    .donate {
+      display: none;
+    }
+  }
+
+  @include media-md {
+    padding-top: 122px;
     #hamburger-salad {
       margin-top: 2px;
     }
-    .donate {
-      display: none;
+    .nav-main {
+      padding: 7px 0;
     }
   }
 }
