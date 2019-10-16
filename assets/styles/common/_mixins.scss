@@ -29,11 +29,11 @@
 }
 
 @mixin theme-color($property, $default: color(black), $map: 'primary') {
-  $theme-map: 'theme-green' color(green), 'theme-pink' color(pink),  'theme-orange' color(orange),  'theme-black' color(black);
+  $theme-map: 'theme-orange' color(green), 'theme-yellow' color(black), 'theme-pink' color(orange);
   @if ($map == 'accent') {
-    $theme-map: 'theme-green' color(yellow), 'theme-pink' color(orange),  'theme-orange' color(brown);
+    $theme-map: 'theme-orange' color(orange), 'theme-yellow' color(yellow),  'theme-pink' color(brown);
   } @else if ($map == 'accent2') {
-    $theme-map: 'theme-green' color(orange), 'theme-pink' color(green),  'theme-orange' color(pink);
+    $theme-map: 'theme-orange' color(orange), 'theme-yellow' color(pink),  'theme-pink' color(pink);
   // } @else if ($map == 'accent3') {
   //   $theme-map: 'theme-green' color(brown)-dark, 'theme-pink' color(black),  'theme-orange' color(black);
   }
