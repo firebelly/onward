@@ -19,3 +19,4 @@ php.ini
 
 # ignore custom logo uploads
 /storage/rebrand
+*.pyc
