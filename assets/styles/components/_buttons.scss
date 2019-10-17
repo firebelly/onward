@@ -45,10 +45,12 @@
   }
   // Jumbo buttons
   &.-jumbo {
-    @include h3;
-    padding: grid(5) grid(10);
+    @include h4;
+    padding: grid(3) grid(10);
 
     @include media-md {
+      @include h3;
+      padding: grid(5) grid(10);
       min-width: columns(4);
     }
   }

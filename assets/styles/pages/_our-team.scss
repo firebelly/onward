@@ -142,6 +142,13 @@ body.child-our-team {
     padding: grid(5) 0 grid(6);
   }
 
+  // Mobile only
+  @include max-screen($breakpoint-md) {
+    .our-board {
+      margin-top: grid(16);
+    }
+  }
+
   // Desktop styles
   @include media-md {
     .person-group-wrap {
