@@ -137,12 +137,9 @@ body.child-our-team {
       }
     }
   }
-  .our-team {
-    .person {
-      p {
-        @include p2;
-      }
-    }
+
+  .person {
+    padding: grid(5) 0 grid(6);
   }
 
   // Desktop styles
@@ -151,15 +148,21 @@ body.child-our-team {
       margin: 0 columns(-0.5);
     }
     .person {
+      p {
+        @include p2;
+      }
       flex-basis: columns(4.5);
+      padding: grid(4) columns(0.5) grid(6);
+      // Square orientation
       &.square {
         flex-basis: columns(3.75);
       }
-      padding: 24px columns(0.5) grid(6);
+      // Vertical padding
       &.padded {
         padding-top: 96px;
       }
     }
+
     // Our Team
     .our-team {
       padding-top: grid(16);
