@@ -1,4 +1,4 @@
-dateModified: 1571243579
+dateModified: 1571284126
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -117,6 +117,8 @@ fields:
       staticField: '1'
       columns:
         28:
+          width: ''
+        101:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -484,7 +486,7 @@ matrixBlockTypes:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Question
     handle: question
-    sortOrder: 1
+    sortOrder: 2
     fields:
       039afe33-d5c3-4614-83a0-10c7be623754:
         name: 'Image Placement'
@@ -698,6 +700,79 @@ matrixBlockTypes:
               b609f1ba-87ec-4d97-9000-606a0bedb46a:
                 required: false
                 sortOrder: 2
+  2ec219db-61ff-45cb-8310-f02e1c147dd0:
+    field: 131af06f-d853-4205-904f-6c835a958650
+    name: 'Section Change'
+    handle: sectionChange
+    sortOrder: 1
+    fields:
+      eefba445-a2e2-4811-b986-88ace815b643:
+        name: Color
+        handle: color
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Brown
+              value: brown
+              default: ''
+            -
+              label: Pink
+              value: pink
+              default: ''
+            -
+              label: Green
+              value: green
+              default: ''
+            -
+              label: Yellow
+              value: yellow
+              default: ''
+            -
+              label: Tan
+              value: tan
+              default: ''
+            -
+              label: Orange
+              value: orange
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      fdded3d6-6221-4799-9b09-82b0c6a6019c:
+        name: Title
+        handle: sectionTitle
+        instructions: 'Shows as fixed vertical text at right on desktop.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      4a8447f5-f5ab-49b8-8f55-5cccfd3a0340:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              eefba445-a2e2-4811-b986-88ace815b643:
+                required: false
+                sortOrder: 2
+              fdded3d6-6221-4799-9b09-82b0c6a6019c:
+                required: false
+                sortOrder: 1
   3466d1e9-47b8-4646-9073-50473a157b4e:
     field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
     name: Statement
@@ -809,7 +884,7 @@ matrixBlockTypes:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Quote
     handle: quote
-    sortOrder: 3
+    sortOrder: 4
     fields:
       0a7b0652-98d2-4068-bcc0-d539b8e4b531:
         name: Attribution
@@ -920,7 +995,7 @@ matrixBlockTypes:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Answer
     handle: answer
-    sortOrder: 2
+    sortOrder: 3
     fields:
       34c8b1ab-4cc6-4942-829a-18d0efd5e1b0:
         name: Body
@@ -1055,7 +1130,7 @@ matrixBlockTypes:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Image
     handle: image
-    sortOrder: 4
+    sortOrder: 5
     fields:
       62f64bf7-afe5-460e-a8af-3416b4baff64:
         name: Caption
@@ -2372,6 +2447,23 @@ superTableBlockTypes:
               default: ''
         contentColumnType: string
         fieldGroup: null
+      b9406501-e847-46f5-991d-25dde9f19823:
+        name: 'Section Title'
+        handle: sectionTitle
+        instructions: "First vertical title shown at top of page —\_if not set, uses page title."
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       c3576140-a6b1-468c-a39a-86c4a1619259:
         tabs:
@@ -2385,6 +2477,9 @@ superTableBlockTypes:
               925ecd9b-7793-48ef-a839-776bf6260325:
                 required: false
                 sortOrder: 2
+              b9406501-e847-46f5-991d-25dde9f19823:
+                required: false
+                sortOrder: 3
   288fb8ef-b704-4eea-bfbc-e7035114035f:
     field: a3d90be8-ba69-44c3-aa70-07ab637f2597
     fields:
@@ -2698,6 +2793,23 @@ superTableBlockTypes:
           validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
+      8447283b-b3c3-4777-9702-3013b0099cff:
+        name: 'Section Title'
+        handle: sectionTitle
+        instructions: "First vertical title shown at top of page —\_if not set, uses page title."
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
       a064d645-f73d-4428-86f8-c42ea0ac3c99:
         name: Body
         handle: body
@@ -2738,6 +2850,9 @@ superTableBlockTypes:
               803d502e-fd0c-4140-8d92-4ea244f1179c:
                 required: false
                 sortOrder: 4
+              8447283b-b3c3-4777-9702-3013b0099cff:
+                required: false
+                sortOrder: 6
               a064d645-f73d-4428-86f8-c42ea0ac3c99:
                 required: false
                 sortOrder: 3

@@ -2,10 +2,43 @@
 
   {% set containerWrapped = false %}
 
+  {# Check if first block is a section change #}
+  {% if entry.homepageBlocks[0].type == 'sectionChange' %}
+    {% set sectionColor = entry.homepageBlocks[0].color %}
+    {% set sectionTitle = entry.homepageBlocks[0].sectionTitle %}
+  {% endif %}
+
   <div class="homepage-blocks">
+    {% if sectionColor is not defined %}
+      {% set sectionColor = 'tan' %}
+      {% set sectionTitle = '' %}
+    {% endif %}
+    <div class="block-section color-{{ sectionColor }}">
+    {% if sectionTitle %}
+      <div class="sticky-header">
+        <div class="sticky-title">{{ sectionTitle }}</div>
+      </div>
+    {% endif %}
 
     {% for block in entry.homepageBlocks.all() %}
       {% switch block.type %}
+
+        {% case 'sectionChange' %}
+          {% if not loop.first %}
+            {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+            {% if block.color != sectionColor %}
+              </div><!-- /.block-color -->
+              <div class="block-section color-{{ block.color }}">
+              {% set sectionColor = block.color %}
+            {% endif %}
+            {% if block.sectionTitle and block.sectionTitle != '' %}
+            <div class="sticky-header">
+              <div class="sticky-title">
+                <span>{{ block.sectionTitle }}</span>
+              </div>
+            </div>
+            {% endif %}
+          {% endif %}
 
         {% case "question" %}
           <div class="block-question -{{ block.imagePlacement ?? '' }}{{ block.image|length ? ' -has-image' : '' }}">
@@ -20,7 +53,7 @@
                 mode: 'crop',
                 width: 600,
                 height: 681,
-                effects: { modulate: [100, 0, 100], clut: 'gradient:#111-#eee' },
+                effects: { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' },
               },
             } %}
           </div>
@@ -42,6 +75,7 @@
                   mode: 'crop',
                   width: 1000,
                   height: 1042,
+                  effects: { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' },
                 }
               } %}
             </div>
@@ -75,6 +109,8 @@
       {% endswitch %}
     {% endfor %}
 
-  {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+    {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+    </div><!-- /.block-section -->
   </div><!-- /.homepage-blocks -->
+
 {% endif %}

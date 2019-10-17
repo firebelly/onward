@@ -76,7 +76,7 @@ export default {
     // Dropdown \/ links to toggle children page nav
     $('.site-nav .toggle-dropdown').on('click', function(e) {
       e.preventDefault();
-      // Make sure custom vh unit on mobile is updated
+      // Update custom vh unit
       _setCustomVhUnit();
       var $li = $(this).parents('li:first');
       // Show/hide children
@@ -88,6 +88,8 @@ export default {
       $li.find('ul.children').velocity($li.hasClass('open') ? 'slideUp' : 'slideDown', {
         duration: 200,
         complete: function() {
+          // Update custom vh unit
+          _setCustomVhUnit();
         }
       }, 'easeOutSine');
       $li.toggleClass('open');
