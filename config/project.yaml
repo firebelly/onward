@@ -1,4 +1,4 @@
-dateModified: 1571284126
+dateModified: 1571284939
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1176,6 +1176,18 @@ matrixBlockTypes:
           validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
+      f07019da-99a8-4bdc-b563-08a374156dbe:
+        name: 'B&W Treated'
+        handle: treated
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Lightswitch
+        settings:
+          default: ''
+        contentColumnType: boolean
+        fieldGroup: null
       f4e8fe34-8ae8-41b4-8361-16e76f51cefe:
         name: 'Image Placement'
         handle: imagePlacement
@@ -1214,6 +1226,9 @@ matrixBlockTypes:
               a0f2bf8d-589d-409b-a3ad-8eb0b68e352a:
                 required: false
                 sortOrder: 1
+              f07019da-99a8-4bdc-b563-08a374156dbe:
+                required: false
+                sortOrder: 4
               f4e8fe34-8ae8-41b4-8361-16e76f51cefe:
                 required: false
                 sortOrder: 3

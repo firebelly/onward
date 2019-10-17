@@ -99,7 +99,8 @@
                 mode: 'crop',
                 width: 1800,
                 height: 1079,
-                },
+                effects: (block.treated ? { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' } : {}),
+              },
               caption: block.caption
             } %}
           </div>
