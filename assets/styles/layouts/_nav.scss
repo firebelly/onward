@@ -89,7 +89,6 @@
     top: 0;
     bottom: 0;
     left: 0;
-    // background: color(tan);
     z-index: 1000;
     transform: translateX(-100%);
     @include transition(transform);
@@ -99,12 +98,14 @@
       text-align: center;
     }
 
-    // Wrap it
+    // Wrap the nav in full viewport
     .wrap {
       height: calc(100% - 46px);
+      height: calc(var(--vh, 1vh) * 100 - 46px);
       @include media-md {
         .wrap {
           height: calc(100% - 50px);
+          height: calc(var(--vh, 1vh) * 100 - 50px);
         }
       }
     }
