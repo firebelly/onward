@@ -4,15 +4,13 @@ export default {
   init() {
     // JavaScript to be fired on all pages
 
-    // Get the viewport height and multiply it by 1% to get a value for a vh unit
-    let vh = window.innerHeight * 0.01;
-    // Set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-
     let $body = $('body');
     let pageAt = window.location.pathname;
     let isAnimating = false;
     let navOpen = false;
+
+    _setCustomVhUnit();
+    $(window).on('resize', _setCustomVhUnit);
 
     // Mobile hamburger and X close icons toggle mobile nav
     $('.toggle-nav').on('click', function(e) {
@@ -78,6 +76,8 @@ export default {
     // Dropdown \/ links to toggle children page nav
     $('.site-nav .toggle-dropdown').on('click', function(e) {
       e.preventDefault();
+      // Make sure custom vh unit on mobile is updated
+      _setCustomVhUnit();
       var $li = $(this).parents('li:first');
       // Show/hide children
       $('.site-nav li').not($li).removeClass('open').find('ul.children').velocity('slideUp', { duration: 0 });
@@ -138,6 +138,13 @@ export default {
           isAnimating = false;
         }
       }, 'easeOutSine');
+    }
+
+    function _setCustomVhUnit() {
+      // Get the viewport height and multiply it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
   },
