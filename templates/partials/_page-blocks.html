@@ -70,7 +70,8 @@
           {% if not containerWrapped %}<div class="container">{% set containerWrapped = true %}{% endif %}
           {% if block.linkURL %}
             <div class="block-cta">
-              <a class="button -jumbo" href="{{ block.linkURL }} ">{{ block.linkLabel}}</a>
+              {% set externalLink = 'http' in block.linkURL and siteUrl not in block.linkURL ? 'rel="noopener" target="_blank" ' : '' %}
+              <a {{ externalLink|raw }}class="button -jumbo" href="{{ block.linkURL }} ">{{ block.linkLabel}}</a>
             </div>
           {% endif %}
 

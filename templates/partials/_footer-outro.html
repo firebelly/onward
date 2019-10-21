@@ -25,7 +25,8 @@
 
       {% if footerOutro.linkURL %}
         <div class="block-cta">
-          <a class="button -jumbo" href="{{ footerOutro.linkURL }} ">{{ footerOutro.linkLabel}}</a>
+          {% set externalLink = ('http' in footerOutro.linkURL and siteUrl not in footerOutro.linkURL) ? 'rel="noopener" target="_blank" ' : '' %}
+          <a {{ externalLink }}class="button -jumbo" href="{{ footerOutro.linkURL }} ">{{ footerOutro.linkLabel}}</a>
         </div>
       {% endif %}
     </div><!-- /.container -->
