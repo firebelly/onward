@@ -215,10 +215,13 @@
     }
 
     // Desktop styles
+    @include media-md {
+      margin: 15px 0 15px 36px;
+      height: 24px;
+    }
     @include media-nav {
       margin: 15px 0;
       position: relative;
-      height: 24px;
       .label {
         display: inline-block;
       }
