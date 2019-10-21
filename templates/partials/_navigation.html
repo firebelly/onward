@@ -27,7 +27,7 @@
 {% spaceless %}
   {% import _self as navigation %}
     {% for item in items %}
-      <{{inside}} class="nav-{{ item.name|lower|replace(' ', '-') }}{% if item.children is defined %} dropdown{% endif %}{% if item.href in craft.app.request.absoluteUrl %} active{% endif %}">
+      <{{inside}} class="nav-{{ item.name|lower|replace(' ', '-') }}{% if item.children is defined %} dropdown{% endif %}{% if item.href == craft.app.request.getUrl() or item.href == craft.app.request.getAbsoluteUrl() %} active{% endif %}">
         <a href="{{ item.href }}"{% if item.children is defined %} aria-haspopup="true"{% endif %}><span class="name">{{ item.name }}</span>{% if item.children is defined %}<span class="toggle-dropdown"><svg class="icon sprite-arrow-down" aria-hidden="true" role="presentation"><use xlink:href="#sprite-arrow-down"/></svg></span>{% endif %}</a>
         {% if item.children is defined and item.children|length > 0 %}
           <{{outside}} class="children" aria-label="submenu">
