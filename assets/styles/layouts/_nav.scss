@@ -154,6 +154,11 @@
             text-decoration: underline;
           }
         }
+        &.active {
+          a {
+            text-decoration: underline;
+          }
+        }
         // Can has child nav
         &.dropdown {
           svg {
