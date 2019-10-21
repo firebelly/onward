@@ -1,9 +1,10 @@
 // Footer
 
+// Footer outro
 .footer-outro {
   position: relative;
-  // @include theme-color('background', color(brown), 'accent');
-  // @include theme-color('color', color(black));
+  // @include theme-color('background', 'accent');
+  // @include theme-color('color');
 
   p {
     @include p2;
@@ -53,13 +54,13 @@
   }
 }
 
+// Footer outro theme tweaks
 body[data-theme="theme-pink"] {
   .footer-outro {
     background: color(brown);
     color: color(tan);
   }
 }
-
 body[data-theme="theme-orange"] {
   .footer-outro {
     background: color(green);
@@ -67,8 +68,9 @@ body[data-theme="theme-orange"] {
   }
 }
 
+// Main footer
 footer.site-footer {
-  @include theme-color('background', color(yellow), 'accent2');
+  @include theme-color('background', 'accent2');
   text-align: center;
 
   .footer-tagline {

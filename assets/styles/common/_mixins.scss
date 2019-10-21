@@ -28,17 +28,15 @@
   @include inline-link;
 }
 
-@mixin theme-color($property, $default: color(black), $map: 'primary') {
-  $theme-map: 'theme-orange' color(green), 'theme-yellow' color(black), 'theme-pink' color(orange);
+@mixin theme-color($property, $map: 'primary') {
+  $theme-map: 'theme-orange' green, 'theme-yellow' black, 'theme-pink' orange;
   @if ($map == 'accent') {
-    $theme-map: 'theme-orange' color(orange), 'theme-yellow' color(yellow),  'theme-pink' color(brown);
+    $theme-map: 'theme-orange' orange, 'theme-yellow' yellow,  'theme-pink' brown;
   } @else if ($map == 'accent2') {
-    $theme-map: 'theme-orange' color(orange), 'theme-yellow' color(pink),  'theme-pink' color(pink);
-  // } @else if ($map == 'accent3') {
-  //   $theme-map: 'theme-green' color(brown)-dark, 'theme-pink' color(black),  'theme-orange' color(black);
+    $theme-map: 'theme-orange' orange, 'theme-yellow' pink,  'theme-pink' pink;
   }
 
-  #{$property}: $default;
+  // #{$property}: $default;
   $selector: &;
 
   // Loop through all schemes
@@ -50,7 +48,7 @@
     @at-root body[data-theme="#{$color-scheme-class}"] {
       // Apply rule
       #{$selector} {
-        #{$property}: $color-scheme-color;
+        #{$property}: color($color-scheme-color);
       }
     }
   }
