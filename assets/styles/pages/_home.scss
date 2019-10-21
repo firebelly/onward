@@ -7,33 +7,41 @@ body.page-home {
   .page-header {
     background: color(green);
   }
-  #hamburger-salad {
-    color: color(tan);
-    svg {
-      fill: color(tan);
+  &.nav-stuck {
+    .nav-main {
+      background: color(tan);
     }
-    &:hover {
-      .label {
-        background: color(white);
-        border-bottom: 2px solid color(black);
-        color: color(green);
+  }
+
+  &:not(.nav-stuck) {
+    #hamburger-salad {
+      color: color(tan);
+      svg {
+        fill: color(tan);
+      }
+      &:hover {
+        .label {
+          background: color(white);
+          border-bottom: 2px solid color(black);
+          color: color(green);
+        }
       }
     }
-  }
-  .sticky-logo {
-    svg {
-      fill: color(tan);
+    .sticky-logo {
+      svg {
+        fill: color(tan);
+      }
     }
-  }
-  .close-wrap {
-    color: color(tan);
-    svg {
-      fill: color(tan);
+    .close-wrap {
+      color: color(tan);
+      svg {
+        fill: color(tan);
+      }
     }
-  }
-  a.donate {
-    color: color(yellow);
-    border-color: color(yellow);
+    a.donate {
+      color: color(yellow);
+      border-color: color(yellow);
+    }
   }
 
   .page-wrapper {
