@@ -17,7 +17,7 @@
   @include h4;
   line-height: 1;
   @include transition(transform);
-  transform-origin: bottom left;
+  // transform-origin: center;
 
   &:hover {
     transform: rotate(-2deg);
