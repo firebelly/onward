@@ -17,9 +17,17 @@
     transform: rotate(90deg);
     transform-origin: left top;
     position: absolute;
-    top: 0;
+    top: 35vh;
     left: calc(100% - 20px);
     white-space: nowrap;
+
+    // 00/01/etc number prefixes
+    i {
+      display: inline-block;
+      font-style: normal;
+      margin-right: grid(8);
+    }
+
   }
 
   @include media-md {

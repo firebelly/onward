@@ -2,8 +2,10 @@
 
 export let $stickies = [],
     $stickyTitles = [],
+    $target,
     offset,
     scrollTop,
+    targetHeight,
     ticking;
 
 const stickyHeaders = {
@@ -13,13 +15,13 @@ const stickyHeaders = {
 
     offset = setOffset || 0;
     if (typeof stickies === 'object' && stickies instanceof $ && stickies.length > 0) {
-
+      $target = target;
       $stickies = stickies;
       stickyHeaders.setStickyPositions();
 
-      target.off('scroll.stickies').on('scroll.stickies', stickyHeaders.scrolling);
-      target.off('resize.stickies').on('resize.stickies', stickyHeaders.resizing);
-      target.off('load.stickies').on('load.stickies', stickyHeaders.resizing);
+      $target.off('scroll.stickies').on('scroll.stickies', stickyHeaders.scrolling);
+      $target.off('resize.stickies').on('resize.stickies', stickyHeaders.resizing);
+      $target.off('load.stickies').on('load.stickies', stickyHeaders.resizing);
     }
   },
 
@@ -59,6 +61,7 @@ const stickyHeaders = {
 
   // Recalculate positions/sizes
   setStickyPositions() {
+    targetHeight = $target.height();
     $stickies.each(function(i) {
       let $this = $(this);
       // Cache title elements
@@ -76,7 +79,7 @@ const stickyHeaders = {
 
   // Scrolling
   scrolling(event) {
-    scrollTop = $(event.currentTarget).scrollTop() + 70;
+    scrollTop = $(event.currentTarget).scrollTop() + (targetHeight / 2) - 50;
     stickyHeaders.requestTick();
   }
 
