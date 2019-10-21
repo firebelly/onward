@@ -1,29 +1,26 @@
 import Flickity from 'flickity';
 
+import appState from '../util/appState';
+
 export default {
   init() {
     // JavaScript to be fired on all pages
 
     let $body = $('body');
     let pageAt = window.location.pathname;
-    let isAnimating = false;
-    let navOpen = false;
 
     _setCustomVhUnit();
     $(window).on('resize', _setCustomVhUnit);
 
     // Mobile hamburger and X close icons toggle mobile nav
-    $('.toggle-nav').on('click', function(e) {
+    $('#hamburger-salad').on('click', function(e) {
       e.preventDefault();
-      if (navOpen) {
-        _closeNav();
-      } else {
-        _openNav();
-      }
+      _openNav();
     });
-
-    // $('.feedify').feedify();
-    // console.log($('.feedify').find('.feedify-item'));
+    $('a.toggle-nav.close').on('click', function(e) {
+      e.preventDefault();
+      _closeNav();
+    });
 
     // Story carousels with custom pagination
     $('.carousel').each(function() {
@@ -42,7 +39,6 @@ export default {
 
       // update selected cellButtons
       flkty.on('select', function(index){
-        // console.log(index);
         $cellButtons.removeClass('-active');
         $cellButtons.eq(index).addClass('-active');
       });
@@ -66,6 +62,13 @@ export default {
     $(document).keyup(function(e) {
       // esc
       if (e.keyCode === 27) {
+        _closeNav();
+      }
+    }).on('click', 'body.nav-open', function(e) {
+      // Clicking outside of modal closes modal
+      let $target = $(e.target);
+      // Make sure target inside modal content
+      if ($target.parents('.toggle-nav').length === 0 && !$target.hasClass('site-nav') && $target.parents('.site-nav').length === 0) {
         _closeNav();
       }
     });
@@ -97,8 +100,8 @@ export default {
 
     // Handle clicks on nav a elements
     $('.site-nav a').on('click', function(e) {
-      // Abort if not clicking directly on link
-      if (e.target.tagName !== 'A') {
+      // Abort if not clicking directly on link (or span inside link)
+      if (e.target.tagName !== 'A' && e.target.tagName !== 'SPAN') {
         return;
       }
 
@@ -115,29 +118,33 @@ export default {
     function _resetNav() {
       $('.site-nav ul.children').velocity('slideUp', { duration: 0 });
       $('.site-nav ul.children span').velocity('fadeOut', { duration: 0 });
-      navOpen = false;
+      appState.navOpen = false;
     }
 
     // Close main and any child nav elements
     function _closeNav() {
+      if (!appState.navOpen) {
+        return;
+      }
       $('.site-nav li.open').removeClass('open');
       _resetNav();
-      $('body').removeClass('nav-open');
+      $body.removeClass('nav-open');
     }
     function _openNav() {
-      $('body').addClass('nav-open');
-      navOpen = true;
+      $body.addClass('nav-open');
+      appState.navOpen = true;
     }
 
     // Scroll body to an element with velocity
     function _scrollBody(element, duration, delay) {
-      isAnimating = true;
+      appState.isAnimating = true;
+      $body.removeClass('nav-stuck');
       element.velocity('scroll', {
         duration: duration,
         delay: delay,
         offset: 0,
         complete: function(elements) {
-          isAnimating = false;
+          appState.isAnimating = false;
         }
       }, 'easeOutSine');
     }

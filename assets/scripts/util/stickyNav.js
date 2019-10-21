@@ -2,12 +2,14 @@
 //
 // Toggles "nav-stuck" class to body as you scroll past element of class "nav-main"
 
+// Shared vars among modules
+import appState from './appState';
+
 export let $nav,
     $body,
     $window,
     navBottom,
     offset = 0,
-    stuck = false,
     scrollTop,
     ticking;
 
@@ -38,13 +40,18 @@ const stickyNav = {
   // Update positions of sticky nav
   update() {
     ticking = false;
-    if (navBottom <= scrollTop && !stuck) {
-      $body.addClass('nav-stuck');
-      stuck = true;
+    // If page is animating (set in common.js), unstick nav and return until !isAnimating
+    if (appState.isAnimating) {
+      appState.navStuck = false;
+      return;
     }
-    if (navBottom >= scrollTop && stuck) {
+    if (navBottom <= scrollTop && !appState.navStuck) {
+      $body.addClass('nav-stuck');
+      appState.navStuck = true;
+    }
+    if (navBottom >= scrollTop && appState.navStuck) {
       $body.removeClass('nav-stuck');
-      stuck = false;
+      appState.navStuck = false;
     }
   },
 
