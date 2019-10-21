@@ -15,7 +15,7 @@ body.page-partner-with-us {
   // Desktop styles
   @include media-md {
     .partner-form-wrap {
-      padding: grid(8) 0 grid(16) 0;
+      padding: grid(8) 0 grid(24) 0;
       .grid-wrap {
         margin: 0 grid(-2);
       }

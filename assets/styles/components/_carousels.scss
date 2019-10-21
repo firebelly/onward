@@ -104,7 +104,7 @@
       }
     }
     .cells {
-      margin: grid(16) 0;
+      padding: grid(16) 0;
       li {
         width: columns(5);
         max-width: 450px;
@@ -113,7 +113,7 @@
     }
   }
   &.postcards {
-    padding-top: grid(16);
+    padding: grid(16) 0 grid(8);
   }
 }
 
