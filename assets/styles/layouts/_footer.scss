@@ -41,7 +41,7 @@
 
   // Desktop styles
   @include media-md {
-    padding: grid(16) 0;
+    padding: grid(16) 0 grid(24);
     .text-wrap {
       align-self: flex-end;
       padding: 0 $global-padding grid(4) 0;
