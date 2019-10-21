@@ -284,6 +284,7 @@ body.nav-stuck {
     .donate {
       display: none;
     }
+    @include drop-shadow;
   }
 
   @include media-md {
