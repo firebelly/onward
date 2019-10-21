@@ -41,6 +41,10 @@ body.page-home {
     a.donate {
       color: color(yellow);
       border-color: color(yellow);
+      &:hover {
+        color: color(green);
+        border-color: color(white);
+      }
     }
   }
 
