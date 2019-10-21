@@ -68,7 +68,7 @@ body[data-theme="theme-orange"] {
   }
 }
 
-// Main footer
+// Main footer styles
 footer.site-footer {
   @include theme-color('background', 'accent2');
   text-align: center;
@@ -98,6 +98,9 @@ footer.site-footer {
       font-weight: bold;
       li {
         margin-bottom: grid(2);
+        a {
+          @include slide-link;
+        }
       }
     }
   }

@@ -21,8 +21,11 @@
   }
 
   a:not(.button) {
-    border-bottom: 2px solid color(black);
-    @extend %inline-link;
+    text-decoration: underline;
+    @include transition(background);
+    &:hover {
+      background: color(white);
+    }
   }
   .button a,
   a.button {
@@ -32,7 +35,7 @@
 
   ol,
   ul {
-    @extend %p2;
+    @include p2;
     padding: 0 0 0 2.25em;
     li {
       margin: 0 0 grid(2);

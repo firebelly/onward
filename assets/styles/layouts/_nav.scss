@@ -5,6 +5,7 @@
   display: inline-block;
   .label {
     display: none;
+    @include slide-link;
   }
   // 🍔¯\_(ツ)_/¯🍔
   .hamburger {
@@ -18,10 +19,6 @@
   }
   // Skew = icon on hover or when nav is active
   &:hover {
-    .label {
-      background: color(white);
-      border-bottom: 2px solid color(black);
-    }
     .hambone:nth-child(1) {
       transform: skewY(-7deg);
     }
@@ -217,6 +214,8 @@
     }
     .label {
       display: none;
+      padding: 0 2px;
+      @include slide-link;
     }
 
     // Desktop styles

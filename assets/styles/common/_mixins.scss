@@ -8,24 +8,71 @@
 }
 
 // Inline link styles
-@mixin inline-link($hover_color: #000) {
-  display: inline;
-  background-color: rgba($hover_color, 0);
-  @include transition(all);
+@mixin inline-link($hover_bg: color(white), $hover_color: color(black)) {
+  // display: inline;
+  background-color: rgba($hover_bg, 0);
+  transition: all 0.1s;
+  padding: 0 2px;
 
   &:hover,
   &:focus {
-    color: color(black);
-    border-color: color(black);
-    background-color: rgba($hover_color, 1);
-    box-shadow: .2em .1em 0 rgba($hover_color, 1), -.2em .1em 0 rgba($hover_color, 1), -.2em 0 0 rgba($hover_color, 1), .2em 0 0 rgba($hover_color, 1);
-    svg {
-      fill: color(black);
-    }
+    color: $hover_color;
+    border-color: $hover_color;
+    background-color: rgba($hover_bg, 1);
+    // box-shadow: .2em .1em 0 rgba($hover_bg, 1), -.2em .1em 0 rgba($hover_bg, 1), -.2em 0 0 rgba($hover_bg, 1), .2em 0 0 rgba($hover_bg, 1);
+    border-bottom: 2px solid $hover_color;
   }
 }
-%inline-link {
-  @include inline-link;
+
+@mixin underline-link($hover_color: color(white)) {
+  background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
+  background-position: 0 1.2em;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.25s ease-in-out 0.2s;
+  &:hover,
+  &:focus {
+    background-size: 100% 2px;
+    transition-delay: 0s;
+  }
+}
+
+// Fancy animated bg + underline link styles
+@mixin slide-link($hover_color: color(white)) {
+  display: inline-block;
+  position: relative;
+  background-color: rgba($hover_color, 0);
+  @include transition(all);
+  z-index: 1;
+  padding: 0 2px;
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -0.1em;
+    width: 0px;
+    height: 100%;
+    @include transition(all);
+    opacity: 0;
+    background-color: color(white);
+    z-index: -1;
+  }
+  &:after {
+    top: auto;
+    height: 2px;
+    background-color: color(black);
+  }
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      width: 100%;
+      opacity: 1;
+    }
+    color: color(black);
+  }
 }
 
 // Faux dropshadow

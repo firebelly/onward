@@ -87,7 +87,7 @@
               {% for textBlock in block.textBlocks.all() %}
                 <li class="text-block grid-item one-half">
                   <h5 class="count subhead">{{ '%02d'|format(loop.index) }}</h5>
-                  <div class="body">
+                  <div class="body user-content">
                     {{ textBlock.body }}
                   </div>
                 </li>
