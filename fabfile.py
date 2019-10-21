@@ -23,14 +23,15 @@ def devsetup():
   local('cp .env-example .env')
   print "OK DONE! Hello? Are you still awake?\nEdit your .env file with local credentials\nRun `npx gulp watch` to run local gulp to compile & watch assets"
 
-def deploy(composer='y'):
+def deploy(composer='y', assets='y'):
   update()
-  if composer == 'y':
+  if composer != 'n':
     composer_install()
-  # scp production assets
-  local('yarn build:production')
-  run('mkdir -p ' + env.remotepath + '/web/assets/dist')
-  put('web/assets/dist', env.remotepath + '/web/assets/')
+  # build and sync production assets
+  if assets != 'n':
+    local('yarn build:production')
+    run('mkdir -p ' + env.remotepath + '/web/assets/dist')
+    put('web/assets/dist', env.remotepath + '/web/assets/')
 
 def update():
   with cd(env.remotepath):
