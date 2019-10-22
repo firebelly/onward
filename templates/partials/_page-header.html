@@ -10,12 +10,10 @@
 <div class="page-header">
   <div class="container">
     <h1>{{ entry.title }}</h1>
-
-    <a href="/"><svg class="icon sprite-logo"><use xlink:href="#sprite-logo"/></svg></a>
-
-    {% if entry.pageHeader.tagline %}
-      <div class="tagline">{{ entry.pageHeader.tagline }}</div>
-    {% endif %}
+    <div class="-tagline-container">
+      {% include 'partials/blocks/_tapeTag' with { tagline: entry.pageHeader.tapeTag, position: entry.pageHeader.tapeTagPosition } %}
+      <a href="/"><svg class="icon sprite-logo"><use xlink:href="#sprite-logo"/></svg></a>
+    </div>
 
     {% if entry.pageHeader.image|length and treatedImage %}
       <div class="image-wrap">

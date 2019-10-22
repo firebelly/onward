@@ -34,3 +34,27 @@
     display: block;
   }
 }
+
+// Tape taglines
+.tape-tagline {
+  z-index: z(taglines);
+  @include h5;
+  @include theme-color('background', 'tape-tagline');
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 4px;
+  position: absolute;
+  width: 300px;
+  transform: rotate(-30deg);
+  span {
+    float: right;
+  }
+
+  @include media-md {
+    width: auto;
+    transform: rotate(-15deg);
+  }
+}
+.-tagline-container {
+  position: relative;
+}

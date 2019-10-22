@@ -1,6 +1,6 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? '_ajax-layout' : '_layout' %}
 
-{% set colorTheme = 'home' %}
+{% set colorTheme = 'homepage' %}
 {% set title = entry.title %}
 {% set sectionTitle = entry.homepageHeader.sectionTitle %}
 {% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}

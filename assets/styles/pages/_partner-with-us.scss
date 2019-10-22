@@ -1,7 +1,11 @@
 // Partner with us
 
 body.page-partner-with-us {
-
+  .page-header {
+    .tape-tagline {
+      color: color(pink);
+    }
+  }
   .partner-form-wrap {
     background: color(yellow);
     .actions {

@@ -1,26 +1,26 @@
 <div class="block-quote -{{ imagePlacement ?? '' }}{{ image|length ? ' -has-image' : '' }}">
-	<div class="container">
-		<blockquote>
-		  {{ quote }}
-		  {% if attribution %}
-		    <cite>{{ attribution }}</cite>
-		  {% endif %}
-		</blockquote>
-	</div>
+  <div class="container">
+    <blockquote>
+      <p>&ldquo;{{ quote }}&rdquo;</p>
+      {% if attribution %}
+        <cite>{{ attribution }}</cite>
+      {% endif %}
+    </blockquote>
+  </div>
 
-	{% if image|length %}
-	  {% set image = image.one() %}
-	  {% set treatedImage = craft.imager.transformImage(image, {
-	    mode: 'crop',
-	    width: 528,
-	    height: 768,
-	    effects: { modulate: [100, 0, 100], clut: 'gradient:#111-#eee' },
-	  }) %}
+  {% if image|length %}
+    {% set image = image.one() %}
+    {% set treatedImage = craft.imager.transformImage(image, {
+      mode: 'crop',
+      width: 528,
+      height: 768,
+      effects: { modulate: [100, 0, 100], clut: 'gradient:#111-#eee' },
+    }) %}
 
-	  {% if treatedImage %}
-	    <figure class="image">
-	      <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
-	    </figure>
-	  {% endif %}
-	{% endif %}
+    {% if treatedImage %}
+      <figure class="image">
+        <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+      </figure>
+    {% endif %}
+  {% endif %}
 </div>

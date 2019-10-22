@@ -35,9 +35,29 @@
     }
   }
 
+  .tape-tagline {
+    top: 65%;
+    right: 65%;
+    &.-right {
+      span {
+        float: left;
+      }
+      top: 45%;
+      right: auto;
+      left: 70%;
+    }
+  }
+
   // Desktop styles
   @include media-md {
-    .page-header-info {
+    .tape-tagline {
+      top: 65%;
+      right: 65%;
+      &.-right {
+        top: 45%;
+        right: auto;
+        left: 70%;
+      }
     }
 
     .image-wrap {

@@ -157,9 +157,18 @@ body.page-home {
       color: color(tan);
     }
 
+    .tape-tagline {
+      left: grid(-15);
+      top: grid(1);
+    }
+
     // Desktop styles
     @include media-md {
       @include clearfix;
+      .tape-tagline {
+        left: grid(-10);
+        top: grid(0);
+      }
       .image-wrap {
         margin: 0;
         width: columns(6);

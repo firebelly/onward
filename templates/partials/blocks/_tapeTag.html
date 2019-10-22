@@ -1,0 +1,14 @@
+<div class="tape-tagline {{ position is defined ? '-'~position : '' }}">
+  <span>
+    {% switch tagline %}
+      {% case 'towardEquity' %}
+        Toward Equity — Toward Equity — Toward Equity
+      {% case 'learnBuildLiberate' %}
+        Learn — Build — Liberate — Learn — Build — Liberate
+      {% case 'adaptInspirePersistCreate' %}
+        Adapt — Inspire — Persist — Create — Adapt — Inspire — Persist — Create
+      {% case 'holdingSpaceElevatingVoices' %}
+        Holding Space — Elevating Voices — Holding Space — Elevating Voices
+    {% endswitch %}
+  </span>
+</div>
