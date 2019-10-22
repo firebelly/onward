@@ -81,6 +81,14 @@
     </div>
   </div>
 
+  {% if entry.footerQuote.quote %}
+    {% include 'partials/blocks/_quote' with {
+      quote: entry.footerQuote.quote,
+      image: [],
+      attribution: entry.footerQuote.attribution
+    } %}
+  {% endif %}
+
   {% include 'partials/_footer-outro' %}
 
 {% endblock %}
