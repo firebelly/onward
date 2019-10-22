@@ -1,4 +1,4 @@
-dateModified: 1571284939
+dateModified: 1571775831
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -119,6 +119,12 @@ fields:
         28:
           width: ''
         101:
+          width: ''
+        104:
+          width: ''
+        110:
+          width: ''
+        111:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -242,6 +248,29 @@ fields:
       selectionLabel: 'Add a person'
     contentColumnType: string
     fieldGroup: 68e682d6-87a3-4206-a8b1-882d516282c9
+  9c9a8880-2d35-41bb-9586-656b4f3bd5ba:
+    name: 'Footer Quote'
+    handle: footerQuote
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_footerquote}}'
+      propagationMethod: all
+      staticField: '1'
+      columns:
+        108:
+          width: ''
+        109:
+          width: ''
+      fieldLayout: row
+      selectionLabel: ''
+    contentColumnType: string
+    fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
   a3d90be8-ba69-44c3-aa70-07ab637f2597:
     name: 'Partnership Stories'
     handle: partnershipStories
@@ -331,6 +360,8 @@ fields:
         13:
           width: ''
         11:
+          width: ''
+        105:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -623,18 +654,14 @@ matrixBlockTypes:
         searchable: true
         translationMethod: none
         translationKeyFormat: null
-        type: craft\redactor\Field
+        type: craft\fields\PlainText
         settings:
-          redactorConfig: Simple.json
-          purifierConfig: ''
-          cleanupHtml: true
-          removeInlineStyles: '1'
-          removeEmptyTags: '1'
-          removeNbsp: '1'
-          purifyHtml: '1'
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: '250'
           columnType: text
-          availableVolumes: '*'
-          availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
       956db08d-fa9f-4eac-910c-fb5624e82757:
@@ -857,7 +884,7 @@ matrixBlockTypes:
           code: ''
           multiline: '1'
           initialRows: '2'
-          charLimit: ''
+          charLimit: '250'
           columnType: text
         contentColumnType: text
         fieldGroup: null
@@ -880,6 +907,51 @@ matrixBlockTypes:
               8b63e510-489d-4a49-849b-148e17c0e85e:
                 required: false
                 sortOrder: 2
+  3c670027-42da-43c1-9c43-8544ec7cffd0:
+    field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+    name: 'Tape Tag'
+    handle: tapeTag
+    sortOrder: 8
+    fields:
+      0904544d-f277-4caf-bfee-4039c05bd985:
+        name: Tagline
+        handle: tagline
+        instructions: 'Will attach to next block.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      c60d6868-2aa8-48cd-9b28-4e804398b4c0:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0904544d-f277-4caf-bfee-4039c05bd985:
+                required: false
+                sortOrder: 1
   6294bce6-869f-421c-834c-c2f257215bd2:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Quote
@@ -931,19 +1003,15 @@ matrixBlockTypes:
         searchable: true
         translationMethod: none
         translationKeyFormat: null
-        type: craft\redactor\Field
+        type: craft\fields\PlainText
         settings:
-          redactorConfig: Simple.json
-          purifierConfig: ''
-          cleanupHtml: true
-          removeInlineStyles: '1'
-          removeEmptyTags: '1'
-          removeNbsp: '1'
-          purifyHtml: '1'
-          columnType: text
-          availableVolumes: '*'
-          availableTransforms: '*'
-        contentColumnType: text
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: '250'
+          columnType: string
+        contentColumnType: string
         fieldGroup: null
       c57e0150-3f26-4482-a1c7-bf07338ccf35:
         name: Image
@@ -991,6 +1059,51 @@ matrixBlockTypes:
               c57e0150-3f26-4482-a1c7-bf07338ccf35:
                 required: false
                 sortOrder: 3
+  68a09d62-9431-4c9c-bcd1-614181dfa194:
+    field: 131af06f-d853-4205-904f-6c835a958650
+    name: 'Tape Tag'
+    handle: tapeTag
+    sortOrder: 6
+    fields:
+      11b90289-d176-42b2-8beb-8efb08c309e9:
+        name: Tagline
+        handle: tagline
+        instructions: 'Will attach to next block.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      9f0193a2-b114-4e01-81d4-57e3f81a7546:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              11b90289-d176-42b2-8beb-8efb08c309e9:
+                required: false
+                sortOrder: 1
   84843265-94b4-4bb0-a385-6812ac10e591:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Answer
@@ -1902,6 +2015,9 @@ sections:
                     sortOrder: 1
                   747f7b29-c1ba-4ae0-a18f-6da874d04062:
                     required: false
+                    sortOrder: 5
+                  9c9a8880-2d35-41bb-9586-656b4f3bd5ba:
+                    required: false
                     sortOrder: 4
                   a3d90be8-ba69-44c3-aa70-07ab637f2597:
                     required: false
@@ -1950,6 +2066,9 @@ sections:
                     required: false
                     sortOrder: 1
                   747f7b29-c1ba-4ae0-a18f-6da874d04062:
+                    required: false
+                    sortOrder: 5
+                  9c9a8880-2d35-41bb-9586-656b4f3bd5ba:
                     required: false
                     sortOrder: 4
                   c07ee076-75fe-4172-8c17-24468a814cae:
@@ -2212,21 +2331,33 @@ superTableBlockTypes:
         contentColumnType: text
         fieldGroup: null
       d8c833ba-cc04-433a-bab1-3f969a52c510:
-        name: Tagline
-        handle: tagline
+        name: 'Tape Tag'
+        handle: tapeTag
         instructions: ''
         searchable: false
         translationMethod: none
         translationKeyFormat: null
-        type: craft\fields\PlainText
+        type: craft\fields\Dropdown
         settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
+          optgroups: true
+          options:
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
         fieldGroup: null
     fieldLayouts:
       246b9329-d6b7-48c9-871b-fc3eb1016627:
@@ -2462,6 +2593,56 @@ superTableBlockTypes:
               default: ''
         contentColumnType: string
         fieldGroup: null
+      9a239048-d220-484c-98ba-858d2b8f561b:
+        name: 'Tape Tag'
+        handle: tapeTag
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      aaf62e22-ab28-4f73-a726-b81d2d85da3f:
+        name: 'Tape Tag Position'
+        handle: tapeTagPosition
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: left
+              default: ''
+            -
+              label: Right
+              value: right
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       b9406501-e847-46f5-991d-25dde9f19823:
         name: 'Section Title'
         handle: sectionTitle
@@ -2492,6 +2673,12 @@ superTableBlockTypes:
               925ecd9b-7793-48ef-a839-776bf6260325:
                 required: false
                 sortOrder: 2
+              9a239048-d220-484c-98ba-858d2b8f561b:
+                required: false
+                sortOrder: 4
+              aaf62e22-ab28-4f73-a726-b81d2d85da3f:
+                required: false
+                sortOrder: 5
               b9406501-e847-46f5-991d-25dde9f19823:
                 required: false
                 sortOrder: 3
@@ -2730,6 +2917,35 @@ superTableBlockTypes:
   38af1bd5-9d3f-4fb6-9746-ce928a3ad213:
     field: dc417efc-de4c-4653-afcf-0e4aa47bd73e
     fields:
+      085c551f-db4d-4117-b494-66a6f72ef9d9:
+        name: 'Tape Tag'
+        handle: tapeTag
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       128c4464-ae64-48f5-a00e-73d9a83763d8:
         name: Subhead
         handle: subhead
@@ -2853,6 +3069,9 @@ superTableBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              085c551f-db4d-4117-b494-66a6f72ef9d9:
+                required: false
+                sortOrder: 7
               128c4464-ae64-48f5-a00e-73d9a83763d8:
                 required: false
                 sortOrder: 1
@@ -3085,6 +3304,56 @@ superTableBlockTypes:
               89fc4cc4-09c0-4167-8c24-08030b8467e9:
                 required: false
                 sortOrder: 1
+  8e86b3aa-ab7f-47a3-8012-6ef6dffe4ff8:
+    field: 9c9a8880-2d35-41bb-9586-656b4f3bd5ba
+    fields:
+      5bc4e41f-1431-4142-a2d1-b1562fe5288f:
+        name: Quote
+        handle: quote
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: '250'
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      fe0a1f04-6e5b-43ed-bf20-02eca700f32d:
+        name: Attribution
+        handle: attribution
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      0a0ef0bf-cd17-48ef-a344-fb6f4ee38576:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              5bc4e41f-1431-4142-a2d1-b1562fe5288f:
+                required: false
+                sortOrder: 1
+              fe0a1f04-6e5b-43ed-bf20-02eca700f32d:
+                required: false
+                sortOrder: 2
   c98fcb28-a56f-4b28-94cf-f1ce54850f03:
     field: 85204e51-4a0e-43e0-9f5a-9f92e49290e3
     fields:
@@ -3243,7 +3512,7 @@ superTableBlockTypes:
                 required: false
                 sortOrder: 3
 system:
-  edition: solo
+  edition: pro
   name: Onward
   live: true
   schemaVersion: 3.3.3
