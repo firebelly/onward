@@ -39,13 +39,13 @@
       vertical-align: top;
       margin-left: 21px;
       letter-spacing: 0.45px;
-      border-bottom: 1px solid color(black);
+      @include slide-link;
     }
-    &:hover {
-      span {
-        background: color(white);
-      }
-    }
+    // &:hover {
+    //   span {
+    //     background: color(white);
+    //   }
+    // }
   }
   .text-wrap {
     position: relative;
@@ -68,10 +68,7 @@
         }
         a {
           @include h4;
-          border-bottom: 2px solid color(black);
-          &:hover {
-            background: color(white);
-          }
+          @include slide-link;
         }
       }
     }
@@ -112,7 +109,8 @@ body.child-our-team {
       padding-right: 34px;
       cursor: pointer;
       span {
-        border-bottom: 2px solid color(black);
+        @include inline-link;
+        text-decoration: underline;
       }
       a {
         display: block;
@@ -122,17 +120,13 @@ body.child-our-team {
         width: 32px;
         height: 32px;
         background: color(white);
+        background-size: 100% 100%;
         padding: 5px;
         text-align: center;
         svg {
           vertical-align: top;
           width: 22px;
           height: 22px;
-        }
-      }
-      &:hover {
-        span {
-          background: color(white);
         }
       }
     }

@@ -22,10 +22,7 @@
 
   a:not(.button) {
     text-decoration: underline;
-    @include transition(background);
-    &:hover {
-      background: color(white);
-    }
+    @include inline-link;
   }
   .button a,
   a.button {

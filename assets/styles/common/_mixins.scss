@@ -7,71 +7,32 @@
   transition-timing-function: $transition-easing;
 }
 
-// Inline link styles
-@mixin inline-link($hover_bg: color(white), $hover_color: color(black)) {
-  // display: inline;
-  background-color: rgba($hover_bg, 0);
-  transition: all 0.1s;
-  padding: 0 2px;
-
-  &:hover,
-  &:focus {
-    color: $hover_color;
-    border-color: $hover_color;
-    background-color: rgba($hover_bg, 1);
-    // box-shadow: .2em .1em 0 rgba($hover_bg, 1), -.2em .1em 0 rgba($hover_bg, 1), -.2em 0 0 rgba($hover_bg, 1), .2em 0 0 rgba($hover_bg, 1);
-    border-bottom: 2px solid $hover_color;
-  }
-}
-
-@mixin underline-link($hover_color: color(white)) {
-  background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
-  background-position: 0 1.2em;
+// Animated white bg + black underline hover for nav/footer links
+@mixin slide-link($hover_color: color(black)) {
+  padding: 0 1px 2px 1px;
+  // background-image: linear-gradient(to bottom, color(white) 94%, color(black) 95%);
+  background-image: linear-gradient(to top, color(black) 2px, color(white) 2px, color(white) 100%);
   background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: background-size 0.25s ease-in-out 0.2s;
+  background-size: 0% 100%;
+  @include transition(background-size);
   &:hover,
   &:focus {
-    background-size: 100% 2px;
+    text-decoration: none;
+    background-size: 100% 100%;
     transition-delay: 0s;
   }
 }
 
-// Fancy animated bg + underline link styles
-@mixin slide-link($hover_color: color(white)) {
-  display: inline-block;
-  position: relative;
-  background-color: rgba($hover_color, 0);
-  @include transition(all);
-  z-index: 1;
-  padding: 0 2px;
-  &:after,
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: -0.1em;
-    width: 0px;
-    height: 100%;
-    @include transition(all);
-    opacity: 0;
-    background-color: color(white);
-    z-index: -1;
-  }
-  &:after {
-    top: auto;
-    height: 2px;
-    background-color: color(black);
-  }
+// Animated white bg hover for user-content links
+@mixin inline-link($hover_color: color(black)) {
+  background-image: linear-gradient(to top, color(white) 0%, color(white) 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  @include transition(background-size);
   &:hover,
   &:focus {
-    &:before,
-    &:after {
-      width: 100%;
-      opacity: 1;
-    }
-    color: color(black);
+    background-size: 100% 100%;
+    transition-delay: 0s;
   }
 }
 
