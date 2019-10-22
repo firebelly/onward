@@ -1,8 +1,8 @@
 {% set footerOutro = entry.footerOutro.one() %}
 {% if footerOutro.body or footerOutro.image|length %}
   <div class="footer-outro">
+    {% include 'partials/blocks/_tapeTag' with { tagline: footerOutro.tapeTag } %}
     <div class="container">
-      {% include 'partials/blocks/_tapeTag' with { tagline: footerOutro.tapeTag } %}
       <div class="grid">
         {% if footerOutro.body %}
           <div class="text-wrap grid-item one-half user-content">

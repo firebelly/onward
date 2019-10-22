@@ -60,7 +60,7 @@
 
         {% case "answer" %}
           {% if not containerWrapped %}<div class="container">{% set containerWrapped = true %}{% endif %}
-          <div class="block-answer">
+          <div class="block-answer -{{ block.imagePlacement ?? '' }}{{ block.image|length ? ' -has-image' : '' }}">
             <div class="text-wrap">
               <h5>{{ block.subhead }}</h5>
               {{ block.headline }}

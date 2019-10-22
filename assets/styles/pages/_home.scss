@@ -128,19 +128,43 @@ body.page-home {
       @include clearfix;
       display: flex;
       justify-content: space-between;
+      .image-wrap {
+        position: relative;
+      }
       .text-wrap {
-        padding-top: 224px;
-        flex-basis: columns(5);
         .body {
           p {
             @include p2;
           }
         }
       }
-      .image-wrap {
-        flex-basis: columns(6);
-        padding-left: $global-padding;
-        position: relative;
+
+      &.-right {
+        .text-wrap {
+          flex-basis: columns(6);
+          padding-right: columns(1);
+          padding-top: 224px;
+        }
+        .image-wrap {
+          flex-basis: columns(6);
+          padding-left: $global-padding;
+          position: relative;
+        }
+      }
+
+      &.-left {
+        .text-wrap {
+          flex-basis: columns(5);
+          padding-left: $global-padding;
+          order: 2;
+        }
+        .image-wrap {
+          align-self: flex-start;
+          flex-basis: columns(7);
+          padding-right: columns(1);
+          order: 1;
+          padding-top: 224px;
+        }
       }
     }
   }
@@ -166,6 +190,7 @@ body.page-home {
     @include media-md {
       @include clearfix;
       .tape-tagline {
+        right: auto;
         left: grid(-10);
         top: grid(0);
       }

@@ -4,7 +4,6 @@
 .footer-outro {
   position: relative;
   // @include theme-color('background', 'accent');
-  // @include theme-color('color');
 
   p {
     @include p2;
@@ -40,9 +39,20 @@
     }
   }
 
+  .tape-tagline {
+    left: grid(-8);
+    top: 0;
+    transform: rotate(15deg);
+  }
+
   // Desktop styles
   @include media-md {
     padding: grid(16) 0 grid(24);
+    .tape-tagline {
+      transform-origin: top left;
+      left: grid(-8);
+      top: 96px;
+    }
     .text-wrap {
       align-self: flex-end;
       padding: 0 $global-padding grid(4) 0;
