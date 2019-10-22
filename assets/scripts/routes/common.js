@@ -1,4 +1,5 @@
 import Flickity from 'flickity';
+require('flickity-imagesloaded');
 
 import appState from '../util/appState';
 
@@ -32,6 +33,7 @@ export default {
 
       var flkty = new Flickity($cells[0], {
         prevNextButtons: false,
+        imagesLoaded: true,
         pageDots: false,
         cellAlign: 'left',
         contain: true
