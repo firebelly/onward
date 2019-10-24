@@ -1,0 +1,13 @@
+// Careers
+
+body.page-careers {
+
+  // Desktop styles
+  @include media-md {
+    .block-text {
+      &.-halfWidth {
+        clear: left;
+      }
+    }
+  }
+}
