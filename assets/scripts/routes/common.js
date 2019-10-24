@@ -35,8 +35,7 @@ export default {
         prevNextButtons: false,
         imagesLoaded: true,
         pageDots: false,
-        cellAlign: 'left',
-        contain: true
+        cellAlign: 'left'
       });
 
       // update selected cellButtons
