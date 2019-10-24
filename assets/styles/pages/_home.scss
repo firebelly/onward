@@ -110,6 +110,13 @@ body.page-home {
       }
     }
 
+    figure {
+      position: relative;
+      .tape-tagline {
+        right: columns(2);
+      }
+    }
+
     @include max-screen($breakpoint-md) {
       .image-wrap {
         margin: grid(8) 0;
@@ -140,6 +147,9 @@ body.page-home {
       }
 
       &.-right {
+        .icon.sprite-slash {
+          right: columns(1, 6);
+        }
         .text-wrap {
           flex-basis: columns(6);
           padding-right: columns(1);
@@ -153,6 +163,9 @@ body.page-home {
       }
 
       &.-left {
+        .icon.sprite-slash {
+          left: columns(1, 6);
+        }
         .text-wrap {
           flex-basis: columns(5);
           padding-left: $global-padding;

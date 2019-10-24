@@ -5,6 +5,23 @@
   padding: grid(2) 0;
 }
 
+// Slashy accent on images without taglines
+.icon.sprite-slash {
+  position: absolute;
+  fill: color(orange);
+  top: -20px;
+  right: 40px;
+  width: 15px;
+  height: 39px;
+
+  @include media-md {
+    right: columns(1);
+    top: -36px;
+    width: 27px;
+    height: 72px;
+  }
+}
+
 // Sticky titles
 .sticky-header {
   position: relative;
