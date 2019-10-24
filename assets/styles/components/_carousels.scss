@@ -58,12 +58,6 @@
         margin-right: grid(5);
       }
     }
-    .tape-tagline {
-       top: 90px;
-       right: -20px;
-       transform: rotate(-30deg);
-       background: color(tan);
-    }
     // Hover state for images
     .cell {
       @include transition(background);
@@ -76,6 +70,13 @@
 
   // Postcard carousels
   &.postcards {
+    .tape-tagline {
+       top: 75px;
+       right: -20px;
+       transform: rotate(30deg);
+       background: color(tan);
+    }
+
     figure {
       display: block;
       background-color: color(black);
