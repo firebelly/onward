@@ -1,4 +1,4 @@
-dateModified: 1571932198
+dateModified: 1571947531
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -475,28 +475,16 @@ matrixBlockTypes:
           optgroups: true
           options:
             -
-              label: Brown
-              value: brown
+              label: Default
+              value: ''
               default: ''
             -
-              label: Pink
-              value: pink
+              label: 'Accent 1'
+              value: accent1
               default: ''
             -
-              label: Green
-              value: green
-              default: ''
-            -
-              label: Yellow
-              value: yellow
-              default: ''
-            -
-              label: Tan
-              value: tan
-              default: ''
-            -
-              label: Orange
-              value: orange
+              label: 'Accent 2'
+              value: accent2
               default: ''
         contentColumnType: string
         fieldGroup: null
@@ -745,28 +733,16 @@ matrixBlockTypes:
           optgroups: true
           options:
             -
-              label: Brown
-              value: brown
+              label: Default
+              value: ''
               default: ''
             -
-              label: Pink
-              value: pink
+              label: 'Accent 1'
+              value: accent1
               default: ''
             -
-              label: Green
-              value: green
-              default: ''
-            -
-              label: Yellow
-              value: yellow
-              default: ''
-            -
-              label: Tan
-              value: tan
-              default: ''
-            -
-              label: Orange
-              value: orange
+              label: 'Accent 2'
+              value: accent2
               default: ''
         contentColumnType: string
         fieldGroup: null
@@ -2631,6 +2607,10 @@ superTableBlockTypes:
         settings:
           optgroups: true
           options:
+            -
+              label: '* None *'
+              value: ''
+              default: ''
             -
               label: 'Toward Equity'
               value: towardEquity

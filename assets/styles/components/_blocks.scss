@@ -19,7 +19,7 @@
     padding: grid(16) 0;
     figcaption {
       position: absolute;
-      right: columns(1);
+      left: columns(1);
       bottom: grid(-4);
       width: columns(3);
     }
@@ -33,6 +33,13 @@
       text-align: center;
       figure {
         margin: 0 auto;
+      }
+      .tape-tagline {
+        left: 100%;
+        right: auto;
+        margin-left: columns(-2);
+        transform-origin: top left;
+        transform: rotate(15deg);
       }
     }
     &.-right {
@@ -55,37 +62,51 @@
 // Section change
 .block-section {
   @include clearfix;
-  @each $color, $value in $colors {
-    &.color-#{$color} {
-      background: $value;
-      position: relative;
-
-      @include media-md {
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: -300px;
-          right: 0;
-          left: 0;
-          bottom: 100%;
-          background: $value;
-          z-index: -1;
-        }
-        margin-top: -grid(16);
-      }
-
-      .block-image {
-        figcaption {
-          background: $value;
-        }
+  position: relative;
+  // Accent colors
+  &.color-accent1,
+  &.color-accent2 {
+    margin-top: grid(-16);
+    @include theme-color(background, 'accent1');
+    @include theme-color(color, 'accent1-text');
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -300px;
+      right: 0;
+      left: 0;
+      bottom: 100%;
+      @include theme-color(background, 'accent1');
+      z-index: -1;
+    }
+    .block-image {
+      figcaption {
+        @include theme-color(background, 'accent1');
       }
     }
   }
-  // Darker color sections get tan text
-  &.color-green,
-  &.color-brown {
-    color: color(tan);
+  &.color-accent1 {
+    .tape-tagline {
+      @include theme-color(background, 'tape-tagline-accent1');
+      @include theme-color(color, 'tape-tagline-accent1-text');
+    }
+  }
+  &.color-accent2 {
+    @include theme-color(background, 'accent2');
+    @include theme-color(color, 'accent2-text');
+    &::after {
+      @include theme-color(background, 'accent2');
+    }
+    .tape-tagline {
+      @include theme-color(background, 'tape-tagline-accent2');
+      @include theme-color(color, 'tape-tagline-accent2-text');
+    }
+    .block-image {
+      figcaption {
+        @include theme-color(background, 'accent2');
+      }
+    }
   }
 }
 
@@ -150,7 +171,6 @@
         }
       }
       &.-fullWidth {
-        padding: grid(16) columns(1);
         .subhead {
           text-align: center;
         }
@@ -208,6 +228,10 @@
 .block-quote {
   // Hide offset images on mobile
   figure {
+    display: none;
+  }
+  // Hide slash element
+  .icon.sprite-slash {
     display: none;
   }
   .container {

@@ -3,12 +3,18 @@
 // Footer outro
 .footer-outro {
   position: relative;
-  // @include theme-color('background', 'accent');
+  @include theme-color(background, 'accent2');
+
+  // No image slashes in footer-outro
+  .sprite-slash {
+    display: none;
+  }
 
   p {
     @include p2;
   }
   .text-wrap {
+    @include theme-color(color, 'accent2-text');
     padding: grid(6) 0 0;
   }
 
@@ -43,6 +49,8 @@
     left: grid(-8);
     top: 0;
     transform: rotate(15deg);
+    @include theme-color(background, 'tape-tagline-accent2');
+    @include theme-color(color, 'tape-tagline-accent2-text');
   }
 
   // Desktop styles
@@ -64,27 +72,9 @@
   }
 }
 
-// Footer outro theme tweaks
-body[data-theme="theme-pink"] {
-  .footer-outro {
-    background: color(brown);
-    .text-wrap {
-      color: color(tan);
-    }
-  }
-}
-body[data-theme="theme-orange"] {
-  .footer-outro {
-    background: color(green);
-    .text-wrap {
-      color: color(tan);
-    }
-  }
-}
-
 // Main footer styles
 footer.site-footer {
-  @include theme-color('background', 'accent2');
+  @include theme-color(background, 'footer');
   text-align: center;
 
   .footer-tagline {
