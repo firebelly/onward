@@ -49,18 +49,85 @@
   }
 }
 
-@mixin theme-color($property, $map: 'primary') {
-  $theme-map: 'theme-orange' green, 'theme-yellow' black, 'theme-pink' orange, 'theme-homepage' yellow;
-  @if ($map == 'accent') {
-    $theme-map: 'theme-orange' orange, 'theme-yellow' yellow,  'theme-pink' brown, 'theme-homepage' orange;
+// Mixin for various theme colors
+@mixin theme-color($property, $map: 'logo') {
+
+  // Logo/H1 (default mapping)
+  $theme-map: 'theme-orange' green,
+              'theme-yellow' black,
+              'theme-pink' orange,
+              'theme-homepage' yellow;
+
+  // Taglines outside accent blocks
+  @if ($map == 'tape-tagline') {
+    $theme-map: 'theme-orange' yellow,
+                'theme-yellow' blue,
+                'theme-pink' pink,
+                'theme-homepage' yellow;
+  } @else if ($map == 'tape-tagline-text') {
+    $theme-map: 'theme-orange' black,
+                'theme-yellow' tan,
+                'theme-pink' black,
+                'theme-homepage' black;
+
+  // Darker color sections get tan text
+  // &.color-green,
+  // &.color-brown {
+  //   color: color(tan);
+  // }
+
+  // Accent colors for section changes
+  } @else if ($map == 'accent1') {
+    $theme-map: 'theme-orange' orange,
+                'theme-yellow' yellow,
+                'theme-pink' pink,
+                'theme-homepage' yellow;
   } @else if ($map == 'accent2') {
-    $theme-map: 'theme-orange' orange, 'theme-yellow' pink,  'theme-pink' pink, 'theme-homepage' yellow;
-  } @else if ($map == 'tape-tagline') {
-    $theme-map: 'theme-orange' yellow, 'theme-yellow' blue,  'theme-pink' pink, 'theme-homepage' yellow;
-  // } @else if ($map == 'footer-outro') {
-  //   $theme-map: 'theme-orange' green, 'theme-yellow' pink,  'theme-pink' pink;
-  // } @else if ($map == 'footer') {
-  //   $theme-map: 'theme-orange' orange, 'theme-yellow' pink,  'theme-pink' pink;
+    $theme-map: 'theme-orange' green,
+                'theme-yellow' pink,
+                'theme-pink' brown,
+                'theme-homepage' pink;
+
+  } @else if ($map == 'accent1-text') {
+    $theme-map: 'theme-orange' black,
+                'theme-yellow' black,
+                'theme-pink' black,
+                'theme-homepage' black;
+  } @else if ($map == 'accent2-text') {
+    $theme-map: 'theme-orange' tan,
+                'theme-yellow' black,
+                'theme-pink' tan,
+                'theme-homepage' black;
+
+  // Tagline colors inside section changes
+  } @else if ($map == 'tape-tagline-accent1') {
+    $theme-map: 'theme-orange' pink,
+                'theme-yellow' yellow,
+                'theme-pink' brown,
+                'theme-homepage' orange;
+  } @else if ($map == 'tape-tagline-accent1-text') {
+    $theme-map: 'theme-orange' black,
+                'theme-yellow' black,
+                'theme-pink' black,
+                'theme-homepage' black;
+  } @else if ($map == 'tape-tagline-accent2') {
+    $theme-map: 'theme-orange' orange,
+                'theme-yellow' blue,
+                'theme-pink' pink,
+                'theme-homepage' yellow;
+  } @else if ($map == 'tape-tagline-accent2-text') {
+    $theme-map: 'theme-orange' black,
+                'theme-yellow' black,
+                'theme-pink' black,
+                'theme-homepage' black;
+
+  // Footers
+  } @else if ($map == 'footer') {
+    $theme-map: 'theme-orange' orange,
+                'theme-yellow' pink,
+                'theme-pink' pink,
+                'theme-homepage' yellow;
+
   }
 
   // #{$property}: $default;
