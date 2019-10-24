@@ -22,7 +22,14 @@ body.page-donate {
     }
   }
 
+  .block-cta {
+    padding-top: 0;
+  }
+
   // Desktop styles
   @include media-md {
+    .block-cta {
+      padding-top: 0;
+    }
   }
 }

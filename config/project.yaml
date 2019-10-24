@@ -1,4 +1,4 @@
-dateModified: 1571947531
+dateModified: 1571949029
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -359,9 +359,9 @@ fields:
           width: ''
         13:
           width: ''
-        11:
-          width: ''
         105:
+          width: ''
+        114:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -2978,23 +2978,6 @@ superTableBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
-      5329310b-cb08-478d-8e96-e1c57da02354:
-        name: 'Image Caption'
-        handle: imageCaption
-        instructions: ''
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
       6154e499-e02a-496d-b342-d7a985f8f429:
         name: Headline
         handle: headline
@@ -3086,13 +3069,10 @@ superTableBlockTypes:
             fields:
               085c551f-db4d-4117-b494-66a6f72ef9d9:
                 required: false
-                sortOrder: 7
+                sortOrder: 6
               128c4464-ae64-48f5-a00e-73d9a83763d8:
                 required: false
                 sortOrder: 1
-              5329310b-cb08-478d-8e96-e1c57da02354:
-                required: false
-                sortOrder: 5
               6154e499-e02a-496d-b342-d7a985f8f429:
                 required: false
                 sortOrder: 2
@@ -3101,7 +3081,7 @@ superTableBlockTypes:
                 sortOrder: 4
               8447283b-b3c3-4777-9702-3013b0099cff:
                 required: false
-                sortOrder: 6
+                sortOrder: 5
               a064d645-f73d-4428-86f8-c42ea0ac3c99:
                 required: false
                 sortOrder: 3

@@ -208,6 +208,9 @@
     p {
       @include h1;
     }
+    blockquote {
+      padding: 0 columns(1);
+    }
   }
 }
 
@@ -219,6 +222,9 @@
 
   @include media-md {
     padding: grid(16) 0;
+    .statement {
+      padding: 0 columns(1);
+    }
   }
 }
 
@@ -279,6 +285,7 @@
 // CTA buttons
 .block-cta {
   text-align: center;
+  padding: grid(8) $mobile-global-padding;
   @include media-md {
     padding: grid(16) 0;
   }
