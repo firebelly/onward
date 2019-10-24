@@ -7,6 +7,13 @@ body.page-donate {
     .carousel-header {
       color: color(tan);
     }
+    .tape-tagline {
+      top: 50px;
+      right: -20px;
+      transform: rotate(30deg);
+      background: color(green);
+      color: color(tan);
+    }
     // Gradient
     .cells {
       &::after {
