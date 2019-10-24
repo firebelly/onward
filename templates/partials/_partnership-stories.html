@@ -23,6 +23,11 @@
         {% for story in entry.partnershipStories.all() %}
           <li class="cell">
             {% if story.tagline %}
+              <div class="tape-tagline">
+                {{ story.tagline }}
+              </div>
+            {% endif %}
+            {% if story.tagline %}
               <div class="tagline">{{ story.tagline }}</div>
             {% endif %}
             <h3>{{ story.headline }}</h3>

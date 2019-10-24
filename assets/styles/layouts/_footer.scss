@@ -68,13 +68,17 @@
 body[data-theme="theme-pink"] {
   .footer-outro {
     background: color(brown);
-    color: color(tan);
+    .text-wrap {
+      color: color(tan);
+    }
   }
 }
 body[data-theme="theme-orange"] {
   .footer-outro {
     background: color(green);
-    color: color(tan);
+    .text-wrap {
+      color: color(tan);
+    }
   }
 }
 

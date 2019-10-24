@@ -56,7 +56,7 @@
   } @else if ($map == 'accent2') {
     $theme-map: 'theme-orange' orange, 'theme-yellow' pink,  'theme-pink' pink, 'theme-homepage' yellow;
   } @else if ($map == 'tape-tagline') {
-    $theme-map: 'theme-orange' orange, 'theme-yellow' blue,  'theme-pink' pink, 'theme-homepage' yellow;
+    $theme-map: 'theme-orange' yellow, 'theme-yellow' blue,  'theme-pink' pink, 'theme-homepage' yellow;
   // } @else if ($map == 'footer-outro') {
   //   $theme-map: 'theme-orange' green, 'theme-yellow' pink,  'theme-pink' pink;
   // } @else if ($map == 'footer') {

@@ -45,6 +45,7 @@
           <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
             {% include 'partials/_image' with {
               image: block.image,
+              tapeTag: block.tapeTag,
               imageOptions: {
                 mode: 'crop',
                 width: 1800,
@@ -116,6 +117,7 @@
         {% default %}
 
       {% endswitch %}
+
     {% endfor %}
 
     {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}

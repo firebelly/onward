@@ -1,4 +1,4 @@
-dateModified: 1571775831
+dateModified: 1571932198
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1059,51 +1059,6 @@ matrixBlockTypes:
               c57e0150-3f26-4482-a1c7-bf07338ccf35:
                 required: false
                 sortOrder: 3
-  68a09d62-9431-4c9c-bcd1-614181dfa194:
-    field: 131af06f-d853-4205-904f-6c835a958650
-    name: 'Tape Tag'
-    handle: tapeTag
-    sortOrder: 6
-    fields:
-      11b90289-d176-42b2-8beb-8efb08c309e9:
-        name: Tagline
-        handle: tagline
-        instructions: 'Will attach to next block.'
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Dropdown
-        settings:
-          optgroups: true
-          options:
-            -
-              label: 'Toward Equity'
-              value: towardEquity
-              default: ''
-            -
-              label: 'Learn — Build — Liberate'
-              value: learnBuildLiberate
-              default: ''
-            -
-              label: 'Adapt — Inspire — Persist — Create'
-              value: adaptInspirePersistCreate
-              default: ''
-            -
-              label: 'Holding Space — Elevating Voices'
-              value: holdingSpaceElevatingVoices
-              default: ''
-        contentColumnType: string
-        fieldGroup: null
-    fieldLayouts:
-      9f0193a2-b114-4e01-81d4-57e3f81a7546:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              11b90289-d176-42b2-8beb-8efb08c309e9:
-                required: false
-                sortOrder: 1
   84843265-94b4-4bb0-a385-6812ac10e591:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Answer
@@ -1262,6 +1217,39 @@ matrixBlockTypes:
           columnType: string
         contentColumnType: string
         fieldGroup: null
+      84a73f5f-e32d-4c99-a474-a813b5afccfe:
+        name: 'Tape Tag'
+        handle: tapeTag
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: '* None *'
+              value: ''
+              default: ''
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       a0f2bf8d-589d-409b-a3ad-8eb0b68e352a:
         name: Image
         handle: image
@@ -1336,6 +1324,9 @@ matrixBlockTypes:
               62f64bf7-afe5-460e-a8af-3416b4baff64:
                 required: false
                 sortOrder: 2
+              84a73f5f-e32d-4c99-a474-a813b5afccfe:
+                required: false
+                sortOrder: 5
               a0f2bf8d-589d-409b-a3ad-8eb0b68e352a:
                 required: false
                 sortOrder: 1
@@ -1432,6 +1423,39 @@ matrixBlockTypes:
     handle: image
     sortOrder: 2
     fields:
+      15ecbddc-6008-42fc-b703-8e8b12fa885e:
+        name: 'Tape Tag'
+        handle: tapeTag
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: '* None *'
+              value: ''
+              default: ''
+            -
+              label: 'Toward Equity'
+              value: towardEquity
+              default: ''
+            -
+              label: 'Learn — Build — Liberate'
+              value: learnBuildLiberate
+              default: ''
+            -
+              label: 'Adapt — Inspire — Persist — Create'
+              value: adaptInspirePersistCreate
+              default: ''
+            -
+              label: 'Holding Space — Elevating Voices'
+              value: holdingSpaceElevatingVoices
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
       46896d5a-af5b-429b-ba0a-42b8ca252cb4:
         name: Image
         handle: image
@@ -1520,6 +1544,9 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              15ecbddc-6008-42fc-b703-8e8b12fa885e:
+                required: false
+                sortOrder: 5
               46896d5a-af5b-429b-ba0a-42b8ca252cb4:
                 required: false
                 sortOrder: 1
@@ -2692,15 +2719,19 @@ superTableBlockTypes:
         searchable: false
         translationMethod: none
         translationKeyFormat: null
-        type: craft\fields\PlainText
+        type: craft\fields\Dropdown
         settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
+          optgroups: true
+          options:
+            -
+              label: '* None *'
+              value: ''
+              default: ''
+            -
+              label: 'Institutional Change'
+              value: 'Institutional Change'
+              default: ''
+        contentColumnType: string
         fieldGroup: null
       333942d0-5846-4451-9bc4-d824308c9281:
         name: Body
@@ -2834,14 +2865,18 @@ superTableBlockTypes:
         searchable: false
         translationMethod: none
         translationKeyFormat: null
-        type: craft\fields\PlainText
+        type: craft\fields\Dropdown
         settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: string
+          optgroups: true
+          options:
+            -
+              label: '* None *'
+              value: ''
+              default: ''
+            -
+              label: 'Travel & Experience'
+              value: 'Travel & Experience'
+              default: ''
         contentColumnType: string
         fieldGroup: null
       edf3548f-f23a-4432-b1b4-21ef410dd401:

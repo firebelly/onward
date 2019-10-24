@@ -31,7 +31,9 @@
         {% endif %}
         <li class="cell">
           {% if card.tagline %}
-            <div class="tagline">{{ card.tagline }}</div>
+            <div class="tape-tagline">
+              {{ card.tagline }}
+            </div>
           {% endif %}
           {% if card.image|length and treatedImage %}
             <figure>
