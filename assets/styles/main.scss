@@ -1,36 +1,37 @@
 // Vendor
-@import "~flickity/css/flickity.css";
+@import '~flickity/css/flickity.css';
 
 // Variables
-@import "common/variables";
+@import 'common/variables';
 
 // Common
-@import "common/normalize";
-@import "common/mixins";
-@import "common/typography";
-@import "common/global";
-@import "common/grid";
-@import "common/base";
-@import "common/user-content";
-@import "common/utility";
+@import 'common/normalize';
+@import 'common/mixins';
+@import 'common/typography';
+@import 'common/global';
+@import 'common/grid';
+@import 'common/base';
+@import 'common/user-content';
+@import 'common/utility';
 
 // Components
-@import "components/buttons";
-@import "components/pagination";
-@import "components/shared";
-@import "components/page-headers";
-@import "components/carousels";
-@import "components/blocks";
-@import "components/forms";
+@import 'components/buttons';
+@import 'components/pagination';
+@import 'components/shared';
+@import 'components/page-headers';
+@import 'components/carousels';
+@import 'components/blocks';
+@import 'components/forms';
 
 // Layout elements
-@import "layouts/nav";
-@import "layouts/footer";
+@import 'layouts/nav';
+@import 'layouts/footer';
 
 // Page specifics
-@import "pages/home";
-@import "pages/our-team";
-@import "pages/our-work";
-@import "pages/our-story";
-@import "pages/donate";
-@import "pages/partner-with-us";
+@import 'pages/home';
+@import 'pages/our-team';
+@import 'pages/our-work';
+@import 'pages/our-story';
+@import 'pages/donate';
+@import 'pages/careers';
+@import 'pages/partner-with-us';
