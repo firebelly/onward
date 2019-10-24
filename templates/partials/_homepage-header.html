@@ -21,9 +21,6 @@
           {% include 'partials/blocks/_tapeTag' with { tagline: entry.homepageHeader.tapeTag } %}
           <figure>
             <img src="{{ treatedImage.getUrl() }}" alt="{{ entry.homepageHeader.image.title }}">
-            {# {% if entry.homepageHeader.imageCaption %}
-              <figcaption>{{ entry.homepageHeader.imageCaption }}</figcaption>
-            {% endif %} #}
           </figure>
         </div>
       {% else %}
