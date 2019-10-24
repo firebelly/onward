@@ -1,7 +1,7 @@
 {% if entry.partnershipStories|length %}
   <div class="carousel-wrap">
     <div class="container">
-      <div class="carousel">
+      <div class="carousel stories">
         <div class="carousel-header grid">
           <div class="grid-item one-half">
             <h2><em>Partnership </em><br> Stories</h2>
@@ -27,12 +27,9 @@
                 {{ story.tagline }}
               </div>
             {% endif %}
-            {% if story.tagline %}
-              <div class="tagline">{{ story.tagline }}</div>
-            {% endif %}
             <h3>{{ story.headline }}</h3>
             {% if story.subhead %}
-              <h5>{{ story.subhead }}</h5>
+              <h5><span>{{ '%02d'|format(loop.index) }}</span> {{ story.subhead }}</h5>
             {% endif %}
             {{ story.body }}
           </li>

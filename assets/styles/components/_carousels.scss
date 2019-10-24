@@ -41,6 +41,39 @@
     padding: $global-padding;
   }
 
+  // Partnership stories
+  &.stories {
+    h3 {
+      @include h2;
+      margin: 0;
+
+      @include media-md {
+        min-height: 160px;
+      }
+    }
+    h5 {
+      // 00/01 prefix
+      span {
+        display: inline-block;
+        margin-right: grid(5);
+      }
+    }
+    .tape-tagline {
+       top: 90px;
+       right: -20px;
+       transform: rotate(-30deg);
+       background: color(tan);
+    }
+    // Hover state for images
+    .cell {
+      @include transition(background);
+      &:hover,
+      &.-active {
+        background: color(pink);
+      }
+    }
+  }
+
   // Postcard carousels
   &.postcards {
     figure {
@@ -93,7 +126,7 @@
     p {
       @include p3;
     }
-  }
+  } // end .postcards
 
   // Desktop styles
   @include media-md {
@@ -111,9 +144,9 @@
         float: left;
       }
     }
-  }
-  &.postcards {
-    padding: grid(16) 0 grid(8);
+    &.postcards {
+      padding: grid(16) 0 grid(8);
+    }
   }
 }
 
