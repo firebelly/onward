@@ -19,12 +19,11 @@ body.page-home {
       svg {
         fill: color(tan);
       }
+      .label {
+        transition-duration: 0.1s;
+      }
       &:hover {
-        .label {
-          background: color(white);
-          border-bottom: 2px solid color(black);
-          color: color(green);
-        }
+        color: color(green);
       }
     }
     .sticky-logo {
@@ -33,9 +32,14 @@ body.page-home {
       }
     }
     .close-wrap {
-      color: color(tan);
       svg {
         fill: color(tan);
+      }
+      .label {
+        color: color(tan);
+        &:hover {
+          color: color(green);
+        }
       }
     }
     a.donate {
