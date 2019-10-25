@@ -96,15 +96,15 @@ footer.site-footer {
   }
 
   .footer-blocks {
+    a:not(.logo) {
+      @include slide-link;
+    }
     ul {
       font-size: 16px;
       line-height: 24px;
       font-weight: bold;
       li {
         margin-bottom: grid(2);
-        a {
-          @include slide-link;
-        }
       }
     }
   }
