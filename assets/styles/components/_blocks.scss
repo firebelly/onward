@@ -27,6 +27,11 @@
       position: relative;
       display: block;
       max-width: $container-width;
+      // &.-has-caption {
+      //   img {
+      //     clip-path: polygon(columns(8) 100%, columns(8) 87%, 87% 86%, 88% 100%, 100% 100%, 99% 0%, 0% 0%, 0% 100%);
+      //   }
+      // }
     }
     &.-center {
       // For inline images not treated, such as SVG/gif/png
@@ -65,6 +70,18 @@
   position: relative;
   background: color(tan);
 
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -300px;
+    right: 0;
+    left: 0;
+    bottom: 100%;
+    @include theme-color(background, tan);
+    z-index: -1;
+  }
+
   // Accent colors
   &.color-accent1,
   &.color-accent2 {
@@ -72,13 +89,6 @@
     @include theme-color(background, 'accent1');
     @include theme-color(color, 'accent1-text');
     &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: -300px;
-      right: 0;
-      left: 0;
-      bottom: 100%;
       @include theme-color(background, 'accent1');
       z-index: -1;
     }
