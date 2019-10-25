@@ -1,4 +1,4 @@
-dateModified: 1571949029
+dateModified: 1572015803
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -883,51 +883,6 @@ matrixBlockTypes:
               8b63e510-489d-4a49-849b-148e17c0e85e:
                 required: false
                 sortOrder: 2
-  3c670027-42da-43c1-9c43-8544ec7cffd0:
-    field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
-    name: 'Tape Tag'
-    handle: tapeTag
-    sortOrder: 8
-    fields:
-      0904544d-f277-4caf-bfee-4039c05bd985:
-        name: Tagline
-        handle: tagline
-        instructions: 'Will attach to next block.'
-        searchable: false
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Dropdown
-        settings:
-          optgroups: true
-          options:
-            -
-              label: 'Toward Equity'
-              value: towardEquity
-              default: ''
-            -
-              label: 'Learn — Build — Liberate'
-              value: learnBuildLiberate
-              default: ''
-            -
-              label: 'Adapt — Inspire — Persist — Create'
-              value: adaptInspirePersistCreate
-              default: ''
-            -
-              label: 'Holding Space — Elevating Voices'
-              value: holdingSpaceElevatingVoices
-              default: ''
-        contentColumnType: string
-        fieldGroup: null
-    fieldLayouts:
-      c60d6868-2aa8-48cd-9b28-4e804398b4c0:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              0904544d-f277-4caf-bfee-4039c05bd985:
-                required: false
-                sortOrder: 1
   6294bce6-869f-421c-834c-c2f257215bd2:
     field: 131af06f-d853-4205-904f-6c835a958650
     name: Quote
