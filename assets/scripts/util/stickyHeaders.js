@@ -16,7 +16,16 @@ const stickyHeaders = {
     offset = setOffset || 0;
     if (typeof stickies === 'object' && stickies instanceof $ && stickies.length > 0) {
       $target = target;
-      $stickies = stickies;
+
+      // Prepend 00, 01 to .sticky-titles (unless blank, which is final stopper sticky-header)
+      $stickies = stickies.each(function(i) {
+        let titleNum = ('0' + i).slice(-2);
+        let $title = $(this).find('.sticky-title');
+        if ($title.text().trim() !== '') {
+          $title.prepend('<i>' + titleNum + '</i>');
+        }
+      });
+
       stickyHeaders.setStickyPositions();
 
       $target.off('scroll.stickies').on('scroll.stickies', stickyHeaders.scrolling);

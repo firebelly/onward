@@ -17,13 +17,6 @@ const routes = new Router({
 });
 
 // Init sticky headers
-let $stickyHeaders = $('.sticky-header').each(function(i) {
-	// Prepend 00, 01 to .sticky-titles
-	let titleNum = ('0' + i).slice(-2);
-	$(this).find('.sticky-title').prepend('<i>' + titleNum + '</i>');
-});
-
-// Init sticky headers
 stickyHeaders.init($('.sticky-header'), $(window), 20);
 
 // Init sticky nav
