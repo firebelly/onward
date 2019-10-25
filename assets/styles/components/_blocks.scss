@@ -63,6 +63,8 @@
 .block-section {
   @include clearfix;
   position: relative;
+  background: color(tan);
+
   // Accent colors
   &.color-accent1,
   &.color-accent2 {
