@@ -17,7 +17,7 @@ const routes = new Router({
 });
 
 // Init sticky headers
-stickyHeaders.init($('.sticky-header'), $(window), 20);
+stickyHeaders.init();
 
 // Init sticky nav
 stickyNav.init();

@@ -3,7 +3,7 @@
 export let $stickies = [],
     $stickyTitles = [],
     $target,
-    offset,
+    offset = 20,
     scrollTop,
     targetHeight,
     ticking;
@@ -11,14 +11,12 @@ export let $stickies = [],
 const stickyHeaders = {
 
   // Init sticky headers
-  init(stickies, target, setOffset) {
-
-    offset = setOffset || 0;
-    if (typeof stickies === 'object' && stickies instanceof $ && stickies.length > 0) {
-      $target = target;
+  init() {
+    if ($('.sticky-header').length) {
+      $target = $(window);
 
       // Prepend 00, 01 to .sticky-titles (unless blank, which is final stopper sticky-header)
-      $stickies = stickies.each(function(i) {
+      $stickies = $('.sticky-header').each(function(i) {
         let titleNum = ('0' + i).slice(-2);
         let $title = $(this).find('.sticky-title');
         if ($title.text().trim() !== '') {
@@ -47,8 +45,7 @@ const stickyHeaders = {
     ticking = false;
     $stickies.each(function(i) {
 
-      let $this = $(this),
-          stickyPosition = $this.data('originalPosition'),
+      let stickyPosition = this.getAttribute('data-originalPosition'),
           newPosition,
           $nextSticky;
 
@@ -57,7 +54,7 @@ const stickyHeaders = {
         newPosition = Math.max(offset, scrollTop - stickyPosition);
         $nextSticky = $stickies.eq(i + 1);
         if($nextSticky.length > 0) {
-          newPosition = Math.min(newPosition, ($nextSticky.data('originalPosition') - stickyPosition) - $this.data('originalHeight'));
+          newPosition = Math.min(newPosition, ($nextSticky.attr('data-originalPosition') - stickyPosition - offset) - this.getAttribute('data-originalHeight'));
         }
 
       } else {
@@ -76,8 +73,8 @@ const stickyHeaders = {
       // Cache title elements
       $stickyTitles[i] = $this.find('.sticky-title');
       $this
-        .data('originalPosition', $this.offset().top)
-        .data('originalHeight', $this.find('.sticky-title').outerWidth() + 10);
+        .attr('data-originalPosition', $this.offset().top)
+        .attr('data-originalHeight', $this.find('.sticky-title').outerWidth() + 10);
     });
   },
 
