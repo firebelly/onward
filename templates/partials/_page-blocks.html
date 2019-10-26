@@ -2,18 +2,39 @@
 
   {% set containerWrapped = false %}
 
+  {# Build sectionChanges array for -has-next classes (for staggered color backgrounds 😬) #}
+  {% set sectionChanges = [] %}
+  {% for block in entry.pageBlocks.all() %}
+    {% if loop.index > 1 %}
+      {% if block.type == 'sectionChange' %}
+        {% set sectionChanges = sectionChanges|merge([ block.color ]) %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {# Page template can send along custom sectionChanges, e.g. Postcards or Stories #}
+  {% if customSectionChange is defined %}
+    {% set sectionChanges = sectionChanges|merge([ customSectionChange ]) %}
+  {% endif %}
+
   {# Check if first block is a section change #}
   {% if entry.pageBlocks[0].type == 'sectionChange' %}
     {% set sectionColor = entry.pageBlocks[0].color %}
     {% set sectionTitle = entry.pageBlocks[0].sectionTitle %}
+    {# Next section color? #}
+    {% if sectionChanges|length %}
+      {% set nextSection = sectionChanges|first %}
+      {% set sectionChanges = sectionChanges|length > 1 ? sectionChanges[1:] : [] %}
+      {% set nextSectionColor = ' -has-next -next-' ~ nextSection %}
+    {% endif %}
+  {% else %}
+    {% set sectionColor = 'default' %}
+    {% set sectionTitle = '' %}
+    {% set nextSectionColor = '' %}
   {% endif %}
 
   <div class="page-blocks">
-    {% if sectionColor is not defined %}
-      {% set sectionColor = 'tan' %}
-      {% set sectionTitle = '' %}
-    {% endif %}
-    <div class="block-section color-{{ sectionColor }}">
+    <div class="block-section color-{{ sectionColor }}{{ nextSectionColor }}">
     {% if sectionTitle %}
       <div class="sticky-header">
         <div class="sticky-title">{{ sectionTitle }}</div>
@@ -25,11 +46,24 @@
 
         {% case 'sectionChange' %}
           {% if not loop.first %}
-            {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+            {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = '' %}{% endif %}
             {% if block.color != sectionColor %}
-              </div><!-- /.block-color -->
-              <div class="block-section color-{{ block.color }}">
+              </div><!-- /.block-section -->
+
+              {# Next section color? #}
+              {% if sectionChanges|length %}
+                {% set nextSection = sectionChanges|first %}
+                {% set sectionChanges = sectionChanges|length > 1 ? sectionChanges[1:] : [] %}
+                {% set nextSectionColor = ' -has-next -next-' ~ nextSection %}
+              {% else %}
+                {% set nextSectionColor = '' %}
+              {% endif %}
+
+              <div class="block-section color-{{ block.color }}{{ nextSectionColor }}">
               {% set sectionColor = block.color %}
+            {% else %}
+              {# Skip nextColor since we have two section blocks of same color in a row #}
+              {% set sectionChanges = sectionChanges|length > 1 ? sectionChanges[1:] : [] %}
             {% endif %}
             {% if block.sectionTitle and block.sectionTitle != '' %}
             <div class="sticky-header">
@@ -39,17 +73,19 @@
             </div>
             {% endif %}
           {% endif %}
-
         {% case 'image' %}
           {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
-          <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
+          {% if not loop.last and entry.pageBlocks[loop.index].type == 'sectionChange' %}
+            {% set nextSectionColor = ' -has-next -next-' ~ entry.pageBlocks[loop.index + 1].color %}
+          {% endif %}
+          <div class="block-image -{{ block.imagePlacement ?? 'center' }}{{ nextSectionColor }}">
             {% include 'partials/_image' with {
               image: block.image,
               tapeTag: block.tapeTag,
               imageOptions: {
                 mode: 'crop',
                 width: 1800,
-                height: 1079,
+                height: 919,
                 effects: (block.treated ? { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' } : {}),
               },
               caption: block.caption
@@ -113,8 +149,6 @@
             image: block.image,
             imagePlacement: block.imagePlacement
           } %}
-
-        {% default %}
 
       {% endswitch %}
 

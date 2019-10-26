@@ -8,10 +8,25 @@
   figcaption {
     @include h4;
     background: color(tan);
-    padding: grid(2) grid(3);
+    color: color(black);
+    padding: $global-padding;
     margin: grid(-6) grid(3) grid(4);
     position: relative;
     text-align: left;
+  }
+  &.-has-next {
+    &.-next-accent1 {
+      figcaption {
+        @include theme-color(background, 'accent1');
+        @include theme-color(color, 'accent1-text');
+      }
+    }
+    &.-next-accent2 {
+      figcaption {
+        @include theme-color(background, 'accent2');
+        @include theme-color(color, 'accent2-text');
+      }
+    }
   }
 
   // Desktop styles
@@ -19,8 +34,10 @@
     padding: grid(16) 0;
     figcaption {
       position: absolute;
+      margin: 0;
+      transform: translateY(grid(-12));
       left: columns(1);
-      bottom: grid(-4);
+      top: 100%;
       width: columns(3);
     }
     figure {
@@ -69,30 +86,62 @@
   @include clearfix;
   position: relative;
   background: color(tan);
+  // margin-top: grid(-16);
 
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -300px;
-    right: 0;
-    left: 0;
-    bottom: 100%;
-    @include theme-color(background, tan);
-    z-index: -1;
+  // Tuck color under header
+  &:first-of-type {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -300px;
+      right: 0;
+      left: 0;
+      bottom: 100%;
+      background: color(tan);
+      z-index: -1;
+    }
+    &.color-accent1::after {
+      @include theme-color(background, 'accent1');
+    }
+    &.color-accent2::after {
+      @include theme-color(background, 'accent2');
+    }
+  }
+
+  &.-has-next {
+    // padding-bottom: grid(32);
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: grid(48);
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background: color(tan);
+      // z-index: -1;
+    }
+
+    &.-next-accent1::before {
+      @include theme-color(background, 'accent1');
+    }
+    &.-next-accent2::before {
+      @include theme-color(background, 'accent2');
+    }
+
   }
 
   // Accent colors
   &.color-accent1,
   &.color-accent2 {
-    margin-top: grid(-16);
     @include theme-color(background, 'accent1');
     @include theme-color(color, 'accent1-text');
-    &::after {
-      @include theme-color(background, 'accent1');
-      z-index: -1;
-    }
-    .block-image {
+    // &::after {
+    //   @include theme-color(background, 'accent1');
+    //   z-index: -1;
+    // }
+    .block-image:not(.-has-next) {
       figcaption {
         @include theme-color(background, 'accent1');
       }
@@ -107,14 +156,14 @@
   &.color-accent2 {
     @include theme-color(background, 'accent2');
     @include theme-color(color, 'accent2-text');
-    &::after {
-      @include theme-color(background, 'accent2');
-    }
+    // &::after {
+    //   @include theme-color(background, 'accent2');
+    // }
     .tape-tagline {
       @include theme-color(background, 'tape-tagline-accent2');
       @include theme-color(color, 'tape-tagline-accent2-text');
     }
-    .block-image {
+    .block-image:not(.-has-next) {
       figcaption {
         @include theme-color(background, 'accent2');
       }

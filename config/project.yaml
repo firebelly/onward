@@ -1,4 +1,4 @@
-dateModified: 1572015803
+dateModified: 1572104454
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -476,7 +476,7 @@ matrixBlockTypes:
           options:
             -
               label: Default
-              value: ''
+              value: default
               default: ''
             -
               label: 'Accent 1'
@@ -734,7 +734,7 @@ matrixBlockTypes:
           options:
             -
               label: Default
-              value: ''
+              value: default
               default: ''
             -
               label: 'Accent 1'
