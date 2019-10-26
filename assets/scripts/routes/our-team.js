@@ -1,5 +1,8 @@
 // Our Team page js
 
+// Shared vars among modules
+import appState from '../util/appState';
+
 export default {
 
   init() {
@@ -31,11 +34,15 @@ export default {
 
     // Team links to modals
     $('.person h3, .person figure').on('click', function(e) {
+      if (appState.isAnimating) {
+        return;
+      }
       e.preventDefault();
       let $person = $(this).parents('.person');
       let $modalContent = $person.find('.modal-content').html();
       $modalContainer.html($modalContent);
       $modalContainer.find('.text-wrap').append('<a href="#" class="close-modal"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg> <span>Close</span></a>');
+      appState.isAnimating = true;
       $modal.velocity('stop').velocity({
           opacity: [1, 0],
         }, {
@@ -44,6 +51,7 @@ export default {
           complete: function() {
             $modal.addClass('-active');
             _disableScroll();
+            appState.isAnimating = false;
           }
         }
       )
@@ -52,7 +60,7 @@ export default {
     });
 
     function _closeModal() {
-      if (!modalOpen) {
+      if (appState.isAnimating || !modalOpen) {
         return;
       }
       modalOpen = false;
