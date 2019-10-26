@@ -77,7 +77,7 @@
           {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
           {% if not loop.last %}
             {% if entry.pageBlocks[loop.index].type == 'sectionChange' %}
-              {% set nextSectionColor = ' -has-next -next-' ~ entry.pageBlocks[loop.index + 1].color %}
+              {% set nextSectionColor = ' -has-next -next-' ~ entry.pageBlocks[loop.index].color %}
             {% else %}
               {% set nextSectionColor = '' %}
             {% endif %}
