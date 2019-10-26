@@ -75,8 +75,12 @@
           {% endif %}
         {% case 'image' %}
           {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
-          {% if not loop.last and entry.pageBlocks[loop.index].type == 'sectionChange' %}
-            {% set nextSectionColor = ' -has-next -next-' ~ entry.pageBlocks[loop.index + 1].color %}
+          {% if not loop.last %}
+            {% if entry.pageBlocks[loop.index].type == 'sectionChange' %}
+              {% set nextSectionColor = ' -has-next -next-' ~ entry.pageBlocks[loop.index + 1].color %}
+            {% else %}
+              {% set nextSectionColor = '' %}
+            {% endif %}
           {% endif %}
           <div class="block-image -{{ block.imagePlacement ?? 'center' }}{{ nextSectionColor }}">
             {% include 'partials/_image' with {
