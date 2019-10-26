@@ -44,6 +44,7 @@
       position: relative;
       display: block;
       max-width: $container-width;
+      // start of clip path option as proof-of-concept, may bring back, requires captions push down instead of up as size grows
       // &.-has-caption {
       //   img {
       //     clip-path: polygon(columns(8) 100%, columns(8) 87%, 87% 86%, 88% 100%, 100% 100%, 99% 0%, 0% 0%, 0% 100%);
@@ -109,8 +110,8 @@
     }
   }
 
+  // Has a following section block, append color block for staggering
   &.-has-next {
-    // padding-bottom: grid(32);
     &::before {
       content: '';
       display: block;
@@ -120,7 +121,6 @@
       left: 0;
       bottom: 0;
       background: color(tan);
-      // z-index: -1;
     }
 
     &.-next-accent1::before {
@@ -313,11 +313,6 @@
     }
     &.-has-image {
       min-height: 384px;
-      padding: 0;
-      .container {
-        position: relative;
-        padding: grid(16) calc(#{columns(1)} - #{$global-padding});
-      }
     }
     figure {
       display: block;

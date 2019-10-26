@@ -1,6 +1,7 @@
 {% if entry.pageBlocks|length %}
 
   {% set containerWrapped = false %}
+  {% set nextSectionColor = '' %}
 
   {# Build sectionChanges array for -has-next classes (for staggered color backgrounds 😬) #}
   {% set sectionChanges = [] %}
@@ -30,7 +31,6 @@
   {% else %}
     {% set sectionColor = 'default' %}
     {% set sectionTitle = '' %}
-    {% set nextSectionColor = '' %}
   {% endif %}
 
   <div class="page-blocks">
