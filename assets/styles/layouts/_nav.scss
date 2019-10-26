@@ -62,7 +62,7 @@
     svg {
       width: 97px;
       height: 26px;
-      fill: color(green);
+      @include theme-color(fill);
     }
     position: absolute;
     top: 7px;
