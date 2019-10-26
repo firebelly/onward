@@ -6,13 +6,12 @@
   {% if entry.homepageBlocks[0].type == 'sectionChange' %}
     {% set sectionColor = entry.homepageBlocks[0].color %}
     {% set sectionTitle = entry.homepageBlocks[0].sectionTitle %}
+  {% else %}
+    {% set sectionColor = 'default' %}
+    {% set sectionTitle = '' %}
   {% endif %}
 
   <div class="homepage-blocks">
-    {% if sectionColor is not defined %}
-      {% set sectionColor = 'tan' %}
-      {% set sectionTitle = '' %}
-    {% endif %}
     <div class="block-section color-{{ sectionColor }}">
     {% if sectionTitle %}
       <div class="sticky-header">
@@ -49,7 +48,6 @@
 
             {% include 'partials/_image' with {
               image: block.image,
-              tapeTag: block.tapeTag,
               imageOptions: {
                 mode: 'crop',
                 width: 600,
@@ -96,6 +94,7 @@
           <div class="block-image -{{ block.imagePlacement ?? 'center' }}">
             {% include 'partials/_image' with {
               image: block.image,
+              tapeTag: block.tapeTag,
               imageOptions: {
                 mode: 'crop',
                 width: 1800,
