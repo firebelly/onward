@@ -70,12 +70,10 @@
         float: right;
       }
       .tape-tagline {
-        left: 0;
-        top: auto;
-        bottom: grid(20);
-        margin-left: grid(-8);
+        right: calc(100% - #{columns(1)});
+        top: 0;
         transform-origin: top left;
-        transform: rotate(15deg) translateX(-100%);
+        transform: rotate(15deg);
       }
     }
     &.-left {
