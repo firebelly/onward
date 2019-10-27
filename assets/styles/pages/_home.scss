@@ -193,6 +193,10 @@ body.page-home {
     }
 
     .text-wrap {
+      h2,
+      h5 {
+        margin: 0;
+      }
       background: color(green);
       color: color(tan);
     }
