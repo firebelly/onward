@@ -58,25 +58,36 @@
           </div>
 
         {% case "answer" %}
-          {% if not containerWrapped %}<div class="container">{% set containerWrapped = true %}{% endif %}
-          <div class="block-answer -{{ block.imagePlacement ?? '' }}{{ block.image|length ? ' -has-image' : '' }}">
-            <div class="text-wrap">
-              <h5>{{ block.subhead }}</h5>
-              {{ block.headline }}
-              <div class="body user-content">
-                {{ block.body }}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+
+          {% set sectionChangeClass = '' %}
+          {% if not loop.last and entry.homepageBlocks[loop.index].type == 'sectionChange' %}
+            {% set sectionChangeClass = sectionChangeClass ~ ' -has-next -next-' ~ entry.homepageBlocks[loop.index].color %}
+          {% endif %}
+          {% if loop.index > 1 and entry.homepageBlocks[loop.index - 2].type == 'sectionChange' %}
+            {% set sectionChangeClass = sectionChangeClass ~ ' -has-previous -previous-' ~ entry.homepageBlocks[loop.index - 2].color %}
+          {% endif %}
+
+          <div class="block-answer -{{ block.imagePlacement ?? '' }}{{ block.image|length ? ' -has-image' : '' }}{{ sectionChangeClass }}">
+            <div class="container">
+              <div class="text-wrap">
+                <h5>{{ block.subhead }}</h5>
+                {{ block.headline }}
+                <div class="body user-content">
+                  {{ block.body }}
+                </div>
               </div>
-            </div>
-            <div class="image-wrap">
-              {% include 'partials/_image' with {
-                image: block.image,
-                imageOptions: {
-                  mode: 'crop',
-                  width: 1000,
-                  height: 1042,
-                  effects: { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' },
-                }
-              } %}
+              <div class="image-wrap">
+                {% include 'partials/_image' with {
+                  image: block.image,
+                  imageOptions: {
+                    mode: 'crop',
+                    width: 1000,
+                    height: 1042,
+                    effects: { modulate: [100, 0, 100], clut: 'gradient:#1A1A1A-#EBE5D0' },
+                  }
+                } %}
+              </div>
             </div>
           </div>
 

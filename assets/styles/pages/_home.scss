@@ -120,6 +120,7 @@ body.page-home {
       }
     }
 
+    // Mobile only styles
     @include max-screen($breakpoint-md) {
       .image-wrap {
         margin: grid(8) 0;
@@ -136,8 +137,50 @@ body.page-home {
     // Desktop styles
     @include media-md {
       @include clearfix;
-      display: flex;
-      justify-content: space-between;
+      // Previous block is section change, match color at top of this block (staggered color blocks)
+      &.-has-previous {
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          height: grid(32);
+          width: 100%;
+          left: 0;
+          top: 0;
+          background: color(tan);
+        }
+
+        &.-previous-accent1::before {
+          @include theme-color(background, 'accent1');
+        }
+        &.-previous-accent2::before {
+          @include theme-color(background, 'accent2');
+        }
+      }
+      // Next block is section change, match color at bottom of this block (staggered color blocks)
+      &.-has-next {
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          height: grid(32);
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          background: color(tan);
+        }
+
+        &.-next-accent1::before {
+          @include theme-color(background, 'accent1');
+        }
+        &.-next-accent2::before {
+          @include theme-color(background, 'accent2');
+        }
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
       .image-wrap {
         position: relative;
       }
