@@ -3,6 +3,7 @@
 // Footer outro
 .footer-outro {
   position: relative;
+  padding: grid(10) 0;
   @include theme-color(background, 'accent2');
 
   // No image slashes in footer-outro
@@ -46,8 +47,8 @@
   }
 
   .tape-tagline {
-    left: grid(-8);
-    top: 0;
+    right: 65%;
+    top: 60px;
     transform: rotate(15deg);
     @include theme-color(background, 'tape-tagline-accent2');
     @include theme-color(color, 'tape-tagline-accent2-text');
@@ -58,6 +59,7 @@
     padding: grid(16) 0 grid(24);
     .tape-tagline {
       transform-origin: top left;
+      right: auto;
       left: grid(-8);
       top: 96px;
     }
@@ -121,7 +123,8 @@ footer.site-footer {
       // Reorder footer blocks
       .main-nav {
         order: 1;
-        // display: none;
+        // Hiding as client thinks mobile footer is too tall
+        display: none;
       }
       .secondary-nav {
         order: 2;
