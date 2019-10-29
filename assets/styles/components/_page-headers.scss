@@ -36,13 +36,13 @@
   }
 
   .tape-tagline {
-    top: 65%;
+    top: 85%;
     right: 65%;
     &.-right {
       span {
         float: left;
       }
-      top: 45%;
+      top: 65%;
       right: auto;
       left: 70%;
     }
@@ -51,12 +51,7 @@
   // Desktop styles
   @include media-md {
     .tape-tagline {
-      top: 65%;
-      right: 65%;
       &.-right {
-        top: 45%;
-        right: auto;
-        left: 70%;
       }
     }
 

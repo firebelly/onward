@@ -47,7 +47,7 @@
 
   }
 
-  @include media-md {
+  @include media-nav {
     display: block;
   }
 }
@@ -63,9 +63,14 @@
   padding: 4px;
   position: absolute;
   width: 300px;
-  transform: rotate(-30deg);
+  transform: rotate(-15deg);
+  transform-origin: left;
   span {
     float: right;
+  }
+
+  @include max-screen($breakpoint-md) {
+    font-size: 10px;
   }
 
   @include media-md {
