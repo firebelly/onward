@@ -5,12 +5,15 @@
   @include clearfix;
   position: relative;
   padding: grid(4) 0;
+  figure {
+    position: relative;
+  }
   figcaption {
     @include h4;
     background: color(tan);
     color: color(black);
-    padding: $global-padding;
-    margin: grid(-6) grid(3) grid(4);
+    padding: $global-padding $global-padding 0;
+    margin: grid(-6) grid(3) 0;
     position: relative;
     text-align: left;
   }
@@ -28,12 +31,39 @@
       }
     }
   }
+  &.-center,
+  &.-left {
+    .tape-tagline {
+      right: grid(-10);
+      top: grid(3);
+      transform: rotate(15deg);
+      span {
+        float: left;
+      }
+    }
+  }
+  &.-center {
+    .tape-tagline {
+      top: grid(3);
+      right: auto;
+      left: 65%;
+    }
+  }
+  &.-right {
+    .tape-tagline {
+      top: grid(6);
+      transform: rotate(15deg);
+      right: calc(100% - 150px);
+    }
+  }
+
 
   // Desktop styles
   @include media-md {
     padding: grid(16) 0;
     figcaption {
       position: absolute;
+      padding: $global-padding;
       margin: 0;
       transform: translateY(grid(-12));
       left: columns(1);
@@ -41,8 +71,6 @@
       width: columns(3);
     }
     figure {
-      position: relative;
-      display: block;
       max-width: $container-width;
       // start of clip path option as proof-of-concept, may bring back, requires captions push down instead of up as size grows
       // &.-has-caption {
@@ -70,19 +98,22 @@
         float: right;
       }
       .tape-tagline {
-        right: calc(100% - #{columns(1)});
-        top: 0;
-        transform-origin: top left;
-        transform: rotate(15deg);
+        top: 100px;
       }
     }
     &.-left {
+      margin: 0;
       figure {
         float: left;
       }
       figcaption {
         right: auto;
         left: columns(3);
+      }
+      .tape-tagline {
+        right: columns(-1);
+        top: grid(-8);
+        transform: rotate(15deg);
       }
     }
   }
@@ -101,7 +132,7 @@
       content: '';
       display: block;
       position: absolute;
-      top: -300px;
+      top: -100px;
       right: 0;
       left: 0;
       bottom: 100%;
@@ -114,6 +145,12 @@
     &.color-accent2::after {
       @include theme-color(background, 'accent2');
     }
+
+    @include media-md {
+      &::after {
+        top: -300px;
+      }
+    }
   }
 
   // Has a following section block, append color block for staggering
@@ -122,11 +159,15 @@
       content: '';
       display: block;
       position: absolute;
-      height: grid(48);
+      height: 100px;
       width: 100%;
       left: 0;
       bottom: 0;
       background: color(tan);
+
+      @include media-md {
+        height: grid(48);
+      }
     }
 
     &.-next-accent1::before {
@@ -299,6 +340,7 @@
 .block-question,
 .block-statement,
 .block-quote {
+  position: relative;
   // Hide offset images on mobile
   figure {
     display: none;
@@ -308,7 +350,7 @@
     display: none;
   }
   .container {
-    padding: grid(8) $mobile-global-padding;
+    padding: grid(4) $mobile-global-padding;
   }
 
   // Desktop styles
