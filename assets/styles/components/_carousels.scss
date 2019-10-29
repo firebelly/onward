@@ -35,19 +35,22 @@
 
   // Individual carousel cells
   .cell {
-    width: 85%;
+    width: 100%;
     margin-right: $global-padding;
     background: color(white);
     padding: $global-padding;
+
+    @include media-md {
+      width: 85%;
+    }
   }
 
   // Partnership stories
   &.stories {
     h3 {
-      @include h2;
-      margin: 0;
-
       @include media-md {
+        @include h2;
+        margin: 0;
         min-height: 160px;
       }
     }
@@ -57,12 +60,22 @@
         display: inline-block;
         margin-right: grid(5);
       }
+      margin: grid(2) 0 grid(3);
+
+      @include media-md {
+        margin: 0 0 grid(2);
+      }
     }
     .tape-tagline {
        top: 90px;
        right: -20px;
        transform: rotate(-30deg);
        background: color(tan);
+       // Hide tape tags on mobile carousels
+       display: none;
+       @include media-md {
+         display: block;
+       }
     }
     // Hover state for images
     .cell {
@@ -81,6 +94,11 @@
        right: -20px;
        transform: rotate(30deg);
        background: color(tan);
+       // Hide tape tags on mobile carousels
+       display: none;
+       @include media-md {
+         display: block;
+       }
     }
     figure {
       display: block;
@@ -127,7 +145,10 @@
 
     // Content inside cell
     .cell-body {
-      padding: 0 $global-padding;
+      padding: $global-padding 0 0;
+      @include media-md {
+        padding: 0 $global-padding;
+      }
     }
     p {
       @include p3;
