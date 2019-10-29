@@ -28,11 +28,11 @@ form {
   input[type=text],
   input[type=email],
   textarea {
+    @include h3;
     background: none;
     border: 2px solid color(black);
     border-top: none;
     padding: grid(2) grid(4) grid(4);
-    @include h3;
     &:focus {
       outline: 0;
     }
@@ -52,6 +52,13 @@ form {
           float: right;
         }
       }
+    }
+  }
+
+  textarea {
+    @include h4;
+    @include media-md {
+      @include h3;
     }
   }
 
