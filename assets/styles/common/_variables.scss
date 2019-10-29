@@ -18,6 +18,16 @@ $colors: (
   @return map-get($colors, #{''+$color-name+''});
 }
 
+// Breakpoints
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-nav: 1158px;
+$breakpoint-lg: 1000px;
+$breakpoint-xl: 1400px;
+
+// Container width (max-width main content containers)
+$container-width: 1128px;
+
 // Z-index maps
 $z-layers: (
   bottomless-pit: -9999,
@@ -32,12 +42,6 @@ $z-layers: (
   @return map-get($z-layers, $key);
 }
 
-// Nav and admin bar heights
-$nav-height-mobile: 80px;
-$nav-height: 176px;
-$admin-bar-height-mobile: 46px;
-$admin-bar-height: 32px;
-
 // Custom cubic easings
 $cubic-ease1: cubic-bezier(0.77, 0, 0.175, 1);
 $cubic-ease2: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -45,13 +49,3 @@ $cubic-ease2: cubic-bezier(0.165, 0.84, 0.44, 1);
 // Base transition styles using @include transition(property)
 $transition-duration: 0.2s;
 $transition-easing: $cubic-ease1;
-
-// Breakpoints
-$breakpoint-sm: 480px;
-$breakpoint-md: 768px;
-$breakpoint-nav: 1128px;
-$breakpoint-lg: 1000px;
-$breakpoint-xl: 1400px;
-
-// Container width (max-width main content containers)
-$container-width: 1128px;

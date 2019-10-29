@@ -86,7 +86,7 @@ svg.icon {
   max-width: $container-width;
   margin: 0 auto;
   padding: 0 $mobile-global-padding;
-  @include min-screen($breakpoint-nav + $mobile-global-padding) {
+  @include media-nav {
     padding: 0;
   }
 }
