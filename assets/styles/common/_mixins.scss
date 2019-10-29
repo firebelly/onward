@@ -70,12 +70,6 @@
                 'theme-pink' black,
                 'theme-homepage' black;
 
-  // Darker color sections get tan text
-  // &.color-green,
-  // &.color-brown {
-  //   color: color(tan);
-  // }
-
   // Accent colors for section changes
   } @else if ($map == 'accent1') {
     $theme-map: 'theme-orange' orange,
@@ -104,12 +98,12 @@
     $theme-map: 'theme-orange' pink,
                 'theme-yellow' yellow,
                 'theme-pink' brown,
-                'theme-homepage' orange;
+                'theme-homepage' green;
   } @else if ($map == 'tape-tagline-accent1-text') {
     $theme-map: 'theme-orange' black,
                 'theme-yellow' black,
                 'theme-pink' black,
-                'theme-homepage' black;
+                'theme-homepage' tan;
   } @else if ($map == 'tape-tagline-accent2') {
     $theme-map: 'theme-orange' orange,
                 'theme-yellow' blue,
