@@ -77,12 +77,15 @@
          display: block;
        }
     }
-    // Hover state for images
-    .cell {
-      @include transition(background);
-      &:hover,
-      &.-active {
-        background: color(pink);
+
+    @include media-md {
+      // Hover state for images
+      .cell {
+        @include transition(background);
+        &:hover,
+        &.-active {
+          background: color(pink);
+        }
       }
     }
   }
@@ -127,17 +130,20 @@
         z-index: 1;
       }
     }
-    // Hover state for images
-    .cell {
-      &:hover,
-      &.-active {
-        figure {
-          img {
-            filter: none;
-            mix-blend-mode: none;
-          }
-          &::before {
-            opacity: 0;
+
+    @include media-md {
+      // Hover state for images
+      .cell {
+        &:hover,
+        &.-active {
+          figure {
+            img {
+              filter: none;
+              mix-blend-mode: none;
+            }
+            &::before {
+              opacity: 0;
+            }
           }
         }
       }
