@@ -104,7 +104,10 @@ body.page-home {
   // Answer
   .block-answer {
     position: relative;
+    padding: 0 0 grid(4);
+
     .text-wrap {
+      position: relative;
       .body {
         p {
           @include p3;
@@ -120,63 +123,69 @@ body.page-home {
       }
     }
 
+    // Previous block is section change, match color at top of this block (staggered color blocks)
+    &.-has-previous {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: grid(32);
+        width: 100%;
+        left: 0;
+        top: 0;
+        background: color(tan);
+      }
+
+      &.-previous-accent1::before {
+        @include theme-color(background, 'accent1');
+      }
+      &.-previous-accent2::before {
+        @include theme-color(background, 'accent2');
+      }
+    }
+    // Next block is section change, match color at bottom of this block (staggered color blocks)
+    &.-has-next {
+      &::before {
+        content: '';
+        display: none;
+        position: absolute;
+        height: grid(32);
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: color(tan);
+      }
+
+      &.-next-accent1::before {
+        @include theme-color(background, 'accent1');
+      }
+      &.-next-accent2::before {
+        @include theme-color(background, 'accent2');
+      }
+    }
+
     // Mobile only styles
     @include max-screen($breakpoint-md) {
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
       .image-wrap {
-        margin: grid(8) 0;
+        margin: grid(4) 0;
+        order: 1;
+      }
+      .text-wrap {
+        order: 2;
       }
       h2 {
-        @include h2;
         margin-top: grid(0);
-        em {
-          @include h2-serif;
-        }
       }
     }
 
     // Desktop styles
     @include media-md {
       @include clearfix;
-      // Previous block is section change, match color at top of this block (staggered color blocks)
-      &.-has-previous {
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          height: grid(32);
-          width: 100%;
-          left: 0;
-          top: 0;
-          background: color(tan);
-        }
 
-        &.-previous-accent1::before {
-          @include theme-color(background, 'accent1');
-        }
-        &.-previous-accent2::before {
-          @include theme-color(background, 'accent2');
-        }
-      }
-      // Next block is section change, match color at bottom of this block (staggered color blocks)
-      &.-has-next {
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          height: grid(32);
-          width: 100%;
-          left: 0;
-          bottom: 0;
-          background: color(tan);
-        }
-
-        &.-next-accent1::before {
-          @include theme-color(background, 'accent1');
-        }
-        &.-next-accent2::before {
-          @include theme-color(background, 'accent2');
-        }
-      }
       .container {
         display: flex;
         justify-content: space-between;
@@ -185,6 +194,7 @@ body.page-home {
         position: relative;
       }
       .text-wrap {
+        position: relative;
         .body {
           p {
             @include p2;
@@ -192,17 +202,21 @@ body.page-home {
         }
       }
 
+      &.-has-next::before {
+        display: block;
+      }
+
       &.-right {
         .icon.sprite-slash {
           right: columns(1, 6);
         }
         .text-wrap {
-          flex-basis: columns(6);
+          flex: 0 1 columns(6);
           padding-right: columns(1);
           padding-top: 224px;
         }
         .image-wrap {
-          flex-basis: columns(6);
+          flex: 0 1 columns(6);
           padding-left: $global-padding;
           position: relative;
         }
@@ -213,13 +227,13 @@ body.page-home {
           left: columns(1, 6);
         }
         .text-wrap {
-          flex-basis: columns(5);
+          flex: 0 1 columns(5);
           padding-left: $global-padding;
           order: 2;
         }
         .image-wrap {
           align-self: flex-start;
-          flex-basis: columns(7);
+          flex: 0 1 columns(7);
           padding-right: columns(1);
           order: 1;
           padding-top: 224px;
@@ -239,6 +253,9 @@ body.page-home {
       h2,
       h5 {
         margin: 0;
+      }
+      .body {
+        margin-top: grid(3);
       }
       background: color(green);
       color: color(tan);
@@ -281,6 +298,11 @@ body.page-home {
         padding-bottom: 25%;
       }
     }
+  }
+
+  // Homepage specific footer-outro tweaks
+  .footer-outro {
+    background: color(tan);
   }
 
 }
