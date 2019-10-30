@@ -36,10 +36,6 @@
 
       <div class="partner-form">
         <form method="post">
-          {{ csrfInput() }}
-          <input type="hidden" name="action" value="contact-form/send">
-          <input type="hidden" name="subject" value="Onward Partnership Submission">
-
           <div class="grid-wrap"><div class="grid">
             <div class="grid-item one-third">
               <label for="from-name">Your Name</label>
@@ -74,6 +70,11 @@
           <div class="status"></div>
 
           <div class="actions">
+            {{ csrfInput() }}
+            {{ craft.contactFormExtensions.recaptcha | raw }}
+            <input type="hidden" name="action" value="contact-form/send">
+            <input type="hidden" name="subject" value="Onward Partnership Submission">
+
             <button type="submit" class="button -jumbo">Submit Message</button>
           </div>
         </form>
