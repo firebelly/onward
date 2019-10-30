@@ -44,6 +44,8 @@
     }
   }
   &.-center {
+    // For inline images not treated, such as SVG/gif/png
+    text-align: center;
     .tape-tagline {
       top: grid(3);
       right: auto;
@@ -82,8 +84,6 @@
       // }
     }
     &.-center {
-      // For inline images not treated, such as SVG/gif/png
-      text-align: center;
       figure {
         margin: 0 auto;
       }
