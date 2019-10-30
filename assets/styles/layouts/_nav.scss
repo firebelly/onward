@@ -6,7 +6,6 @@
   @include slide-link('.label');
   .label {
     display: none;
-    @include transition(background-size color);
   }
 
   // 🍔¯\_(ツ)_/¯🍔
@@ -221,7 +220,6 @@
     .label {
       display: none;
       padding: 0 2px;
-      @include transition(background-size color);
     }
 
     // Desktop styles

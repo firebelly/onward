@@ -15,14 +15,15 @@ body.page-home {
 
   &:not(.nav-stuck) {
     #hamburger-salad {
-      color: color(tan);
+      .label {
+        color: color(tan);
+      }
       svg {
         fill: color(tan);
       }
-      .label {
-        &:hover {
-          color: color(green);
-        }
+      &:hover .label,
+      .label:hover {
+        color: color(green);
       }
     }
     .sticky-logo {
@@ -36,9 +37,10 @@ body.page-home {
       }
       .label {
         color: color(tan);
-        &:hover {
-          color: color(green);
-        }
+      }
+      &:hover .label,
+      .label:hover {
+        color: color(green);
       }
     }
     a.donate {
