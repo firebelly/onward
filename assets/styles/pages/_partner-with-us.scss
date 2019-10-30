@@ -15,6 +15,13 @@ body.page-partner-with-us {
       }
     }
   }
+  p.terms {
+    font-size: 10px;
+    opacity: 0.5;
+    a {
+      text-decoration: underline;
+    }
+  }
 
   // Desktop styles
   @include media-md {
