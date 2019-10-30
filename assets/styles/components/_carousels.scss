@@ -82,8 +82,7 @@
       // Hover state for images
       .cell {
         @include transition(background);
-        &:hover,
-        &.-active {
+        &:hover {
           background: color(pink);
         }
       }
@@ -134,8 +133,7 @@
     @include media-md {
       // Hover state for images
       .cell {
-        &:hover,
-        &.-active {
+        &:hover {
           figure {
             img {
               filter: none;
@@ -197,9 +195,6 @@
       width: 27px;
       height: 19px;
     }
-    &.-active {
-      color: color(orange);
-    }
     &:hover {
       color: color(black);
       svg {
@@ -210,8 +205,11 @@
   svg {
     fill: color(gray);
   }
-  .cell-buttons {
+  .cell-count {
     display: inline-block;
+  }
+  .previous {
+    padding-left: 0;
   }
   .next {
     svg {

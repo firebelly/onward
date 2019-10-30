@@ -14,10 +14,8 @@
         <div class="grid-item one-half">
           <div class="carousel-pagination">
             <span class="previous"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
-            <div class="cell-buttons">
-              {% for card in entry.postcards.all() %}
-                <span{{ loop.first ? ' class="-active"' : '' }}>{{ '%02d'|format(loop.index) }}</span>
-              {% endfor %}
+            <div class="cell-count">
+              01 / {{ '%02d'|format(entry.postcards|length) }}
             </div>
             <span class="next"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
           </div>

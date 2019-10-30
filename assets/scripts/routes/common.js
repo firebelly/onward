@@ -10,9 +10,6 @@ export default {
     let $body = $('body');
     let pageAt = window.location.pathname;
 
-    _setCustomVhUnit();
-    $(window).on('resize', _setCustomVhUnit);
-
     // Mobile hamburger and X close icons toggle mobile nav
     $('#hamburger-salad').on('click', function(e) {
       e.preventDefault();
@@ -27,9 +24,9 @@ export default {
     $('.carousel').each(function() {
       var $this = $(this),
           $cells = $this.find('.cells'),
+          cellCount = $cells.find('.cell').length,
           $pagination = $this.find('.carousel-pagination'),
-          $cellButtonGroup = $pagination.find('.cell-buttons'),
-          $cellButtons = $cellButtonGroup.find('span');
+          $cellCounter = $pagination.find('.cell-count');
 
       var flkty = new Flickity($cells[0], {
         prevNextButtons: false,
@@ -38,22 +35,16 @@ export default {
         cellAlign: 'left'
       });
 
-      // update selected cellButtons
+      // Update '01 / 05' text
       flkty.on('select', function(index){
-        $cellButtons.removeClass('-active');
-        $cellButtons.eq(index).addClass('-active');
+        $cellCounter.text(('0' + (index+1)).slice(-2) + ' / ' + ('0' + cellCount).slice(-2));
       });
 
-      // select cell on button click
-      $cellButtonGroup.on('click', 'span', function(){
-        var index = $(this).index();
-        flkty.select(index);
-      });
-      // previous
+      // Previous
       $this.find('.previous').on('click', function(){
         flkty.previous();
       });
-      // next
+      // Next
       $this.find('.next').on('click', function(){
         flkty.next();
       });
@@ -69,7 +60,7 @@ export default {
       // Clicking outside of modal closes modal
       let $target = $(e.target);
       // Make sure target inside modal content
-      if ($target.parents('.toggle-nav').length === 0 && !$target.hasClass('site-nav') && $target.parents('.site-nav').length === 0) {
+      if ($target.parents('.toggle-nav').length === 0 && !$target.hasClass('site-nav')  && !$target.hasClass('toggle-nav') && $target.parents('.site-nav').length === 0) {
         _closeNav();
       }
     });
@@ -80,8 +71,6 @@ export default {
     // Dropdown \/ links to toggle children page nav
     $('.site-nav .toggle-dropdown').on('click', function(e) {
       e.preventDefault();
-      // Update custom vh unit
-      _setCustomVhUnit();
       var $li = $(this).parents('li:first');
       // Show/hide children
       $('.site-nav li').not($li).removeClass('open').find('ul.children').velocity('slideUp', { duration: 0 });
@@ -90,11 +79,7 @@ export default {
         delay: ($li.hasClass('open') ? 0 : 150)
       });
       $li.find('ul.children').velocity($li.hasClass('open') ? 'slideUp' : 'slideDown', {
-        duration: 200,
-        complete: function() {
-          // Update custom vh unit
-          _setCustomVhUnit();
-        }
+        duration: 200
       }, 'easeOutSine');
       $li.toggleClass('open');
     });
@@ -148,13 +133,6 @@ export default {
           appState.isAnimating = false;
         }
       }, 'easeOutSine');
-    }
-
-    function _setCustomVhUnit() {
-      // Get the viewport height and multiply it by 1% to get a value for a vh unit
-      let vh = window.innerHeight * 0.01;
-      // Set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
   },

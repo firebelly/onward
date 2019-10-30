@@ -36,6 +36,7 @@
     .tape-tagline {
       right: grid(-10);
       top: grid(3);
+      transform-origin: left;
       transform: rotate(15deg);
       span {
         float: left;
@@ -52,6 +53,7 @@
   &.-right {
     .tape-tagline {
       top: grid(6);
+      transform-origin: left;
       transform: rotate(15deg);
       right: calc(100% - 150px);
     }
