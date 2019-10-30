@@ -1,14 +1,14 @@
 {# Static dropdown nav menu #}
 
 {# Find child pages of Our Work to show in nav #}
-{% set ourWorkPages = craft.entries({ section: 'ourWork', showInNav: 1, level: 2 }).all() %}
+{% set ourWorkPages = craft.entries({ section: 'ourWork', showInNav: 1, level: 2 }).limit(3) %}
 {% set ourWorkChildNav = [] %}
 {% for page in ourWorkPages %}
   {% set ourWorkChildNav = ourWorkChildNav|merge([{ 'href': page.getUrl(), 'name': page.title }]) %}
 {% endfor %}
 
 {# Find child pages of Our Story to show in nav #}
-{% set ourStoryPages = craft.entries({ section: 'ourStory', showInNav: 1, level: 2 }).all() %}
+{% set ourStoryPages = craft.entries({ section: 'ourStory', showInNav: 1, level: 2 }).limit(3) %}
 {% set ourStoryChildNav = [] %}
 {% for page in ourStoryPages %}
   {% set ourStoryChildNav = ourStoryChildNav|merge([{ 'href': page.getUrl(), 'name': page.title }]) %}
