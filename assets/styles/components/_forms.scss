@@ -28,7 +28,7 @@ form {
   input[type=text],
   input[type=email],
   textarea {
-    @include h3;
+    @include p2;
     background: none;
     border: 2px solid color(black);
     border-top: none;
@@ -52,13 +52,6 @@ form {
           float: right;
         }
       }
-    }
-  }
-
-  textarea {
-    @include h4;
-    @include media-md {
-      @include h3;
     }
   }
 

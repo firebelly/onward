@@ -15,7 +15,7 @@
     background-image: linear-gradient(to top, color(black) 2px, color(white) 2px, color(white) 100%);
     background-repeat: no-repeat;
     background-size: 0% 100%;
-    @include transition(background-size);
+    @include transition(background-size, color);
   }
   &:hover,
   &:focus {

@@ -1,4 +1,4 @@
-dateModified: 1572282181
+dateModified: 1572454104
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1750,7 +1750,7 @@ plugins:
       prependSender: 'On behalf of'
       prependSubject: ''
       allowAttachments: ''
-      successFlashMessage: 'Your message has been sent.'
+      successFlashMessage: 'Your message has been sent'
   contact-form-extensions:
     edition: standard
     enabled: true
@@ -1762,15 +1762,21 @@ plugins:
       notificationTemplate: ''
       confirmationTemplate: ''
       confirmationSubject: ''
-      recaptcha: '1'
+      recaptcha: ''
       recaptchaVersion: '3'
       recaptchaSiteKey: $RECAPTCHA_SITE_KEY
       recaptchaSecretKey: $RECAPTCHA_SECRET_KEY
-      recaptchaHideBadge: ''
+      recaptchaHideBadge: '1'
       recaptchaDataBadge: bottomright
-      recaptchaTimeout: '5'
+      recaptchaTimeout: '30'
       recaptchaDebug: ''
       recaptchaThreshold: '0.5'
+  contact-form-honeypot:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      honeypotParam: botsLoveTheHoney
 sections:
   0d9553ee-97bc-45c6-aeed-06d1bfde344f:
     name: 'Our Story'

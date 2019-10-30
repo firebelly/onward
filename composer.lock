@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d146795f6e5f17a6fd09210bb666ccd5",
+    "content-hash": "cb93a5a0ea246caea3ff58345660d4e0",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.28",
+            "version": "3.112.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "dabae6df3fd53b470da8806d641d05dbb66859da"
+                "reference": "dd708cda7df0def37e9dcb6e3640d4d122e4bd28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/dabae6df3fd53b470da8806d641d05dbb66859da",
-                "reference": "dabae6df3fd53b470da8806d641d05dbb66859da",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/dd708cda7df0def37e9dcb6e3640d4d122e4bd28",
+                "reference": "dd708cda7df0def37e9dcb6e3640d4d122e4bd28",
                 "shasum": ""
             },
             "require": {
@@ -207,59 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-10-24T18:14:24+00:00"
-        },
-        {
-            "name": "barrelstrength/sprout-active",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/barrelstrength/craft-sprout-active.git",
-                "reference": "42515d31e4f93f651e25af70ed7079adcb488ba0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-active/zipball/42515d31e4f93f651e25af70ed7079adcb488ba0",
-                "reference": "42515d31e4f93f651e25af70ed7079adcb488ba0",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Sprout Active",
-                "handle": "sprout-active",
-                "developer": "Barrel Strength",
-                "developerUrl": "https://barrelstrengthdesign.com",
-                "documentationUrl": "https://sprout.barrelstrengthdesign.com/craft-plugins/active",
-                "changelogUrl": "https://raw.githubusercontent.com/barrelstrength/sprout-active/master/CHANGELOG.md",
-                "downloadUrl": "https://github.com/barrelstrength/sprout-active/archive/master.zip",
-                "class": "barrelstrength\\sproutactive\\SproutActive"
-            },
-            "autoload": {
-                "psr-4": {
-                    "barrelstrength\\sproutactive\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Barrel Strength",
-                    "homepage": "https://www.barrelstrengthdesign.com/"
-                }
-            ],
-            "description": "Simplify navigation and URL-based logic in your templates.",
-            "keywords": [
-                "craftcms",
-                "twig",
-                "twig extension",
-                "urls"
-            ],
-            "time": "2019-04-30T02:40:35+00:00"
+            "time": "2019-10-29T18:07:59+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -767,6 +715,53 @@
                 "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
             },
             "time": "2019-05-31T22:56:39+00:00"
+        },
+        {
+            "name": "craftcms/contact-form-honeypot",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/contact-form-honeypot.git",
+                "reference": "57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/contact-form-honeypot/zipball/57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0",
+                "reference": "57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.20"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Contact Form Honeypot",
+                "handle": "contact-form-honeypot",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/contact-form-honeypot/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/contact-form-honeypot/archive/master.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\contactform\\honeypot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Add a honeypot captcha to your Craft CMS contact form",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "yii2"
+            ],
+            "time": "2017-12-05T00:55:45+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1286,16 +1281,16 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.11.0",
+            "version": "v4.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "83ab08bc1af7d808a9e0fbf024f1c24bfd73c0a7"
+                "reference": "a617e55bc62a87eec73bd456d146d134ad716f03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/83ab08bc1af7d808a9e0fbf024f1c24bfd73c0a7",
-                "reference": "83ab08bc1af7d808a9e0fbf024f1c24bfd73c0a7",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/a617e55bc62a87eec73bd456d146d134ad716f03",
+                "reference": "a617e55bc62a87eec73bd456d146d134ad716f03",
                 "shasum": ""
             },
             "require": {
@@ -1329,7 +1324,7 @@
             "keywords": [
                 "html"
             ],
-            "time": "2019-07-14T18:58:38+00:00"
+            "time": "2019-10-28T03:44:26+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -1379,16 +1374,16 @@
         },
         {
             "name": "google/auth",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3"
+                "reference": "45635ac69d0b95f38885531d4ebcdfcb2ebb6f36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3",
-                "reference": "6d5455b4c0f4a58b1f1b4bdf2ba49221123698b3",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/45635ac69d0b95f38885531d4ebcdfcb2ebb6f36",
+                "reference": "45635ac69d0b95f38885531d4ebcdfcb2ebb6f36",
                 "shasum": ""
             },
             "require": {
@@ -1426,20 +1421,20 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2019-10-01T18:35:05+00:00"
+            "time": "2019-10-29T20:13:04+00:00"
         },
         {
             "name": "google/cloud",
-            "version": "v0.115.0",
+            "version": "v0.116.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php.git",
-                "reference": "36040d9c5f6803023929f2226ccb448dc3f2e2ab"
+                "reference": "8e53cbe2ed8788aa120cd2a2db34eb03c8c9554d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/36040d9c5f6803023929f2226ccb448dc3f2e2ab",
-                "reference": "36040d9c5f6803023929f2226ccb448dc3f2e2ab",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/8e53cbe2ed8788aa120cd2a2db34eb03c8c9554d",
+                "reference": "8e53cbe2ed8788aa120cd2a2db34eb03c8c9554d",
                 "shasum": ""
             },
             "require": {
@@ -1463,36 +1458,36 @@
                 "google/cloud-bigtable": "1.1.0",
                 "google/cloud-common-protos": "0.2.0",
                 "google/cloud-container": "0.11.0",
-                "google/cloud-core": "1.33.1",
-                "google/cloud-dataproc": "0.15.0",
+                "google/cloud-core": "1.34.0",
+                "google/cloud-dataproc": "0.15.1",
                 "google/cloud-datastore": "1.10.0",
                 "google/cloud-debugger": "0.19.1",
                 "google/cloud-dialogflow": "0.10.0",
                 "google/cloud-dlp": "0.22.0",
                 "google/cloud-error-reporting": "0.15.0",
-                "google/cloud-firestore": "1.9.0",
+                "google/cloud-firestore": "1.10.0",
                 "google/cloud-iot": "0.9.0",
                 "google/cloud-kms": "1.7.0",
                 "google/cloud-language": "0.21.0",
                 "google/cloud-logging": "1.18.0",
-                "google/cloud-monitoring": "0.18.0",
+                "google/cloud-monitoring": "0.19.0",
                 "google/cloud-oslogin": "0.10.0",
                 "google/cloud-pubsub": "1.18.0",
-                "google/cloud-redis": "0.10.0",
+                "google/cloud-redis": "0.11.0",
                 "google/cloud-scheduler": "1.1.0",
                 "google/cloud-security-center": "0.2.0",
                 "google/cloud-spanner": "1.20.0",
                 "google/cloud-speech": "0.27.0",
-                "google/cloud-storage": "1.14.0",
-                "google/cloud-talent": "0.6.0",
+                "google/cloud-storage": "1.15.0",
+                "google/cloud-talent": "0.7.0",
                 "google/cloud-tasks": "1.3.0",
                 "google/cloud-text-to-speech": "0.5.0",
                 "google/cloud-trace": "0.15.0",
-                "google/cloud-translate": "1.5.0",
+                "google/cloud-translate": "1.6.0",
                 "google/cloud-videointelligence": "1.7.0",
                 "google/cloud-vision": "0.24.0",
                 "google/cloud-web-risk": "0.3.0",
-                "google/cloud-web-security-scanner": "0.2.0"
+                "google/cloud-web-security-scanner": "0.3.0"
             },
             "require-dev": {
                 "erusev/parsedown": "^1.6",
@@ -1649,7 +1644,7 @@
                 "translation",
                 "vision"
             ],
-            "time": "2019-10-07T20:57:40+00:00"
+            "time": "2019-10-28T19:05:44+00:00"
         },
         {
             "name": "google/common-protos",
@@ -1734,16 +1729,16 @@
         },
         {
             "name": "google/gax",
-            "version": "1.1.2",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "4389c4103f0469f02c078250c73eaa57bdc91452"
+                "reference": "4baa6d9fb2c5f13ea46c65133848e99fe0aa5ed5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/4389c4103f0469f02c078250c73eaa57bdc91452",
-                "reference": "4389c4103f0469f02c078250c73eaa57bdc91452",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/4baa6d9fb2c5f13ea46c65133848e99fe0aa5ed5",
+                "reference": "4baa6d9fb2c5f13ea46c65133848e99fe0aa5ed5",
                 "shasum": ""
             },
             "require": {
@@ -1751,7 +1746,7 @@
                 "google/common-protos": "^1.0",
                 "google/grpc-gcp": "^0.1.0",
                 "google/protobuf": "^3.7.1",
-                "grpc/grpc": "^1.4",
+                "grpc/grpc": "^1.13",
                 "guzzlehttp/promises": "^1.3",
                 "guzzlehttp/psr7": "^1.2",
                 "php": ">=5.5"
@@ -1780,7 +1775,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-09-06T18:27:35+00:00"
+            "time": "2019-10-28T20:25:44+00:00"
         },
         {
             "name": "google/grpc-gcp",

@@ -15,12 +15,17 @@ body.page-partner-with-us {
       }
     }
   }
+  // Google Recaptcha terms (removed for now and switched to honeypot)
   p.terms {
     font-size: 10px;
     opacity: 0.5;
     a {
       text-decoration: underline;
     }
+  }
+  // Honeypot
+  input#botsLoveTheHoney {
+    display: none;
   }
 
   // Desktop styles
