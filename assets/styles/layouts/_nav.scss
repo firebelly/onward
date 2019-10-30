@@ -3,9 +3,9 @@
 // Hamburgers for everyone large and small
 #hamburger-salad {
   display: inline-block;
+  @include slide-link('.label');
   .label {
     display: none;
-    @include slide-link;
     @include transition(background-size color);
   }
 
@@ -104,12 +104,10 @@
 
     // Wrap the nav in full viewport
     .wrap {
-      height: calc(100% - 46px);
-      height: calc(var(--vh, 1vh) * 100 - 46px);
+      height: calc(100vh - 46px);
       @include media-md {
         .wrap {
-          height: calc(100% - 50px);
-          height: calc(var(--vh, 1vh) * 100 - 50px);
+          height: calc(100vh - 50px);
         }
       }
     }
@@ -218,11 +216,11 @@
         vertical-align: top;
         margin-right: grid(3);
       }
+      @include slide-link('.label');
     }
     .label {
       display: none;
       padding: 0 2px;
-      @include slide-link;
       @include transition(background-size color);
     }
 
