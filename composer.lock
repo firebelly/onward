@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb93a5a0ea246caea3ff58345660d4e0",
+    "content-hash": "d66b78f05d1f17f50fabb53e62b67c53",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -4037,16 +4037,16 @@
         },
         {
             "name": "spicyweb/craft-embedded-assets",
-            "version": "2.1.0",
+            "version": "2.1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spicywebau/craft-embedded-assets.git",
-                "reference": "8d17233dd2cd7bb8e36eaaa3b96c5f431ac1aced"
+                "reference": "272616d4e22e1063ad5a8ce506c799f71b1ffc9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-embedded-assets/zipball/8d17233dd2cd7bb8e36eaaa3b96c5f431ac1aced",
-                "reference": "8d17233dd2cd7bb8e36eaaa3b96c5f431ac1aced",
+                "url": "https://api.github.com/repos/spicywebau/craft-embedded-assets/zipball/272616d4e22e1063ad5a8ce506c799f71b1ffc9f",
+                "reference": "272616d4e22e1063ad5a8ce506c799f71b1ffc9f",
                 "shasum": ""
             },
             "require": {
@@ -4089,7 +4089,7 @@
                 "vimeo",
                 "youtube"
             ],
-            "time": "2019-10-18T04:12:59+00:00"
+            "time": "2019-10-28T05:09:36+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",

@@ -10,7 +10,7 @@
     "mmikkel/retcon": "^2.0",
     "pelago/emogrifier": "^2.0",
     "rias/craft-contact-form-extensions": "1.2.0",
-    "spicyweb/craft-embedded-assets": "2.1.0",
+    "spicyweb/craft-embedded-assets": "2.1.1.1",
     "verbb/expanded-singles": "1.0.7",
     "verbb/super-table": "2.3.0",
     "vlucas/phpdotenv": "^3.4.0",
