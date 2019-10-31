@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <title>{% if seoTitle is defined and seoTitle != '' %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ siteOptions.titleSeparator }} {{ siteName }}{% else %}{{ siteName }}{% endif %}</title>
+  <title>{% if seoTitle is defined and seoTitle != '' %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ siteOptions.misc.titleSeparator }} {{ siteName }}{% else %}{{ siteName }}{% endif %}</title>
 {% if seoDescription is defined %}
   <meta name="description" content="{{ seoDescription }}">
 {% endif %}
