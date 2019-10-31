@@ -6,7 +6,7 @@ use \DrewM\MailChimp\MailChimp;
 Event::on(Submission::class, Submission::EVENT_AFTER_VALIDATE, function(Event $e) {
 
   $apiKey = getenv('MAILCHIMP_API_KEY');
-  if (!empty($apiKey) {
+  if (!empty($apiKey)) {
 
     $submission = $e->sender;
     $siteOptions = \craft\elements\GlobalSet::find()
