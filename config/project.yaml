@@ -1,4 +1,4 @@
-dateModified: 1572454104
+dateModified: 1572486243
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -59,7 +59,7 @@ fields:
     name: 'Footer Info'
     handle: footerInfo
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: site
     translationKeyFormat: null
     type: verbb\supertable\fields\SuperTableField
@@ -84,21 +84,27 @@ fields:
       selectionLabel: ''
     contentColumnType: string
     fieldGroup: c5df179a-46ba-4ca1-bbdb-c44d8b2a821d
-  6972beb1-d7c4-46b6-8d63-f06e2c7627d8:
-    name: 'Title Separator'
-    handle: titleSeparator
-    instructions: 'Used in <title> to separate siteName and pageTitle'
-    searchable: true
-    translationMethod: none
+  5eaf5088-470a-41a8-8696-2affe0ab47a2:
+    name: Miscellaneous
+    handle: misc
+    instructions: ''
+    searchable: false
+    translationMethod: site
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: verbb\supertable\fields\SuperTableField
     settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: string
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_misc}}'
+      propagationMethod: all
+      staticField: '1'
+      columns:
+        121:
+          width: ''
+        120:
+          width: ''
+      fieldLayout: matrix
+      selectionLabel: ''
     contentColumnType: string
     fieldGroup: c5df179a-46ba-4ca1-bbdb-c44d8b2a821d
   73a71b02-a084-4cce-850e-2ab834b84730:
@@ -436,7 +442,7 @@ globalSets:
               3ea9bba3-6981-4abf-8ca2-b714a51917a9:
                 required: false
                 sortOrder: 1
-              6972beb1-d7c4-46b6-8d63-f06e2c7627d8:
+              5eaf5088-470a-41a8-8696-2affe0ab47a2:
                 required: false
                 sortOrder: 2
 matrixBlockTypes:
@@ -3467,12 +3473,62 @@ superTableBlockTypes:
               df17e61b-58a0-4093-b295-c303fd0ef0f8:
                 required: false
                 sortOrder: 3
+  f7da1fd1-bee6-42a0-a523-45150918f278:
+    field: 5eaf5088-470a-41a8-8696-2affe0ab47a2
+    fields:
+      20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1:
+        name: 'Mailchimp List ID'
+        handle: mailchimpListId
+        instructions: 'If populated, users will be added to this Mailchimp list when submitting the Partner With Us form'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
+      72bb892d-4f32-4918-9d99-ca9e821d5be7:
+        name: 'Title Separator'
+        handle: titleSeparator
+        instructions: 'Used in page titles separating siteName and pageTitle'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: 'e.g. 2199ee8570'
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: string
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      cbd2e0b7-b4ec-422a-988f-3aaf959ab729:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1:
+                required: false
+                sortOrder: 2
+              72bb892d-4f32-4918-9d99-ca9e821d5be7:
+                required: false
+                sortOrder: 1
 system:
   edition: pro
   name: Onward
   live: true
   schemaVersion: 3.3.3
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
 users:
   requireEmailVerification: true
   allowPublicRegistration: false
