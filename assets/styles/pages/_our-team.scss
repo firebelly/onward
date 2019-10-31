@@ -112,7 +112,10 @@
     // Scrollable person body
     .person-body {
       overflow: auto;
-      padding-bottom: grid(8);
+      padding-bottom: grid(20);
+      @include media-md {
+        padding-bottom: grid(8);
+      }
     }
     // Overflow gradient
     &::after {
