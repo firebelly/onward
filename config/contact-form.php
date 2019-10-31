@@ -5,36 +5,39 @@ use \DrewM\MailChimp\MailChimp;
 
 Event::on(Submission::class, Submission::EVENT_AFTER_VALIDATE, function(Event $e) {
 
-  $submission = $e->sender;
   $apiKey = getenv('MAILCHIMP_API_KEY');
-  $siteOptions = \craft\elements\GlobalSet::find()
-    ->handle('siteOptions')
-    ->one();
-  $listId = $siteOptions->misc->mailchimpListId;
-  $email = $submission->fromEmail;
-  $name = $submission->fromName;
+  if (!empty($apiKey) {
 
-  // Split name for mailchimp
-  $parts = explode(' ', $name);
-  if(count($parts) > 1) {
-    $last = array_pop($parts);
-    $first = implode(" ", $parts);
-  } else {
-    $first = $name;
-    $last = '';
-  }
+    $submission = $e->sender;
+    $siteOptions = \craft\elements\GlobalSet::find()
+      ->handle('siteOptions')
+      ->one();
+    $listId = $siteOptions->misc->mailchimpListId;
+    $email = $submission->fromEmail;
+    $name = $submission->fromName;
 
-  // Subscribe user to mailchimp list
-  if (!empty($apiKey) && !empty($listId)) {
-    try {
-      $MailChimp = new MailChimp($apiKey);
-      $result = $MailChimp->post("lists/{$listId}/members", [
-        'email_address' => $email,
-        'merge_fields'  => ['FNAME'=>$first, 'LNAME'=>$last],
-        'status'        => 'subscribed',
-      ]);
-    } catch (Exception $e) {
-      $submission->addError('mailchimp', $e->getMessage());
+    // Split name for mailchimp
+    $parts = explode(' ', $name);
+    if(count($parts) > 1) {
+      $last = array_pop($parts);
+      $first = implode(" ", $parts);
+    } else {
+      $first = $name;
+      $last = '';
+    }
+
+    // Subscribe user to mailchimp list
+    if (!empty($listId)) {
+      try {
+        $MailChimp = new MailChimp($apiKey);
+        $result = $MailChimp->post("lists/{$listId}/members", [
+          'email_address' => $email,
+          'merge_fields'  => ['FNAME'=>$first, 'LNAME'=>$last],
+          'status'        => 'subscribed',
+        ]);
+      } catch (Exception $e) {
+        $submission->addError('mailchimp', $e->getMessage());
+      }
     }
   }
 
