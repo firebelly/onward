@@ -215,7 +215,7 @@ body.child-our-team {
     }
   }
 
-  @include screen($breakpoint-sm, $breakpoint-md) {
+  @include screen($breakpoint-sm, 950px) {
     .person-group-wrap {
       margin: 0 -#{$mobile-global-padding / 2};
     }
