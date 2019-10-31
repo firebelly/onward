@@ -15,6 +15,11 @@ export default {
       e.preventDefault();
       _openNav();
     });
+    $('.site-nav a').on('focus', function() {
+      if (!appState.navOpen) {
+        _openNav();
+      }
+    });
     $('a.toggle-nav.close').on('click', function(e) {
       e.preventDefault();
       _closeNav();
