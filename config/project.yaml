@@ -1,4 +1,4 @@
-dateModified: 1572486243
+dateModified: 1572486811
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -3485,7 +3485,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\fields\PlainText
         settings:
-          placeholder: ''
+          placeholder: 'e.g. 2199ee8570'
           code: ''
           multiline: ''
           initialRows: '4'
@@ -3502,7 +3502,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\fields\PlainText
         settings:
-          placeholder: 'e.g. 2199ee8570'
+          placeholder: ''
           code: ''
           multiline: ''
           initialRows: '4'
