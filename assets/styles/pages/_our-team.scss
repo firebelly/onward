@@ -174,8 +174,9 @@
 }
 
 body.child-our-team {
+
   .person {
-    padding: grid(5) 0 grid(6);
+    padding: $global-padding 0;
 
     // Hide modal content containers
     .modal-content {
@@ -183,6 +184,9 @@ body.child-our-team {
     }
     figure {
       cursor: pointer;
+    }
+    p {
+      @include p2;
     }
     h3 {
       position: relative;
@@ -213,6 +217,20 @@ body.child-our-team {
     }
   }
 
+  @include media-sm {
+    .person-group-wrap {
+      margin: 0 -#{$global-padding};
+    }
+    .person-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .person {
+      padding: grid(5) $global-padding grid(6);
+      flex: 0 1 50%;
+    }
+  }
+
   // Mobile only
   @include max-screen($breakpoint-md) {
     .our-board {
@@ -229,11 +247,11 @@ body.child-our-team {
       p {
         @include p2;
       }
-      flex-basis: columns(4.5);
+      flex: 0 1 columns(4.5);
       padding: grid(4) columns(0.5) grid(6);
       // Square orientation
       &.square {
-        flex-basis: columns(3.75);
+        flex: 0 1 columns(3.75);
       }
       // Vertical padding
       &.padded {
@@ -256,7 +274,7 @@ body.child-our-team {
       }
       padding-top: grid(16);
       .person {
-        flex-basis: columns(4);
+        flex: 0 1 columns(4);
         padding: 24px #{$global-padding / 2} grid(16);
         .person-info {
           padding-right: columns(1,4);
