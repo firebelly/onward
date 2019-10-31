@@ -18,43 +18,88 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: $global-padding;
+  @include media-md {
+    padding: $global-padding;
+  }
   z-index: z(modal);
-  // will-change: transform;
-  // transform-origin: bottom left;
   .close-modal {
     position: absolute;
-    width: 150px;
+    width: 100px;
     top: 6px;
-    left: calc(100% - 6px);
-    transform: rotate(90deg);
-    transform-origin: left top;
+    right: 4px;
+    @include slide-link('span');
     svg {
       width: 21px;
       height: 21px;
+      float: right;
     }
     span {
+      @include h4;
       display: inline-block;
-      font-size: 12px;
       vertical-align: top;
-      margin-left: 21px;
-      letter-spacing: 0.45px;
-      @include slide-link;
+      margin: -2px 0 0 16px;
     }
-    // &:hover {
-    //   span {
-    //     background: color(white);
-    //   }
-    // }
+
+    @include media-md {
+      width: 150px;
+      top: 6px;
+      left: calc(100% - 6px);
+      transform: rotate(90deg);
+      transform-origin: left top;
+      svg {
+        float: none;
+      }
+    }
   }
+  // Person profile image
+  .image-wrap {
+    margin: $global-padding $global-padding 0 $global-padding;
+    img {
+      display: block;
+      margin: $global-padding auto 0;
+      max-height: 30vh;
+    }
+  }
+  // Person copy
   .text-wrap {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(70vh - #{$global-padding});
+
+    ul.social {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        margin-left: grid(4);
+      }
+      a {
+        @include h4;
+        text-decoration: underline;
+        @include inline-link;
+      }
+    }
+    .user-content ul.social {
+      li {
+        &::before {
+          display: none;
+        }
+        display: block;
+        margin: grid(3) 0 0;
+      }
+    }
+
     h2 {
       @include h2;
       text-align: center;
     }
     .person-meta {
-      display: flex;
+      .inner {
+        display: flex;
+        padding-bottom: grid(2);
+      }
       h3 {
         flex: 0 1 40%;
       }
@@ -62,14 +107,38 @@
         flex: 0 1 60%;
         text-align: right;
         margin-top: 4px;
-        li {
-          display: inline-block;
-          margin-left: grid(4);
-        }
-        a {
+      }
+    }
+    // Scrollable person body
+    .person-body {
+      overflow: auto;
+      padding-bottom: grid(8);
+    }
+    // Overflow gradient
+    &::after {
+      content: '';
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, color(pink) 30%, rgba(0,0,0,0) 100%);
+    }
+
+    // Mobile only
+    @include max-screen($breakpoint-md) {
+      background: color(pink);
+      padding: $mobile-global-padding;
+      .person-meta {
+        // 😬
+        h3 {
           @include h4;
-          @include slide-link;
         }
+      }
+      // 😬
+      h2 {
+        @include h3;
       }
     }
   }
@@ -77,6 +146,10 @@
   @include media-md {
     .image-wrap {
       width: columns(6);
+      margin: 0;
+      img {
+        max-height: 50vh;
+      }
     }
     .text-wrap {
       position: relative;
@@ -85,8 +158,7 @@
       padding: grid(6) columns(1);
       background: color(pink);
       min-height: 220px;
-      max-height: 53vh;
-      overflow: auto;
+      max-height: 60vh;
 
       h2 {
         margin: grid(6) 0 grid(8);
@@ -97,6 +169,9 @@
 
 body.child-our-team {
   .person {
+    padding: grid(5) 0 grid(6);
+
+    // Hide modal content containers
     .modal-content {
       display: none;
     }
@@ -130,10 +205,6 @@ body.child-our-team {
         }
       }
     }
-  }
-
-  .person {
-    padding: grid(5) 0 grid(6);
   }
 
   // Mobile only

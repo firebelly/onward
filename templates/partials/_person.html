@@ -55,23 +55,25 @@
     {% endif %}
     <div class="text-wrap">
       <div class="person-meta">
-        <h3>{{ person.personName }}</h3>
-        {% if person.socialLinks|length %}
-          <ul class="social">
-            {% for link in person.socialLinks %}
-              <li><a rel="noopener" target="_blank" href="{{ link.url }}">{{ link.title }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+        <div class="inner">
+          <h3>{{ person.personName }}</h3>
+          {% if person.socialLinks|length %}
+            <ul class="social show-for-medium-up">
+              {% for link in person.socialLinks %}
+                <li><a rel="noopener" target="_blank" href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
       </div>
-      <div class="person-body">
-        <div class="user-content">
-        {% if person.headline %}
-          <h2>{{ person.headline }}</h2>
-        {% endif %}
-        {% if person.body %}
-          {{ person.body }}
-        {% endif %}
+      <div class="person-body user-content">
+        <div class="inner">
+          {% if person.headline %}
+            <h2>{{ person.headline }}</h2>
+          {% endif %}
+          {% if person.body %}
+            {{ person.body }}
+          {% endif %}
         </div>
       </div>
     </div>

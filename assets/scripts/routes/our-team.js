@@ -10,8 +10,14 @@ export default {
     let $window = $(window);
     let $modal = $('.modal');
     let $modalOverlay = $('.modal-overlay');
-    let $modalContainer = $modal.find('.container');
+    let $modalContainer = $modal.find('.inner');
     let modalOpen = false;
+
+    // Sigh
+    $('article.person').each(function() {
+      let $social = $(this).find('ul.social').clone().removeClass('show-for-medium-up');
+      $social.appendTo($(this).find('.person-body .inner')).addClass('hide-for-medium-up');
+    });
 
     // Keyboard-triggered functions
     $(document).keyup(function(e) {
