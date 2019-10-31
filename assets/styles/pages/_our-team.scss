@@ -219,15 +219,16 @@ body.child-our-team {
 
   @include media-sm {
     .person-group-wrap {
-      margin: 0 -#{$global-padding};
+      margin: 0 -#{$mobile-global-padding / 2};
     }
     .person-group {
       display: flex;
       flex-wrap: wrap;
     }
     .person {
-      padding: grid(5) $global-padding grid(6);
+      padding: grid(5) #{$mobile-global-padding / 2} grid(6);
       flex: 0 1 50%;
+      min-width: 50%;
     }
   }
 
