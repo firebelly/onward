@@ -80,7 +80,6 @@
       }
       a {
         @include h4;
-        text-decoration: underline;
         @include inline-link;
       }
     }
@@ -191,10 +190,7 @@ body.child-our-team {
       padding-right: 34px;
       cursor: pointer;
       @include h4;
-      span {
-        @include inline-link;
-        text-decoration: underline;
-      }
+      @include inline-link('span');
       a {
         display: block;
         position: absolute;

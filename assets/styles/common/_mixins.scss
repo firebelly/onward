@@ -29,15 +29,20 @@
 }
 
 // Animated white bg hover for user-content links
-@mixin inline-link() {
-  background-image: linear-gradient(to top, color(white) 0%, color(white) 100%);
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  @include transition(background-size);
+@mixin inline-link($slide-target:'&') {
+  #{$slide-target} {
+    background-image: linear-gradient(to top, color(white) 0%, color(white) 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    text-decoration: underline;
+    @include transition(background-size);
+  }
   &:hover,
   &:focus {
-    background-size: 100% 100%;
-    transition-delay: 0s;
+    #{$slide-target} {
+      background-size: 100% 100%;
+      transition-delay: 0s;
+    }
   }
 }
 

@@ -21,7 +21,6 @@
   }
 
   a:not(.button) {
-    text-decoration: underline;
     @include inline-link;
   }
   .button a,
