@@ -25,7 +25,7 @@
         <ul class="cells">
         {% for story in entry.partnershipStories.all() %}
           <li class="cell">
-            {% if story.tagline %}
+            {% if story.tagline != '' %}
               <div class="tape-tagline">
                 {{ story.tagline }}
               </div>
