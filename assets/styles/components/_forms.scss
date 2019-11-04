@@ -3,9 +3,10 @@
 form {
 
   label {
+    @include h4;
     display: block;
     padding: 0 $global-padding grid(2) 0;
-    @include h4;
+    margin: 0;
     &.-large {
       @include h3;
     }
