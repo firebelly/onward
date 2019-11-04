@@ -36,12 +36,14 @@
   }
 
   .tape-tagline {
-    top: 65%;
+    transform-origin: right;
+    top: 25%;
     right: 65%;
     &.-right {
       span {
         float: left;
       }
+      transform-origin: left;
       top: 45%;
       right: auto;
       left: 70%;
