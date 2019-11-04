@@ -2,6 +2,11 @@
 
 body.page-home {
 
+  .block-section {
+    // For overlapping Onward logos between sections
+    position: static;
+  }
+
   // Dark nav with lighter elements
   .nav-main,
   .page-header {
