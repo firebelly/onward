@@ -37,6 +37,8 @@ export default {
         prevNextButtons: false,
         imagesLoaded: true,
         pageDots: false,
+        selectedAttraction: 0.2,
+        friction: 0.8,
         cellAlign: 'left'
       });
 
@@ -60,6 +62,10 @@ export default {
       // esc
       if (e.keyCode === 27) {
         _closeNav();
+        // Unfocus any focused elements
+        if (document.activeElement != document.body) {
+          document.activeElement.blur();
+        }
       }
     }).on('click', 'body.nav-open', function(e) {
       // Clicking outside of modal closes modal
