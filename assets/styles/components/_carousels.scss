@@ -5,30 +5,35 @@
 }
 
 .carousel {
-  // @include clearfix;
-  padding: $global-padding;
-
   // Make Flickity extend outside .container
   .flickity-viewport {
     overflow: visible;
   }
 
+  .tape-tagline {
+    // Hide tape tags on mobile carousels
+    display: none;
+  }
+
   // Gradient
   .cells.flickity-enabled {
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 50%;
-      bottom: 0;
-      width: 15%;
-      margin-right: -50vw;
-      background-image: linear-gradient(90deg, rgba(color(tan), 0) 0%, rgba(color(tan), 1) 100%);
-      pointer-events: none;
-
       // Desktop styles
       @include media-md {
+        .tape-tagline {
+          display: block;
+          width: auto !important;
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 50%;
+          bottom: 0;
+          width: 15%;
+          margin-right: -50vw;
+          background-image: linear-gradient(90deg, rgba(color(tan), 0) 0%, rgba(color(tan), 1) 100%);
+          pointer-events: none;
       }
     }
   }
@@ -67,15 +72,10 @@
       }
     }
     .tape-tagline {
-       top: 90px;
-       right: -20px;
-       transform: rotate(-30deg);
-       background: color(tan);
-       // Hide tape tags on mobile carousels
-       display: none;
-       @include media-md {
-         display: block;
-       }
+      top: 90px;
+      right: -20px;
+      transform: rotate(-30deg);
+      background: color(tan);
     }
 
     @include media-md {
@@ -96,11 +96,6 @@
        right: -20px;
        transform: rotate(30deg);
        background: color(tan);
-       // Hide tape tags on mobile carousels
-       display: none;
-       @include media-md {
-         display: block;
-       }
     }
     figure {
       display: block;
