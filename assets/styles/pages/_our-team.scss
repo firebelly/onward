@@ -128,7 +128,7 @@
       bottom: 20px;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, color(pink) 30%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(to top, color(pink) 30%, rgba(color(pink), 0) 100%);
     }
 
     // Mobile only
