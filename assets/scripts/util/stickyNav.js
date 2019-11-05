@@ -22,11 +22,12 @@ const stickyNav = {
     $window = $(window);
 
     stickyNav.resize();
+    stickyNav.scrolling();
     stickyNav.update();
 
     $window.off('scroll.stickyNav').on('scroll.stickyNav', stickyNav.scrolling);
     $window.off('resize.stickyNav').on('resize.stickyNav', stickyNav.resize);
-    $window.off('load.stickyNav').on('load.stickyNav', function() { stickyNav.resize(); stickyNav.update(); });
+    $window.off('load.stickyNav').on('load.stickyNav', function() { stickyNav.resize(); stickyNav.scrolling(); stickyNav.update(); });
   },
 
   // Request update using requestAnimationFrame
