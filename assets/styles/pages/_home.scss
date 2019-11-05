@@ -275,7 +275,13 @@ body.page-home {
 
     // Desktop styles
     @include media-md {
+      padding-bottom: grid(5);
       @include clearfix;
+      .body {
+        p {
+          @include p2;
+        }
+      }
       .tape-tagline {
         .xl {
           display: none;
@@ -306,6 +312,19 @@ body.page-home {
         margin-top: grid(16);
         margin-bottom: 25%;
         padding-bottom: 25%;
+      }
+    }
+
+    // Add staggered color when screen is wide enough
+    @include media-nav {
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: color(tan);
+        height: grid(32);
+        width: 100%;
       }
     }
   }
