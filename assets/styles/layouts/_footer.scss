@@ -58,7 +58,7 @@
   @include media-md {
     padding: grid(16) 0 grid(24);
     .tape-tagline {
-      transform-origin: top left;
+      transform-origin: left;
       right: auto;
       left: grid(-8);
       top: 96px;

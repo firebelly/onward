@@ -277,9 +277,12 @@ body.page-home {
     @include media-md {
       @include clearfix;
       .tape-tagline {
+        .xl {
+          display: none;
+        }
         right: auto;
         left: grid(-10);
-        top: grid(0);
+        top: -60px;
       }
       .image-wrap {
         margin: 0;

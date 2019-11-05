@@ -48,7 +48,6 @@
   }
 
   @include media-nav {
-    display: block;
   }
 }
 
@@ -64,8 +63,11 @@
   position: absolute;
   width: 300px;
   transform: rotate(-15deg);
-  span {
+  > span {
     float: right;
+  }
+  .xl {
+    display: none;
   }
 
   @include max-screen($breakpoint-md) {
@@ -75,6 +77,9 @@
   @include media-md {
     width: auto;
     transform: rotate(-15deg);
+  }
+  @include media-xl {
+    // width: auto;
   }
 }
 .-tagline-container {

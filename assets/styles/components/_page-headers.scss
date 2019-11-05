@@ -37,14 +37,14 @@
 
   .tape-tagline {
     transform-origin: right;
-    top: 25%;
+    top: 5%;
     right: 65%;
     &.-right {
-      span {
+      > span {
         float: left;
       }
       transform-origin: left;
-      top: 45%;
+      top: 35%;
       right: auto;
       left: 70%;
     }
@@ -53,7 +53,12 @@
   // Desktop styles
   @include media-md {
     .tape-tagline {
+      .xl {
+        display: inline;
+      }
+      top: 25%;
       &.-right {
+        top: 65%;
       }
     }
 

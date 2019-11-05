@@ -35,10 +35,10 @@
   &.-left {
     .tape-tagline {
       right: grid(-10);
-      top: grid(3);
+      top: grid(-3);
       transform-origin: left;
       transform: rotate(15deg);
-      span {
+      > span {
         float: left;
       }
     }
@@ -83,26 +83,31 @@
       //   }
       // }
     }
+
+    // Center images
     &.-center {
       figure {
         margin: 0 auto;
       }
       .tape-tagline {
-        left: 100%;
-        right: auto;
-        margin-left: columns(-2);
-        transform-origin: top left;
+        top: 100px;
+        left: auto;
+        right: grid(-8);
         transform: rotate(15deg);
       }
     }
+    // Right aligned images
     &.-right {
       figure {
         float: right;
       }
       .tape-tagline {
         top: 100px;
+        right: auto;
+        left: grid(-8);
       }
     }
+    // Left aligned images
     &.-left {
       margin: 0;
       figure {
@@ -113,8 +118,9 @@
         left: columns(3);
       }
       .tape-tagline {
-        right: columns(-1);
-        top: grid(-8);
+        left: auto;
+        right: grid(-8);
+        top: 100px;
         transform: rotate(15deg);
       }
     }
