@@ -91,6 +91,7 @@
 
   // Postcard carousels
   &.postcards {
+    padding: grid(6) 0;
     .tape-tagline {
        top: 75px;
        right: -20px;
@@ -143,14 +144,8 @@
     }
 
     // Content inside cell
-    .cell-headline {
-      hyphens: auto;
-    }
     .cell-body {
-      padding: $global-padding 0 0;
-      @include media-md {
-        padding: 0 $global-padding;
-      }
+      padding: grid(2) 0 0;
     }
     p {
       @include p3;
@@ -159,7 +154,6 @@
 
   // Desktop styles
   @include media-md {
-    padding: 0;
     .carousel-header {
       .grid-item:nth-child(2) {
         position: relative;
