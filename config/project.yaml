@@ -1,4 +1,4 @@
-dateModified: 1572486811
+dateModified: 1572984324
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -3013,18 +3013,14 @@ superTableBlockTypes:
         searchable: false
         translationMethod: none
         translationKeyFormat: null
-        type: craft\redactor\Field
+        type: craft\fields\PlainText
         settings:
-          redactorConfig: Simple.json
-          purifierConfig: ''
-          cleanupHtml: true
-          removeInlineStyles: '1'
-          removeEmptyTags: '1'
-          removeNbsp: '1'
-          purifyHtml: '1'
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '2'
+          charLimit: '265'
           columnType: text
-          availableVolumes: '*'
-          availableTransforms: '*'
         contentColumnType: text
         fieldGroup: null
     fieldLayouts:
