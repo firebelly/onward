@@ -1,5 +1,6 @@
 import Flickity from 'flickity';
 require('flickity-imagesloaded');
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import appState from '../util/appState';
 
@@ -9,6 +10,7 @@ export default {
 
     let $body = $('body');
     let pageAt = window.location.pathname;
+    let $siteNav = $('.site-nav');
 
     // Mobile hamburger and X close icons toggle mobile nav
     $('#hamburger-salad').on('click', function(e) {
@@ -126,10 +128,12 @@ export default {
       $('.site-nav li.open').removeClass('open');
       _resetNav();
       $body.removeClass('nav-open');
+      enableBodyScroll($siteNav[0]);
     }
     function _openNav() {
       $body.addClass('nav-open');
       appState.navOpen = true;
+      disableBodyScroll($siteNav[0]);
     }
 
     // Scroll body to an element with velocity

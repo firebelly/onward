@@ -2,6 +2,7 @@
 
 // Shared vars among modules
 import appState from '../util/appState';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 export default {
 
@@ -56,7 +57,7 @@ export default {
           display: 'block',
           complete: function() {
             $modal.addClass('-active');
-            _disableScroll();
+            disableBodyScroll($('.modal .text-wrap .person-body')[0]);
             appState.isAnimating = false;
           }
         }
@@ -81,7 +82,7 @@ export default {
       );
       _toggleOverlay();
       $body.removeClass('modal-open');
-      _enableScroll();
+      enableBodyScroll($('.modal .text-wrap .person-body')[0]);
     }
 
     function _toggleOverlay() {
@@ -92,21 +93,6 @@ export default {
           display: (modalOpen ? 'block' : 'none')
         });
     }
-
-    function _disableScroll() {
-      var st = $window.scrollTop();
-      $body.attr('data-st', st);
-      $body.addClass('no-scroll modal-open');
-      $body.css('top', -st);
-    }
-
-    function _enableScroll() {
-      $body.removeClass('no-scroll');
-      $body.css('top', '');
-      $window.scrollTop($body.attr('data-st'));
-      $body.attr('data-st', '');
-    }
-
 
   },
 
