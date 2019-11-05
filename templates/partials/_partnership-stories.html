@@ -1,4 +1,11 @@
-{% if entry.partnershipStories|length %}
+{% set stories = craft.entries({
+  section: 'stories',
+  with: [
+    'storyInfo'
+  ]
+}) %}
+
+{% if stories|length %}
   <div class="sticky-header">
     <div class="sticky-title">
       <span>Stories</span>
@@ -15,7 +22,7 @@
             <div class="carousel-pagination">
               <span class="previous"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
               <div class="cell-count">
-                01 / {{ '%02d'|format(entry.partnershipStories|length) }}
+                01 / {{ '%02d'|format(stories|length) }}
               </div>
               <span class="next"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
             </div>
@@ -23,18 +30,18 @@
         </div>
 
         <ul class="cells">
-        {% for story in entry.partnershipStories.all() %}
+        {% for story in stories.all() %}
           <li class="cell">
-            {% if story.tagline != '' %}
+            {% if story.storyInfo[0].tagline != '' %}
               <div class="tape-tagline">
-                {{ story.tagline }}
+                {{ story.storyInfo[0].tagline }}
               </div>
             {% endif %}
-            <h3>{{ story.headline }}</h3>
-            {% if story.subhead %}
-              <h5><span>{{ '%02d'|format(loop.index) }}</span> {{ story.subhead }}</h5>
+            <h3>{{ story.title }}</h3>
+            {% if story.storyInfo[0].subhead %}
+              <h5><span>{{ '%02d'|format(loop.index) }}</span> {{ story.storyInfo[0].subhead }}</h5>
             {% endif %}
-            {{ story.body }}
+            {{ story.storyInfo[0].body }}
           </li>
         {% endfor %}
         </ul>

@@ -143,6 +143,9 @@
     }
 
     // Content inside cell
+    .cell-headline {
+      hyphens: auto;
+    }
     .cell-body {
       padding: $global-padding 0 0;
       @include media-md {
