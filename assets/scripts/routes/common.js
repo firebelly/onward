@@ -9,6 +9,7 @@ export default {
     // JavaScript to be fired on all pages
 
     let $body = $('body');
+    let $html = $('html');
     let pageAt = window.location.pathname;
     let $siteNav = $('.site-nav');
 
@@ -129,11 +130,13 @@ export default {
       _resetNav();
       $body.removeClass('nav-open');
       enableBodyScroll($siteNav[0]);
+      $html.css('overflow', '');
     }
     function _openNav() {
       $body.addClass('nav-open');
       appState.navOpen = true;
       disableBodyScroll($siteNav[0]);
+      $html.css('overflow', 'hidden');
     }
 
     // Scroll body to an element with velocity

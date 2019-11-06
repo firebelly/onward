@@ -8,13 +8,14 @@ export default {
 
   init() {
     let $body = $('body');
+    let $html = $('html');
     let $window = $(window);
     let $modal = $('.modal');
     let $modalOverlay = $('.modal-overlay');
     let $modalContainer = $modal.find('.inner');
     let modalOpen = false;
 
-    // Sigh
+    // Sigh — duplicate content for mobile display only
     $('article.person').each(function() {
       let $social = $(this).find('ul.social').clone().removeClass('show-for-medium-up');
       $social.appendTo($(this).find('.person-body .inner')).addClass('hide-for-medium-up');
@@ -48,7 +49,9 @@ export default {
       let $person = $(this).parents('.person');
       let $modalContent = $person.find('.modal-content').html();
       $modalContainer.html($modalContent);
+      // Add close button
       $modalContainer.find('.text-wrap').append('<a href="#" class="close-modal"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg> <span>Close</span></a>');
+      // Set isAnimating to ignore any other triggers until modal is open
       appState.isAnimating = true;
       $modal.velocity('stop').velocity({
           opacity: [1, 0],
@@ -56,8 +59,9 @@ export default {
           duration: 500,
           display: 'block',
           complete: function() {
-            $modal.addClass('-active');
+            $body.addClass('modal-open');
             disableBodyScroll($('.modal .text-wrap .person-body')[0]);
+            $html.css('overflow', 'hidden');
             appState.isAnimating = false;
           }
         }
@@ -71,18 +75,19 @@ export default {
         return;
       }
       modalOpen = false;
-      $('.modal').removeClass('-active').velocity({
+      $('.modal').velocity({
           opacity: [0, 1],
         }, {
           duration: 250,
           display: 'none',
           complete: function() {
+            enableBodyScroll($('.modal .text-wrap .person-body')[0]);
+            $html.css('overflow', '');
           }
         }
       );
       _toggleOverlay();
       $body.removeClass('modal-open');
-      enableBodyScroll($('.modal .text-wrap .person-body')[0]);
     }
 
     function _toggleOverlay() {

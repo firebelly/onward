@@ -170,6 +170,7 @@
           .toggle-dropdown {
             padding: 25px;
             cursor: pointer;
+            display: block;
             position: absolute;
             right: columns(1);
             @include transition(transform);
