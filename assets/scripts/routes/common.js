@@ -40,8 +40,8 @@ export default {
         prevNextButtons: false,
         imagesLoaded: true,
         pageDots: false,
-        selectedAttraction: 0.2,
-        friction: 0.8,
+        selectedAttraction: 0.15,
+        friction: 1,
         cellAlign: 'left'
       });
 
