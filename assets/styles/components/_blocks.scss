@@ -76,6 +76,9 @@
     }
     figure {
       max-width: $container-width;
+      @include media-xl {
+        max-width: calc(50vw + #{columns(4)});
+      }
       // start of clip path option as proof-of-concept, may bring back, requires captions push down instead of up as size grows
       // &.-has-caption {
       //   img {
