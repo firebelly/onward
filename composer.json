@@ -15,7 +15,8 @@
     "verbb/expanded-singles": "1.0.7",
     "verbb/super-table": "2.3.0",
     "vlucas/phpdotenv": "^3.4.0",
-    "wbrowar/adminbar": "3.1.8.1"
+    "wbrowar/adminbar": "3.1.8.1",
+    "wbrowar/guide": "2.1.2"
   },
   "autoload": {
     "psr-4": {

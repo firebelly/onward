@@ -1,4 +1,4 @@
-dateModified: 1572990251
+dateModified: 1573061100
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1779,6 +1779,15 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: botsLoveTheHoney
+  guide:
+    edition: lite
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      templatePath: _guide
+      assetVolume: e5827a94-b77b-4616-9913-bda2cf79b52b
+      clientName: Onward
+      myCompanyName: Firebelly
 sections:
   0d9553ee-97bc-45c6-aeed-06d1bfde344f:
     name: 'Our Story'
@@ -3707,7 +3716,7 @@ volumes:
     url: /uploads/people/
     settings:
       path: uploads/people
-    sortOrder: 1
+    sortOrder: 2
   6f85d94b-c535-4e84-802b-33fe7087ab63:
     name: Global
     handle: global
@@ -3716,4 +3725,13 @@ volumes:
     url: /uploads/
     settings:
       path: uploads/
-    sortOrder: 2
+    sortOrder: 1
+  e5827a94-b77b-4616-9913-bda2cf79b52b:
+    name: Guide
+    handle: guide
+    type: craft\volumes\Local
+    hasUrls: true
+    url: /uploads/guide/
+    settings:
+      path: uploads/guide
+    sortOrder: 3
