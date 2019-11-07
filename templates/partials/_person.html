@@ -56,7 +56,14 @@
     {% if person.image|length and modalImage %}
       <div class="image-wrap">
         <figure>
-          <img src="{{ modalImage.getUrl() }}" alt="{{ person.image.title }}">
+          {% if treated %}
+            <img src="{{ modalImage.getUrl() }}" alt="{{ person.image.title }}">
+          {% else %}
+            <div class="color-massage">
+              <div class="hands"></div>
+              <img src="{{ modalImage.getUrl() }}" alt="{{ person.image.title }}">
+            </div>
+          {% endif %}
         </figure>
       </div>
     {% endif %}
