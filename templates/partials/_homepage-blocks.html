@@ -48,7 +48,7 @@
 
             {% include 'partials/_image' with {
               image: block.image,
-              treated: true,
+              treated: 1,
               imageOptions: {
                 mode: 'crop',
                 width: 600,
@@ -81,7 +81,7 @@
               <div class="image-wrap">
                 {% include 'partials/_image' with {
                   image: block.image,
-                  treated: true,
+                  treated: 1,
                   imageOptions: {
                     mode: 'crop',
                     width: 1000,

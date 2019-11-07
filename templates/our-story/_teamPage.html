@@ -41,7 +41,7 @@
                   {% set verticalShown = true %}
                 {% endif %}
 
-                {% include 'partials/_person' with { person: person, imageClass: imageClass } %}
+                {% include 'partials/_person' with { person: person, imageClass: imageClass, treated: 0 } %}
               {% endif %}
             {% endfor %}
           {% endfor %}
@@ -61,7 +61,7 @@
       <div class="person-group-wrap">
         <div class="person-group grid">
           {% for person in entry.ourBoard.all() %}
-            {% include 'partials/_person' with { person: person, imageClass: ['gray'] } %}
+            {% include 'partials/_person' with { person: person, imageClass: ['gray'], treated: 1 } %}
           {% endfor %}
         </div>
       </div>
