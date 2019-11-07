@@ -48,6 +48,7 @@
 
             {% include 'partials/_image' with {
               image: block.image,
+              treated: true,
               imageOptions: {
                 mode: 'crop',
                 width: 600,
@@ -80,6 +81,7 @@
               <div class="image-wrap">
                 {% include 'partials/_image' with {
                   image: block.image,
+                  treated: true,
                   imageOptions: {
                     mode: 'crop',
                     width: 1000,
@@ -106,6 +108,7 @@
             {% include 'partials/_image' with {
               image: block.image,
               tapeTag: block.tapeTag,
+              treated: block.treated,
               imageOptions: {
                 mode: 'crop',
                 width: 1800,

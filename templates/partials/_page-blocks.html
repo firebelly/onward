@@ -73,6 +73,7 @@
             </div>
             {% endif %}
           {% endif %}
+
         {% case 'image' %}
           {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
           {% if not loop.last %}
@@ -86,6 +87,7 @@
             {% include 'partials/_image' with {
               image: block.image,
               tapeTag: block.tapeTag,
+              treated: block.treated,
               imageOptions: {
                 mode: 'crop',
                 width: 1800,

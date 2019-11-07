@@ -18,7 +18,10 @@
     {% if entry.pageHeader.image|length and treatedImage %}
       <div class="image-wrap">
         <figure>
-          <img src="{{ treatedImage.getUrl() }}" alt="{{ entry.pageHeader.image.title }}">
+          <div class="color-massage">
+            <div class="hands"></div>
+            <img src="{{ treatedImage.getUrl() }}" alt="{{ entry.pageHeader.image.title }}">
+          </div>
         </figure>
       </div>
     {% endif %}

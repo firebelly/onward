@@ -24,7 +24,14 @@
         {% if tapeTag is not defined or tapeTag == '' %}
           <svg class="icon sprite-slash" aria-hidden="true"><use xlink:href="#sprite-slash"/></svg>
         {% endif %}
-        <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+        {% if image.filename matches '/(gif|png|svg)$/' or treated %}
+          <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+        {% else %}
+          <div class="color-massage">
+            <div class="hands"></div>
+            <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+          </div>
+        {% endif %}
         {% if caption is defined and caption != '' %}
           {% if caption %}
             <figcaption>{{ caption }}</figcaption>

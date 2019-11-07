@@ -85,3 +85,33 @@
 .-tagline-container {
   position: relative;
 }
+
+// Color image treatment
+.color-massage {
+  position: relative;
+  img {
+    display: block;
+  }
+  .hands {
+    &,
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(235, 229, 208, 0.50);
+      mix-blend-mode: saturation;
+    }
+    &::before {
+      background: #1A1A1A;
+      mix-blend-mode: lighten;
+    }
+    &::after {
+      background: rgba(235, 229, 208, 0.50);
+      mix-blend-mode: multiply;
+    }
+  }
+}
