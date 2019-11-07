@@ -57,10 +57,19 @@
   // Person profile image
   .image-wrap {
     margin: $global-padding $global-padding 0 $global-padding;
+    text-align: center;
+    figure {
+      margin: $global-padding auto 0;
+    }
     img {
       display: block;
-      margin: $global-padding auto 0;
       max-height: 30vh;
+    }
+    // Non-color-treated images have no wrapper to center
+    &.gray {
+      img {
+        margin: 0 auto;
+      }
     }
   }
   // Person copy

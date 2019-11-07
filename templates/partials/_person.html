@@ -54,7 +54,7 @@
 
   <div class="modal-content">
     {% if person.image|length and modalImage %}
-      <div class="image-wrap">
+      <div class="image-wrap{{ imageClass|length ? ' ' ~ imageClass|join(' ') : '' }}">
         <figure>
           {% if treated %}
             <img src="{{ modalImage.getUrl() }}" alt="{{ person.image.title }}">
