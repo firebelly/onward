@@ -93,7 +93,6 @@
     display: block;
   }
   .hands {
-    &,
     &::before,
     &::after {
       content: '';
@@ -102,8 +101,6 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(235, 229, 208, 0.50);
-      mix-blend-mode: saturation;
     }
     &::before {
       background: #1A1A1A;
