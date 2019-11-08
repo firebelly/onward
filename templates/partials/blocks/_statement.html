@@ -4,7 +4,7 @@
 			{% if subhead %}
 			  <h5 class="subhead">{{ subhead }}</h5 class="subhead">
 			{% endif %}
-		  <h2>{{ statement }}</h2>
+		  <h2>{{ statement|nl2br }}</h2>
 		</div>
 	</div>
 	{% include 'partials/_image' with {
