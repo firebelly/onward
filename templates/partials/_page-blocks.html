@@ -116,7 +116,9 @@
               {% set externalLink = 'http' in block.linkURL and siteUrl not in block.linkURL ? 'rel="noopener" target="_blank" ' : '' %}
               <a {{ externalLink|raw }}class="button -jumbo" href="{{ block.linkURL }} ">{{ block.linkLabel}}</a>
               {% if block.notice %}
-                <p>{{ block.notice }}</p>
+                <div class="user-content">
+                  {{ block.notice }}
+                </div>
               {% endif %}
             </div>
           {% endif %}
