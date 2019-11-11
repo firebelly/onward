@@ -5,6 +5,23 @@
   padding: grid(2) 0;
 }
 
+// Flash notices
+.flash {
+  padding: 10px;
+  color: color(blue);
+  background: color(white);
+  text-align: center;
+  padding: 20px 0;
+  margin: grid(4) 0;
+  svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: text-bottom;
+    fill: color(blue);
+    margin-right: 20px;
+  }
+}
+
 // Slashy accent on images without taglines
 .icon.sprite-slash {
   position: absolute;
