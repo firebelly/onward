@@ -9,12 +9,9 @@ export default {
     // JavaScript to be fired on all pages
 
     let $body = $('body');
-    let $window = $(window);
     let $html = $('html');
     let pageAt = window.location.pathname;
     let $siteNav = $('.site-nav');
-    let $siteNavWrap = $('.site-nav .wrap');
-    let $closeWrap = $('.nav-main .close-wrap');
 
     // Mobile hamburger and X close icons toggle mobile nav
     $('#hamburger-salad').on('click', function(e) {
@@ -134,18 +131,12 @@ export default {
       $body.removeClass('nav-open');
       enableBodyScroll($siteNav[0]);
       $html.css('overflow', '');
-      $window.off('resize.siteNav');
     }
     function _openNav() {
       $body.addClass('nav-open');
       appState.navOpen = true;
       disableBodyScroll($siteNav[0]);
       $html.css('overflow', 'hidden');
-      // Set nav height to window.innerHeight (minus close-wrap) as 100vh isn't consistent on mobile
-      $siteNavWrap.height(window.innerHeight - $closeWrap.outerHeight());
-      $window.on('resize.siteNav', function() {
-        $siteNavWrap.height(window.innerHeight - $closeWrap.outerHeight());
-      });
     }
 
     // Scroll body to an element with velocity
