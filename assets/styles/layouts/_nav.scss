@@ -209,7 +209,7 @@
 
   // Close button
   .close-wrap {
-    margin: 10px 0 10px grid(6);
+    padding: 10px 0 10px 36px;
     a {
       display: block;
       width: 100px;
@@ -227,11 +227,10 @@
 
     // Desktop styles
     @include media-md {
-      margin: 15px 0 15px 36px;
-      height: 24px;
+      padding: 15px 0 15px 36px;
+      height: 54px;
     }
     @include media-nav {
-      margin: 15px 0;
       position: relative;
       .label {
         display: inline-block;
