@@ -97,10 +97,6 @@
     transform: translateX(-100%);
     @include transition(transform);
 
-    height: 100vh;
-    height: stretch;
-    height: -webkit-fill-available;
-
     // Center all the links
     a {
       text-align: center;
@@ -108,10 +104,10 @@
 
     // Wrap the nav in full viewport
     .wrap {
-      height: calc(100% - 44px);
+      height: calc(100vh - 44px);
       @include media-md {
         .wrap {
-          height: calc(100% - 52px);
+          height: calc(100vh - 42px);
         }
       }
     }

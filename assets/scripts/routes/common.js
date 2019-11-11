@@ -1,6 +1,6 @@
 import Flickity from 'flickity';
 require('flickity-imagesloaded');
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+// import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import appState from '../util/appState';
 
@@ -129,13 +129,13 @@ export default {
       $('.site-nav li.open').removeClass('open');
       _resetNav();
       $body.removeClass('nav-open');
-      enableBodyScroll($siteNav[0]);
+      // enableBodyScroll($siteNav[0]);
       $html.css('overflow', '');
     }
     function _openNav() {
       $body.addClass('nav-open');
       appState.navOpen = true;
-      disableBodyScroll($siteNav[0]);
+      // disableBodyScroll($siteNav[0]);
       $html.css('overflow', 'hidden');
     }
 
