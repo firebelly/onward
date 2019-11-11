@@ -1,6 +1,6 @@
 import Flickity from 'flickity';
 require('flickity-imagesloaded');
-// import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import appState from '../util/appState';
 
@@ -9,9 +9,19 @@ export default {
     // JavaScript to be fired on all pages
 
     let $body = $('body');
+    let $window = $(window);
     let $html = $('html');
     let pageAt = window.location.pathname;
     let $siteNav = $('.site-nav');
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    $window.on('resize.siteNav', function() {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
 
     // Mobile hamburger and X close icons toggle mobile nav
     $('#hamburger-salad').on('click', function(e) {
@@ -129,13 +139,13 @@ export default {
       $('.site-nav li.open').removeClass('open');
       _resetNav();
       $body.removeClass('nav-open');
-      // enableBodyScroll($siteNav[0]);
+      enableBodyScroll($siteNav[0]);
       $html.css('overflow', '');
     }
     function _openNav() {
       $body.addClass('nav-open');
       appState.navOpen = true;
-      // disableBodyScroll($siteNav[0]);
+      disableBodyScroll($siteNav[0]);
       $html.css('overflow', 'hidden');
     }
 
