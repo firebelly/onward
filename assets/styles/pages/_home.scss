@@ -66,32 +66,47 @@ body.page-home {
       margin: 0 auto;
       position: relative;
 
+      svg.sprite-logo.clone {
+        width: 250px;
+        height: 67px;
+        stroke-width: 2px;
+        position: absolute;
+        top: 100%;
+        display: block;
+      }
+
       @include media-md {
         width: 742px;
+        svg.sprite-logo.clone {
+          width: 742px;
+          height: 200px;
+          stroke-width: 1px;
+        }
       }
     }
 
-    .sprite-logo {
-      fill: color(tan);
-      opacity: 0;
-    }
-    .sprite-logo.clone {
-      fill: none;
-      stroke: color(yellow);
-      stroke-width: 2px;
-      position: absolute;
-      top: 100%;
-      &.clone-3 {
-        top: 200%;
+    .page-header {
+      svg.sprite-logo {
+        fill: color(tan);
+        opacity: 0;
       }
-      &.clone-2 {
-        top: 300%;
+      svg.sprite-logo.clone {
+        fill: none;
+        stroke: color(yellow);
       }
-      &.clone-1 {
-        top: 400%;
-      }
-      @include media-md {
-        stroke-width: 1px;
+
+      .logos {
+        svg.sprite-logo.clone {
+          &.clone-3 {
+            top: 200%;
+          }
+          &.clone-2 {
+            top: 300%;
+          }
+          &.clone-1 {
+            top: 400%;
+          }
+        }
       }
     }
 
@@ -332,6 +347,47 @@ body.page-home {
   // Homepage specific footer-outro tweaks
   .footer-outro {
     background: color(tan);
+    padding-top: 0;
+
+    .logos.footer-clones {
+      svg.sprite-logo {
+        fill: none;
+        stroke: color(black);
+      }
+    }
+
+    // Mobile only styles
+    @include max-screen($breakpoint-md) {
+      .logos.footer-clones {
+        svg.sprite-logo.clone {
+          position: relative;
+          top: auto;
+        }
+        padding-bottom: grid(10);
+      }
+    }
+
+
+    @include media-md {
+      padding-top: 0;
+
+      .logos.footer-clones {
+        height: 200px;
+
+        svg.sprite-logo.clone {
+          &.clone-3 {
+            top: 200%;
+          }
+          &.clone-2 {
+            top: 100%;
+          }
+          &.clone-1 {
+            top: 0;
+          }
+        }
+      }
+    }
+
   }
 
 }
