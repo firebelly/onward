@@ -1,4 +1,4 @@
-dateModified: 1573061100
+dateModified: 1573494253
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1576,6 +1576,27 @@ matrixBlockTypes:
           columnType: string
         contentColumnType: string
         fieldGroup: null
+      1f69d011-d301-45ff-8f9f-2b64aef2a050:
+        name: Notice
+        handle: notice
+        instructions: 'Info to show below button, i.e. donate button details'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
       2b81e063-ddc0-47a8-9af3-3e5321f7d757:
         name: 'Link Label'
         handle: linkLabel
@@ -1603,6 +1624,9 @@ matrixBlockTypes:
               02b835d7-a6a9-469e-9beb-f2d4b611a376:
                 required: false
                 sortOrder: 2
+              1f69d011-d301-45ff-8f9f-2b64aef2a050:
+                required: false
+                sortOrder: 3
               2b81e063-ddc0-47a8-9af3-3e5321f7d757:
                 required: false
                 sortOrder: 1
