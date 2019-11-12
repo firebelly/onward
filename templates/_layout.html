@@ -11,10 +11,10 @@
       {% include 'partials/_navigation' %}
       <div class="sticky-header main">
         <div class="sticky-title">
-          {% if title is defined and title != '' %}
-            {{ title }}
-          {% elseif sectionTitle is defined and sectionTitle != '' %}
+          {% if sectionTitle is defined and sectionTitle != '' %}
             {{ sectionTitle }}
+          {% elseif title is defined and title != '' %}
+            {{ title }}
           {% endif %}
         </div>
       </div>
