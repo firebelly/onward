@@ -42,7 +42,6 @@
 // Sticky titles
 .sticky-header {
   position: relative;
-  display: none;
   .sticky-title {
     color: color(black);
     z-index: z(titles);
@@ -54,7 +53,8 @@
     top: 35vh;
     left: calc(100% - 20px);
     white-space: nowrap;
-
+    opacity: 0;
+    pointer-events: none;
     // 00/01/etc number prefixes
     i {
       display: inline-block;
@@ -63,8 +63,11 @@
     }
 
   }
-
-  @include media-nav {
+  &.main {
+    .sticky-title {
+      opacity: 1;
+      position: fixed;
+    }
   }
 }
 

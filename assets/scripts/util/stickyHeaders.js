@@ -1,7 +1,8 @@
 // Vertical sticky headers with push effect
 
 export let $stickies = [],
-    $stickyTitles = [],
+    stickyTitles = [],
+    $mainSticky,
     $target,
     offset = 20,
     scrollTop,
@@ -14,14 +15,13 @@ const stickyHeaders = {
   init() {
     if ($('.sticky-header').length) {
       $target = $(window);
+      $mainSticky = $('.sticky-header.main .sticky-title');
 
-      // Prepend 00, 01 to .sticky-titles (unless blank, which is final stopper sticky-header)
+      // Prepend 00, 01 to .sticky-titles
       $stickies = $('.sticky-header').each(function(i) {
         let titleNum = ('0' + i).slice(-2);
         let $title = $(this).find('.sticky-title');
-        if ($title.text().trim() !== '') {
-          $title.prepend('<i>' + titleNum + '</i>');
-        }
+        $title.prepend('<i>' + titleNum + '</i>');
       });
 
       stickyHeaders.setStickyPositions();
@@ -43,26 +43,14 @@ const stickyHeaders = {
   // Update positions of sticky headers
   update() {
     ticking = false;
+    let currentStickyTitle = stickyTitles[0];
+    // Find current sticky section title based on scroll position
     $stickies.each(function(i) {
-
-      let stickyPosition = this.getAttribute('data-originalPosition'),
-          newPosition,
-          $nextSticky;
-
-      if (stickyPosition <= scrollTop) {
-
-        newPosition = Math.max(offset, scrollTop - stickyPosition);
-        $nextSticky = $stickies.eq(i + 1);
-        if($nextSticky.length > 0) {
-          newPosition = Math.min(newPosition, ($nextSticky.attr('data-originalPosition') - stickyPosition - offset) - this.getAttribute('data-originalHeight'));
-        }
-
-      } else {
-        newPosition = offset;
+      if (this.getAttribute('data-originalPosition') <= scrollTop) {
+        currentStickyTitle = stickyTitles[i];
       }
-
-      $stickyTitles[i].css('top', newPosition + 'px');
     });
+    $mainSticky.html(currentStickyTitle);
   },
 
   // Recalculate positions/sizes
@@ -71,10 +59,8 @@ const stickyHeaders = {
     $stickies.each(function(i) {
       let $this = $(this);
       // Cache title elements
-      $stickyTitles[i] = $this.find('.sticky-title');
-      $this
-        .attr('data-originalPosition', $this.offset().top)
-        .attr('data-originalHeight', $this.find('.sticky-title').outerWidth() + 10);
+      stickyTitles[i] = $this.find('.sticky-title').html();
+      $this.attr('data-originalPosition', $this.offset().top);
     });
   },
 
@@ -85,7 +71,7 @@ const stickyHeaders = {
 
   // Scrolling
   scrolling(event) {
-    scrollTop = $(event.currentTarget).scrollTop() + (targetHeight / 2) - 50;
+    scrollTop = $(event.currentTarget).scrollTop();
     stickyHeaders.requestTick();
   }
 

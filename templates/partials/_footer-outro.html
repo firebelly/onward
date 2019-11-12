@@ -1,7 +1,3 @@
-{# Sticky header stopper, pushes up any last sticky header before footer #}
-<div class="sticky-header">
-  <div class="sticky-title"></div>
-</div>
 {% set footerOutro = entry.footerOutro.one() %}
 {% if footerOutro.body or footerOutro.image|length %}
   <div class="footer-outro">

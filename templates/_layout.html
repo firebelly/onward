@@ -9,11 +9,15 @@
     {{ adminbar({ sticky: false, entry: entry ?? null }) }}
     <div class="body-wrapper">
       {% include 'partials/_navigation' %}
-      {% if (title is defined and title != '') or (sectionTitle is defined and sectionTitle != '') %}
-        <div class="sticky-header">
-          <div class="sticky-title">{% if sectionTitle is defined and sectionTitle != '' %}{{ sectionTitle }}{% else %}{{ title }}{% endif %}</div>
+      <div class="sticky-header main">
+        <div class="sticky-title">
+          {% if title is defined and title != '' %}
+            {{ title }}
+          {% elseif sectionTitle is defined and sectionTitle != '' %}
+            {{ sectionTitle }}
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
 
       <div class="page-wrapper">
         <main class="site-main" role="main">
