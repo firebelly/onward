@@ -1,4 +1,4 @@
-dateModified: 1573511696
+dateModified: 1573597913
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1776,7 +1776,7 @@ plugins:
       prependSender: 'On behalf of'
       prependSubject: ''
       allowAttachments: ''
-      successFlashMessage: 'Thank you for submitting! If you have another entry, please submit again below.'
+      successFlashMessage: 'Thank you for submitting! If you have another entry, please submit again.'
   contact-form-extensions:
     edition: standard
     enabled: true
