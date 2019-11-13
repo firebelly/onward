@@ -3,10 +3,8 @@
 export let $stickies = [],
     stickyTitles = [],
     $mainSticky,
-    $target,
-    offset = 20,
+    $window,
     scrollTop,
-    targetHeight,
     ticking;
 
 const stickyHeaders = {
@@ -14,7 +12,7 @@ const stickyHeaders = {
   // Init sticky headers
   init() {
     if ($('.sticky-header').length) {
-      $target = $(window);
+      $window = $(window);
       $mainSticky = $('.sticky-header.main .sticky-title');
 
       // Prepend 00, 01 to .sticky-titles
@@ -26,9 +24,9 @@ const stickyHeaders = {
 
       stickyHeaders.setStickyPositions();
 
-      $target.off('scroll.stickies').on('scroll.stickies', stickyHeaders.scrolling);
-      $target.off('resize.stickies').on('resize.stickies', stickyHeaders.resizing);
-      $target.off('load.stickies').on('load.stickies', stickyHeaders.resizing);
+      $window.off('scroll.stickies').on('scroll.stickies', stickyHeaders.scrolling);
+      $window.off('resize.stickies').on('resize.stickies', stickyHeaders.resizing);
+      $window.off('load.stickies').on('load.stickies', stickyHeaders.resizing);
     }
   },
 
@@ -40,7 +38,7 @@ const stickyHeaders = {
     ticking = true;
   },
 
-  // Update positions of sticky headers
+  // Update sticky title
   update() {
     ticking = false;
     let currentStickyTitle = stickyTitles[0];
@@ -55,7 +53,6 @@ const stickyHeaders = {
 
   // Recalculate positions/sizes
   setStickyPositions() {
-    targetHeight = $target.height();
     $stickies.each(function(i) {
       let $this = $(this);
       // Cache title elements
@@ -71,7 +68,7 @@ const stickyHeaders = {
 
   // Scrolling
   scrolling(event) {
-    scrollTop = $(event.currentTarget).scrollTop();
+    scrollTop = $window.scrollTop();
     stickyHeaders.requestTick();
   }
 

@@ -3,6 +3,7 @@ import Velocity from 'velocity-animate';
 
 // import local dependencies
 import Router from './util/Router';
+import imageReveals from './util/imageReveals';
 import stickyHeaders from './util/stickyHeaders';
 import stickyNav from './util/stickyNav';
 import common from './routes/common';
@@ -15,6 +16,9 @@ const routes = new Router({
   pageHome,
   childOurTeam,
 });
+
+// Init image reveals
+imageReveals.init();
 
 // Init sticky headers
 stickyHeaders.init();

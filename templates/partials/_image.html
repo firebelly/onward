@@ -20,7 +20,7 @@
     {% endif %}
 
     {% if treatedImage %}
-      <figure class="image{% if caption is defined and caption != '' %} -has-caption{% endif %}">
+      <figure class="image -reveal{% if caption is defined and caption != '' %} -has-caption{% endif %}">
         {% if tapeTag is not defined or tapeTag == '' %}
           <svg class="icon sprite-slash" aria-hidden="true"><use xlink:href="#sprite-slash"/></svg>
         {% endif %}

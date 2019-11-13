@@ -3,24 +3,40 @@ export default {
     // JavaScript to be fired on the home page
 
     // Clone & fade in header logos on homepage
-    var $homeHeader = $('.page-home .page-header');
-    var $homeSvg = $homeHeader.find('.sprite-logo');
+    let $homeHeader = $('.page-home .page-header');
+    let $homeSvg = $homeHeader.find('.sprite-logo');
     $homeSvg.velocity({ opacity: 0 }, { duration: 0 });
-    $homeHeader.find('.page-header-info').velocity({ opacity: 0 }, { duration: 0 });
-    var clones = [];
-    for (var i = 1; i < 5; i++) {
+    $homeHeader.find('.page-header-info').velocity({ opacity: 0, translateY: 15 }, { duration: 0 });
+
+    let clones = [];
+    let fadeSpeed = 135;
+    for (let i = 1; i < 5; i++) {
       clones[i] = $homeSvg.clone().addClass('clone clone-'+i).insertAfter($homeSvg).velocity({ opacity: 0 }, { duration: 0});
     }
-    $homeSvg.velocity({ opacity: 1 }, { duration: 1500 });
-    for (var i = 1; i < 5; i++) {
-      clones[i].velocity({ opacity: 1 }, { duration: i * 500, delay: (5-i) * 250 });
+    // Fade in main logo
+    $homeSvg.velocity({ opacity: 1 }, {
+      duration: (fadeSpeed*2),
+      easing: 'ease-in'
+    });
+    // Fade each cloned logo in a "stamp. stamp." effect
+    for (let i = 1; i < 5; i++) {
+      clones[i].velocity({ opacity: 1 }, {
+        duration: fadeSpeed,
+        delay: (5-i) * (fadeSpeed*3) + (fadeSpeed*0.25),
+        easing: 'ease-in'
+      });
     }
-    $homeHeader.find('.page-header-info').velocity({ opacity: 1 }, { duration: 500, delay: 1500 });
+    // Fade in footer image and text
+    $homeHeader.find('.page-header-info').velocity({ opacity: 1, translateY: 0 }, {
+      duration: (fadeSpeed*3),
+      delay: (fadeSpeed*12),
+      easing: 'ease-out'
+    });
 
     // Add logo clones to footer-outro
-    var $footerClones = $('<div class="logos footer-clones"/>').prependTo($('.page-home .footer-outro'));
-    var footerClones = [];
-    for (var i = 1; i < 4; i++) {
+    let $footerClones = $('<div class="logos footer-clones"/>').prependTo($('.page-home .footer-outro'));
+    let footerClones = [];
+    for (let i = 1; i < 4; i++) {
       footerClones[i] = $homeSvg.clone().addClass('clone clone-'+i).appendTo($footerClones);
     }
   },
