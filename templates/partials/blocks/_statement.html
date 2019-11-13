@@ -1,20 +1,25 @@
 <div class="block-statement -{{ imagePlacement ?? '' }}{{ image|length ? ' -has-image' : '' }}">
-	<div class="container">
-		<div class="statement">
-			{% if subhead %}
-			  <h5 class="subhead">{{ subhead }}</h5 class="subhead">
-			{% endif %}
-		  <h2>{{ statement|nl2br }}</h2>
-		</div>
-	</div>
-	{% include 'partials/_image' with {
-	  image: block.image,
-	  treated: 1,
-	  imageOptions: {
-		  mode: 'crop',
-		  width: 528,
-		  height: 768,
-		  effects: { modulate: [100, 0, 100], clut: 'gradient:#111-#eee' },
-	  },
-	} %}
+  <div class="container">
+    <div class="statement">
+      {% if subhead %}
+        <h5 class="subhead">{{ subhead }}</h5 class="subhead">
+      {% endif %}
+      <h2>{{ statement|nl2br }}</h2>
+    </div>
+  </div>
+  {% if image|length %}
+    {% set image = image.one() %}
+    {% set treatedImage = craft.imager.transformImage(image, {
+      mode: 'crop',
+      width: 528,
+      height: 768,
+      effects: { modulate: [100, 0, 100], clut: 'gradient:#111-#eee' },
+    }) %}
+
+    {% if treatedImage %}
+      <figure class="image">
+        <img src="{{ treatedImage.getUrl() }}" alt="{{ image.title }}">
+      </figure>
+    {% endif %}
+  {% endif %}
 </div>
