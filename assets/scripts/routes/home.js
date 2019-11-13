@@ -7,6 +7,7 @@ export default {
     let $homeSvg = $homeHeader.find('.sprite-logo');
     $homeSvg.velocity({ opacity: 0 }, { duration: 0 });
     $homeHeader.find('.page-header-info').velocity({ opacity: 0, translateY: 15 }, { duration: 0 });
+    let windowHeight = $(window).height();
 
     let clones = [];
     let fadeSpeed = 135;
@@ -29,7 +30,7 @@ export default {
     // Fade in footer image and text
     $homeHeader.find('.page-header-info').velocity({ opacity: 1, translateY: 0 }, {
       duration: (fadeSpeed*3),
-      delay: (fadeSpeed*7),
+      delay: fadeSpeed * Math.min(9, Math.floor(windowHeight/100)),
       easing: 'ease-out'
     });
 
