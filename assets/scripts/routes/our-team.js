@@ -55,6 +55,7 @@ export default {
       appState.isAnimating = true;
       $modal.velocity('stop').velocity({
           opacity: [1, 0],
+          translateY: [0, 15],
         }, {
           duration: 500,
           display: 'block',
@@ -77,6 +78,7 @@ export default {
       modalOpen = false;
       $('.modal').velocity({
           opacity: [0, 1],
+          translateY: [15, 0],
         }, {
           duration: 250,
           display: 'none',
