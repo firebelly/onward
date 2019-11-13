@@ -62,6 +62,7 @@ export default {
 
     function _openPerson($person) {
       let $modalContent = $person.find('.modal-content').html();
+      let personSlug = $person.attr('data-person');
       $modalContainer.html($modalContent);
       // Add close button
       $modalContainer.find('.text-wrap').append('<a href="#" class="close-modal"><svg class="icon sprite-close" aria-hidden="true"><use xlink:href="#sprite-close"/></svg> <span>Close</span></a>');
@@ -78,6 +79,7 @@ export default {
             disableBodyScroll($('.modal .text-wrap .person-body')[0]);
             $html.css('overflow', 'hidden');
             appState.isAnimating = false;
+            window.location.hash = '#' + personSlug;
           }
         }
       )
@@ -99,6 +101,8 @@ export default {
           complete: function() {
             enableBodyScroll($('.modal .text-wrap .person-body')[0]);
             $html.css('overflow', '');
+            // Remove hash
+            history.replaceState(null, null, ' ');
           }
         }
       );
