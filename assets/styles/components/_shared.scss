@@ -41,6 +41,7 @@
 
 // Sticky titles
 .sticky-header {
+  display: none;
   position: relative;
   .sticky-title {
     color: color(black);
@@ -68,6 +69,9 @@
       opacity: 1;
       position: fixed;
     }
+  }
+  @include media-nav {
+    display: block;
   }
 }
 

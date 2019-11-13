@@ -407,8 +407,14 @@
 // CTA buttons
 .block-cta {
   text-align: center;
-  padding: grid(8) $mobile-global-padding;
+  padding: grid(8) 0;
+  .user-content {
+    margin: $mobile-global-padding auto 0;
+  }
   @include media-md {
     padding: grid(16) 0;
+    .user-content {
+      max-width: 80%;
+    }
   }
 }
