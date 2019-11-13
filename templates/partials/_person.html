@@ -1,4 +1,4 @@
-<article class="grid-item person{{ imageClass|length ? ' ' ~ imageClass|join(' ') : '' }}">
+<article class="grid-item person{{ imageClass|length ? ' ' ~ imageClass|join(' ') : '' }}" data-person="{{ person.personName|kebab }}">
   {% if person.image|length %}
     {% set personImage = person.image.one() %}
     {% set width = 1104 %}

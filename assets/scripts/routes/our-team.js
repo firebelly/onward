@@ -21,6 +21,16 @@ export default {
       $social.appendTo($(this).find('.person-body .inner')).addClass('hide-for-medium-up');
     });
 
+    // Check for hash to open user
+    if (window.location.hash) {
+      let $person = $(`[data-person="${window.location.hash.replace('#','')}"]`);
+      if ($person.length) {
+        setTimeout(function() {
+          _openPerson($person);
+        }, 500);
+      }
+    }
+
     // Keyboard-triggered functions
     $(document).keyup(function(e) {
       // Escape key
@@ -42,11 +52,15 @@ export default {
 
     // Team links to modals
     $('.person h3, .person figure').on('click', function(e) {
+      e.preventDefault();
       if (appState.isAnimating) {
         return;
       }
-      e.preventDefault();
       let $person = $(this).parents('.person');
+      _openPerson($person);
+    });
+
+    function _openPerson($person) {
       let $modalContent = $person.find('.modal-content').html();
       $modalContainer.html($modalContent);
       // Add close button
@@ -69,7 +83,7 @@ export default {
       )
       modalOpen = true;
       _toggleOverlay();
-    });
+    }
 
     function _closeModal() {
       if (appState.isAnimating || !modalOpen) {
