@@ -22,14 +22,14 @@ export default {
     for (let i = 1; i < 5; i++) {
       clones[i].velocity({ opacity: 1 }, {
         duration: fadeSpeed,
-        delay: (5-i) * (fadeSpeed*3) + (fadeSpeed*0.25),
+        delay: (5-i) * (fadeSpeed*2),
         easing: 'ease-in'
       });
     }
     // Fade in footer image and text
     $homeHeader.find('.page-header-info').velocity({ opacity: 1, translateY: 0 }, {
       duration: (fadeSpeed*3),
-      delay: (fadeSpeed*12),
+      delay: (fadeSpeed*7),
       easing: 'ease-out'
     });
 
