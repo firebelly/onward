@@ -8,7 +8,7 @@
 // Image reveals
 .-reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(40px);
   transition: transform 1.5s $cubic-ease2, opacity 0.5s $cubic-ease2;
 
   @include media-md {
