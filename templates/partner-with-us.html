@@ -57,17 +57,25 @@
 
           <div class="grid-wrap"><div class="grid">
             <div class="grid-item one-half">
-              <label class="-large" for="message[Capacity]">Do you have the capacity and drive to dedicate a movement toward equity?</label>
-              <textarea rows="10" cols="40" id="message[Capacity]" name="message[Capacity]">{{ message.message.capacity ?? '' }}</textarea>
+              <label for="message[Resources]">What resources (financial, time, prioritization) are you willing to dedicate to doing real DEI work?</label>
+              <textarea rows="10" cols="40" id="message[Resources]" name="message[Resources]">{{ message.message.resources ?? '' }}</textarea>
             </div>
             <div class="grid-item one-half">
-              <label class="-large" for="message[Current system]">What is your current system to provide a more equitable organization?</label>
-              <textarea rows="10" cols="40" id="message[Current system]" name="message[Current system]">{{ message.message.system ?? '' }}</textarea>
+              <label for="message[Current systems]">What current systems do you have in place at your organization to ensure diversity, equity, and inclusion?</label>
+              <textarea rows="10" cols="40" id="message[Current systems]" name="message[Current systems]">{{ message.message.systems ?? '' }}</textarea>
             </div>
           </div></div>
 
-          <label for="message[Additional info]">Additional Information</label>
-          <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
+          <div class="grid-wrap"><div class="grid">
+            <div class="grid-item one-half">
+              <label for="message[Current systems to change]">What current systems would you like to change because they perpetuate a lack of diversity, equity, and inclusion at your organization?</label>
+              <textarea rows="10" cols="40" id="message[Current systems to change]" name="message[Current systems to change]">{{ message.message.systemsChange ?? '' }}</textarea>
+            </div>
+            <div class="grid-item one-half">
+              <label for="message[Additional info]">Additional Information</label>
+              <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
+            </div>
+          </div></div>
 
           <div class="status"></div>
 
