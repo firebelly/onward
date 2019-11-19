@@ -1,4 +1,4 @@
-dateModified: 1573597913
+dateModified: 1574193632
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1772,7 +1772,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      toEmail: nate@firebellydesign.com
+      toEmail: hello@thisisonward.com
       prependSender: 'On behalf of'
       prependSubject: ''
       allowAttachments: ''
