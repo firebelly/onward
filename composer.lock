@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31243a621b32428cd5a9d98f874b2a42",
+    "content-hash": "a5bc06b8989c48215abe095474580745",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -522,11 +522,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.14",
+            "version": "3.3.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/42829299dd7eb126bb433bb1018d50309de45cab",
-                "reference": "42829299dd7eb126bb433bb1018d50309de45cab",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/7a294dd6fd6054b5278a940d7a6e4fcd9c1a2550",
+                "reference": "7a294dd6fd6054b5278a940d7a6e4fcd9c1a2550",
                 "shasum": ""
             },
             "require": {
@@ -603,7 +603,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-10-30T19:07:57+00:00"
+            "time": "2019-11-05T19:51:36+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -3294,11 +3294,11 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
-                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": ""
             },
             "require": {
@@ -3315,7 +3315,6 @@
                     "Psr\\Log\\": "Psr/Log/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3332,7 +3331,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-10-25T08:06:51+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -3821,11 +3820,11 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.1",
+            "version": "v6.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
-                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
+                "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
                 "shasum": ""
             },
             "require": {
@@ -3834,10 +3833,6 @@
                 "symfony/polyfill-iconv": "^1.0",
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.1",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses",
@@ -3854,7 +3849,6 @@
                     "lib/swift_required.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3874,7 +3868,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-04-21T09:21:45+00:00"
+            "time": "2019-11-12T09:31:26+00:00"
         },
         {
             "name": "symfony/console",
@@ -4798,22 +4792,17 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.12.1",
+            "version": "v2.12.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
-                "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/d761fd1f1c6b867ae09a7d8119a6d95d06dc44ed",
+                "reference": "d761fd1f1c6b867ae09a7d8119a6d95d06dc44ed",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
                 "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-mbstring": "^1.3"
-            },
-            "require-dev": {
-                "psr/container": "^1.0",
-                "symfony/debug": "^3.4|^4.2",
-                "symfony/phpunit-bridge": "^4.4@dev|^5.0"
             },
             "type": "library",
             "extra": {
@@ -4829,7 +4818,6 @@
                     "Twig\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -4856,7 +4844,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-10-17T07:34:53+00:00"
+            "time": "2019-11-11T16:52:09+00:00"
         },
         {
             "name": "verbb/expanded-singles",
@@ -5007,19 +4995,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.15",
+            "version": "4.1.19",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/14ff3982d58af104f5f38a438d99b9600705151e",
-                "reference": "14ff3982d58af104f5f38a438d99b9600705151e",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/8acdad8a3ad4c70d04cd6925811b28d06d776ca1",
+                "reference": "8acdad8a3ad4c70d04cd6925811b28d06d776ca1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
-                "voku/portable-utf8": "~5.4.21"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
+                "voku/portable-utf8": "~5.4.25"
             },
             "type": "library",
             "extra": {
@@ -5032,7 +5017,6 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5055,15 +5039,15 @@
                 "security",
                 "xss"
             ],
-            "time": "2019-09-25T22:40:48+00:00"
+            "time": "2019-11-11T14:48:30+00:00"
         },
         {
             "name": "voku/arrayy",
-            "version": "5.14.2",
+            "version": "5.15.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/6fe80d46f515d8d96db244d36e6099ef6659c04a",
-                "reference": "6fe80d46f515d8d96db244d36e6099ef6659c04a",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/807013ebf923de01689afe516e1301c51818f056",
+                "reference": "807013ebf923de01689afe516e1301c51818f056",
                 "shasum": ""
             },
             "require": {
@@ -5071,9 +5055,6 @@
                 "php": ">=7.0.0",
                 "phpdocumentor/reflection-docblock": "~4.3",
                 "symfony/polyfill-mbstring": "~1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "autoload": {
@@ -5084,7 +5065,6 @@
                     "src/Create.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5106,7 +5086,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2019-10-06T17:56:40+00:00"
+            "time": "2019-11-18T00:23:19+00:00"
         },
         {
             "name": "voku/email-check",
@@ -5154,11 +5134,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.3.4",
+            "version": "1.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/d3553af811794c377ea2afff5494b343bcef5b76",
-                "reference": "d3553af811794c377ea2afff5494b343bcef5b76",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/056000d679a44b06ee61a63114f587cde066b1a8",
+                "reference": "056000d679a44b06ee61a63114f587cde066b1a8",
                 "shasum": ""
             },
             "require": {
@@ -5190,15 +5170,15 @@
                 "clean",
                 "php"
             ],
-            "time": "2019-10-14T09:49:39+00:00"
+            "time": "2019-11-11T16:55:47+00:00"
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.25",
+            "version": "5.4.28",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/aed1b955d5d43e4104d72dce4158db5de3cecce6",
-                "reference": "aed1b955d5d43e4104d72dce4158db5de3cecce6",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/f1b08aa203cb4731a5c4c9d9328b6fc329341acf",
+                "reference": "f1b08aa203cb4731a5c4c9d9328b6fc329341acf",
                 "shasum": ""
             },
             "require": {
@@ -5255,7 +5235,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-10-14T06:46:29+00:00"
+            "time": "2019-11-17T21:08:41+00:00"
         },
         {
             "name": "voku/stop-words",
@@ -5450,55 +5430,6 @@
                 "craftcms"
             ],
             "time": "2019-04-29T13:12:58+00:00"
-        },
-        {
-            "name": "wbrowar/guide",
-            "version": "2.1.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wbrowar/craft-guide/zipball/ad2f5985adbc4e02cbdb9abee368e7ed9beb3c04",
-                "reference": "ad2f5985adbc4e02cbdb9abee368e7ed9beb3c04",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.2.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Guide",
-                "handle": "guide",
-                "hasCpSettings": true,
-                "hasCpSection": true,
-                "changelogUrl": "https://raw.githubusercontent.com/wbrowar/craft-guide/master/CHANGELOG.md",
-                "class": "wbrowar\\guide\\Guide"
-            },
-            "autoload": {
-                "psr-4": {
-                    "wbrowar\\guide\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Will Browar",
-                    "homepage": "https://wbrowar.com"
-                }
-            ],
-            "description": "A CMS Guide for Craft CMS.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "guide"
-            ],
-            "support": {
-                "docs": "https://github.com/wbrowar/craft-guide/blob/master/README.md",
-                "issues": "https://github.com/wbrowar/craft-guide/issues"
-            },
-            "time": "2019-08-25T18:41:55+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5770,11 +5701,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.10",
+            "version": "2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/4f1a9f0fe8c565203b9243613b0a81a46dde27e7",
-                "reference": "4f1a9f0fe8c565203b9243613b0a81a46dde27e7",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/72e7c6c454028366f14ccef5a93d6c18fc9dcd63",
+                "reference": "72e7c6c454028366f14ccef5a93d6c18fc9dcd63",
                 "shasum": ""
             },
             "require": {
@@ -5782,11 +5713,6 @@
                 "opis/closure": "^3.3",
                 "php": ">=5.4",
                 "yiisoft/yii2": "~2.0.13"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "<7",
-                "yiisoft/yii2-coding-standards": "~2.0",
-                "yiisoft/yii2-swiftmailer": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -5799,7 +5725,6 @@
                     "yii\\debug\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -5819,7 +5744,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-10-22T10:36:02+00:00"
+            "time": "2019-11-05T13:56:49+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
