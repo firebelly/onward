@@ -1,4 +1,4 @@
-dateModified: 1574193632
+dateModified: 1574194139
 email:
   fromEmail: nate@firebellydesign.com
   fromName: Onward
@@ -1803,15 +1803,6 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: botsLoveTheHoney
-  guide:
-    edition: lite
-    enabled: true
-    schemaVersion: 2.0.0
-    settings:
-      templatePath: _guide
-      assetVolume: e5827a94-b77b-4616-9913-bda2cf79b52b
-      clientName: Onward
-      myCompanyName: Firebelly
 sections:
   0d9553ee-97bc-45c6-aeed-06d1bfde344f:
     name: 'Our Story'
