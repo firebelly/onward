@@ -21,7 +21,7 @@
 
   {% include 'partials/_page-header' %}
 
-  {% include '/partials/_flash' %}
+  {% include 'partials/_flash' %}
 
   {% include 'partials/_page-blocks' %}
 
@@ -66,16 +66,11 @@
             </div>
           </div></div>
 
-          <div class="grid-wrap"><div class="grid">
-            <div class="grid-item one-half">
-              <label for="message[Current systems to change]">What current systems would you like to change because they perpetuate a lack of diversity, equity, and inclusion at your organization?</label>
-              <textarea rows="10" cols="40" id="message[Current systems to change]" name="message[Current systems to change]">{{ message.message.systemsChange ?? '' }}</textarea>
-            </div>
-            <div class="grid-item one-half">
-              <label for="message[Additional info]">Additional Information</label>
-              <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
-            </div>
-          </div></div>
+          <label for="message[Current systems to change]">What current systems would you like to change because they perpetuate a lack of diversity, equity, and inclusion at your organization?</label>
+          <textarea rows="10" cols="40" id="message[Current systems to change]" name="message[Current systems to change]">{{ message.message.systemsChange ?? '' }}</textarea>
+
+          <label for="message[Additional info]">Additional Information</label>
+          <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
 
           <div class="status"></div>
 
