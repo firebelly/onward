@@ -161,6 +161,10 @@
             imagePlacement: block.imagePlacement
           } %}
 
+        {% case 'postcards' %}
+          {% if containerWrapped %}</div><!-- /.container -->{% set containerWrapped = false %}{% endif %}
+          {% include 'partials/blocks/_postcard-blocks' with { postcards: block } %}
+
       {% endswitch %}
 
     {% endfor %}

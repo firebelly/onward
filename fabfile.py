@@ -21,7 +21,7 @@ def devsetup():
   local('composer install')
   local('yarn')
   local('cp .env-example .env')
-  print("OK DONE! Hello? Are you still awake?\nEdit your .env file with local credentials\nRun `npx gulp watch` to run local gulp to compile & watch assets")
+  print("OK DONE! Hello? Are you still awake?\nEdit your .env file with local credentials\nRun `yarn start` to compile & watch assets")
 
 def deploy(composer='y', assets='y'):
   update()

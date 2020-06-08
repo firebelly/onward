@@ -111,6 +111,7 @@
       }
       // Monochrome image treatment before hover
       &::before {
+        pointer-events: none;
         @include transition(opacity);
         content: '';
         background-color: color(tan);
@@ -146,6 +147,9 @@
     // Content inside cell
     .cell-body {
       padding: grid(2) 0 0;
+      a {
+        @include inline-link('&', color(tan));
+      }
     }
     p {
       @include p3;

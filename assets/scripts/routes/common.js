@@ -14,12 +14,6 @@ export default {
     let pageAt = window.location.pathname;
     let $siteNav = $('.site-nav');
 
-    $window.on('resize', function() {
-      // We execute the same script as before
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }).trigger('resize');
-
     // Mobile hamburger and X close icons toggle mobile nav
     $('#hamburger-salad').on('click', function(e) {
       e.preventDefault();

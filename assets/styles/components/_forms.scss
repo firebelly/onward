@@ -18,6 +18,7 @@ form {
     margin: 0;
   }
 
+  // Hide autofill styles
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
@@ -26,6 +27,7 @@ form {
       -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
   }
 
+  // Base field styles
   input[type=text],
   input[type=email],
   textarea {

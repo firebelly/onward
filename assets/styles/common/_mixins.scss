@@ -29,9 +29,9 @@
 }
 
 // Animated white bg hover for user-content links
-@mixin inline-link($slide-target:'&') {
+@mixin inline-link($slide-target: '&', $hover: color(white)) {
   #{$slide-target} {
-    background-image: linear-gradient(to top, color(white) 0%, color(white) 100%);
+    background-image: linear-gradient(to top, #{$hover} 0%, #{$hover} 100%);
     background-repeat: no-repeat;
     background-size: 0% 100%;
     text-decoration: underline;

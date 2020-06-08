@@ -1,14 +1,8 @@
-{% set postcards = craft.entries({
-  section: 'postcards',
-  with: [
-    'postcardInfo'
-  ]
-}) %}
-
+{# This is essentially the same as _postcards.html but is supporting an arbitrary page block version of Postcards #}
 {% if postcards|length %}
   <div class="sticky-header">
     <div class="sticky-title">
-      <span>Postcards</span>
+      <span>{{ postcards.headline }}</span>
     </div>
   </div>
   <div class="carousel-wrap">
@@ -16,13 +10,13 @@
       <div class="carousel postcards">
         <div class="carousel-header grid">
           <div class="grid-item one-half">
-            <h2><em>Postcards</em><br> from the Field</h2>
+            <h2>{{ postcards.headline }}</h2>
           </div>
           <div class="grid-item one-half">
             <div class="carousel-pagination">
               <span class="previous"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
               <div class="cell-count">
-                01 / {{ '%02d'|format(postcards|length) }}
+                01 / {{ '%02d'|format(postcards.postcardBlocks|length) }}
               </div>
               <span class="next"><svg class="icon sprite-arrow"><use xlink:href="#sprite-arrow"/></svg></span>
             </div>
@@ -30,9 +24,9 @@
         </div>
 
         <ul class="cells">
-        {% for card in postcards.all() %}
-          {% if card.postcardInfo[0].image|length %}
-            {% set cardImage = card.postcardInfo[0].image.one() %}
+        {% for card in postcards.postcardBlocks.all() %}
+          {% if card.image|length %}
+            {% set cardImage = card.image.one() %}
             {% set treatedImage = craft.imager.transformImage(cardImage, {
               width: 1000,
               height: 690,
@@ -40,21 +34,23 @@
             }) %}
           {% endif %}
           <li class="cell">
-            {% if card.postcardInfo[0].tagline %}
+            {% if card.tagline %}
               <div class="tape-tagline">
-                {{ card.postcardInfo[0].tagline }}
+                {{ card.tagline }}
               </div>
             {% endif %}
-            {% if card.postcardInfo[0].image|length and treatedImage %}
+            {% if card.image|length and treatedImage %}
               <figure>
-                <img src="{{ treatedImage.getUrl() }}" alt="{{ card.postcardInfo[0].image.title }}">
+                {% if card.blockUrl %}<a rel="noopener" target="_blank" href="{{ card.blockUrl }}">{% endif %}
+                  <img src="{{ treatedImage.getUrl() }}" alt="{{ card.image.title }}">
+                {% if card.blockUrl %}</a>{% endif %}
               </figure>
             {% endif %}
             <div class="cell-headline">
-              <h3>{{ card.title }}</h3>
+              <h3>{{ card.blockTitle }}</h3>
             </div>
             <div class="cell-body">
-              {{ card.postcardInfo[0].body }}
+              {{ card.body }}
             </div>
           </li>
         {% endfor %}
