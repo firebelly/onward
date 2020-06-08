@@ -1,8 +1,9 @@
-dateModified: 1591636680
+dateModified: 1591639055
 email:
-  fromEmail: nate@firebellydesign.com
+  fromEmail: hello@thisisonward.com
   fromName: Onward
-  template: null
+  replyToEmail: null
+  template: ''
   transportSettings:
     encryptionMethod: tls
     host: smtp.sendgrid.net
