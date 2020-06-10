@@ -300,8 +300,11 @@
         .subhead {
           text-align: center;
         }
+        ul,
+        ol,
         p {
-          @include p2; // ?
+          // Larger text on desktop fullwidth blocks
+          @include p2;
         }
       }
     }
