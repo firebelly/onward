@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe1c9cad9b81af40fa35254f57c69fa6",
+    "content-hash": "6119e6b9cea795c4b7774f69fae92fe9",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -501,11 +501,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.22.1",
+            "version": "3.4.23",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/2cf3a90ea6b76d44323c13da0a149e1c6462f387",
-                "reference": "2cf3a90ea6b76d44323c13da0a149e1c6462f387",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/9a16630114780c721a227a5d1f9a07956ee89f5e",
+                "reference": "9a16630114780c721a227a5d1f9a07956ee89f5e",
                 "shasum": ""
             },
             "require": {
@@ -586,7 +586,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-05-30T15:10:56+00:00"
+            "time": "2020-06-09T20:23:40+00:00"
         },
         {
             "name": "craftcms/contact-form",
