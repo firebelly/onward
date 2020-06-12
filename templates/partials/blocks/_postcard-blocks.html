@@ -27,11 +27,7 @@
         {% for card in postcards.postcardBlocks.all() %}
           {% if card.image|length %}
             {% set cardImage = card.image.one() %}
-            {% set treatedImage = craft.imager.transformImage(cardImage, {
-              width: 1000,
-              height: 690,
-              mode: 'crop',
-            }) %}
+            {% set treatedImage = craft.imager.transformImage(cardImage, { width: 1000 }) %}
           {% endif %}
           <li class="cell">
             {% if card.tagline %}
