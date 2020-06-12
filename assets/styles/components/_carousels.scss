@@ -165,7 +165,7 @@
     }
     .cells {
       padding: grid(16) 0;
-      li {
+      .cell {
         width: columns(5);
         max-width: 450px;
         float: left;
