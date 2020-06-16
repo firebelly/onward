@@ -39,7 +39,7 @@
     "fitvids": "^2.0.0",
     "flickity": "^2.2.1",
     "flickity-imagesloaded": "^2.0.0",
-    "jquery": "^3.4",
+    "jquery": "^3.5",
     "velocity-animate": "^1.5.2"
   }
 }
