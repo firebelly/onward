@@ -91,6 +91,7 @@
 
   // Postcard carousels
   &.postcards {
+
     padding: grid(6) 0;
     .tape-tagline {
        top: 75px;
@@ -138,7 +139,7 @@
       }
     }
 
-    // Support for story-like image-less postcard blocks (!!)
+    // Support for story-like image-less postcard blocks on arbitrary pages (e.g. Our Resources)
     .cell.-no-image {
       .cell-headline {
         @include media-md {
@@ -187,6 +188,22 @@
     p {
       @include p3;
     }
+
+    // Page block version of postcards
+    // &.-postcards-block {
+    //   // Support first line in serif font (disabled as this is fragile)
+    //   .carousel-header h2 {
+    //     &::first-line {
+    //       @include h3-serif;
+    //       @include media-md {
+    //         @include h2-serif;
+    //       }
+    //       @include media-nav {
+    //         @include h1-serif;
+    //       }
+    //     }
+    //   }
+    // }
   } // end .postcards
 
   // Desktop styles
@@ -202,6 +219,12 @@
         width: columns(5);
         max-width: 450px;
         float: left;
+      }
+    }
+    // Postcard blocks get less padding
+    &.-postcards-block {
+      .cells {
+        padding: grid(12) 0;
       }
     }
     &.postcards {
