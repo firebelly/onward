@@ -29,7 +29,7 @@
             {% set cardImage = card.image.one() %}
             {% set treatedImage = craft.imager.transformImage(cardImage, { width: 1000 }) %}
           {% endif %}
-          <li class="cell">
+          <li class="cell{{ card.image|length == 0 ? ' -no-image' : '' }}">
             {% if card.tagline %}
               <div class="tape-tagline">
                 {{ card.tagline }}
@@ -37,9 +37,9 @@
             {% endif %}
             {% if card.image|length and treatedImage %}
               <figure>
-                {% if card.blockUrl %}<a rel="noopener" target="_blank" href="{{ card.blockUrl }}">{% endif %}
+                {% if card.blockLink|length and card.blockLink[0].url %}<a rel="noopener" target="_blank" href="{{ card.blockLink[0].url }}">{% endif %}
                   <img src="{{ treatedImage.getUrl() }}" alt="{{ card.image.title }}">
-                {% if card.blockUrl %}</a>{% endif %}
+                {% if card.blockLink|length and card.blockLink[0].url %}</a>{% endif %}
               </figure>
             {% endif %}
             <div class="cell-headline">
@@ -48,6 +48,11 @@
             <div class="cell-body user-content">
               {{ card.body }}
             </div>
+            {% if card.blockLink|length and card.blockLink[0].url and card.blockLink[0].label %}
+              <div class="cta">
+                <a rel="noopener" target="_blank" href="{{ card.blockLink[0].url }}">{{ card.blockLink[0].label }}</a>
+              </div>
+            {% endif %}
           </li>
         {% endfor %}
         </ul>

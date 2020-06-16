@@ -5,6 +5,11 @@
 {% set sectionTitle = entry.pageHeader.sectionTitle %}
 {% if entry.seoTitle %}{% set seoTitle = entry.seoTitle %}{% endif %}
 {% if entry.seoDescription %}{% set seoDescription = entry.seoDescription %}{% endif %}
+{% if entry.shareImage|length %}
+  {% set shareImage = entry.shareImage.one() %}
+{% elseif entry.pageHeader.image|length %}
+  {% set shareImage = entry.pageHeader.image.one() %}
+{% endif %}
 
 {% block content %}
 
@@ -14,13 +19,13 @@
 
   {% include 'partials/_partnership-stories' %}
 
-	{% if entry.footerQuote.quote %}
-	  {% include 'partials/blocks/_quote' with {
-	    quote: entry.footerQuote.quote,
-	    image: [],
-	    attribution: entry.footerQuote.attribution
-	  } %}
-	{% endif %}
+  {% if entry.footerQuote.quote %}
+    {% include 'partials/blocks/_quote' with {
+      quote: entry.footerQuote.quote,
+      image: [],
+      attribution: entry.footerQuote.attribution
+    } %}
+  {% endif %}
 
   {% include 'partials/_footer-outro' %}
 

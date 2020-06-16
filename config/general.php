@@ -27,6 +27,14 @@ return [
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => true,
 
+        // Base site URL
+        'siteUrl' => getenv('SITE_URL'),
+
+        'aliases' => [
+            '@rootUrl' => getenv('SITE_URL'),
+        ],
+
+        // Disable GraphQL
         'enableGql' => false,
     ],
 

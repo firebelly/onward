@@ -1,4 +1,4 @@
-dateModified: 1591641564
+dateModified: 1592329733
 email:
   fromEmail: hello@thisisonward.com
   fromName: Onward
@@ -29,6 +29,36 @@ fieldGroups:
   d7cadcda-36e7-4698-a430-56f94012c04b:
     name: Common
 fields:
+  083bb795-ac2a-4c86-aac3-9f670c828761:
+    contentColumnType: string
+    fieldGroup: 9591d94f-3f18-46a6-9d97-e03ed9da808f
+    handle: shareImage
+    instructions: 'Used when sharing a post or page on social'
+    name: 'Share Image'
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   131af06f-d853-4205-904f-6c835a958650:
     contentColumnType: string
     fieldGroup: a86c6f50-b95f-4784-98a8-f28553c72a62
@@ -122,14 +152,14 @@ fields:
       columns:
         __assoc__:
           -
-            - 20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1
+            - 72bb892d-4f32-4918-9d99-ca9e821d5be7
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 72bb892d-4f32-4918-9d99-ca9e821d5be7
+            - 20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1
             -
               __assoc__:
                 -
@@ -1744,13 +1774,6 @@ matrixBlockTypes:
                       - width
                       - ''
               -
-                - 61f1bbdd-2871-4ab5-b739-5d5b0295fede
-                -
-                  __assoc__:
-                    -
-                      - width
-                      - ''
-              -
                 - d531307d-3217-4fc7-b3b7-c594a9d2616b
                 -
                   __assoc__:
@@ -1759,6 +1782,13 @@ matrixBlockTypes:
                       - ''
               -
                 - 0299655c-97db-4197-8d62-8e60a5e20bb2
+                -
+                  __assoc__:
+                    -
+                      - width
+                      - ''
+              -
+                - 61f1bbdd-2871-4ab5-b739-5d5b0295fede
                 -
                   __assoc__:
                     -
@@ -2452,6 +2482,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2494,6 +2527,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2530,6 +2566,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2586,6 +2625,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2622,6 +2664,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2721,6 +2766,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2771,6 +2819,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2821,6 +2872,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -2908,6 +2962,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  083bb795-ac2a-4c86-aac3-9f670c828761:
+                    required: false
+                    sortOrder: 3
                   caac16cc-30e8-497f-88b2-ac1a5ccc79c5:
                     required: false
                     sortOrder: 1
@@ -4302,10 +4359,10 @@ superTableBlockTypes:
             fields:
               0299655c-97db-4197-8d62-8e60a5e20bb2:
                 required: true
-                sortOrder: 5
+                sortOrder: 4
               61f1bbdd-2871-4ab5-b739-5d5b0295fede:
                 required: false
-                sortOrder: 3
+                sortOrder: 5
               8614f2c0-3142-4b1c-8aca-f2f44d8d1c89:
                 required: false
                 sortOrder: 2
@@ -4314,7 +4371,7 @@ superTableBlockTypes:
                 sortOrder: 1
               d531307d-3217-4fc7-b3b7-c594a9d2616b:
                 required: false
-                sortOrder: 4
+                sortOrder: 3
             name: Content
             sortOrder: 1
     fields:
@@ -4342,18 +4399,63 @@ superTableBlockTypes:
         translationMethod: none
         type: craft\redactor\Field
       61f1bbdd-2871-4ab5-b739-5d5b0295fede:
-        contentColumnType: string(255)
+        contentColumnType: text
         fieldGroup: null
-        handle: blockUrl
-        instructions: 'If set, clicking on image will open new tab with this URL'
-        name: URL
+        handle: blockLink
+        instructions: 'If URL is set, clicking on image will open new tab with this URL. If Label is also set, will show CTA link at bottom of postcard.'
+        name: Link
         searchable: true
         settings:
-          maxLength: '255'
-          placeholder: ''
+          addRowLabel: 'Add a row'
+          columnType: text
+          columns:
+            __assoc__:
+              -
+                - col1
+                -
+                  __assoc__:
+                    -
+                      - heading
+                      - URL
+                    -
+                      - handle
+                      - url
+                    -
+                      - width
+                      - ''
+                    -
+                      - type
+                      - singleline
+              -
+                - col2
+                -
+                  __assoc__:
+                    -
+                      - heading
+                      - Label
+                    -
+                      - handle
+                      - label
+                    -
+                      - width
+                      - ''
+                    -
+                      - type
+                      - singleline
+          defaults:
+            -
+              __assoc__:
+                -
+                  - col1
+                  - ''
+                -
+                  - col2
+                  - ''
+          maxRows: '1'
+          minRows: '1'
         translationKeyFormat: null
         translationMethod: none
-        type: craft\fields\Url
+        type: craft\fields\Table
       8614f2c0-3142-4b1c-8aca-f2f44d8d1c89:
         contentColumnType: string
         fieldGroup: null
@@ -4615,6 +4717,9 @@ superTableBlockTypes:
               20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1:
                 required: false
                 sortOrder: 2
+              41aae94f-1d28-4041-b0b4-ff9158540336:
+                required: false
+                sortOrder: 3
               72bb892d-4f32-4918-9d99-ca9e821d5be7:
                 required: false
                 sortOrder: 1
@@ -4629,7 +4734,8 @@ superTableBlockTypes:
         name: 'Mailchimp List ID'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: string
           initialRows: '4'
@@ -4638,6 +4744,36 @@ superTableBlockTypes:
         translationKeyFormat: null
         translationMethod: none
         type: craft\fields\PlainText
+      41aae94f-1d28-4041-b0b4-ff9158540336:
+        contentColumnType: string
+        fieldGroup: null
+        handle: globalShareImage
+        instructions: 'Default share image used for pages with no inherent shareable image'
+        name: 'Global Share Image'
+        searchable: true
+        settings:
+          allowSelfRelations: ''
+          allowedKinds:
+            - image
+          defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+          defaultUploadLocationSubpath: ''
+          limit: '1'
+          localizeRelations: false
+          restrictFiles: '1'
+          selectionLabel: 'Add image'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+          singleUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+          singleUploadLocationSubpath: ''
+          source: null
+          sources: '*'
+          targetSiteId: null
+          useSingleFolder: false
+          validateRelatedElements: ''
+          viewMode: large
+        translationKeyFormat: null
+        translationMethod: site
+        type: craft\fields\Assets
       72bb892d-4f32-4918-9d99-ca9e821d5be7:
         contentColumnType: string
         fieldGroup: null
@@ -4646,7 +4782,8 @@ superTableBlockTypes:
         name: 'Title Separator'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: string
           initialRows: '4'
@@ -4839,7 +4976,7 @@ volumes:
       path: uploads/people
     sortOrder: 2
     type: craft\volumes\Local
-    url: /uploads/people/
+    url: '@rootUrl/uploads/people/'
   6f85d94b-c535-4e84-802b-33fe7087ab63:
     handle: global
     hasUrls: true
@@ -4848,4 +4985,4 @@ volumes:
       path: uploads/
     sortOrder: 1
     type: craft\volumes\Local
-    url: /uploads/
+    url: '@rootUrl/uploads/'

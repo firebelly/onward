@@ -10,11 +10,18 @@
   <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
 
   <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | {{ siteName }}{% else %}{{ siteName }}{% endif %}">
-{% if mainImage is defined %}
-  <meta property="og:image" content="{{ mainImage.getUrl() }}">
+
+{% if shareImage is defined -%}
+  {% set transformedImage = craft.imager.transformImage(shareImage, { width: 1200, height: 630, mode: 'crop', format: 'jpg' }) -%}
+  <meta property="og:image" content="{{ transformedImage.getUrl() }}">
+  <meta property="og:image:type" content="image/jpeg">
+{% elseif siteOptions.misc.globalShareImage|length -%}
+  {% set transformedImage = craft.imager.transformImage(siteOptions.misc.globalShareImage.one(), { width: 1200, height: 630, mode: 'crop', format: 'jpg' }) -%}
+  <meta property="og:image" content="{{ transformedImage.getUrl() }}">
+  <meta property="og:image:type" content="image/jpeg">
 {% else %}
   <meta property="og:image" content="">
-{% endif %}
+{% endif -%}
 
   <link rel="stylesheet" media="screen" href="{{ rev('/styles/main.css') }}">
   <link rel="stylesheet" media="print" href="{{ rev('/styles/print.css') }}">
