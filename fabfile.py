@@ -2,7 +2,7 @@ from fabric.api import *
 import os
 
 env.hosts = ['staging.thisisonward.com']
-env.user = 'caitlinmccorkle'
+env.user = 'onward'
 env.path = '~/Firebelly/onward'
 env.remotepath = '/home/onward/apps/onward-staging'
 env.git_branch = 'master'
