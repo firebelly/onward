@@ -1,0 +1,97 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  4b7ecd80-a9a7-429a-b6a7-86cbeb2ade63:
+    tabs:
+      -
+        fields:
+          7a5ce998-18a1-4dae-8b93-f9934e83e045:
+            required: false
+            sortOrder: 2
+          7a83a647-f896-4471-94d4-a975fb74d584:
+            required: false
+            sortOrder: 3
+          f15c2427-187c-46b7-a33c-0e3410a1745a:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  7a5ce998-18a1-4dae-8b93-f9934e83e045:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  7a83a647-f896-4471-94d4-a975fb74d584:
+    contentColumnType: string
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Half Width'
+            -
+              - value
+              - halfWidth
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Full Width'
+            -
+              - value
+              - fullWidth
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f15c2427-187c-46b7-a33c-0e3410a1745a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subhead
+    instructions: ''
+    name: Subhead
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: text
+name: Text
+sortOrder: 4

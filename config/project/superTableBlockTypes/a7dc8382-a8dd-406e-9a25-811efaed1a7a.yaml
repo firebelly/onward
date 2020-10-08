@@ -1,0 +1,171 @@
+field: 6fca9068-a071-4b07-8d2e-9532b07964a2
+fieldLayouts:
+  c97b83f3-b792-4b3f-8b6c-c13219ea3efb:
+    tabs:
+      -
+        fields:
+          0299655c-97db-4197-8d62-8e60a5e20bb2:
+            required: true
+            sortOrder: 4
+          61f1bbdd-2871-4ab5-b739-5d5b0295fede:
+            required: false
+            sortOrder: 5
+          8614f2c0-3142-4b1c-8aca-f2f44d8d1c89:
+            required: false
+            sortOrder: 2
+          95287868-a514-443e-ba6e-3164ae4c9e5a:
+            required: true
+            sortOrder: 1
+          d531307d-3217-4fc7-b3b7-c594a9d2616b:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  0299655c-97db-4197-8d62-8e60a5e20bb2:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  61f1bbdd-2871-4ab5-b739-5d5b0295fede:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockLink
+    instructions: 'If URL is set, clicking on image will open new tab with this URL. If Label is also set, will show CTA link at bottom of postcard.'
+    name: Link
+    searchable: true
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - URL
+                -
+                  - handle
+                  - url
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Label
+                -
+                  - handle
+                  - label
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: '1'
+      minRows: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  8614f2c0-3142-4b1c-8aca-f2f44d8d1c89:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  95287868-a514-443e-ba6e-3164ae4c9e5a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockTitle
+    instructions: ''
+    name: Title
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d531307d-3217-4fc7-b3b7-c594a9d2616b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: tagline
+    instructions: ''
+    name: Tagline
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

@@ -1,0 +1,148 @@
+field: 131af06f-d853-4205-904f-6c835a958650
+fieldLayouts:
+  d9aa29d4-2076-4e92-9cec-fd33b2aa3889:
+    tabs:
+      -
+        fields:
+          34c8b1ab-4cc6-4942-829a-18d0efd5e1b0:
+            required: false
+            sortOrder: 3
+          3c2518bb-bdbb-4f06-a671-af7aa94cae3d:
+            required: false
+            sortOrder: 2
+          420dfa14-522e-4cf7-9695-0ac0f13be8bd:
+            required: false
+            sortOrder: 5
+          b1e6aa99-466d-455d-8dab-e11e67ed222a:
+            required: false
+            sortOrder: 1
+          f310cf98-ae90-4b5f-9475-fb13eaf38fee:
+            required: false
+            sortOrder: 4
+        name: Content
+        sortOrder: 1
+fields:
+  34c8b1ab-4cc6-4942-829a-18d0efd5e1b0:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  3c2518bb-bdbb-4f06-a671-af7aa94cae3d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  420dfa14-522e-4cf7-9695-0ac0f13be8bd:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imagePlacement
+    instructions: ''
+    name: 'Image Placement'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  b1e6aa99-466d-455d-8dab-e11e67ed222a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subhead
+    instructions: ''
+    name: Subhead
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f310cf98-ae90-4b5f-9475-fb13eaf38fee:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: answer
+name: Answer
+sortOrder: 3

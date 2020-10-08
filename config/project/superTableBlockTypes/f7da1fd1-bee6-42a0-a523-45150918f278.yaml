@@ -1,0 +1,84 @@
+field: 5eaf5088-470a-41a8-8696-2affe0ab47a2
+fieldLayouts:
+  cbd2e0b7-b4ec-422a-988f-3aaf959ab729:
+    tabs:
+      -
+        fields:
+          20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1:
+            required: false
+            sortOrder: 2
+          41aae94f-1d28-4041-b0b4-ff9158540336:
+            required: false
+            sortOrder: 3
+          72bb892d-4f32-4918-9d99-ca9e821d5be7:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: mailchimpListId
+    instructions: 'If populated, users will be added to this Mailchimp list when submitting the Partner With Us form'
+    name: 'Mailchimp List ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'e.g. 2199ee8570'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  41aae94f-1d28-4041-b0b4-ff9158540336:
+    contentColumnType: string
+    fieldGroup: null
+    handle: globalShareImage
+    instructions: 'Default share image used for pages with no inherent shareable image'
+    name: 'Global Share Image'
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  72bb892d-4f32-4918-9d99-ca9e821d5be7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: titleSeparator
+    instructions: 'Used in page titles separating siteName and pageTitle'
+    name: 'Title Separator'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

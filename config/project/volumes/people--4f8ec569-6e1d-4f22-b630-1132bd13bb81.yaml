@@ -1,0 +1,8 @@
+handle: people
+hasUrls: true
+name: People
+settings:
+  path: uploads/people
+sortOrder: 2
+type: craft\volumes\Local
+url: '@rootUrl/uploads/people/'

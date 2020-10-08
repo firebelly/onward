@@ -1,0 +1,217 @@
+field: 73a71b02-a084-4cce-850e-2ab834b84730
+fieldLayouts:
+  c3576140-a6b1-468c-a39a-86c4a1619259:
+    tabs:
+      -
+        fields:
+          5579df76-d891-403b-bb43-0bdddca360d5:
+            required: false
+            sortOrder: 1
+          925ecd9b-7793-48ef-a839-776bf6260325:
+            required: false
+            sortOrder: 2
+          9a239048-d220-484c-98ba-858d2b8f561b:
+            required: false
+            sortOrder: 4
+          aaf62e22-ab28-4f73-a726-b81d2d85da3f:
+            required: false
+            sortOrder: 5
+          b9406501-e847-46f5-991d-25dde9f19823:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  5579df76-d891-403b-bb43-0bdddca360d5:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  925ecd9b-7793-48ef-a839-776bf6260325:
+    contentColumnType: string
+    fieldGroup: null
+    handle: colorTheme
+    instructions: ''
+    name: 'Color Theme'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Orange
+            -
+              - value
+              - orange
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Pink
+            -
+              - value
+              - pink
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Yellow
+            -
+              - value
+              - yellow
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  9a239048-d220-484c-98ba-858d2b8f561b:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tapeTag
+    instructions: ''
+    name: 'Tape Tag'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '* None *'
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Toward Equity'
+            -
+              - value
+              - towardEquity
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Learn — Build — Liberate'
+            -
+              - value
+              - learnBuildLiberate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adapt — Inspire — Persist — Create'
+            -
+              - value
+              - adaptInspirePersistCreate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Holding Space — Elevating Voices'
+            -
+              - value
+              - holdingSpaceElevatingVoices
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  aaf62e22-ab28-4f73-a726-b81d2d85da3f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tapeTagPosition
+    instructions: ''
+    name: 'Tape Tag Position'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  b9406501-e847-46f5-991d-25dde9f19823:
+    contentColumnType: string
+    fieldGroup: null
+    handle: sectionTitle
+    instructions: "First vertical title shown at top of page —\_if not set, uses page title."
+    name: 'Section Title'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

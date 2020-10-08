@@ -1,0 +1,21 @@
+fieldLayouts:
+  6f48d12a-3d73-4309-ac76-494fe7fd94be:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 8d680df1-9464-46d5-96c2-0fbf1570093b
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Common
+        sortOrder: 1
+handle: postcards
+hasTitleField: true
+name: Postcards
+section: 1a7bf290-7f6a-4934-b855-1ecaf0cb2afd
+sortOrder: 1
+titleFormat: ''

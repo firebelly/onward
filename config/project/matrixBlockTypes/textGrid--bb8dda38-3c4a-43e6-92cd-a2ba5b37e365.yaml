@@ -1,0 +1,68 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  9b7c6ec8-6811-4d32-948b-f4875bd39048:
+    tabs:
+      -
+        fields:
+          80aede10-a66e-490d-ac5a-469a7283ed27:
+            required: false
+            sortOrder: 2
+          ccc3cd90-61fe-43df-836a-70e069e9edfb:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  80aede10-a66e-490d-ac5a-469a7283ed27:
+    contentColumnType: string
+    fieldGroup: null
+    handle: textBlocks
+    instructions: ''
+    name: 'Text Blocks'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 302cee28-3841-4c5d-b750-9f30e6a13016
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_7_textblocks}}'
+      fieldLayout: row
+      maxRows: '4'
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a text block'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  ccc3cd90-61fe-43df-836a-70e069e9edfb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: intro
+    instructions: ''
+    name: Intro
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: textGrid
+name: 'Text Grid'
+sortOrder: 5

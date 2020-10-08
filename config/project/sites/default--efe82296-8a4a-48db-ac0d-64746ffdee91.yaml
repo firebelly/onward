@@ -1,0 +1,8 @@
+baseUrl: $DEFAULT_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: Onward
+primary: true
+siteGroup: b431bdaa-8467-4438-83ee-6750652bc5fc
+sortOrder: 1

@@ -1,0 +1,61 @@
+contentColumnType: string
+fieldGroup: a86c6f50-b95f-4784-98a8-f28553c72a62
+handle: homepageHeader
+instructions: ''
+name: 'Homepage Header'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 085c551f-db4d-4117-b494-66a6f72ef9d9
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 128c4464-ae64-48f5-a00e-73d9a83763d8
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6154e499-e02a-496d-b342-d7a985f8f429
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 803d502e-fd0c-4140-8d92-4ea244f1179c
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8447283b-b3c3-4777-9702-3013b0099cff
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - a064d645-f73d-4428-86f8-c42ea0ac3c99
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_homepageheader}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

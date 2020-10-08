@@ -1,0 +1,21 @@
+fieldLayouts:
+  8cf88d7c-9e4a-4241-b016-f266280db558:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: a3d90be8-ba69-44c3-aa70-07ab637f2597
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Common
+        sortOrder: 1
+handle: stories
+hasTitleField: true
+name: Stories
+section: 8709a9b5-a8b7-4c3e-b12d-e7e88926dc24
+sortOrder: 1
+titleFormat: ''

@@ -1,0 +1,125 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  3183ac6f-9d80-4c5d-8a5a-f9cf0d1705ff:
+    tabs:
+      -
+        fields:
+          123f2ad5-2c4e-478c-b575-31584e73a76c:
+            required: false
+            sortOrder: 1
+          5588242d-181d-4dda-b094-f4e1ab3e5e90:
+            required: false
+            sortOrder: 3
+          7ca8553e-664b-48f1-9367-7ea1a44f3ebc:
+            required: false
+            sortOrder: 4
+          8b63e510-489d-4a49-849b-148e17c0e85e:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  123f2ad5-2c4e-478c-b575-31584e73a76c:
+    contentColumnType: string
+    fieldGroup: null
+    handle: subhead
+    instructions: ''
+    name: Subhead
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  5588242d-181d-4dda-b094-f4e1ab3e5e90:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  7ca8553e-664b-48f1-9367-7ea1a44f3ebc:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imagePlacement
+    instructions: ''
+    name: 'Image Placement'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  8b63e510-489d-4a49-849b-148e17c0e85e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: statement
+    instructions: ''
+    name: Statement
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 250
+      code: ''
+      columnType: text
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: statement
+name: Statement
+sortOrder: 6

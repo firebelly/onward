@@ -1,0 +1,92 @@
+field: a3d90be8-ba69-44c3-aa70-07ab637f2597
+fieldLayouts:
+  ee0158f6-7943-42a2-a649-03cf03675d19:
+    tabs:
+      -
+        fields:
+          602a225c-5e16-4a3b-8b8f-9214279f3b14:
+            required: false
+            sortOrder: 4
+          6691e838-b700-41b0-83a8-c50eeef15b0b:
+            required: false
+            sortOrder: 3
+          833e687c-812c-4b23-84b3-e20ee1ce1500:
+            required: false
+            sortOrder: 2
+          938db5a5-d0fc-4a54-b640-12499c99c736:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  602a225c-5e16-4a3b-8b8f-9214279f3b14:
+    contentColumnType: text
+    fieldGroup: null
+    handle: tagline
+    instructions: ''
+    name: Tagline
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6691e838-b700-41b0-83a8-c50eeef15b0b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  833e687c-812c-4b23-84b3-e20ee1ce1500:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subhead
+    instructions: ''
+    name: Subhead
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  938db5a5-d0fc-4a54-b640-12499c99c736:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: story
+name: Story
+sortOrder: 1

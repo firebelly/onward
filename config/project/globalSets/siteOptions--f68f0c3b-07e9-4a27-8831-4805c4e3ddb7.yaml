@@ -1,0 +1,15 @@
+fieldLayouts:
+  e075516d-697a-49ec-b3a6-2134a7d940f3:
+    tabs:
+      -
+        fields:
+          3ea9bba3-6981-4abf-8ca2-b714a51917a9:
+            required: false
+            sortOrder: 1
+          5eaf5088-470a-41a8-8696-2affe0ab47a2:
+            required: false
+            sortOrder: 2
+        name: Footer
+        sortOrder: 1
+handle: siteOptions
+name: 'Site Options'

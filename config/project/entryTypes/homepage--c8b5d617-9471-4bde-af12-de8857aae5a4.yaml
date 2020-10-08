@@ -1,0 +1,45 @@
+fieldLayouts:
+  3a311baa-afa8-44cc-bac6-8a412684aa2e:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: dc417efc-de4c-4653-afcf-0e4aa47bd73e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 131af06f-d853-4205-904f-6c835a958650
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 747f7b29-c1ba-4ae0-a18f-6da874d04062
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Homepage
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: caac16cc-30e8-497f-88b2-ac1a5ccc79c5
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eccb8cfb-a355-4a92-bb67-aebb97ed92f2
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 083bb795-ac2a-4c86-aac3-9f670c828761
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: homepage
+hasTitleField: false
+name: Homepage
+section: 7ae1a417-ef1b-4b81-b05c-d3b37f9b2d67
+sortOrder: 1
+titleFormat: '{section.name|raw}'

@@ -1,0 +1,184 @@
+field: 9166c707-3164-4994-a96d-7d54a517833d
+fieldLayouts:
+  5e9a1deb-1d7f-481f-b6a1-38d5474a010b:
+    tabs:
+      -
+        fields:
+          07742700-6374-4595-9ede-33c0fdfb0aeb:
+            required: false
+            sortOrder: 5
+          3aeb8c76-5c1a-409b-a4b5-979eb325e3ea:
+            required: false
+            sortOrder: 4
+          45fb168c-e0b0-4b98-9b1a-2b6cb51d0de5:
+            required: false
+            sortOrder: 3
+          69a2a3dd-b898-40a1-b810-7e52bd16a941:
+            required: false
+            sortOrder: 2
+          69d9cef3-a2b4-4663-87ee-97a63b511798:
+            required: false
+            sortOrder: 1
+          7cb22f2f-25b8-4ce1-88dd-1180e9339c37:
+            required: false
+            sortOrder: 6
+        name: Content
+        sortOrder: 1
+fields:
+  07742700-6374-4595-9ede-33c0fdfb0aeb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3aeb8c76-5c1a-409b-a4b5-979eb325e3ea:
+    contentColumnType: text
+    fieldGroup: null
+    handle: socialLinks
+    instructions: ''
+    name: 'Social Links'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a link'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Title
+                -
+                  - handle
+                  - title
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - URL
+                -
+                  - handle
+                  - url
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  45fb168c-e0b0-4b98-9b1a-2b6cb51d0de5:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  69a2a3dd-b898-40a1-b810-7e52bd16a941:
+    contentColumnType: text
+    fieldGroup: null
+    handle: shortBio
+    instructions: 'One sentence bio shown in list view'
+    name: 'Short bio'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  69d9cef3-a2b4-4663-87ee-97a63b511798:
+    contentColumnType: text
+    fieldGroup: null
+    handle: personName
+    instructions: ''
+    name: Name
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7cb22f2f-25b8-4ce1-88dd-1180e9339c37:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field

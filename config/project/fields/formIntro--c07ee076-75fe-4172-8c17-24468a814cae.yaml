@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 0bee4054-16c4-4299-af71-f6b5ebb21116
+handle: formIntro
+instructions: ''
+name: 'Form Intro'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: ''
+  redactorConfig: Simple.json
+  removeEmptyTags: ''
+  removeInlineStyles: ''
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

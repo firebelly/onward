@@ -1,0 +1,54 @@
+contentColumnType: string
+fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+handle: footerOutro
+instructions: ''
+name: 'Footer Outro'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 67f18502-81e3-4b97-bad1-f2b789a37676
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8959cde6-c1f1-422f-8b2b-4c4c7ad6b659
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - ade54bb0-75f3-4704-849d-0e97ccf353dd
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - bc5be786-6d4b-4629-8be1-204d8e131ada
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - d8c833ba-cc04-433a-bab1-3f969a52c510
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_footeroutro}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

@@ -1,0 +1,258 @@
+field: 3ea9bba3-6981-4abf-8ca2-b714a51917a9
+fieldLayouts:
+  8fe7b267-c834-4de5-a2a7-12857692ee6c:
+    tabs:
+      -
+        fields:
+          32f0b36b-c389-4479-aead-a1eab3144503:
+            required: false
+            sortOrder: 3
+          894d6ca8-6652-42cf-a94c-12a4996dc5bb:
+            required: false
+            sortOrder: 1
+          99406cf1-a857-40c4-abc0-1fd08be7fb9a:
+            required: false
+            sortOrder: 4
+          af6f9955-ebc2-4a67-ab98-6f8c8808ec6e:
+            required: false
+            sortOrder: 2
+          c754f567-9cf5-4172-abca-1d5a3377c9fc:
+            required: false
+            sortOrder: 5
+        name: Content
+        sortOrder: 1
+fields:
+  32f0b36b-c389-4479-aead-a1eab3144503:
+    contentColumnType: text
+    fieldGroup: null
+    handle: secondaryNav
+    instructions: ''
+    name: 'Secondary Nav'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Title
+                -
+                  - handle
+                  - title
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - URL
+                -
+                  - handle
+                  - url
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  894d6ca8-6652-42cf-a94c-12a4996dc5bb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: contact
+    instructions: ''
+    name: Contact
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  99406cf1-a857-40c4-abc0-1fd08be7fb9a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: socialLinks
+    instructions: ''
+    name: 'Social Links'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Title
+                -
+                  - handle
+                  - title
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - URL
+                -
+                  - handle
+                  - url
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  af6f9955-ebc2-4a67-ab98-6f8c8808ec6e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: mainNav
+    instructions: ''
+    name: 'Main Nav'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Title
+                -
+                  - handle
+                  - title
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - URL
+                -
+                  - handle
+                  - url
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  c754f567-9cf5-4172-abca-1d5a3377c9fc:
+    contentColumnType: text
+    fieldGroup: null
+    handle: taglines
+    instructions: ''
+    name: Taglines
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Tagline
+                -
+                  - handle
+                  - tagline
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table

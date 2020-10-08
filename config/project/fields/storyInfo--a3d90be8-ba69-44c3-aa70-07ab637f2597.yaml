@@ -1,0 +1,40 @@
+contentColumnType: string
+fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+handle: storyInfo
+instructions: ''
+name: 'Story Info'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 331ae571-7c70-4855-9e55-18729f8f26a1
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 333942d0-5846-4451-9bc4-d824308c9281
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - e1d7f464-824d-49b8-abf5-489f3d9fe386
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_storyinfo}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: 'Add a story'
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

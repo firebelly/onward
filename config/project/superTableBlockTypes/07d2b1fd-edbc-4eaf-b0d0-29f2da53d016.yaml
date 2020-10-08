@@ -1,0 +1,163 @@
+field: 747f7b29-c1ba-4ae0-a18f-6da874d04062
+fieldLayouts:
+  246b9329-d6b7-48c9-871b-fc3eb1016627:
+    tabs:
+      -
+        fields:
+          67f18502-81e3-4b97-bad1-f2b789a37676:
+            required: false
+            sortOrder: 4
+          8959cde6-c1f1-422f-8b2b-4c4c7ad6b659:
+            required: false
+            sortOrder: 2
+          ade54bb0-75f3-4704-849d-0e97ccf353dd:
+            required: false
+            sortOrder: 5
+          bc5be786-6d4b-4629-8be1-204d8e131ada:
+            required: false
+            sortOrder: 1
+          d8c833ba-cc04-433a-bab1-3f969a52c510:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  67f18502-81e3-4b97-bad1-f2b789a37676:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkLabel
+    instructions: ''
+    name: 'CTA Button Label'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8959cde6-c1f1-422f-8b2b-4c4c7ad6b659:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  ade54bb0-75f3-4704-849d-0e97ccf353dd:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkURL
+    instructions: 'e.g. /our-work/'
+    name: 'CTA Button URL'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  bc5be786-6d4b-4629-8be1-204d8e131ada:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  d8c833ba-cc04-433a-bab1-3f969a52c510:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tapeTag
+    instructions: ''
+    name: 'Tape Tag'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Toward Equity'
+            -
+              - value
+              - towardEquity
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Learn — Build — Liberate'
+            -
+              - value
+              - learnBuildLiberate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adapt — Inspire — Persist — Create'
+            -
+              - value
+              - adaptInspirePersistCreate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Holding Space — Elevating Voices'
+            -
+              - value
+              - holdingSpaceElevatingVoices
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown

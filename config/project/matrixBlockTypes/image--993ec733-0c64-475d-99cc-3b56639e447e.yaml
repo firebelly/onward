@@ -1,0 +1,201 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  fdadc4d1-dc5f-41b0-9aab-6b950020b97c:
+    tabs:
+      -
+        fields:
+          15ecbddc-6008-42fc-b703-8e8b12fa885e:
+            required: false
+            sortOrder: 5
+          46896d5a-af5b-429b-ba0a-42b8ca252cb4:
+            required: false
+            sortOrder: 1
+          530887ec-6ee8-4e91-86b7-e2cb972de8c8:
+            required: false
+            sortOrder: 2
+          7e084dec-73cc-4f14-803f-400896f385f5:
+            required: false
+            sortOrder: 3
+          9f84197e-3baa-4b46-93a7-a3010a4afbf6:
+            required: false
+            sortOrder: 4
+        name: Content
+        sortOrder: 1
+fields:
+  15ecbddc-6008-42fc-b703-8e8b12fa885e:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tapeTag
+    instructions: ''
+    name: 'Tape Tag'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '* None *'
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Toward Equity'
+            -
+              - value
+              - towardEquity
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Learn — Build — Liberate'
+            -
+              - value
+              - learnBuildLiberate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adapt — Inspire — Persist — Create'
+            -
+              - value
+              - adaptInspirePersistCreate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Holding Space — Elevating Voices'
+            -
+              - value
+              - holdingSpaceElevatingVoices
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  46896d5a-af5b-429b-ba0a-42b8ca252cb4:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  530887ec-6ee8-4e91-86b7-e2cb972de8c8:
+    contentColumnType: string
+    fieldGroup: null
+    handle: caption
+    instructions: ''
+    name: Caption
+    searchable: true
+    settings:
+      byteLimit: 100
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7e084dec-73cc-4f14-803f-400896f385f5:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imagePlacement
+    instructions: ''
+    name: 'Image Placement'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  9f84197e-3baa-4b46-93a7-a3010a4afbf6:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: treated
+    instructions: ''
+    name: 'B&W Treated'
+    searchable: false
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: image
+name: Image
+sortOrder: 2

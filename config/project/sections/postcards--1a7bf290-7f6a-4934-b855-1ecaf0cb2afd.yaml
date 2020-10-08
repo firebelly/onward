@@ -1,0 +1,21 @@
+enableVersioning: true
+handle: postcards
+name: Postcards
+previewTargets:
+  -
+    label: 'Our Story'
+    urlFormat: our-story
+  -
+    label: Donate
+    urlFormat: donate
+propagationMethod: all
+siteSettings:
+  efe82296-8a4a-48db-ac0d-64746ffdee91:
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: ''
+structure:
+  maxLevels: 1
+  uid: 19563f97-e672-4f86-b837-dbc622ad7fd0
+type: structure

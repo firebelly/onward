@@ -1,0 +1,91 @@
+field: a3d90be8-ba69-44c3-aa70-07ab637f2597
+fieldLayouts:
+  85db01b5-1adb-4628-a929-15de18c1fe2c:
+    tabs:
+      -
+        fields:
+          331ae571-7c70-4855-9e55-18729f8f26a1:
+            required: false
+            sortOrder: 3
+          333942d0-5846-4451-9bc4-d824308c9281:
+            required: false
+            sortOrder: 2
+          e1d7f464-824d-49b8-abf5-489f3d9fe386:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  331ae571-7c70-4855-9e55-18729f8f26a1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tagline
+    instructions: ''
+    name: Tagline
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '* None *'
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Institutional Change'
+            -
+              - value
+              - 'Institutional Change'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  333942d0-5846-4451-9bc4-d824308c9281:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  e1d7f464-824d-49b8-abf5-489f3d9fe386:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subhead
+    instructions: ''
+    name: Subhead
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

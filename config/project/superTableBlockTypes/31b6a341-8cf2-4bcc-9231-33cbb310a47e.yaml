@@ -1,0 +1,101 @@
+field: 8d680df1-9464-46d5-96c2-0fbf1570093b
+fieldLayouts:
+  4c69431e-4ad8-4c14-9a3c-bfefc73769df:
+    tabs:
+      -
+        fields:
+          29cbefd6-80a7-44e6-a91c-304291dcacb1:
+            required: false
+            sortOrder: 3
+          6632d328-147b-4b1c-8e34-eedd570c4c72:
+            required: false
+            sortOrder: 1
+          8a4380b5-11b5-45f4-86af-142012814334:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  29cbefd6-80a7-44e6-a91c-304291dcacb1:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  6632d328-147b-4b1c-8e34-eedd570c4c72:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  8a4380b5-11b5-45f4-86af-142012814334:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tagline
+    instructions: ''
+    name: Tagline
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '* None *'
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Travel & Experience'
+            -
+              - value
+              - 'Travel & Experience'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown

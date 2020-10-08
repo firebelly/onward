@@ -1,0 +1,61 @@
+contentColumnType: string
+fieldGroup: 68e682d6-87a3-4206-a8b1-882d516282c9
+handle: ourBoard
+instructions: ''
+name: 'Our Board'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 185cfede-feee-4ae0-8b96-f6204336b7ee
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 2025cac3-0cea-4d19-8999-91f7ced0158b
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 3a4f8dbc-9904-493a-89fa-08f5a7d97179
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6274b074-6ed1-43b7-a071-03245d0c4974
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - c42808d5-cb5e-4070-99e6-1781008c221a
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - df17e61b-58a0-4093-b295-c303fd0ef0f8
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_ourboard}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: 'Add a person'
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+handle: footerQuote
+instructions: ''
+name: 'Footer Quote'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 5bc4e41f-1431-4142-a2d1-b1562fe5288f
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - fe0a1f04-6e5b-43ed-bf20-02eca700f32d
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_footerquote}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

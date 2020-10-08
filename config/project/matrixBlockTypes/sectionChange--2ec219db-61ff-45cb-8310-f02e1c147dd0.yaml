@@ -1,0 +1,81 @@
+field: 131af06f-d853-4205-904f-6c835a958650
+fieldLayouts:
+  4a8447f5-f5ab-49b8-8f55-5cccfd3a0340:
+    tabs:
+      -
+        fields:
+          eefba445-a2e2-4811-b986-88ace815b643:
+            required: false
+            sortOrder: 2
+          fdded3d6-6221-4799-9b09-82b0c6a6019c:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  eefba445-a2e2-4811-b986-88ace815b643:
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Color
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Accent 1'
+            -
+              - value
+              - accent1
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Accent 2'
+            -
+              - value
+              - accent2
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  fdded3d6-6221-4799-9b09-82b0c6a6019c:
+    contentColumnType: string
+    fieldGroup: null
+    handle: sectionTitle
+    instructions: 'Shows as fixed vertical text at right on desktop.'
+    name: Title
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: sectionChange
+name: 'Section Change'
+sortOrder: 1

@@ -1,0 +1,179 @@
+field: dc417efc-de4c-4653-afcf-0e4aa47bd73e
+fieldLayouts:
+  b61d0d48-e128-475c-8600-af850eef19dc:
+    tabs:
+      -
+        fields:
+          085c551f-db4d-4117-b494-66a6f72ef9d9:
+            required: false
+            sortOrder: 6
+          128c4464-ae64-48f5-a00e-73d9a83763d8:
+            required: false
+            sortOrder: 1
+          6154e499-e02a-496d-b342-d7a985f8f429:
+            required: false
+            sortOrder: 2
+          803d502e-fd0c-4140-8d92-4ea244f1179c:
+            required: false
+            sortOrder: 4
+          8447283b-b3c3-4777-9702-3013b0099cff:
+            required: false
+            sortOrder: 5
+          a064d645-f73d-4428-86f8-c42ea0ac3c99:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  085c551f-db4d-4117-b494-66a6f72ef9d9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tapeTag
+    instructions: ''
+    name: 'Tape Tag'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Toward Equity'
+            -
+              - value
+              - towardEquity
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Learn — Build — Liberate'
+            -
+              - value
+              - learnBuildLiberate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adapt — Inspire — Persist — Create'
+            -
+              - value
+              - adaptInspirePersistCreate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Holding Space — Elevating Voices'
+            -
+              - value
+              - holdingSpaceElevatingVoices
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  128c4464-ae64-48f5-a00e-73d9a83763d8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subhead
+    instructions: ''
+    name: Subhead
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6154e499-e02a-496d-b342-d7a985f8f429:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  803d502e-fd0c-4140-8d92-4ea244f1179c:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  8447283b-b3c3-4777-9702-3013b0099cff:
+    contentColumnType: string
+    fieldGroup: null
+    handle: sectionTitle
+    instructions: "First vertical title shown at top of page —\_if not set, uses page title."
+    name: 'Section Title'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a064d645-f73d-4428-86f8-c42ea0ac3c99:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: false
+    settings:
+      charLimit: '265'
+      code: ''
+      columnType: text
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

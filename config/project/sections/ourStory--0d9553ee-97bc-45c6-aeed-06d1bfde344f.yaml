@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: ourStory
+name: 'Our Story'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  efe82296-8a4a-48db-ac0d-64746ffdee91:
+    enabledByDefault: true
+    hasUrls: true
+    template: our-story/_entry
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: 2
+  uid: c6670914-9dc1-4bbb-a4b8-3dfce4e5dbd8
+type: structure

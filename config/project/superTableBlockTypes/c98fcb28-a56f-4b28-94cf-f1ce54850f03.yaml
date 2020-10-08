@@ -1,0 +1,184 @@
+field: 85204e51-4a0e-43e0-9f5a-9f92e49290e3
+fieldLayouts:
+  2414f578-b95a-4d22-b204-3f8c0d225e2f:
+    tabs:
+      -
+        fields:
+          185cfede-feee-4ae0-8b96-f6204336b7ee:
+            required: false
+            sortOrder: 2
+          2025cac3-0cea-4d19-8999-91f7ced0158b:
+            required: false
+            sortOrder: 1
+          3a4f8dbc-9904-493a-89fa-08f5a7d97179:
+            required: false
+            sortOrder: 5
+          6274b074-6ed1-43b7-a071-03245d0c4974:
+            required: false
+            sortOrder: 4
+          c42808d5-cb5e-4070-99e6-1781008c221a:
+            required: false
+            sortOrder: 6
+          df17e61b-58a0-4093-b295-c303fd0ef0f8:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  185cfede-feee-4ae0-8b96-f6204336b7ee:
+    contentColumnType: text
+    fieldGroup: null
+    handle: shortBio
+    instructions: 'One sentence bio shown in list view'
+    name: 'Short bio'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2025cac3-0cea-4d19-8999-91f7ced0158b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: personName
+    instructions: ''
+    name: Name
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3a4f8dbc-9904-493a-89fa-08f5a7d97179:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6274b074-6ed1-43b7-a071-03245d0c4974:
+    contentColumnType: text
+    fieldGroup: null
+    handle: socialLinks
+    instructions: ''
+    name: 'Social Links'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a link'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Title
+                -
+                  - handle
+                  - title
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - URL
+                -
+                  - handle
+                  - url
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  c42808d5-cb5e-4070-99e6-1781008c221a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  df17e61b-58a0-4093-b295-c303fd0ef0f8:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets

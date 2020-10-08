@@ -1,0 +1,40 @@
+contentColumnType: string
+fieldGroup: d7cadcda-36e7-4698-a430-56f94012c04b
+handle: postcardInfo
+instructions: ''
+name: 'Postcard Info'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 29cbefd6-80a7-44e6-a91c-304291dcacb1
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 6632d328-147b-4b1c-8e34-eedd570c4c72
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 8a4380b5-11b5-45f4-86af-142012814334
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_postcardinfo}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: 'Add a postcard'
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

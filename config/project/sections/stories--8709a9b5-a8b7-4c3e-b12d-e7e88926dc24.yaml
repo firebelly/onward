@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: stories
+name: Stories
+previewTargets:
+  -
+    label: 'Our Work'
+    urlFormat: our-work
+propagationMethod: all
+siteSettings:
+  efe82296-8a4a-48db-ac0d-64746ffdee91:
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: ''
+structure:
+  maxLevels: null
+  uid: d16dd01a-1bbf-4a4d-8718-a53f66a8e6f6
+type: structure

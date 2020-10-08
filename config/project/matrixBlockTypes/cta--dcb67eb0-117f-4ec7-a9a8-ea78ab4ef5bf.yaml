@@ -1,0 +1,80 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  f6d104c2-095b-4f0d-9359-2badc9411da4:
+    tabs:
+      -
+        fields:
+          02b835d7-a6a9-469e-9beb-f2d4b611a376:
+            required: false
+            sortOrder: 2
+          1f69d011-d301-45ff-8f9f-2b64aef2a050:
+            required: false
+            sortOrder: 3
+          2b81e063-ddc0-47a8-9af3-3e5321f7d757:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  02b835d7-a6a9-469e-9beb-f2d4b611a376:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkURL
+    instructions: ''
+    name: 'Link URL'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1f69d011-d301-45ff-8f9f-2b64aef2a050:
+    contentColumnType: text
+    fieldGroup: null
+    handle: notice
+    instructions: 'Info to show below button, i.e. donate button details'
+    name: Notice
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  2b81e063-ddc0-47a8-9af3-3e5321f7d757:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkLabel
+    instructions: ''
+    name: 'Link Label'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: cta
+name: CTA
+sortOrder: 7

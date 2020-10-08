@@ -1,0 +1,15 @@
+enableVersioning: true
+handle: donate
+name: Donate
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  efe82296-8a4a-48db-ac0d-64746ffdee91:
+    enabledByDefault: true
+    hasUrls: true
+    template: donate
+    uriFormat: donate
+type: single

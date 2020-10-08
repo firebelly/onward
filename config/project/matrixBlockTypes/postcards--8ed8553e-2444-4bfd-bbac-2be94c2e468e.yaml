@@ -1,0 +1,91 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  eb22a7e3-d25e-4306-acbe-e0a85115b051:
+    tabs:
+      -
+        fields:
+          4e8bdd58-7439-4782-aaaf-142621518d0e:
+            required: false
+            sortOrder: 1
+          6fca9068-a071-4b07-8d2e-9532b07964a2:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  4e8bdd58-7439-4782-aaaf-142621518d0e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6fca9068-a071-4b07-8d2e-9532b07964a2:
+    contentColumnType: string
+    fieldGroup: null
+    handle: postcardBlocks
+    instructions: ''
+    name: 'Postcard Blocks'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 95287868-a514-443e-ba6e-3164ae4c9e5a
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 8614f2c0-3142-4b1c-8aca-f2f44d8d1c89
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d531307d-3217-4fc7-b3b7-c594a9d2616b
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 0299655c-97db-4197-8d62-8e60a5e20bb2
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 61f1bbdd-2871-4ab5-b739-5d5b0295fede
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_14_postcardblocks}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a block'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: postcards
+name: Postcards
+sortOrder: 8

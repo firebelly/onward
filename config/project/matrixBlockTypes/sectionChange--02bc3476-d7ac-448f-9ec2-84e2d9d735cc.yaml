@@ -1,0 +1,82 @@
+field: de9ddb2d-f504-43eb-8c92-5ff7ab72ef33
+fieldLayouts:
+  4c800df4-f0f2-49b8-8574-cecb22148a70:
+    tabs:
+      -
+        fields:
+          0995ff1b-d299-4c5f-9b67-f6cfcaf330fe:
+            required: false
+            sortOrder: 1
+          121c2dc7-a0bc-4f95-b3df-acefec4c7646:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  0995ff1b-d299-4c5f-9b67-f6cfcaf330fe:
+    contentColumnType: string
+    fieldGroup: null
+    handle: sectionTitle
+    instructions: 'Shows as fixed vertical text at right on desktop.'
+    name: Title
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  121c2dc7-a0bc-4f95-b3df-acefec4c7646:
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Color
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Accent 1'
+            -
+              - value
+              - accent1
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Accent 2'
+            -
+              - value
+              - accent2
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: sectionChange
+name: 'Section Change'
+sortOrder: 1

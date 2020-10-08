@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: c5df179a-46ba-4ca1-bbdb-c44d8b2a821d
+handle: misc
+instructions: ''
+name: Miscellaneous
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 72bb892d-4f32-4918-9d99-ca9e821d5be7
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 20bf666b-bc68-49b8-8bfa-b5bc4f05e2d1
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_misc}}'
+  fieldLayout: matrix
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

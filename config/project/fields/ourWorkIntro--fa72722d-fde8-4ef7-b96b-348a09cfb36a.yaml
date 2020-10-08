@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: 70c8963f-cd93-46cf-9706-cb8e83ebf659
+handle: ourWorkIntro
+instructions: ''
+name: 'Our Work Intro'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 5347438f-53f7-42d5-8bd4-69a83d84ea11
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 89fc4cc4-09c0-4167-8c24-08030b8467e9
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_ourworkintro}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

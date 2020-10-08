@@ -1,0 +1,120 @@
+field: 131af06f-d853-4205-904f-6c835a958650
+fieldLayouts:
+  81d6d752-fa96-4c86-b999-a56f4a1538e3:
+    tabs:
+      -
+        fields:
+          0a7b0652-98d2-4068-bcc0-d539b8e4b531:
+            required: false
+            sortOrder: 2
+          13cec0dd-5cc8-415e-af53-8dc66d17abb9:
+            required: false
+            sortOrder: 4
+          9a692fe5-6b89-478a-a477-ba865d3c90b9:
+            required: false
+            sortOrder: 1
+          c57e0150-3f26-4482-a1c7-bf07338ccf35:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  0a7b0652-98d2-4068-bcc0-d539b8e4b531:
+    contentColumnType: string
+    fieldGroup: null
+    handle: attribution
+    instructions: ''
+    name: Attribution
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  13cec0dd-5cc8-415e-af53-8dc66d17abb9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imagePlacement
+    instructions: ''
+    name: 'Image Placement'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  9a692fe5-6b89-478a-a477-ba865d3c90b9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: quote
+    instructions: ''
+    name: Quote
+    searchable: true
+    settings:
+      charLimit: '250'
+      code: ''
+      columnType: string
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c57e0150-3f26-4482-a1c7-bf07338ccf35:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: quote
+name: Quote
+sortOrder: 4

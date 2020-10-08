@@ -1,0 +1,197 @@
+field: 131af06f-d853-4205-904f-6c835a958650
+fieldLayouts:
+  3491ff18-1857-42ca-98b3-ad2a9528a5ee:
+    tabs:
+      -
+        fields:
+          62f64bf7-afe5-460e-a8af-3416b4baff64:
+            required: false
+            sortOrder: 2
+          84a73f5f-e32d-4c99-a474-a813b5afccfe:
+            required: false
+            sortOrder: 5
+          a0f2bf8d-589d-409b-a3ad-8eb0b68e352a:
+            required: false
+            sortOrder: 1
+          f07019da-99a8-4bdc-b563-08a374156dbe:
+            required: false
+            sortOrder: 4
+          f4e8fe34-8ae8-41b4-8361-16e76f51cefe:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  62f64bf7-afe5-460e-a8af-3416b4baff64:
+    contentColumnType: string
+    fieldGroup: null
+    handle: caption
+    instructions: ''
+    name: Caption
+    searchable: true
+    settings:
+      charLimit: '100'
+      code: ''
+      columnType: string
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  84a73f5f-e32d-4c99-a474-a813b5afccfe:
+    contentColumnType: string
+    fieldGroup: null
+    handle: tapeTag
+    instructions: ''
+    name: 'Tape Tag'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '* None *'
+            -
+              - value
+              - ''
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Toward Equity'
+            -
+              - value
+              - towardEquity
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Learn — Build — Liberate'
+            -
+              - value
+              - learnBuildLiberate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Adapt — Inspire — Persist — Create'
+            -
+              - value
+              - adaptInspirePersistCreate
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Holding Space — Elevating Voices'
+            -
+              - value
+              - holdingSpaceElevatingVoices
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a0f2bf8d-589d-409b-a3ad-8eb0b68e352a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6f85d94b-c535-4e84-802b-33fe7087ab63'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      singleUploadLocationSource: 'volume:4f8ec569-6e1d-4f22-b630-1132bd13bb81'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f07019da-99a8-4bdc-b563-08a374156dbe:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: treated
+    instructions: ''
+    name: 'B&W Treated'
+    searchable: true
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  f4e8fe34-8ae8-41b4-8361-16e76f51cefe:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imagePlacement
+    instructions: ''
+    name: 'Image Placement'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: image
+name: Image
+sortOrder: 5

@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: a86c6f50-b95f-4784-98a8-f28553c72a62
+handle: homepageBlocks
+instructions: ''
+name: 'Homepage Blocks'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_homepageblocks}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
