@@ -1,7 +1,7 @@
 contentColumnType: text
 fieldGroup: 0bee4054-16c4-4299-af71-f6b5ebb21116
 handle: formEmbed
-instructions: ''
+instructions: 'If populated, this will show instead of the custom form'
 name: 'Form Embed'
 searchable: true
 settings:
@@ -12,6 +12,7 @@ settings:
   initialRows: '4'
   multiline: '1'
   placeholder: ''
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText
