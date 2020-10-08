@@ -42,61 +42,63 @@
       {% endif %}
 
       {% if entry.formEmbed %}
+
         <div class="form-embed">
           {{ entry.formEmbed|raw }}
         </div>
+
+      {% else %}
+
+        <div class="partner-form">
+          <form method="post" action="/partner-with-us">
+            <div class="grid-wrap"><div class="grid">
+              <div class="grid-item one-third">
+                <label for="from-name">Your Name</label>
+                <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" placeholder="Enter your name...">
+                {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+              </div>
+              <div class="grid-item one-third">
+                <label for="from-email">Your Email</label>
+                <input required id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" placeholder="Now your email...">
+                {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+              </div>
+              <div class="grid-item one-third">
+                <label for="message[Phone]">Phone Number</label>
+                <input type="text" id="message[Phone]" name="message[Phone]" value="{{ message.message.phone ?? '' }}" placeholder="000-000-0000">
+              </div>
+            </div></div>
+
+            <div class="grid-wrap"><div class="grid">
+              <div class="grid-item one-half">
+                <label for="message[Resources]">What resources (financial, time, prioritization) are you willing to dedicate to doing real DEI work?</label>
+                <textarea rows="10" cols="40" id="message[Resources]" name="message[Resources]">{{ message.message.resources ?? '' }}</textarea>
+              </div>
+              <div class="grid-item one-half">
+                <label for="message[Current systems]">What current systems do you have in place at your organization to ensure diversity, equity, and inclusion?</label>
+                <textarea rows="10" cols="40" id="message[Current systems]" name="message[Current systems]">{{ message.message.systems ?? '' }}</textarea>
+              </div>
+            </div></div>
+
+            <label for="message[Current systems to change]">What current systems would you like to change because they perpetuate a lack of diversity, equity, and inclusion at your organization?</label>
+            <textarea rows="10" cols="40" id="message[Current systems to change]" name="message[Current systems to change]">{{ message.message.systemsChange ?? '' }}</textarea>
+
+            <label for="message[Additional info]">Additional Information</label>
+            <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
+
+            <div class="status"></div>
+
+            <div class="actions">
+              {{ csrfInput() }}
+              <input id="botsLoveTheHoney" name="botsLoveTheHoney" type="text">
+              <input type="hidden" name="action" value="contact-form/send">
+              <input type="hidden" name="subject" value="Onward Partner With Us Submission">
+              <input type="hidden" name="message[formName]" value="Partner With Us">
+              <button type="submit" class="button -jumbo">Submit Message</button>
+            </div>
+          </form>
+        </div><!-- /.partner-form -->
+
       {% endif %}
-
-      {#
-      <div class="partner-form">
-        <form method="post" action="/partner-with-us">
-          <div class="grid-wrap"><div class="grid">
-            <div class="grid-item one-third">
-              <label for="from-name">Your Name</label>
-              <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" placeholder="Enter your name...">
-              {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
-            </div>
-            <div class="grid-item one-third">
-              <label for="from-email">Your Email</label>
-              <input required id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" placeholder="Now your email...">
-              {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
-            </div>
-            <div class="grid-item one-third">
-              <label for="message[Phone]">Phone Number</label>
-              <input type="text" id="message[Phone]" name="message[Phone]" value="{{ message.message.phone ?? '' }}" placeholder="000-000-0000">
-            </div>
-          </div></div>
-
-          <div class="grid-wrap"><div class="grid">
-            <div class="grid-item one-half">
-              <label for="message[Resources]">What resources (financial, time, prioritization) are you willing to dedicate to doing real DEI work?</label>
-              <textarea rows="10" cols="40" id="message[Resources]" name="message[Resources]">{{ message.message.resources ?? '' }}</textarea>
-            </div>
-            <div class="grid-item one-half">
-              <label for="message[Current systems]">What current systems do you have in place at your organization to ensure diversity, equity, and inclusion?</label>
-              <textarea rows="10" cols="40" id="message[Current systems]" name="message[Current systems]">{{ message.message.systems ?? '' }}</textarea>
-            </div>
-          </div></div>
-
-          <label for="message[Current systems to change]">What current systems would you like to change because they perpetuate a lack of diversity, equity, and inclusion at your organization?</label>
-          <textarea rows="10" cols="40" id="message[Current systems to change]" name="message[Current systems to change]">{{ message.message.systemsChange ?? '' }}</textarea>
-
-          <label for="message[Additional info]">Additional Information</label>
-          <textarea rows="10" cols="40" id="message[Additional info]" name="message[Additional info]" placeholder="Is there anything else the Onward team should know?">{{ message.message.info ?? '' }}</textarea>
-
-          <div class="status"></div>
-
-          <div class="actions">
-            {{ csrfInput() }}
-            <input id="botsLoveTheHoney" name="botsLoveTheHoney" type="text">
-            <input type="hidden" name="action" value="contact-form/send">
-            <input type="hidden" name="subject" value="Onward Partner With Us Submission">
-            <input type="hidden" name="message[formName]" value="Partner With Us">
-            <button type="submit" class="button -jumbo">Submit Message</button>
-          </div>
-        </form>
-      </div><!-- /.partner-form -->
-      #}
     </div>
   </div>
 
