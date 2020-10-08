@@ -5,6 +5,7 @@
     RewriteCond %{HTTP_HOST} !^thisisonward\.com [NC]
     RewriteCond %{REQUEST_URI} !\.well-known
     RewriteCond %{HTTP_HOST} !^onward\.localhost [NC]
+    RewriteCond %{HTTP_HOST} !^onward\.firebelly\.co [NC]
     RewriteCond %{HTTP_HOST} !^staging\.thisisonward\.com [NC]
     RewriteRule ^(.*)$ https://thisisonward.com%{REQUEST_URI} [R=301,L]
 
